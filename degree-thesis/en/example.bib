@@ -1,0 +1,223 @@
+
+@inproceedings{murdoch_steven_j._chip_2010,
+	address = {Oakland, CA, USA},
+	title = {Chip and {PIN} is {Broken}},
+	isbn = {9781424468942},
+	url = {http://ieeexplore.ieee.org/document/5504801/},
+	language = {en},
+	booktitle = {2010 {IEEE} {Symposium} on {Security} and {Privacy}},
+	publisher = {IEEE},
+	author = {{Murdoch, Steven J.} and {Drimer, Saar} and {Anderson, Ross} and {Bond, Mike}},
+	year = {2010},
+	pages = {433--446}
+}
+
+@article{anderson_ross_emv:_2014,
+	title = {{EMV}: why payment systems fail},
+	volume = {57},
+	issn = {00010782},
+	shorttitle = {{EMV}},
+	url = {http://dl.acm.org/citation.cfm?doid=2602695.2602321},
+	doi = {10.1145/2602321},
+	language = {en},
+	number = {6},
+	journal = {Communications of the ACM},
+	author = {{Anderson, Ross} and {Murdoch, Steven J.}},
+	month = jun,
+	year = {2014},
+	pages = {24--28}
+}
+
+@incollection{kou_weidong_secure_2003,
+	address = {Berlin, Heidelberg},
+	title = {Secure {Electronic} {Transactions}: {Overview}, {Capabilities}, and {Current} {Status}},
+	isbn = {9783642078873 9783662053225},
+	shorttitle = {Secure {Electronic} {Transactions}},
+	url = {http://www.springerlink.com/index/10.1007/978-3-662-05322-5_10},
+	language = {en},
+	booktitle = {Payment {Technologies} for {E}-{Commerce}},
+	publisher = {Springer Berlin Heidelberg},
+	author = {{Kou, Weidong} and {Agnew, Gordon}},
+	year = {2003},
+	doi = {10.1007/978-3-662-05322-5_10},
+	pages = {211--226}
+}
+
+@article{solat_security_2017,
+	title = {Security of {Electronic} {Payment} {Systems}: {A} {Comprehensive} {Survey}},
+	shorttitle = {Security of {Electronic} {Payment} {Systems}},
+	url = {http://arxiv.org/abs/1701.04556},
+	abstract = {This comprehensive survey deliberated over the security of electronic payment systems. In our research, we focused on either dominant systems or new attempts and innovations to improve the level of security of the electronic payment systems. This survey consists of the Card-present (CP) transactions and a review of its dominant system i.e. EMV including several researches at Cambridge university to designate variant types of attacks against this standard which demonstrates lack of a secure "offline" authentication method that is one of the main purpose of using the smart cards instead of magnetic stripe cards which are not able to participate in authentication process, the evaluation of the EMV migration from RSA cryptosystem to ECC based cryptosystem 3. The evaluation of the Card-not-present transactions approaches including 3D Secure, 3D SET, SET/EMV and EMV/CAP, the impact of concept of Tokenization and the role of Blind Signatures schemes in electronic cash and E-payment systems, use of quantum key distribution (QKD) in electronic payment systems to achieve unconditional security rather than only computational assurance of the security level by using traditional cryptography, the evaluation of Near Field Communication (NFC) and the contactless payment systems such as Google wallet, Android Pay and Apple Pay, the assessment of the electronic currency and peer to peer payment systems such as Bitcoin. The criterion of our survey for the measurement and the judgment about the quality of the security in electronic payment systems was this quote: "The security of a system is only as strong as its weakest link"},
+	journal = {arXiv:1701.04556 [cs]},
+	author = {Solat, Siamak},
+	month = jan,
+	year = {2017},
+	note = {arXiv: 1701.04556}
+}
+
+@inproceedings{bond_chip_2014,
+	title = {Chip and {Skim}: {Cloning} {EMV} {Cards} with the {Pre}-play {Attack}},
+	shorttitle = {Chip and {Skim}},
+	abstract = {EMV, also known as "Chip and PIN", is the leading system for card payments worldwide. It is used throughout Europe and much of Asia, and is starting to be introduced in North America too. Payment cards contain a chip so they can execute an authentication protocol. This protocol requires point-of-sale (POS) terminals or ATMs to generate a nonce, called the unpredictable number, for each transaction to ensure it is fresh. We have discovered two serious problems: a widespread implementation flaw and a deeper, more difficult to fix flaw with the EMV protocol itself. The first flaw is that some EMV implementers have merely used counters, timestamps or home-grown algorithms to supply this nonce. This exposes them to a "pre-play" attack which is indistinguishable from card cloning from the standpoint of the logs available to the card-issuing bank, and can be carried out even if it is impossible to clone a card physically. Card cloning is the very type of fraud that EMV was supposed to prevent. We describe how we detected the vulnerability, a survey methodology we developed to chart the scope of the weakness, evidence from ATM and terminal experiments in the field, and our implementation of proof-of-concept attacks. We found flaws in widely-used ATMs from the largest manufacturers. We can now explain at least some of the increasing number of frauds in which victims are refused refunds by banks which claim that EMV cards cannot be cloned and that a customer involved in a dispute must therefore be mistaken or complicit. The second problem was exposed by the above work. Independent of the random number quality, there is a protocol failure: the actual random number generated by the terminal can simply be replaced by one the attacker used earlier when capturing an authentication code from the card. This variant of the pre-play attack may be carried out by malware in an ATM or POS terminal, or by a man-in-the-middle between the terminal and the acquirer. We explore the design and implementation mistakes that enabled these flaws to evade detection until now: shortcomings of the EMV specification, of the EMV kernel certification process, of implementation testing, formal analysis, and monitoring customer complaints. Finally we discuss countermeasures. More than a year after our initial responsible disclosure of these flaws to the banks, action has only been taken to mitigate the first of them, while we have seen a likely case of the second in the wild, and the spread of ATM and POS malware is making it ever more of a threat.},
+	booktitle = {2014 {IEEE} {Symposium} on {Security} and {Privacy}},
+	author = {Bond, M. and Choudary, O. and Murdoch, S. J. and Skorobogatov, S. and Anderson, R.},
+	month = may,
+	year = {2014},
+	keywords = {EMV, Pre-Play, cloning},
+	pages = {49--64}
+}
+
+
+@article{ortiz_s._is_2006,
+	title = {Is {Near}-{Field} {Communication} {Close} to {Success}?},
+	volume = {39},
+	issn = {0018-9162},
+	url = {http://ieeexplore.ieee.org/document/1607943/},
+	language = {en},
+	number = {3},
+	journal = {Computer},
+	author = {{Ortiz, S.}},
+	month = mar,
+	year = {2006},
+	pages = {18--20}
+}
+
+@article{haselsteiner_security_2006,
+	title = {Security in {Near} {Field} {Communication} ({NFC})},
+	abstract = {This paper gives a comprehensive analysis of security with respect to NFC. It is not limited to a certain application of NFC, but it uses a systematic approach to analyze the various aspects of security whenever an NFC interface is used. The authors want to clear up many misconceptions about security and NFC in various applications. The paper lists the threats, which are applicable to NFC, and describes solutions to protect against these threats. All of this is given in the context of currently available NFC hardware, NFC applications and possible future developments of NFC.},
+	language = {en},
+	author = {Haselsteiner, Ernst and Breitfuß, Klemens},
+	month = jan,
+	year = {2006},
+	pages = {11}
+}
+
+@online{galloway_visa_2019,
+	title = {Visa card vulnerability can bypass contactless limits},
+	url = {https://www.ptsecurity.com/ww-en/about/news/visa-card-vulnerability-can-bypass-contactless-limits/},
+	abstract = {Visa card vulnerability can bypass contactless transaction limits using a {MITM} attack},
+	author = {Galloway, Leigh-Anne and Yunusov, Timur},
+	urldate = {2019-08-13},
+	date = {2019-07-29},
+	langid = {english},
+	file = {Snapshot:/home/cptpie/Zotero/storage/GXG38JY6/visa-card-vulnerability-can-bypass-contactless-limits.html:text/html},
+    note = {Accessed: 2019-08-13}
+}
+
+@inproceedings{zhou_nshield_2014,
+	location = {Bretton Woods, New Hampshire, {USA}},
+	title = {{nShield}: a noninvasive {NFC} security system for mobiledevices},
+	isbn = {978-1-4503-2793-0},
+	url = {http://dl.acm.org/citation.cfm?doid=2594368.2594376},
+	shorttitle = {{nShield}},
+	abstract = {The Near Field Communication ({NFC}) technology is gaining increasing popularity among mobile users. However, as a relatively new and developing technology, {NFC} may also introduce security threats that make mobile devices vulnerable to various malicious attacks. This work presents the ﬁrst system study on the feasibility of and defense again passive {NFC} eavesdropping. Our experiments show that commodity {NFC}-enabled mobile devices can be eavesdropped from up to 240 cm away, which is at least an order of magnitude of the intended {NFC} communication distance. This ﬁnding challenges the general perception that {NFC} is largely immune to eavesdropping because of its short working range. We then present the design of a hardware security system called {nShield}. With a small form factor, {nShield} can be attached to the back of mobile devices to attenuate the signal strength against passive eavesdropping. At the same time, the absorbed {RF} energy is scavenged by {nShield} for its perpetual operation. {nShield} intelligently determines the right attenuation level that is just enough to sustain reliable data communication. We implement a prototype of {nShield}, and evaluate its performance via extensive experiments. Our results show that {nShield} has low power consumption (23 {uW}), can harvest signiﬁcant amount of power (55 {mW}), and adaptively attenuates the signal strength of {NFC} in a variety of realistic settings, while only introducing insigniﬁcant delay (up to 2.2 s).},
+	eventtitle = {the 12th annual international conference},
+	pages = {95--108},
+	booktitle = {Proceedings of the 12th annual international conference on Mobile systems, applications, and services - {MobiSys} '14},
+	publisher = {{ACM} Press},
+	author = {Zhou, Ruogu and Xing, Guoliang},
+	urldate = {2019-08-18},
+	date = {2014},
+	langid = {english}
+}
+
+@inproceedings{lalehTaxonomyFraudsFraud2009,
+  series = {Communications in {{Computer}} and {{Information Science}}},
+  title = {A {{Taxonomy}} of {{Frauds}} and {{Fraud Detection Techniques}}},
+  isbn = {978-3-642-00405-6},
+  abstract = {Fraud is growing noticeably with the expansion of modern technology and the universal superhighways of communication, resulting in the loss of billions of dollars worldwide each year. Several recent techniques in detecting fraud are constantly evolved and applied to many commerce areas. The goal of this paper is to propose a new taxonomy and a comprehensive review of different types of fraud and data mining techniques of fraud detection. The novelty of this paper is collecting all types of frauds that can detect by data mining techniques and review some real time approaches that have capability to detect frauds in real time.},
+  language = {en},
+  booktitle = {Information {{Systems}}, {{Technology}} and {{Management}}},
+  publisher = {{Springer Berlin Heidelberg}},
+  author = {Laleh, Naeimeh and Abdollahi Azgomi, Mohammad},
+  editor = {Prasad, Sushil K. and Routray, Susmi and Khurana, Reema and Sahni, Sartaj},
+  year = {2009},
+  keywords = {Bagging,Fraud Detection,Intrusion Detection,Spike Detection,Stacking},
+  pages = {256-267},
+  file = {/home/xandy/Zotero/storage/TA6IH3PN/Laleh and Abdollahi Azgomi - 2009 - A Taxonomy of Frauds and Fraud Detection Technique.pdf},
+}
+
+
+
+@article{ferradiWhenOrganizedCrime2016,
+  title = {When Organized Crime Applies Academic Results: A Forensic Analysis of an in-Card Listening Device},
+  volume = {6},
+  issn = {2190-8508, 2190-8516},
+  shorttitle = {When Organized Crime Applies Academic Results},
+  abstract = {This paper describes the forensic analysis of what the authors believe to be the most sophisticated smart card fraud encountered to date. In 2010, Murdoch et al. [7] described a man-inthe-middle attack against EMV cards. [7] demonstrated the attack using a general purpose FPGA board, noting that ``miniaturization is mostly a mechanical challenge, and well within the expertise of criminal gangs''. This indeed happened in 2011, when about 40 sophisticated card forgeries surfaced in the field.},
+  language = {en},
+  number = {1},
+  journal = {Journal of Cryptographic Engineering},
+  author = {Ferradi, Houda and G{\'e}raud, R{\'e}mi and Naccache, David and Tria, Assia},
+  month = apr,
+  year = {2016},
+  pages = {49-59},
+  file = {/home/xandy/Zotero/storage/ASY6T76N/Ferradi et al. - 2016 - When organized crime applies academic results a f.pdf}
+}
+
+
+
+@online{emvco_emvco_website,
+	title = {{EMVCo} specification documents regarding {EMV}},
+	url = {https://www.emvco.com/document-search/},
+	titleaddon = {{EMVCo}},
+	author = {{EMVCo}},
+	urldate = {2019-08-19},
+	langid = {american},
+	month = nov,
+    year = {2011},
+    note = {Accessed: 2019-08-19},
+	file = {Snapshot:/home/cptpie/Zotero/storage/FJ5SU3SY/document-search.html:text/html}
+}
+
+@online{emvco_emvco_book1,
+	title = {{EMVCo} - {EMV} Specification Book 1},
+	url = {https://www.emvco.com/wp-content/plugins/pmpro-customizations/oy-getfile.php?u=/wp-content/uploads/documents/EMV_v4.3_Book_1_ICC_to_Terminal_Interface_2012060705394541.pdf},
+	titleaddon = {{EMVCo}},
+	author = {{EMVCo}},
+	urldate = {2019-08-19},
+	langid = {american},
+	month = nov,
+    year = {2011},
+    note = {02011},
+	file = {EMVCo - EMVCo - EMV Specification Book 1.pdf:/home/cptpie/Zotero/storage/4XK6CHIY/EMVCo - EMVCo - EMV Specification Book 1.pdf:application/pdf;Snapshot:/home/cptpie/Zotero/storage/TFBIAYFQ/terms-of-use.html:text/html}
+}
+
+@online{emvco_emvco_book2,
+	title = {{EMVCo} - {EMV} Specification Book 2},
+	url = {https://www.emvco.com/wp-content/plugins/pmpro-customizations/oy-getfile.php?u=/wp-content/uploads/documents/EMV_v4.3_Book_2_Security_and_Key_Management_20120607061923900.pdf},
+	titleaddon = {{EMVCo}},
+	author = {{EMVCo}},
+	urldate = {2019-08-19},
+	langid = {american},
+	month = nov,
+    year = {2011},
+    note = {00000},
+	file = {EMVCo - EMVCo - EMV Specification Book 2.pdf:/home/cptpie/Zotero/storage/SB9JN6YV/EMVCo - EMVCo - EMV Specification Book 2.pdf:application/pdf}
+}
+
+@online{emvco_emvco_book3,
+	title = {{EMVCo} - {EMV} Specification Book 3},
+	url = {https://www.emvco.com/wp-content/plugins/pmpro-customizations/oy-getfile.php?u=/wp-content/uploads/documents/EMV_v4.3_Book_3_Application_Specification_20120607062110791.pdf},
+	titleaddon = {{EMVCo}},
+	author = {{EMVCo}},
+	urldate = {2019-08-19},
+	langid = {american},
+	month = nov,
+    year = {2011},
+    note = {00000},
+	file = {EMVCo - EMVCo - EMV Specification Book 3.pdf:/home/cptpie/Zotero/storage/Q5FF9U26/EMVCo - EMVCo - EMV Specification Book 3.pdf:application/pdf}
+}
+
+@online{emvco_emvco_book4,
+	title = {{EMVCo} - {EMV} Specification Book 4},
+	url = {https://www.emvco.com/wp-content/plugins/pmpro-customizations/oy-getfile.php?u=/wp-content/uploads/documents/EMV_v4.3_Book_3_Application_Specification_20120607062110791.pdf},
+	titleaddon = {{EMVCo}},
+	author = {{EMVCo}},
+	urldate = {2019-08-19},
+	langid = {american},
+	month = nov,
+    year = {2011},
+    note = {02011},
+	file = {EMVCo - EMVCo - EMV Specification Book 3.pdf:/home/cptpie/Zotero/storage/968SRZFW/EMVCo - EMVCo - EMV Specification Book 3.pdf:application/pdf}
+}
