@@ -39,7 +39,27 @@ headsepline, % Uncomment to get a line under the header
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
+
+
+
+
 \usepackage[T1]{fontenc} % Output font encoding for international characters
+% \usepackage[default]{raleway}
+
+
+\setsansfont[
+	Path        	= \currfileabsdir,
+	Ligatures   	= TeX,
+	BoldFont		= Roboto-Bold.otf,
+	ItalicFont		= Roboto-Italic.otf,
+	BoldItalicFont	= Roboto-BoldItalic.otf
+]{Roboto-Regular.otf}
+
+
+\titleformat*{\section}{\Large\bfseries\sffamily}
+\titleformat*{\subsection}{\large\bfseries\sffamily}
+\titleformat*{\subsubsection}{\bfseries\sffamily}
+
 
 \usepackage{mathpazo} % Use the Palatino font by default
 
