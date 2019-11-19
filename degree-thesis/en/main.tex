@@ -46,19 +46,36 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 % \usepackage[default]{raleway}
 
+\usepackage{fontspec}
+\usepackage{titlesec}
 
-\setsansfont[
-	Path        	= \currfileabsdir,
-	Ligatures   	= TeX,
+\setmainfont[
+	Path          	= fonts/,
+	BoldFont		= Heuristica-Bold.otf,
+	ItalicFont		= Heuristica-Italic.otf,
+	BoldItalicFont	= Heuristica-BoldItalic.otf
+]{Heuristica-Regular.otf}
+
+
+
+
+\newfontfamily\headingfont[
+	Path          	= fonts/,
 	BoldFont		= Roboto-Bold.otf,
 	ItalicFont		= Roboto-Italic.otf,
 	BoldItalicFont	= Roboto-BoldItalic.otf
 ]{Roboto-Regular.otf}
 
+% \titleformat{\chapter}{\Huge\bfseries\sffamily}
 
-\titleformat*{\section}{\Large\bfseries\sffamily}
-\titleformat*{\subsection}{\large\bfseries\sffamily}
-\titleformat*{\subsubsection}{\bfseries\sffamily}
+
+\titleformat{\chapter}[display]
+  {\headingfont\Huge\bfseries}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+\titleformat*{\section}{\Large\bfseries\headingfont}
+\titleformat*{\subsection}{\large\bfseries\headingfont}
+\titleformat*{\subsubsection}{\bfseries\headingfont}
 
 
 \usepackage{mathpazo} % Use the Palatino font by default
