@@ -40,23 +40,23 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 
-
-
-
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 % \usepackage[default]{raleway}
 
 \usepackage{fontspec}
 \usepackage{titlesec}
 
+
 \setmainfont[
-	Path          	= fonts/,
-	BoldFont		= Heuristica-Bold.otf,
-	ItalicFont		= Heuristica-Italic.otf,
-	BoldItalicFont	= Heuristica-BoldItalic.otf
-]{Heuristica-Regular.otf}
+	Path           = fonts/,
+    BoldFont       = {Crimson Semibold},
+    BoldFont       = {Crimson-Bold.otf},
+    ItalicFont     = {Crimson-Italic.otf},
+    BoldItalicFont = {Crimson-BoldItalic.otf},
+    Ligatures      = TeX
+]{Crimson-Roman.otf}
 
-
+\renewcommand{\familydefault}{\rmdefault}
 
 
 \newfontfamily\headingfont[
@@ -65,8 +65,6 @@ headsepline, % Uncomment to get a line under the header
 	ItalicFont		= Roboto-Italic.otf,
 	BoldItalicFont	= Roboto-BoldItalic.otf
 ]{Roboto-Regular.otf}
-
-% \titleformat{\chapter}{\Huge\bfseries\sffamily}
 
 
 \titleformat{\chapter}[display]
@@ -77,8 +75,10 @@ headsepline, % Uncomment to get a line under the header
 \titleformat*{\subsection}{\large\bfseries\headingfont}
 \titleformat*{\subsubsection}{\bfseries\headingfont}
 
+\usepackage{marginnote}
 
-\usepackage{mathpazo} % Use the Palatino font by default
+\usepackage{microtype}
+
 
 \usepackage[
 	backend=biber,
