@@ -1,8 +1,8 @@
 main.pdf: main.tex
 	lualatex main.tex && lualatex main.tex && biber main && lualatex main.tex
 
-clean: move
-	latexmk -c
+clean:
+	latexmk -c && rm main.bbl && rm main.run.xml
 
 move:
 	if [ -d pdf ]; then \
