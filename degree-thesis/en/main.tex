@@ -38,14 +38,10 @@ headsepline, % Uncomment to get a line under the header
 %consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
-\usepackage[utf8]{inputenc} % Required for inputting international characters
 
 \usepackage[T1]{fontenc} % Output font encoding for international characters
-% \usepackage[default]{raleway}
 
 \usepackage{fontspec}
-\usepackage{titlesec}
-
 
 \setmainfont[
 	Path           = fonts/,
@@ -56,9 +52,6 @@ headsepline, % Uncomment to get a line under the header
     Ligatures      = TeX
 ]{Crimson-Roman.otf}
 
-\renewcommand{\familydefault}{\rmdefault}
-
-
 \newfontfamily\headingfont[
 	Path          	= fonts/,
 	BoldFont		= Roboto-Bold.otf,
@@ -66,6 +59,10 @@ headsepline, % Uncomment to get a line under the header
 	BoldItalicFont	= Roboto-BoldItalic.otf
 ]{Roboto-Regular.otf}
 
+\renewcommand{\familydefault}{\rmdefault}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage[explicit]{titlesec}
 
 \titleformat{\chapter}[display]
   {\headingfont\Huge\bfseries}
