@@ -78,6 +78,7 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{microtype}
 
+\usepackage{multicol}
 
 \usepackage[
 	backend=biber,
@@ -284,8 +285,15 @@ Ich erkläre hiermit gemäß § 17 Abs. 2 APO, dass ich die vorstehende {\abschl
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
-
-\printbibliography[heading=bibintoc]
+\setcounter{chapter}{-1}
+\chapter{References}
+\begin{multicols}{2}% two columns
+\begin{refcontext}[sorting=nyt] % make sure that bibliography is sorted by last name, year, title
+\renewcommand*{\bibfont}{\small\raggedright}
+\linespread{1.3}\selectfont
+\printbibliography[heading=none]
+\end{refcontext}
+\end{multicols}
 
 %----------------------------------------------------------------------------------------
 
