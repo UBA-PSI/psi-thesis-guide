@@ -64,13 +64,13 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage[explicit]{titlesec}
 
-\titleformat{\chapter}[display]
-  {\headingfont\Huge\bfseries}
-  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
 
-\titleformat*{\section}{\Large\bfseries\headingfont}
-\titleformat*{\subsection}{\large\bfseries\headingfont}
-\titleformat*{\subsubsection}{\bfseries\headingfont}
+\titleformat{\chapter}[hang]{\headingfont\Huge\bfseries}{\color{gray75}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{gray75}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright#1\end{tabular}}
+\titleformat{\section}[hang]{\bfseries\Large\headingfont}{\arabic{chapter}.\arabic{section} #1}{6pt}{}
+\titleformat{\subsection}[hang]{\bfseries\large\headingfont}{\arabic{chapter}.\arabic{section}.\arabic{subsection} #1}{6pt}{}
+\titleformat{\subsubsection}[hang]{\bfseries\headingfont}{#1}{6pt}{}
 
 \usepackage{marginnote}
 
