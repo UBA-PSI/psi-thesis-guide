@@ -41,114 +41,8 @@ headsepline, % Uncomment to get a line under the header
 
 \newcommand{\abschluss}{Bachelor}
 
-%----------------------------------------------------------------------------------------
-%		FONT SETUP
-%----------------------------------------------------------------------------------------
+\input{Misc/setup.tex}
 
-\usepackage[T1]{fontenc} % Output font encoding for international characters
-
-\usepackage{fontspec}
-
-\setmainfont[
-	Path           = fonts/,
-    BoldFont       = {Crimson Semibold},
-    BoldFont       = {Crimson-Bold.otf},
-    ItalicFont     = {Crimson-Italic.otf},
-    BoldItalicFont = {Crimson-BoldItalic.otf},
-    Ligatures      = TeX
-]{Crimson-Roman.otf}
-
-\newfontfamily\headingfont[
-	Path          	= fonts/,
-	BoldFont		= Roboto-Bold.otf,
-	ItalicFont		= Roboto-Italic.otf,
-	BoldItalicFont	= Roboto-BoldItalic.otf
-]{Roboto-Regular.otf}
-
-\renewcommand{\familydefault}{\rmdefault}
-\defaultfontfeatures{Ligatures=TeX}
-
-
-%----------------------------------------------------------------------------------------
-%		TITLE SETUP
-%----------------------------------------------------------------------------------------
-
-\usepackage[explicit]{titlesec}
-
-\definecolor{gray75}{gray}{0.75}
-\newcommand{\hsp}{\hspace{20pt}}
-
-\titleformat{\chapter}[hang]{\headingfont\Huge\bfseries}{\color{gray75}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{gray75}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright#1\end{tabular}}
-
-\titleformat{\section}[hang]{\bfseries\Large\headingfont}{\arabic{chapter}.\arabic{section} #1}{6pt}{}
-
-\titleformat{\subsection}[hang]{\bfseries\large\headingfont}{\arabic{chapter}.\arabic{section}.\arabic{subsection} #1}{6pt}{}
-
-\titleformat{\subsubsection}[hang]{\bfseries\headingfont}{#1}{6pt}{}
-
-
-%----------------------------------------------------------------------------------------
-%		OTHER PACKAGES
-%----------------------------------------------------------------------------------------
-
-\usepackage{marginnote} % Enable Notes on the Page Margin
-
-\usepackage{microtype} % Enable better typographic setup
-
-\usepackage{multicol} % Enable usage of multiple columns
-
-\usepackage[
-	backend=biber,
-	style=alphabetic
-	]{biblatex} % Use biber backend with alphabetic reference style
-
-\addbibresource{example.bib} % The filename of the bibliography
-
-\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
-
-\usepackage{todonotes}
-
-\usepackage{booktabs}
-
-\urlstyle{same}
-
-
-%----------------------------------------------------------------------------------------
-%	SETUP BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
-\setlength{\bibitemsep}{.3\baselineskip plus .05\baselineskip minus .05\baselineskip}
-\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
-\let\oldthebibliography\thebibliography
-\renewcommand\thebibliography[1]{%
-  \oldthebibliography{#1}%
-  \setlength{\parskip}{\bibitemsep}%
-  \setlength{\itemsep}{\bibparskip}%
-}
-
-%----------------------------------------------------------------------------------------
-%	MARGIN SETTINGS
-%----------------------------------------------------------------------------------------
-
-\geometry{
-	paper=a4paper, % Change to letterpaper for US letter
-	inner=2cm, % Inner margin
-	outer=3.8cm, % Outer margin
-	marginparwidth=3cm,
-	marginparsep=4mm,
-	bindingoffset=.5cm, % Binding offset
-	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
-	% showframe, % Uncomment to show how the type block is set on the page
-}
-
-
-%----------------------------------------------------------------------------------------
-%	SETUP HEADER AND FOOTER
-%----------------------------------------------------------------------------------------
-\automark[chapter]{chapter}
-\ihead{\textsc{\headmark}}% Inner header
-\ohead[\pagemark]{\pagemark}% Outer header
-\automark*[section]{}%
 %----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
@@ -165,13 +59,6 @@ headsepline, % Uncomment to get a line under the header
 \department{\href{ }{ }} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
 \group{\href{https://www.uni-bamberg.de/en/psi/}{Privacy and Security in Information Systems Group}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
 \faculty{\href{https://www.uni-bamberg.de/en/wiai/}{Information Systems and Applied Computer Sciences}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
-
-\AtBeginDocument{
-\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
-\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
-\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
-}
-
 \begin{document}
 
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
