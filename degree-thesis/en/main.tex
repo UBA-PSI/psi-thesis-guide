@@ -131,12 +131,14 @@ headsepline, % Uncomment to get a line under the header
 
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
-	inner=2.5cm, % Inner margin
+	inner=2cm, % Inner margin
 	outer=3.8cm, % Outer margin
+	marginparwidth=3cm,
+	marginparsep=4mm,
 	bindingoffset=.5cm, % Binding offset
 	top=1.5cm, % Top margin
 	bottom=1.5cm, % Bottom margin
-	%showframe, % Uncomment to show how the type block is set on the page
+	% showframe, % Uncomment to show how the type block is set on the page
 }
 
 
@@ -262,20 +264,6 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
-
-
-% Changing the geometry again to enable the wider margin
-\newgeometry{
-	paper=a4paper, % Change to letterpaper for US letter
-	inner=2.5cm, % Inner margin
-	outer=5cm, % Outer margin
-	bindingoffset=.5cm, % Binding offset
-	top=2.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
-}
-
-
-
 \mainmatter % Begin numeric (1,2,3...) page numbering
 
 \pagestyle{thesis} % Return the page headers back to the "thesis" style
@@ -304,15 +292,6 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
 
-% Resetting the geometry to disable the wider margin
-\newgeometry{
-	paper=a4paper, % Change to letterpaper for US letter
-	inner=2.5cm, % Inner margin
-	outer=3.8cm, % Outer margin
-	bindingoffset=.5cm, % Binding offset
-	top=2.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
-}
 \begin{declaration}
 \addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
 Ich erkläre hiermit gemäß § 17 Abs. 2 APO, dass ich die vorstehende {\abschluss}arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
