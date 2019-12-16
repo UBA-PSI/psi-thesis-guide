@@ -112,6 +112,19 @@ headsepline, % Uncomment to get a line under the header
 
 \urlstyle{same}
 
+
+%----------------------------------------------------------------------------------------
+%	SETUP BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\setlength{\bibitemsep}{.3\baselineskip plus .05\baselineskip minus .05\baselineskip}
+\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
+\let\oldthebibliography\thebibliography
+\renewcommand\thebibliography[1]{%
+  \oldthebibliography{#1}%
+  \setlength{\parskip}{\bibitemsep}%
+  \setlength{\itemsep}{\bibparskip}%
+}
+
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
@@ -311,11 +324,11 @@ Ich erkläre hiermit gemäß § 17 Abs. 2 APO, dass ich die vorstehende {\abschl
 \setcounter{chapter}{-1}
 \chapter{References}
 \begin{multicols}{2}% two columns
-\begin{refcontext}[sorting=nyt] % make sure that bibliography is sorted by last name, year, title
-\renewcommand*{\bibfont}{\small\raggedright}
-\linespread{1.3}\selectfont
-\printbibliography[heading=none]
-\end{refcontext}
+	\begin{refcontext}[sorting=nyt] % make sure that bibliography is sorted by last name, year, title
+		\renewcommand*{\bibfont}{\small\raggedright}
+		\linespread{1.2}\selectfont
+		\printbibliography[heading=none]
+	\end{refcontext}
 \end{multicols}
 
 %----------------------------------------------------------------------------------------
