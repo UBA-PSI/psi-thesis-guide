@@ -201,7 +201,7 @@
 \RequirePackage{booktabs} % Required for better table rules
 
 \RequirePackage{caption} % Required for customising the captions
-\captionsetup{justification=centerlast,font=small,labelfont=sc,margin=50pt}
+\captionsetup{format=plain,justification=RaggedRight,font=small,labelfont=bf,margin=50pt,singlelinecheck=true}
 
 %----------------------------------------------------------------------------------------
 %	DEFINE CUSTOM THESIS INFORMATION COMMANDS
@@ -285,6 +285,7 @@
 }
 \ifoot{}% Inner footer
 \ofoot{}% Outer footer
+
 \pagestyle{thesisSimple}
 \providepairofpagestyles[thesisSimple]{thesis}{%
 	\automark*[section]{}%
@@ -347,10 +348,10 @@ KOMA-script documentation for details.}]{fancyhdr}
 \ifbool{consistentlayout}{
 	\DeclareDocumentEnvironment{abstract}{ O{} }{%
 		\addchap*{\abstractname}%
-		{\chapteralign\normalsize\abstractauthorfont \authorname \par}% Author name
-		\vspace{\baselineskip}
-		{\chapteralign\parbox{.7\linewidth}{\chapteralign\normalsize\itshape\abstracttitlefont\@title}\par}% Thesis title
-		\bigskip\noindent\ignorespaces
+		%{\chapteralign\normalsize\abstractauthorfont \authorname \par}% Author name
+		%\vspace{\baselineskip}
+		%{\chapteralign\parbox{.7\linewidth}{\chapteralign\normalsize\itshape\abstracttitlefont\@title}\par}% Thesis title
+		%\bigskip\noindent\ignorespaces
 	}%
 	{}%end alt-abstract
 }{%

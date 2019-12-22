@@ -15,7 +15,7 @@
 
 %----------------------------------------------------------------------------------------
 
-\section{Welcome and Thank You}
+\section{Welcome and and a Quick Thank You}
 Welcome to this \LaTeX{} Thesis Template, a beautiful and easy to use template for writing a thesis using the \LaTeX{} typesetting system.
 
 If you are writing a thesis (or will be in the future) and its subject is technical or mathematical (though it doesn't have to be), then creating it in \LaTeX{} is highly recommended as a way to make sure you can just get down to the essential writing without having to worry over formatting or wasting time arguing with your word processor.
@@ -195,11 +195,11 @@ Due to the differences in the paper size, the resulting margins may be different
 
 The \code{biblatex} package is used to format the bibliography and inserts references such as this one \parencite{murdoch_steven_j._chip_2010}. The options used in the \file{main.tex} file mean that the in-text citations of references are formatted with the author(s) listed with the date \cite{anderson_ross_emv:_2014} of the publication. Multiple references are separated by semicolons (e.g. \parencite{solat_security_2017, bond_chip_2014}) and references with more than three authors only show the first author with \emph{et al.} indicating there are more authors (e.g. \parencite{bond_chip_2014}). This is done automatically for you. To see how you use references, have a look at the \file{Chapter1.tex} source file. Many reference managers allow you to simply drag the reference into the document as you type.
 
-Scientific references should come \emph{before} the punctuation mark if there is one (such as a comma or period). The same goes for footnotes\footnote{Such as this footnote, here down at the bottom of the page.}. You can change this but the most important thing is to keep the convention consistent throughout the thesis. Footnotes themselves should be full, descriptive sentences (beginning with a capital letter and ending with a full stop). The APA6 states: \enquote{Footnote numbers should be superscripted, [...], following any punctuation mark except a dash.} The Chicago manual of style states: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}
+Scientific references should come \emph{before} the punctuation mark if there is one (such as a comma or period). The same goes for footnotes\footnote{Such as this footnote, here down at the bottom of the page. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.}. You can change this but the most important thing is to keep the convention consistent throughout the thesis. Footnotes themselves should be full, descriptive sentences (beginning with a capital letter and ending with a full stop). The APA6 states: \enquote{Footnote numbers should be superscripted, [...], following any punctuation mark except a dash.} The Chicago manual of style states: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}
 
 The bibliography is typeset with references listed in alphabetical order by the first author's last name. This is similar to the APA referencing style. To see how \LaTeX{} typesets the bibliography, have a look at the very end of this document (or just click on the reference number links in in-text citations).
 
-\subsubsection{A Note on bibtex}
+\paragraph{A Quick Note on bibtex}
 
 The bibtex backend used in the template by default does not correctly handle unicode character encoding (i.e. "international" characters). You may see a warning about this in the compilation log and, if your references contain unicode characters, they may not show up correctly or at all. The solution to this is to use the biber backend instead of the outdated bibtex backend. This is done by finding this in \file{main.tex}: \option{backend=bibtex} and changing it to \option{backend=biber}. You will then need to delete all auxiliary BibTeX files and navigate to the template directory in your terminal (command prompt). Once there, simply type \code{biber main} and biber will compile your bibliography. You can then compile \file{main.tex} as normal and your bibliography will be updated. An alternative is to set up your LaTeX editor to compile with biber instead of bibtex, see \href{http://tex.stackexchange.com/questions/154751/biblatex-with-biber-configuring-my-editor-to-avoid-undefined-citations/}{here} for how to do this for various editors.
 
@@ -231,7 +231,7 @@ Tables are an important way of displaying your results, below is an example tabl
 \caption{The effects of treatments X and Y on the four groups studied.}
 \label{tab:treatments}
 \centering
-\begin{tabular}{l l l}
+\begin{tabular}{r r r}
 \toprule
 \tabhead{Groups} & \tabhead{Treatment X} & \tabhead{Treatment Y} \\
 \midrule

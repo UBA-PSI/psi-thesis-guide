@@ -1,4 +1,4 @@
-main.pdf: main.tex Misc/setup.tex Chapters/*.tex
+main.pdf: main.tex Misc/setup.tex Misc/titlepage.tex Chapters/*.tex Appendices/*.tex
 	lualatex main.tex && lualatex main.tex && biber main && lualatex main.tex
 
 clean:

@@ -25,7 +25,7 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 %oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
-english, % ngerman for German
+english, % ngerman for German 
 singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
 %draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
 %nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
@@ -35,7 +35,7 @@ parskip, % Uncomment to add space between paragraphs
 nohyperref, % Uncomment to not load the hyperref package
 headsepline, % Uncomment to get a line under the header
 %chapterinoneline, % Uncomment to place the chapter title next to the number on one line
-%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
 
@@ -43,31 +43,39 @@ headsepline, % Uncomment to get a line under the header
 
 \input{Misc/setup.tex}
 
+\addbibresource{example.bib} % The filename of the bibliography
+
 %----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 \newcommand{\thesistype}{Bachelors} % The type of you thesis (Bachelors, Masters, Doctoral ...)
-\thesistitle{Thesis Title} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
-\supervisor{Dr. James \textsc{Smith}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
-\degree{Doctor of Philosophy} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
-\author{Max \textsc{Mustermann}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
-\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
 
-\subject{Biological Sciences} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
-\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
-\university{\href{https://www.uni-bamberg.de/en/}{University of Bamberg}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
-\department{\href{ }{ }} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+% Replace Q with \Qswash (defined in setup.tex) in title
+\catcode`Q=\active
+\defQ{\swashedletter}
+\thesistitle{Just a Quick Example: This is a Thesis Title of Typical Length} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\catcode`Q=11 % make Q inactive again
+
+\supervisor{Prof. Dr. Dominik Herrmann} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\degree{degree not used} % Your degree name, this is used in the title page, print it elsewhere with \degreename
+\author{Max Mustermann} % Your name, this is used in the title page, print it elsewhere with \authorname
+\addresses{address not used} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{subject not used} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{keywords not used} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{\href{https://www.uni-bamberg.de/en/}{University of Bamberg}} % Your university's name and URL, this is used in the title page, print it elsewhere with \univname
+\department{department not used} % Your department's name and URL, this is used in the title page, print it elsewhere with \deptname
 \group{\href{https://www.uni-bamberg.de/en/psi/}{Privacy and Security in Information Systems Group}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
-\faculty{\href{https://www.uni-bamberg.de/en/wiai/}{Information Systems and Applied Computer Sciences}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+\faculty{\href{https://www.uni-bamberg.de/en/wiai/}{Faculty of Information Systems and Applied Computer Sciences}} % Your faculty's name and URL, this is used in the title page, print it elsewhere with \facname
 \begin{document}
 
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages 
 
 \include{Misc/titlepage}
 
 
 %----------------------------------------------------------------------------------------
-%	QUOTATION PAGE
+%	QUOTATION
 %----------------------------------------------------------------------------------------
 
 % \vspace*{0.2\textheight}
@@ -81,30 +89,34 @@ headsepline, % Uncomment to get a line under the header
 %----------------------------------------------------------------------------------------
 
 \begin{abstract}
-\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+%\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+Provide a Thesis Abstract here (length: less than one page).
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
-\begin{acknowledgements}
-\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
-The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
-\end{acknowledgements}
+%\begin{acknowledgements}
+% %\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+%The acknowledgments and the people to thank go here.
+%\end{acknowledgements}
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
 
+\cleardoublepage
+{
+\hypersetup{linkcolor=black}
 \tableofcontents % Prints the main table of contents
+}
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION
 %----------------------------------------------------------------------------------------
 
-\dedicatory{For/Dedicated to/To my\ldots}
+% \dedicatory{For/Dedicated to/To my\ldots}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
@@ -134,6 +146,36 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %\include{Appendices/AppendixC}
 
 %----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\newgeometry{
+%	paper=a4paper, % Change to letterpaper for US letter
+%	inner=2cm, % Inner margin
+%	outer=1.8cm, % Outer margin
+%	marginparwidth=0cm,
+%	marginparsep=0mm,
+%	bindingoffset=.5cm, % Binding offset
+%	top=1.5cm, % Top margin
+%	bottom=2.5cm, % Bottom margin
+%	% showframe, % Uncomment to show how the type block is set on the page
+%}
+
+%\setcounter{chapter}{-1}
+\chapter*{References}
+\addcontentsline{toc}{chapter}{References}
+
+%\begin{multicols}{2}% two columns
+	\begin{refcontext}[sorting=nyt] % make sure that bibliography is sorted by last name, year, title
+		\renewcommand*{\bibfont}{\small\raggedright}
+		\linespread{1.2}\selectfont
+		\printbibliography[heading=none]
+	\end{refcontext}
+%\end{multicols}
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
 
@@ -148,20 +190,5 @@ Ich erkläre hiermit gemäß § 17 Abs. 2 APO, dass ich die vorstehende {\abschl
 \noindent Datum:\\
 \rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
 \end{declaration}
-
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
-\setcounter{chapter}{-1}
-\chapter{References}
-\begin{multicols}{2}% two columns
-	\begin{refcontext}[sorting=nyt] % make sure that bibliography is sorted by last name, year, title
-		\renewcommand*{\bibfont}{\small\raggedright}
-		\linespread{1.2}\selectfont
-		\printbibliography[heading=none]
-	\end{refcontext}
-\end{multicols}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}

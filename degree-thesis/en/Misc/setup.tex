@@ -13,6 +13,15 @@
     BoldItalicFont = {Crimson-BoldItalic.otf}
 ]{Crimson-Roman.otf}
 
+% preamble should include, in this order:
+% load babel here if needed
+\usepackage[p,osf]{cochineal}
+
+\AtBeginEnvironment{tabular}{%
+  \tlfstyle
+}
+
+
 \setmonofont[
 	Path           = fonts/,
     BoldFont       = {UbuntuMono-B.ttf},
@@ -21,12 +30,12 @@
     Scale = MatchLowercase
 ]{UbuntuMono-R.ttf}
 
-\newfontfamily\headingfont[
-	Path          	= fonts/,
-	BoldFont		= Roboto-Bold.otf,
-	ItalicFont		= Roboto-Italic.otf,
-	BoldItalicFont	= Roboto-BoldItalic.otf
-]{Roboto-Regular.otf}
+%\newfontfamily\headingfont[
+%	Path          	= fonts/,
+%	BoldFont		= Roboto-Bold.otf,
+%	ItalicFont		= Roboto-Italic.otf,
+%	BoldItalicFont	= Roboto-BoldItalic.otf
+%]{Roboto-Regular.otf}
 
 
 \setsansfont[
@@ -39,6 +48,9 @@
 \renewcommand{\familydefault}{\rmdefault}
 \defaultfontfeatures{Ligatures=TeX}
 
+\usepackage[cochineal,vvarbb]{newtxmath}
+\usepackage[cal=boondoxo]{mathalfa}
+
 
 %----------------------------------------------------------------------------------------
 %		TITLE SETUP
@@ -49,14 +61,39 @@
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{20pt}}
 
-\titleformat{\chapter}[hang]{\headingfont\Huge\bfseries}{\color{gray75}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{gray75}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright#1\end{tabular}}
 
-\titleformat{\section}[hang]{\bfseries\Large\headingfont}{\arabic{chapter}.\arabic{section} #1}{6pt}{}
 
-\titleformat{\subsection}[hang]{\bfseries\large\headingfont}{\arabic{chapter}.\arabic{section}.\arabic{subsection} #1}{6pt}{}
+% ====== replace Q with \Qswash in Chapters and Sections =========
 
-\titleformat{\subsubsection}[hang]{\bfseries\headingfont}{#1}{6pt}{}
+\newcommand{\swashedletter}{\Qswash}
+\catcode`Q=\active
+\defQ{\swashedletter}
+\catcode`Q=11
+\usepackage{xstring}
+\noexpandarg\exploregroups
+\newcommand\ReplaceStrQ[1]{\StrSubstitute{#1}{Q}{\swashedletter}}
 
+% ================================================================
+
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\color{gray75}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{gray75}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright\ReplaceStrQ{#1}\end{tabular}}
+
+\titleformat{\section}[hang]{\bfseries\Large}{\arabic{chapter}.\arabic{section}}{1ex}{ \ReplaceStrQ{#1}}{}
+
+\titleformat{\subsection}[hang]{\bfseries\large}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}{1ex}{\ReplaceStrQ{#1}}{}
+
+\titleformat{\subsubsection}[hang]{\bfseries}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1ex}{\ReplaceStrQ{#1}}{}
+
+
+%----------------------------------------------------------------------------------------
+%		TABLE OF CONTENTS SETUP
+%----------------------------------------------------------------------------------------
+
+% Recommendation is to use 1 or 2
+\setcounter{tocdepth}{1}
+
+% recommended if you have tocdepth > 1
+%\usepackage{tocloft}
+%\setlength{\cftbeforesecskip}{6pt}
 
 %----------------------------------------------------------------------------------------
 %		OTHER PACKAGES
@@ -66,7 +103,7 @@
 \usepackage{ragged2e}
 \renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
-\renewcommand*{\marginfont}{\footnotesize}
+\renewcommand*{\marginfont}{\footnotesize\sffamily}
 
 \renewcommand{\marginnotevadjust}{0.63\baselineskip}
 
@@ -74,12 +111,33 @@
 
 \usepackage{multicol} % Enable usage of multiple columns
 
+% biblatex setup is inspired by https://anneurai.net/2017/10/18/thesis-formatting-in-latex/
 \usepackage[
-	backend=biber,
-	style=alphabetic
-	]{biblatex} % Use biber backend with alphabetic reference style
+  backend=biber,
+  style=alphabetic,
+  doi=false,isbn=false,
+  terseinits=true, % no points between initials
+  sortcites=true,
+  language=english
+]{biblatex} % Use biber backend with alphabetic reference style
+\AtEveryBibitem{%
+  \clearlist{language} % don't show "en."
+  \clearlist{extra} % clears extra fields such as ISBN nrs
+}
 
-\addbibresource{example.bib} % The filename of the bibliography
+%-- no "quotes" around titles of chapters/article titles
+\DeclareFieldFormat[article, inbook, incollection, inproceedings, misc, thesis, unpublished]{title}{#1}
+%-- no punctuation after volume
+\DeclareFieldFormat[article]{volume}{{#1}}
+%-- puts number/issue between brackets
+\DeclareFieldFormat[article, inbook, incollection, inproceedings, misc, thesis, unpublished]{number}{\mkbibparens{#1}}
+%-- and then for articles directly the pages w/o any "pages" or "pp."
+\DeclareFieldFormat[article]{pages}{#1}
+%-- format 16(4):224--225 for articles
+\renewbibmacro*{volume+number+eid}{\printfield{volume}\printfield{number}\printunit{\addcolon}
+}
+\DeclareFieldFormat{url}{\url{#1}}
+
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
@@ -89,8 +147,50 @@
 
 \urlstyle{same}
 
+% make citations hyperlinks, grey
 \usepackage{hyperref}
+ \hypersetup{colorlinks,breaklinks,
+             citecolor=[rgb]{0.3,0.3,0.3},
+             linkcolor=[rgb]{0.3,0.3,0.3},
+             filecolor=[rgb]{0.3,0.3,0.3},
+             urlcolor=[rgb]{0.3,0.3,0.3}}
+ 
+% hyperlink for \citeauthor as well
+\DeclareCiteCommand{\citeauthor}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexnames{labelname}}
+     {}%
+   \printtext[bibhyperref]{\printnames{labelname}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+ 
+% https://tex.stackexchange.com/questions/27607/biblatex-authoryear-comp-and-hyperlinks
+% make full author-year into hyperlinks, will be colored grey
+\makeatletter
+\let\abx@macro@citeOrig\abx@macro@cite
+\renewbibmacro{cite}{%
+   \bibhyperref{%
+   \let\bibhyperref\relax\relax%
+   \abx@macro@citeOrig%
+   }%
+}
+\let\abx@macro@textciteOrig\abx@macro@textcite
+\renewbibmacro{textcite}{%
+   \bibhyperref{%
+   \let\bibhyperref\relax\relax%
+   \abx@macro@textciteOrig%
+   }%
+}%
+\makeatother
+
+
 \usepackage{cleveref}
+
+\raggedbottom % dont force the same page length by increasing space between paragraphs
+
 %----------------------------------------------------------------------------------------
 %	SETUP BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
@@ -124,8 +224,10 @@
 %	SETUP HEADER AND FOOTER
 %----------------------------------------------------------------------------------------
 \automark[chapter]{chapter}
-\ihead{\textsc{\headmark}}% Inner header
-\ohead[\pagemark]{\pagemark}% Outer header
+%\ihead{\textsc{\headmark}}% Inner header - use for Small Caps in header
+\ihead{\textup{\headmark}}% Inner header
+\ohead[]{\pagemark}% Outer header
+\cfoot[\pagemark]{} 
 \automark*[section]{}%
 
 
@@ -138,4 +240,4 @@
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 }
 
-\hypersetup{colorlinks=false}
+%\hypersetup{colorlinks=false} % uncomment for to change gray links to black links

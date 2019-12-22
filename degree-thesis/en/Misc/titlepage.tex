@@ -5,42 +5,64 @@
 %----------------------------------------------------------------------------------------
 
 \begin{titlepage}
+
+\newgeometry{
+	inner=4cm, % Inner margin
+	outer=4cm, % Outer margin
+	marginparwidth=0cm,
+	marginparsep=0mm,
+	bindingoffset=.5cm, % Binding offset
+	top=2.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin
+	showframe % Uncomment to show how the type block is set on the page
+}
+
 \begin{center}
 
 \vspace*{.06\textheight}
-{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
-\textsc{\Large \thesistype~Thesis}\\[0.5cm] % Thesis type
 
-\HRule \\[0.4cm] % Horizontal line
-{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
-\HRule \\[1.5cm] % Horizontal line
+\includegraphics[width=35mm]{Misc/UB_Logo_20mm_CMYK.pdf}
 
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author:}\\
-\authorname
-\end{flushleft}
-\end{minipage}
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushright} \large
+\vspace*{.06\textheight}
+
+{\LARGE \textls[130]{\MakeUppercase{\univname}}\par}\vspace{2\baselineskip} % University name
+
+{\large \facname}
+
+\vspace{1.5cm}
+
+\textsc{\Large \thesistype~Thesis}\\[1cm] % Thesis type
+
+%\HRule \\[0.4cm] % Horizontal line
+%
+{\huge \bfseries \ttitle\par}\vspace{1cm} % Thesis title
+
+%\HRule \\[1.5cm] % Horizontal line
+
+
+\textsc{\Large by}\\[1cm]
+
+{\Large \authorname}
+
+\vspace{1.5cm}
+
 \emph{Supervisor:} \\
-\supname
-\end{flushright}
-\end{minipage}\\[3cm]
+\supname\\[1cm]
+%
+%\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+%\textit{in the}\\[0.4cm]
+%
+\groupname%\\[2cm] % Research group name and department name
 
 \vfill
 
-\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
-\textit{in the}\\[0.4cm]
-\groupname\\\deptname\\[2cm] % Research group name and department name
-
-\vfill
-
-{\large \today}\\[4cm] % Date
-%\includegraphics{Logo} % University/department logo - uncomment to place it
+{\large \today} % Date
 
 \vfill
 \end{center}
+
+\restoregeometry
+
 \end{titlepage}
 
 
