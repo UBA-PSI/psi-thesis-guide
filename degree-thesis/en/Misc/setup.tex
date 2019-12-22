@@ -8,14 +8,28 @@
 
 \setmainfont[
 	Path           = fonts/,
-    BoldFont       = {Crimson Semibold},
-    BoldFont       = {Crimson-Bold.otf},
+    BoldFont       = {Crimson-Semibold.otf},
     ItalicFont     = {Crimson-Italic.otf},
-    BoldItalicFont = {Crimson-BoldItalic.otf},
-    Ligatures      = TeX
+    BoldItalicFont = {Crimson-BoldItalic.otf}
 ]{Crimson-Roman.otf}
 
+\setmonofont[
+	Path           = fonts/,
+    BoldFont       = {UbuntuMono-B.ttf},
+    ItalicFont       = {UbuntuMono-RI.ttf},
+    BoldItalicFont       = {UbuntuMono-BI.ttf},
+    Scale = MatchLowercase
+]{UbuntuMono-R.ttf}
+
 \newfontfamily\headingfont[
+	Path          	= fonts/,
+	BoldFont		= Roboto-Bold.otf,
+	ItalicFont		= Roboto-Italic.otf,
+	BoldItalicFont	= Roboto-BoldItalic.otf
+]{Roboto-Regular.otf}
+
+
+\setsansfont[
 	Path          	= fonts/,
 	BoldFont		= Roboto-Bold.otf,
 	ItalicFont		= Roboto-Italic.otf,
@@ -49,6 +63,12 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{marginnote} % Enable Notes on the Page Margin
+\usepackage{ragged2e}
+\renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
+\renewcommand*{\raggedrightmarginnote}{\RaggedRight}
+\renewcommand*{\marginfont}{\footnotesize}
+
+\renewcommand{\marginnotevadjust}{0.63\baselineskip}
 
 \usepackage{microtype} % Enable better typographic setup
 
@@ -90,12 +110,12 @@
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
 	inner=2cm, % Inner margin
-	outer=3.8cm, % Outer margin
-	marginparwidth=3cm,
+	outer=5.8cm, % Outer margin
+	marginparwidth=4cm,
 	marginparsep=4mm,
 	bindingoffset=.5cm, % Binding offset
 	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
+	bottom=2.5cm, % Bottom margin
 	% showframe, % Uncomment to show how the type block is set on the page
 }
 
