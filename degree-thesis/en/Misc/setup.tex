@@ -1,4 +1,17 @@
 %----------------------------------------------------------------------------------------
+%		UNIVERSITY OF BAMBERG COLORS
+%----------------------------------------------------------------------------------------
+
+% http://www.brandwares.com/RGBTintCalculator.php
+% Base Color value obtained from UB Corporate Identity Manual 
+\definecolor{ubblue}{HTML}{00457D}
+\definecolor{ubblue80}{HTML}{336A97}
+\definecolor{ubblue60}{HTML}{668FB1}
+\definecolor{ubblue40}{HTML}{99B5CB}
+\definecolor{ubblue20}{HTML}{CCDAE5}
+
+
+%----------------------------------------------------------------------------------------
 %		FONT SETUP
 %----------------------------------------------------------------------------------------
 
@@ -75,13 +88,25 @@
 
 % ================================================================
 
-\titleformat{\chapter}[hang]{\Huge\bfseries}{\color{gray75}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{gray75}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright\ReplaceStrQ{#1}\end{tabular}}
 
-\titleformat{\section}[hang]{\bfseries\Large}{\arabic{chapter}.\arabic{section}}{1ex}{ \ReplaceStrQ{#1}}{}
 
-\titleformat{\subsection}[hang]{\bfseries\large}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}{1ex}{\ReplaceStrQ{#1}}{}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\color{ubblue60}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{ubblue60}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright\ReplaceStrQ{#1}\end{tabular}}
 
-\titleformat{\subsubsection}[hang]{\bfseries}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1ex}{\ReplaceStrQ{#1}}{}
+\titleformat{\section}[hang]{\bfseries\large}{{\color{ubblue80}\arabic{chapter}.\arabic{section}}}{1ex}{{\color{ubblue80}\ReplaceStrQ{#1}}}{}
+
+\titleformat{\subsection}[hang]{\bfseries\large}{{\color{ubblue80}\arabic{chapter}.\arabic{section}.\arabic{subsection}}}{1ex}{{\color{ubblue80}\ReplaceStrQ{#1}}}{}
+
+\titleformat{\subsubsection}[hang]{\bfseries}{{\color{ubblue80}\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}}{1ex}{{\color{ubblue80}\ReplaceStrQ{#1}}}{}
+
+
+\titlespacing*{\section}
+{0pt}{7ex}{3ex}
+
+\titlespacing*{\subsection}
+{0pt}{4ex}{2ex}
+
+\titlespacing*{\subsubsection}
+{0pt}{4ex}{2ex}
 
 
 %----------------------------------------------------------------------------------------
@@ -103,7 +128,7 @@
 \usepackage{ragged2e}
 \renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
-\renewcommand*{\marginfont}{\footnotesize\sffamily}
+\renewcommand*{\marginfont}{\footnotesize\sffamily\itshape}
 
 \renewcommand{\marginnotevadjust}{0.63\baselineskip}
 
@@ -117,12 +142,19 @@
   style=alphabetic,
   doi=false,isbn=false,
   terseinits=true, % no points between initials
+  giveninits=true, % always print only initials for given names
   sortcites=true,
-  language=english
+  language=english,
+  backref=true, % show on what pages a ref has been cited
 ]{biblatex} % Use biber backend with alphabetic reference style
 \AtEveryBibitem{%
   \clearlist{language} % don't show "en."
   \clearlist{extra} % clears extra fields such as ISBN nrs
+}
+
+\DefineBibliographyStrings{english}{%
+  backrefpage = {page},
+  backrefpages = {pages},
 }
 
 %-- no "quotes" around titles of chapters/article titles
@@ -147,14 +179,30 @@
 
 \urlstyle{same}
 
-% make citations hyperlinks, grey
+% URL breaking
+\PassOptionsToPackage{hyphens}{url}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks% save the current one
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+  \do\Y\do\Z\do\*\do\-\do\~\do\'\do\"\do\-}%
+
+
+% hyperlink layout
 \usepackage{hyperref}
- \hypersetup{colorlinks,breaklinks,
-             citecolor=[rgb]{0.3,0.3,0.3},
-             linkcolor=[rgb]{0.3,0.3,0.3},
-             filecolor=[rgb]{0.3,0.3,0.3},
-             urlcolor=[rgb]{0.3,0.3,0.3}}
- 
+ \hypersetup{colorlinks,breaklinks,unicode,
+             citecolor=ubblue60,
+             linkcolor=ubblue60,
+             filecolor=ubblue60,
+             urlcolor=ubblue60}
+
+
+% makes links appear in black when print
+% (do not use, breaks title page layout)
+%\usepackage[ocgcolorlinks]{ocgx2}
+
 % hyperlink for \citeauthor as well
 \DeclareCiteCommand{\citeauthor}
   {\boolfalse{citetracker}%

@@ -149,29 +149,35 @@ Provide a Thesis Abstract here (length: less than one page).
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-%\newgeometry{
-%	paper=a4paper, % Change to letterpaper for US letter
-%	inner=2cm, % Inner margin
-%	outer=1.8cm, % Outer margin
-%	marginparwidth=0cm,
-%	marginparsep=0mm,
-%	bindingoffset=.5cm, % Binding offset
-%	top=1.5cm, % Top margin
-%	bottom=2.5cm, % Bottom margin
-%	% showframe, % Uncomment to show how the type block is set on the page
-%}
+\newgeometry{
+	inner=2cm, % Inner margin
+	outer=2cm, % Outer margin
+	marginparwidth=0cm,
+	marginparsep=0mm,
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin,
+	includehead,
+	includefoot
+	% showframe, % Uncomment to show how the type block is set on the page
+}
 
-%\setcounter{chapter}{-1}
 \chapter*{References}
-\addcontentsline{toc}{chapter}{References}
+%\addcontentsline{toc}{chapter}{References}
+\addchap{References}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
 
-%\begin{multicols}{2}% two columns
+
+\setlength\columnsep{2em}
+\begin{multicols}{2}% two columns
 	\begin{refcontext}[sorting=nyt] % make sure that bibliography is sorted by last name, year, title
-		\renewcommand*{\bibfont}{\small\raggedright}
-		\linespread{1.2}\selectfont
+		\renewcommand*{\bibfont}{\small\RaggedRight}
+		\linespread{1.0}\selectfont
+		\settowidth\labelalphawidth{[Foo+42]}% 
 		\printbibliography[heading=none]
 	\end{refcontext}
-%\end{multicols}
+\end{multicols}
 
 %----------------------------------------------------------------------------------------
 
