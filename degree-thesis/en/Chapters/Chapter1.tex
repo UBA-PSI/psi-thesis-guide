@@ -228,7 +228,7 @@ Tables are an important way of displaying your results, below is an example tabl
 \midrule
 1 & 0.2 & 0.8\\
 2 & 0.17 & 0.7\\
-3 & 0.24 & 0.75\\[0.3ex]
+3 & 0.24 & 0.75\\ \addlinespace
 4 & 0.68 & 0.3\\
 5 & 0.61 & 0.9\\
 6 & 0.18 & 0.1\\
@@ -248,7 +248,7 @@ Tables are an important way of displaying your results, below is an example tabl
 \midrule
 1 & 0.2 & 0.8\\
 2 & 0.17 & 0.7\\
-3 & 0.24 & 0.75\\[0.3ex]
+3 & 0.24 & 0.75\\ \addlinespace
 4 & 0.68 & 0.3\\
 5 & 0.61 & 0.9\\
 6 & 0.18 & 0.1\\
@@ -256,9 +256,20 @@ Tables are an important way of displaying your results, below is an example tabl
 \end{tabular}
 \end{table}
 
+Tables have captions that always appear \emph{above} the \code{tabular} environment. All tables must be referred to in the main text.
 You can reference tables with \verb|\ref{<label>}| where the label is defined within the table environment. See \file{Chapter1.tex} for an example of the label and citation (e.\,g., Table~\ref{tab:treatments}).
 
-Tables are using the more formal \emph{booktabs} style, which avoids all vertical lines. Horizontal lines should be used sparingly as well. You are encouraged to use bold print to highlight especially relevant parts. Also, you can make use of small amounts of vertical space to group rows together (as was done in Table~\ref{tab:treatments}).
+In the PSI Thesis template tables use the \emph{booktabs} style, which avoids visual clutter such all vertical lines. Horizontal lines should be used sparingly as well. You can add additional vertical space (using \verb|\addlinespace|) to group consecutive rows (as was done in Table~\ref{tab:treatments}). You can also use bold print to highlight especially relevant parts.
+
+Note that Table~\ref{tab:treatments} is not laid out ideally: the numbers are given with different precision, which disturbs their alignment. Creating good tables is a challenge in its own. Recommended readings: 
+\begin{itemize}
+\item \url{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/}
+\item \url{http://tug.org/pracjourn/2007-1/mori/mori.pdf}
+\item \url{https://inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf}
+\item \url{https://www.cl.uni-heidelberg.de/courses/ss19/wissschreib/material/tableTricks.pdf}
+\end{itemize}
+
+If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \url{https://www.latex-tables.com} useful. You can also use \texttt{LyX} to build tables and export their source code.
 
 \subsection{Figures}
 
@@ -282,17 +293,45 @@ Also look in the source file. Putting this code into the source file produces th
 \label{fig:Electron}
 \end{figure}
 
-The recommended figure placement is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so \LaTeX{} puts it at the top of the next page. Positioning figures is the job of \LaTeX{} and so you should only worry about making them look good!
+The recommended figure placement is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so \LaTeX{} puts it at the top of the next page. Positioning figures is the job of \LaTeX{} and so you should only worry about making them look good. Generally, everything is fine as long as a figure either appears on the page where it is referred to for the first time or on one of the subsequent pages.
 
-Figures usually should have captions just in case you need to refer to them (such as in Figure~\ref{fig:Electron}). The \verb|\caption| command contains two parts, the first part, inside the square brackets is the title that will appear in the \emph{List of Figures}, and so should be short. The second part in the curly brackets should contain the longer and more descriptive caption text.
+Every figure needs a descriptive caption and a label. Figure captions must always appear below the included graphics file within the \code{figure} environment.
+
+Every figure must be referred to in the text at least once, either in parentheses (cf. Fig.~\ref{fig:Electron}) or explicitly in the sentence: Figure~\ref{fig:Electron} shows an electron. Refer to figures using the abbreviation \code{Fig.} followed by a protected space (\verb|~|) and \verb|\ref|. Exception: write \code{Figure} if it is the first word of a sentence.
+
+\marginnote{Theses at PSI usually do not have a List of Figures. You can, therefore, omit the part in square brackets.} The \verb|\caption| command contains two parts, the first part, inside the square brackets is the title that will appear in the \emph{List of Figures}, and so should be short. The second part in the curly brackets should contain the longer and more descriptive caption text.
 
 The \verb|\decoRule| command is optional and simply puts a horizontal line below the image. This can be useful with figures that are not symmetrical or whose exterior is not evenly defined at the bottom.
 
-Make sure to resize figures to an appropriate size.
+Resize your figures, ideally consistently, to an appropriate size, e.\,g., a fraction of \texttt{\textbackslash textwidth}.
 
-\LaTeX{} is capable of using images in pdf, jpg and png format.
+\LaTeX{} is capable of using images in PDF, JPG, and PNG format. Using vectorized figures (PDF) is preferred as they usually provide sharper results. If you have to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
 
-\subsection{Typesetting mathematics}
+\paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures side-by-side. There are several approaches, for instance, by using the \texttt{subfigure} package. In many cases, a comprehensive subfigure support is not really needed. A lightweight approach as shown in Fig.~\ref{fig:sidebyside} may be sufficient. This result is achieved with the following code:
+
+\begin{verbatim}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{Figures/Electron}%
+\hspace{\fill}%
+\includegraphics[width=0.48\textwidth]{Figures/Electron}
+\decoRule
+\caption{A blue electron (left) and another one (right).}
+\label{fig:sidebyside}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{Figures/Electron}%
+\hspace{\fill}%
+\includegraphics[width=0.48\textwidth]{Figures/Electron}
+\decoRule
+\caption{A blue electron (left) and another one (right).}
+\label{fig:sidebyside}
+\end{figure}
+
+\subsection{Typesetting Mathematics}
 
 If your thesis is going to contain heavy mathematical content, be sure that \LaTeX{} will make it look beautiful, even though it won't be able to solve the equations for you.
 
@@ -326,7 +365,7 @@ You can also have equations in the middle of a paragraph: \( E = mc^{2} \). This
 
 %----------------------------------------------------------------------------------------
 
-\section{Sectioning and Subsectioning}
+\section{Using Chapters and Sections, and Paragraphs}
 
 You should break your thesis up into chapters and sections. \LaTeX{} automatically builds a Table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source. You may even think about using subsubsections (\verb|subsubsection{}|). All of these will be hierarchically numbered.
 
@@ -334,7 +373,7 @@ Note, however, that (sub-)subsections should only be used if you use them consis
 
 The Table of Contents should only list \emph{chapters} and \emph{sections}. Listing \emph{(sub-)subsections} is not recommended as this results in a very long Table of Contents, which may become difficult to read. The depth to which the Table of Contents is formatted is set within \file{setup.tex}. If you need this changed, search for \texttt{\textbackslash etocsettocdepth}.
 
-Use \emph{title case} for your \emph{chapters}, \emph{sections}, and \emph{paragraphs}. Consider, for instance, \url{https://capitalizemytitle.com} for title case capitalization rules.
+Use \emph{title case} in your \emph{chapters}, \emph{sections}, and \emph{paragraphs}. Consider, for instance, \url{https://capitalizemytitle.com} for title case capitalization rules.
 
 
 %----------------------------------------------------------------------------------------

@@ -209,7 +209,7 @@
 \RequirePackage{booktabs} % Required for better table rules
 
 \RequirePackage{caption} % Required for customising the captions
-\captionsetup{format=plain,justification=RaggedRight,font=small,labelfont=bf,margin=50pt,singlelinecheck=true}
+\captionsetup{format=plain,justification=RaggedRight,font=small,labelfont=bf,margin=20pt,singlelinecheck=true,tableposition=top}
 
 %----------------------------------------------------------------------------------------
 %	DEFINE CUSTOM THESIS INFORMATION COMMANDS
