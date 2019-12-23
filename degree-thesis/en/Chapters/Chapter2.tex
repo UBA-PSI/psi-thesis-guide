@@ -1,0 +1,240 @@
+% Chapter 1
+
+\chapter{Conventions} % Main chapter title
+
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter1}
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content
+\renewcommand{\keyword}[1]{\textbf{#1}}
+\renewcommand{\tabhead}[1]{\textbf{#1}}
+\renewcommand{\code}[1]{\texttt{#1}}
+\renewcommand{\file}[1]{\texttt{#1}}
+\renewcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+
+
+
+\marginnote{Having a signpost paragraph at the start of a chapter is considered good style.}One of the most important (and most difficult) things to keep track of in such a long document as a thesis is consistency. Using certain conventions and ways of doing things (such as using a Todo list) makes the job easier.
+Of course, all of these are optional and you can adopt your own method.%
+\todo{This is a todo note. Place them in your text during writing. To print the final thesis, hide all of them by adding the parameter \emph{final} to the documentclass declaration.}
+
+
+\section{References}
+
+Scientific references should come \emph{before} the punctuation mark (such as a comma or period) if there is one, as shown in this sentence \cite{Hintz02}.
+
+When you cite multiple references in one spot, you should include them in one \verb|\cite| command:
+\begin{quote}
+  The FOO approach appears in a wide variety of applications \cite{murdoch_steven_j._chip_2010,anderson_ross_emv:_2014,kou_weidong_secure_2003}.
+\end{quote}
+
+Note, however, that this style is not very useful for the reader.\footnote{This recommendation was originally given here: \url{https://nhigham.com/2014/12/22/more-tips-on-book-and-thesis-writing/}} Much more information can be given like this:
+\begin{quote}
+The FOO approach appears in a wide variety of applications, such as \emph{qux systems} \cite{murdoch_steven_j._chip_2010}, \emph{baz systems} \cite{anderson_ross_emv:_2014}, and – much earlier – in \emph{bar readers} \cite{kou_weidong_secure_2003}.
+\end{quote}
+
+\section{Margin Notes and Footnotes}
+
+The template offers you the option to use margin notes and footnotes. You can use Margin notes (\verb|\marginnote|) as a replacement for footnotes. You can also use them with keywords or short phrases to attract the reader's attention.
+
+Footnotes are either inserted directly after the particular word they refer to or after the punctuation if they relate to the whole clause or sentence.\footnote{Such as this footnote, here down at the bottom of the page. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.} Footnotes themselves should be full, descriptive sentences (beginning with a capital letter and ending with a full stop). The APA6 states: \enquote{Footnote numbers should be superscripted, [...], following any punctuation mark except a dash.} The Chicago manual of style states: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}
+
+Using both margin notes and footnotes for similar purposes may create an inconsistent appearance and is therefore discouraged.
+
+\section{Tables}
+
+Tables are an important way of displaying your results, below is an example table which was generated with this code:
+
+{\small
+\begin{verbatim}
+\begin{table}
+\caption{The effects of treatments X and Y on the four groups studied.}
+\label{tab:treatments}
+\centering
+\begin{tabular}{l l l}
+\toprule
+\tabhead{Groups} & \tabhead{Treatment X} & \tabhead{Treatment Y} \\
+\midrule
+1 & 0.2 & 0.8\\
+2 & 0.17 & 0.7\\
+3 & 0.24 & 0.75\\ \addlinespace
+4 & 0.68 & 0.3\\
+5 & 0.61 & 0.9\\
+6 & 0.18 & 0.1\\
+\bottomrule\\
+\end{tabular}
+\end{table}
+\end{verbatim}
+}
+
+\begin{table}
+\caption{The effects of treatments X and Y on the four groups studied.}
+\label{tab:treatments}
+\centering
+\begin{tabular}{r r r}
+\toprule
+\tabhead{Groups} & \tabhead{Treatment X} & \tabhead{Treatment Y} \\
+\midrule
+1 & 0.2 & 0.8\\
+2 & 0.17 & 0.7\\
+3 & 0.24 & 0.75\\ \addlinespace
+4 & 0.68 & 0.3\\
+5 & 0.61 & 0.9\\
+6 & 0.18 & 0.1\\
+\bottomrule\\
+\end{tabular}
+\end{table}
+
+Tables have captions that always appear \emph{above} the \code{tabular} environment. All tables must be referred to in the main text.
+You can reference tables with \verb|\ref{<label>}| where the label is defined within the table environment. See \file{Chapter1.tex} for an example of the label and citation (e.\,g., Table~\ref{tab:treatments}).
+
+In the PSI Thesis template tables use the \emph{booktabs} style, which avoids visual clutter such all vertical lines. Horizontal lines should be used sparingly as well. You can add additional vertical space (using \verb|\addlinespace|) to group consecutive rows (as was done in Table~\ref{tab:treatments}). You can also use bold print to highlight especially relevant parts.
+
+Note that Table~\ref{tab:treatments} is not laid out ideally: the numbers are given with different precision, which disturbs their alignment. Creating good tables is a challenge in its own. Recommended readings: 
+\begin{itemize}
+\item \url{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/}
+\item \url{http://tug.org/pracjourn/2007-1/mori/mori.pdf}
+\item \url{https://inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf}
+\item \url{https://www.cl.uni-heidelberg.de/courses/ss19/wissschreib/material/tableTricks.pdf}
+\end{itemize}
+
+If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \url{https://www.latex-tables.com} useful. You can also use \texttt{LyX} to build tables and export their source code.
+
+
+\section{Figures}
+
+There will hopefully be many figures in your thesis (that should be placed in the \emph{Figures} folder). The way to insert figures into your thesis is to use a code template like this:
+\begin{verbatim}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.75\textwidth]{Figures/Electron}
+\decoRule
+\caption[An Electron]{An electron (artist's impression).}
+\label{fig:Electron}
+\end{figure}
+\end{verbatim}
+Also look in the source file. Putting this code into the source file produces the picture of the electron that you can see in the figure below.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.75\textwidth]{Figures/Electron}
+\decoRule
+\caption[An Electron]{An electron (artist's impression).}
+\label{fig:Electron}
+\end{figure}
+
+The recommended figure placement is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so \LaTeX{} puts it at the top of the next page. Positioning figures is the job of \LaTeX{} and so you should only worry about making them look good. Generally, everything is fine as long as a figure either appears on the page where it is referred to for the first time or on one of the subsequent pages.
+
+Every figure needs a descriptive caption and a label. Figure captions must always appear below the included graphics file within the \code{figure} environment.
+
+Every figure must be referred to in the text at least once, either in parentheses (cf. Fig.~\ref{fig:Electron}) or explicitly in the sentence: Figure~\ref{fig:Electron} shows an electron. Refer to figures using the abbreviation \code{Fig.} followed by a protected space (\verb|~|) and \verb|\ref|. Exception: write \code{Figure} if it is the first word of a sentence.
+
+\marginnote{Theses at PSI usually do not have a List of Figures. You can, therefore, omit the part in square brackets.} The \verb|\caption| command contains two parts, the first part, inside the square brackets is the title that will appear in the \emph{List of Figures}, and so should be short. The second part in the curly brackets should contain the longer and more descriptive caption text.
+
+The \verb|\decoRule| command is optional and simply puts a horizontal line below the image. This can be useful with figures that are not symmetrical or whose exterior is not evenly defined at the bottom.
+
+Resize your figures, ideally consistently, to an appropriate size, e.\,g., a fraction of \texttt{\textbackslash textwidth}.
+
+\LaTeX{} is capable of using images in PDF, JPG, and PNG format. Using vectorized figures (PDF) is preferred as they usually provide sharper results. If you have to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
+
+\paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures side-by-side. There are several approaches, for instance, by using the \texttt{subfigure} package. In many cases, a comprehensive subfigure support is not really needed. A lightweight approach as shown in Fig.~\ref{fig:sidebyside} may be sufficient. This result is achieved with the following code:
+
+\begin{verbatim}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{Figures/Electron}%
+\hspace{\fill}%
+\includegraphics[width=0.48\textwidth]{Figures/Electron}
+\decoRule
+\caption{A blue electron (left) and another one (right).}
+\label{fig:sidebyside}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.48\textwidth]{Figures/Electron}%
+\hspace{\fill}%
+\includegraphics[width=0.48\textwidth]{Figures/Electron}
+\decoRule
+\caption{A blue electron (left) and another one (right).}
+\label{fig:sidebyside}
+\end{figure}
+
+\section{Typesetting Mathematics}
+
+If your thesis is going to contain heavy mathematical content, be sure that \LaTeX{} will make it look beautiful, even though it won't be able to solve the equations for you.
+
+The \enquote{Not So Short Introduction to \LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, \enquote{A Short Math Guide to \LaTeX} and can be downloaded from:
+\url{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}
+
+There are many different \LaTeX{} symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
+
+You can write an equation, which is automatically given an equation number by \LaTeX{} like this:
+\begin{verbatim}
+\begin{equation}
+E = mc^{2}
+\label{eqn:Einstein}
+\end{equation}
+\end{verbatim}
+
+This will produce Einstein's famous energy-matter equivalence equation:
+\begin{equation}
+E = mc^{2}
+\label{eqn:Einstein}
+\end{equation}
+
+All equations you write are automatically given equation numbers by \LaTeX{}. If you don't want a particular equation numbered, use the unnumbered form:
+\begin{verbatim}
+\[ a^{2}=4 \]
+\end{verbatim}
+You can also have equations in the middle of a paragraph: \( E = mc^{2} \). This can be achieved with this code: 
+\begin{verbatim}
+\( E = mc^{2} \)
+\end{verbatim}
+
+%----------------------------------------------------------------------------------------
+
+\section{Using Chapters and Sections, and Paragraphs}
+
+You should break your thesis up into chapters and sections. \LaTeX{} automatically builds a Table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source. You may even think about using subsubsections (\verb|\subsubsection{}|). All of these will be hierarchically numbered.
+
+Note, however, that (sub-)subsections should only be used if you use them consistently in all or multiple chapters. Otherwise, you should opt for a \verb|paragraph{}|, which structures pieces of content with unobtrusive non-numbered inline headings.
+
+The Table of Contents should only list \emph{chapters} and \emph{sections}. Listing \emph{(sub-)subsections} is not recommended as this results in a very long Table of Contents, which may become difficult to read. The depth to which the Table of Contents is formatted is set within \file{setup.tex}. If you need this changed, search for \texttt{\textbackslash etocsettocdepth}.
+
+Use \emph{title case} in your \emph{chapters}, \emph{sections}, and \emph{paragraphs}. Consider, for instance, \url{https://capitalizemytitle.com} for title case capitalization rules.
+
+
+\section{Avoiding Common Typographical Mistakes}
+
+Use thin spaces (\verb|\,|) in the appropriate places. For instance, write \verb|i.\,e.,| to obtain i.\,e., which is spoken ``that is''. The same applies to e.\,g. Both abbreviations are followed by a comma in American English.
+
+Dashes can be used instead of colons or pairs of commas to mark off a nested clause. Use an \emph{en dash} for that purpose – like in this example. If you cannot type an \emph{en dash} on your keyboard, you can write two regular hyphens next to each other. \LaTeX{} will substitute them with an \emph{en dash}. While we have no strict preference, we recommend to use \emph{en dashes} instead of the longer \emph{em dashes}.
+
+Use en dashes also within ranges, e.\,g., when you write something like 5–10\,\% (note the thin space before the \% symbol).
+
+Use a proper \emph{minus symbol} (e.\,g., by using math mode).
+
+If you speak German, consider reading \textsc{typokurz} (\url{https://zvisionwelt.wordpress.com/downloads/}).
+
+\section{Writing Style}
+
+We highly recommend to use the serial comma in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}. It is inserted before the word \emph{and} that leads the last item of a list. Consider this example:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
+\begin{quote}
+  Three important techniques in the design of algorithms are bisection, divide and conquer, and recursion
+\end{quote}
+
+``Lists are common in all forms of writing. The list items can be included within the text or put on separate lines. Separate lines are used in order to draw attention to the items, to ease reading when the items are long or numerous, or to facilitate cross-reference to specific items.''\footnote{Source: \url{https://nhigham.com/2015/12/17/punctuating-lists/}} The environments \code{itemize} and \code{enumerate} produce lists on separate lines. It is considered good style to use punctuation in such a way that the lists remain readable as full sentences if their items were not split onto separate lines. This can be achieved by ensuring that every list item is a full sentence. If list items are fragments, additional punctuation is necessary (example taken from the source mentioned in the footnote):
+
+\begin{quote}
+  We used three different algorithms in the experiments. The table reports the performance of
+\begin{itemize}
+\item Algorithm 3.1 (based on a Taylor series),
+\item Algorithm 3.2 (with parameter \(k = 1\)), and
+\item Algorithm 3.3 (with tolerance \(10^{-8}\)).
+\end{itemize}
+\end{quote}

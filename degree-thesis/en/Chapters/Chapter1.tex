@@ -15,13 +15,15 @@
 
 %----------------------------------------------------------------------------------------
 
+This introductory chapter will give you an overview of the PSI Thesis template and its usage.
+Moreover, it presents some pointers for learning \LaTeX{}.
+
 \section{A Quick Welcome}
 Welcome to this \LaTeX{} Thesis Template, a beautiful and easy to use template for writing a thesis using the \LaTeX{} typesetting system.
 
 If you are writing a thesis (or will be in the future) and its subject is technical or mathematical (though it doesn't have to be), then creating it in \LaTeX{} is highly recommended as a way to make sure you can just get down to the essential writing without having to worry over formatting or wasting time arguing with your word processor.
 
 \LaTeX{} is easily able to professionally typeset documents that run to hundreds or thousands of pages long. With simple mark-up commands, it automatically sets out the table of contents, margins, page headers and footers and keeps the formatting consistent and beautiful. One of its main strengths is the way it can easily typeset mathematics, even \emph{heavy} mathematics. Even if those equations are the most horribly twisted and most difficult mathematical problems that can only be solved on a super-computer, you can at least count on \LaTeX{} to make them look stunning.
-\todo{This is a todo note.}
 %----------------------------------------------------------------------------------------
 
 \section{Learning \LaTeX{}}
@@ -45,7 +47,7 @@ If you are writing a technical or mathematical thesis, then you may want to read
 under the \enquote{Additional Documentation} section towards the bottom of the page.
 
 \subsection{Common \LaTeX{} Math Symbols}
-\marginnote{Hallo} There are a multitude of mathematical symbols available for \LaTeX{} and it would take a great effort to learn the commands for them all. The most common ones you are likely to use are shown on this page:
+There are a multitude of mathematical symbols available for \LaTeX{} and it would take a great effort to learn the commands for them all. The most common ones you are likely to use are shown on this page:
 \url{http://www.sunilpatel.co.uk/latex-type/latex-math-symbols/}
 
 You can use this page as a reference or crib sheet, the symbols are rendered as large, high quality images so you can quickly find the \LaTeX{} command for the symbol you need.
@@ -63,7 +65,7 @@ The package for macOS is called \textsc{MacTeX} and it contains all the applicat
 
 \section{Getting Started with this Template}
 
-Once you are familiar with \LaTeX{}, you should explore the directory structure of the template and then proceed to place your own information into the \emph{THESIS INFORMATION} block of the \file{main.tex} file. You can then modify the rest of this file to your unique specifications based on your degree/university. \Cref{FillingFile} on page~\pageref{FillingFile} will help you do this. Make sure you also read Sect.~\ref{ThesisConventions} about thesis conventions to get the most out of this template.
+Once you are familiar with \LaTeX{}, you should explore the directory structure of the template and then proceed to place your own information into the \emph{THESIS INFORMATION} block of the \file{main.tex} file. You can then modify the rest of this file to your unique specifications based on your degree/university. \Cref{FillingFile} on page~\pageref{FillingFile} will help you do this. Make sure you also read Sect.~\ref{ThesisFeatures} about thesis conventions to get the most out of this template.
 
 If you are new to \LaTeX{} it is recommended that you carry on reading through the rest of the information in this document.
 
@@ -177,11 +179,7 @@ After the preamble, chapters and appendices finally comes the bibliography. The 
 
 %----------------------------------------------------------------------------------------
 
-\section{Thesis Features and Conventions}\label{ThesisConventions}
-
-To get the best out of this template, follow the conventions outlined in this section.
-
-One of the most important (and most difficult) things to keep track of in such a long document as a thesis is consistency. Using certain conventions and ways of doing things (such as using a Todo list) makes the job easier. Of course, all of these are optional and you can adopt your own method.
+\section{Template Features}\label{ThesisFeatures}
 
 \subsection{Printing Format}
 
@@ -189,7 +187,7 @@ One of the most important (and most difficult) things to keep track of in such a
 
 The headers for the pages contain the page number on the outer side (so it is easy to flick through to the page you want) and the chapter name on the inner side.
 
-\marginnote{For a thesis at the PSI Chair, stick with the defaults.}The text is set to 11 point by default with single line spacing, again, you can tune the text size and spacing should you want or need to using the options at the top of \file{main.tex}. The spacing can be changed similarly by replacing the \option{singlespacing} with \option{onehalfspacing} or \option{doublespacing}.
+The text is set to 11 point by default with single line spacing,\marginnote{For a thesis at the PSI Chair, stick with the defaults.} again, you can tune the text size and spacing should you want or need to using the options at the top of \file{main.tex}. The spacing can be changed similarly by replacing the \option{singlespacing} with \option{onehalfspacing} or \option{doublespacing}.
 
 \subsection{Using US Letter Paper}
 
@@ -200,9 +198,7 @@ Due to the differences in the paper size, the resulting margins may be different
 
 \subsection{References}
 
-The \code{biblatex} package is used to format the bibliography and inserts references such as this one \parencite{murdoch_steven_j._chip_2010}. The options used in the \file{main.tex} file mean that the in-text citations of references are formatted with the author(s) initials and the year \cite{anderson_ross_emv:_2014} of the publication. Multiple references are separated by semicolons (e.\,g., \cite{solat_security_2017, bond_chip_2014}). This is done automatically for you. To see how you use references, have a look at the \file{Chapter1.tex} source file. Reference managers may also allow you to simply copy and paste or drag references into the document.
-
-Scientific references should come \emph{before} the punctuation mark if there is one (such as a comma or period). Footnotes are either inserted directly after the particular word they refer to or after the punctuation if they relate to the whole clause or sentence.\footnote{Such as this footnote, here down at the bottom of the page. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.} Footnotes themselves should be full, descriptive sentences (beginning with a capital letter and ending with a full stop). The APA6 states: \enquote{Footnote numbers should be superscripted, [...], following any punctuation mark except a dash.} The Chicago manual of style states: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}
+The \code{biblatex} package is used to format the bibliography and inserts references such as this one \parencite{murdoch_steven_j._chip_2010}. The options used in the \file{main.tex} file mean that the in-text citations of references are formatted with the author(s) initials and the year \cite{anderson_ross_emv:_2014} of the publication. Multiple references are separated by semicolons (e.\,g., \cite{solat_security_2017, bond_chip_2014}). This is done automatically for you. To see how you use references, have a look at the \file{Chapter1.tex} source file. Reference managers allow you to simply copy and paste or drag references into the document.
 
 The bibliography is typeset with references listed in alphabetical order by the first author's last name. This is similar to the APA referencing style. To see how \LaTeX{} typesets the bibliography, have a look at the very end of this document (or just click on the reference number links in in-text citations).
 
@@ -212,181 +208,21 @@ As the ``old'' \code{bibtex} backend does not correctly handle unicode character
 
 Let's cite a lot of references so that the list of references gets populated \cite{murdoch_steven_j._chip_2010,anderson_ross_emv:_2014,kou_weidong_secure_2003,solat_security_2017,bond_chip_2014,ortiz_s._is_2006,haselsteiner_security_2006,galloway_visa_2019,zhou_nshield_2014,lalehTaxonomyFraudsFraud2009,ferradiWhenOrganizedCrime2016,emvco_emvco_website,emvco_emvco_book1,emvco_emvco_book2,emvco_emvco_book3,emvco_emvco_book4,Yang10,Kopsell06,VilaGM03,Herrmann12-ipv6prefix,Herrmann14-diss,HBF:2013,Herrmann11-NordSec,AcarEEJND14,Herrmann09,WangG13,Raymond00,Hintz02,Herrmann14-encdns,FederrathFHP11,Goodson12-privacy,Fabian10,Google12,goldberg97,WendolskyHF07,chaum81,BertholdFK00,Dingledine04,rfc5246,LoesingMD10,FuchsHF13}.
 
-\subsection{Tables}
-
-Tables are an important way of displaying your results, below is an example table which was generated with this code:
-
-{\small
-\begin{verbatim}
-\begin{table}
-\caption{The effects of treatments X and Y on the four groups studied.}
-\label{tab:treatments}
-\centering
-\begin{tabular}{l l l}
-\toprule
-\tabhead{Groups} & \tabhead{Treatment X} & \tabhead{Treatment Y} \\
-\midrule
-1 & 0.2 & 0.8\\
-2 & 0.17 & 0.7\\
-3 & 0.24 & 0.75\\ \addlinespace
-4 & 0.68 & 0.3\\
-5 & 0.61 & 0.9\\
-6 & 0.18 & 0.1\\
-\bottomrule\\
-\end{tabular}
-\end{table}
-\end{verbatim}
-}
-
-\begin{table}
-\caption{The effects of treatments X and Y on the four groups studied.}
-\label{tab:treatments}
-\centering
-\begin{tabular}{r r r}
-\toprule
-\tabhead{Groups} & \tabhead{Treatment X} & \tabhead{Treatment Y} \\
-\midrule
-1 & 0.2 & 0.8\\
-2 & 0.17 & 0.7\\
-3 & 0.24 & 0.75\\ \addlinespace
-4 & 0.68 & 0.3\\
-5 & 0.61 & 0.9\\
-6 & 0.18 & 0.1\\
-\bottomrule\\
-\end{tabular}
-\end{table}
-
-Tables have captions that always appear \emph{above} the \code{tabular} environment. All tables must be referred to in the main text.
-You can reference tables with \verb|\ref{<label>}| where the label is defined within the table environment. See \file{Chapter1.tex} for an example of the label and citation (e.\,g., Table~\ref{tab:treatments}).
-
-In the PSI Thesis template tables use the \emph{booktabs} style, which avoids visual clutter such all vertical lines. Horizontal lines should be used sparingly as well. You can add additional vertical space (using \verb|\addlinespace|) to group consecutive rows (as was done in Table~\ref{tab:treatments}). You can also use bold print to highlight especially relevant parts.
-
-Note that Table~\ref{tab:treatments} is not laid out ideally: the numbers are given with different precision, which disturbs their alignment. Creating good tables is a challenge in its own. Recommended readings: 
-\begin{itemize}
-\item \url{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/}
-\item \url{http://tug.org/pracjourn/2007-1/mori/mori.pdf}
-\item \url{https://inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf}
-\item \url{https://www.cl.uni-heidelberg.de/courses/ss19/wissschreib/material/tableTricks.pdf}
-\end{itemize}
-
-If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \url{https://www.latex-tables.com} useful. You can also use \texttt{LyX} to build tables and export their source code.
-
-\subsection{Figures}
-
-There will hopefully be many figures in your thesis (that should be placed in the \emph{Figures} folder). The way to insert figures into your thesis is to use a code template like this:
-\begin{verbatim}
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.75\textwidth]{Figures/Electron}
-\decoRule
-\caption[An Electron]{An electron (artist's impression).}
-\label{fig:Electron}
-\end{figure}
-\end{verbatim}
-Also look in the source file. Putting this code into the source file produces the picture of the electron that you can see in the figure below.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.75\textwidth]{Figures/Electron}
-\decoRule
-\caption[An Electron]{An electron (artist's impression).}
-\label{fig:Electron}
-\end{figure}
-
-The recommended figure placement is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so \LaTeX{} puts it at the top of the next page. Positioning figures is the job of \LaTeX{} and so you should only worry about making them look good. Generally, everything is fine as long as a figure either appears on the page where it is referred to for the first time or on one of the subsequent pages.
-
-Every figure needs a descriptive caption and a label. Figure captions must always appear below the included graphics file within the \code{figure} environment.
-
-Every figure must be referred to in the text at least once, either in parentheses (cf. Fig.~\ref{fig:Electron}) or explicitly in the sentence: Figure~\ref{fig:Electron} shows an electron. Refer to figures using the abbreviation \code{Fig.} followed by a protected space (\verb|~|) and \verb|\ref|. Exception: write \code{Figure} if it is the first word of a sentence.
-
-\marginnote{Theses at PSI usually do not have a List of Figures. You can, therefore, omit the part in square brackets.} The \verb|\caption| command contains two parts, the first part, inside the square brackets is the title that will appear in the \emph{List of Figures}, and so should be short. The second part in the curly brackets should contain the longer and more descriptive caption text.
-
-The \verb|\decoRule| command is optional and simply puts a horizontal line below the image. This can be useful with figures that are not symmetrical or whose exterior is not evenly defined at the bottom.
-
-Resize your figures, ideally consistently, to an appropriate size, e.\,g., a fraction of \texttt{\textbackslash textwidth}.
-
-\LaTeX{} is capable of using images in PDF, JPG, and PNG format. Using vectorized figures (PDF) is preferred as they usually provide sharper results. If you have to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
-
-\paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures side-by-side. There are several approaches, for instance, by using the \texttt{subfigure} package. In many cases, a comprehensive subfigure support is not really needed. A lightweight approach as shown in Fig.~\ref{fig:sidebyside} may be sufficient. This result is achieved with the following code:
-
-\begin{verbatim}
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.48\textwidth]{Figures/Electron}%
-\hspace{\fill}%
-\includegraphics[width=0.48\textwidth]{Figures/Electron}
-\decoRule
-\caption{A blue electron (left) and another one (right).}
-\label{fig:sidebyside}
-\end{figure}
-\end{verbatim}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.48\textwidth]{Figures/Electron}%
-\hspace{\fill}%
-\includegraphics[width=0.48\textwidth]{Figures/Electron}
-\decoRule
-\caption{A blue electron (left) and another one (right).}
-\label{fig:sidebyside}
-\end{figure}
-
-\subsection{Typesetting Mathematics}
-
-If your thesis is going to contain heavy mathematical content, be sure that \LaTeX{} will make it look beautiful, even though it won't be able to solve the equations for you.
-
-The \enquote{Not So Short Introduction to \LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, \enquote{A Short Math Guide to \LaTeX} and can be downloaded from:
-\url{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}
-
-There are many different \LaTeX{} symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
-
-You can write an equation, which is automatically given an equation number by \LaTeX{} like this:
-\begin{verbatim}
-\begin{equation}
-E = mc^{2}
-\label{eqn:Einstein}
-\end{equation}
-\end{verbatim}
-
-This will produce Einstein's famous energy-matter equivalence equation:
-\begin{equation}
-E = mc^{2}
-\label{eqn:Einstein}
-\end{equation}
-
-All equations you write are automatically given equation numbers by \LaTeX{}. If you don't want a particular equation numbered, use the unnumbered form:
-\begin{verbatim}
-\[ a^{2}=4 \]
-\end{verbatim}
-You can also have equations in the middle of a paragraph: \( E = mc^{2} \). This can be achieved with this code: 
-\begin{verbatim}
-\( E = mc^{2} \)
-\end{verbatim}
-
-%----------------------------------------------------------------------------------------
-
-\section{Using Chapters and Sections, and Paragraphs}
-
-You should break your thesis up into chapters and sections. \LaTeX{} automatically builds a Table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source. You may even think about using subsubsections (\verb|subsubsection{}|). All of these will be hierarchically numbered.
-
-Note, however, that (sub-)subsections should only be used if you use them consistently in all or multiple chapters. Otherwise, you should opt for a \verb|paragraph{}|, which structures pieces of content with unobtrusive non-numbered inline headings.
-
-The Table of Contents should only list \emph{chapters} and \emph{sections}. Listing \emph{(sub-)subsections} is not recommended as this results in a very long Table of Contents, which may become difficult to read. The depth to which the Table of Contents is formatted is set within \file{setup.tex}. If you need this changed, search for \texttt{\textbackslash etocsettocdepth}.
-
-Use \emph{title case} in your \emph{chapters}, \emph{sections}, and \emph{paragraphs}. Consider, for instance, \url{https://capitalizemytitle.com} for title case capitalization rules.
 
 
 %----------------------------------------------------------------------------------------
 
 \section{In Closing}
 
-You have reached the end of this mini-guide. You can now rename or overwrite this pdf file and begin writing your own \file{Chapter1.tex} and the rest of your thesis. The tedious tasks of setting up the structure and framework has been taken care of for you. It's now your job to fill it out.
+You have reached the end of this introductory chapter. The following chapter continues with a set of recommendations and conventions.
+
+When you are ready, you can rename or overwrite this PDF file and begin writing your own \file{Chapter1.tex} and the rest of your thesis. The tedious tasks of setting up the structure and framework has been taken care of for you. It's now your job to fill it out.
 
 Good luck and happy writing!
 
 \begin{flushright}
 Guide written by ---\\
 Sunil Patel: \href{http://www.sunilpatel.co.uk}{www.sunilpatel.co.uk}\\
-Vel: \href{http://www.LaTeXTemplates.com}{LaTeXTemplates.com}\\
+Vel: \href{http://www.LaTeXTemplates.com}{LaTeXTemplates.com}\\[2ex]
 with amendments by Dominik Herrmann
 \end{flushright}
