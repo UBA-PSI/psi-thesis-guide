@@ -26,10 +26,9 @@
     BoldItalicFont = {Crimson-BoldItalic.otf}
 ]{Crimson-Roman.otf}
 
-% preamble should include, in this order:
-% load babel here if needed
-\usepackage[p,osf]{cochineal}
 
+\usepackage[p,osf]{cochineal}
+ 
 \AtBeginEnvironment{tabular}{%
   \tlfstyle
 }
@@ -113,12 +112,167 @@
 %		TABLE OF CONTENTS SETUP
 %----------------------------------------------------------------------------------------
 
+\usepackage{tocloft}
+
 % Recommendation is to use 1 or 2
-\setcounter{tocdepth}{1}
+%\setcounter{tocdepth}{1}
 
 % recommended if you have tocdepth > 1
 %\usepackage{tocloft}
 %\setlength{\cftbeforesecskip}{6pt}
+
+%\usepackage{textcase}
+%\makeatletter
+%\DeclareRobustCommand{\spacedallcaps}[1]{\textsc{\textls[160]{\MakeTextUppercase{#1}}}} \DeclareRobustCommand{\spacedlowsmallcaps}[1]{\textsc{\textls[80]{\MakeTextLowercase{#1}}}}
+%\makeatother
+%%%
+%%%% ********************************************************************
+%%%% layout of the TOC, LOF and LOT (LOL-workaround see next section)
+%%%% ********************************************************************
+%%%\PassOptionsToPackage{titles}{tocloft}
+%%%\RequirePackage{tocloft}
+%%%% avoid page numbers being right-aligned in fixed-size box
+%%%\newlength{\newnumberwidth}
+%%%\settowidth{\newnumberwidth}{999} % yields overfull hbox warnings for pages > 999
+%%%\cftsetpnumwidth{\newnumberwidth}
+%%%
+%%%% have the bib neatly positioned after the rest
+%%%\newlength{\beforebibskip}
+%%%\setlength{\beforebibskip}{0em}
+%%%
+%%%
+%%%
+%%%    \renewcommand{\thepart}{\roman{part}}%
+%%%    \renewcommand{\cftpartpresnum}{\scshape}%  \MakeTextLowercase
+%%%    \renewcommand{\cftpartaftersnum}{}%
+%%%    \renewcommand{\cftpartaftersnumb}{\spacedlowsmallcaps}%
+%%%    \setlength{\cftpartnumwidth}{\cftchapnumwidth}
+%%%    \renewcommand{\cftpartfont}{\color{CTtitle}\normalfont}%
+%%%    \cftpagenumbersoff{part}
+%%%    \renewcommand{\cftpartpagefont}{\normalfont}%
+%%%    \setlength{\cftbeforepartskip}{1em}%
+%%%    \setlength{\cftbeforechapskip}{.1em}%
+%%%    \setlength{\beforebibskip}{1.5\cftbeforepartskip}%
+%%%
+%%%
+%%%        \renewcommand{\cftchappresnum}{\spacedlowsmallcaps}%
+%%%        \renewcommand{\cftchapaftersnumb}{\spacedlowsmallcaps}%
+%%%        \renewcommand{\cftchapfont}{\normalfont}%
+%%%        \renewcommand{\cftchappagefont}{\normalfont}%
+%%%        %\setlength{\cftbeforechapskip}{.1em}%
+%%%
+%%%\renewcommand{\cftsecpresnum}{\scshape\MakeTextLowercase}%
+%%%\renewcommand{\cftsecfont}{\normalfont}%
+%%%\renewcommand{\cftsecpagefont}{\normalfont}%
+%%%
+%%%% subsections
+%%%\renewcommand{\cftsubsecpresnum}{\scshape\MakeTextLowercase}%
+%%%\renewcommand{\cftsubsecfont}{\normalfont}%
+%%%
+%%%% subsubsections
+%%%\renewcommand{\cftsubsubsecpresnum}{\scshape\MakeTextLowercase}%
+%%%\renewcommand{\cftsubsubsecfont}{\normalfont}%
+%%%
+%%%% figures
+%%%\renewcommand{\cftfigpresnum}{\scshape\MakeTextLowercase}%
+%%%\renewcommand{\cftfigfont}{\normalfont}%
+%%%
+%%%\renewcommand{\cftfigpresnum}{\figurename~}%Fig.~}
+%%%\newlength{\figurelabelwidth}
+%%%\settowidth{\figurelabelwidth}{\cftfigpresnum~999}
+%%%\addtolength{\figurelabelwidth}{2.5em}
+%%%\cftsetindents{figure}{0em}{\figurelabelwidth}
+%%%
+%%%% tables
+%%%\renewcommand{\cfttabpresnum}{\scshape\MakeTextLowercase}%
+%%%\renewcommand{\cfttabfont}{\normalfont}%
+%%%
+%%%\renewcommand{\cfttabpresnum}{\tablename~}%Tab.~}
+%%%\newlength{\tablelabelwidth}
+%%%\settowidth{\tablelabelwidth}{\cfttabpresnum~999}
+%%%\addtolength{\tablelabelwidth}{2.5em}
+%%%%\cftsetindents{table}{0em}{\tablelabelwidth}
+%%%\cftsetindents{table}{0em}{\figurelabelwidth}
+%%%
+%%%
+%%%\AtBeginDocument{\addtocontents{toc}{\protect\vspace{-\cftbeforechapskip}}}
+%%%
+%%%
+%%%\newcommand{\tocEntry}[1]{\protect\numberline {}{#1}}%
+%%%
+%%%\DeclareRobustCommand*{\deactivateaddvspace}{\let\addvspace\@gobble}%
+%%%\AtBeginDocument{%
+%%%    \addtocontents{lof}{\deactivateaddvspace}%
+%%%    \addtocontents{lot}{\deactivateaddvspace}%
+%%%}%
+%%%%    }
+
+%%%%% 
+%\renewcommand{\cftchappresnum}{\bfseries}%
+%\renewcommand{\cftchapaftersnumb}{\bfseries}%
+%\renewcommand{\cftchapfont}{\bfseries}%
+%\renewcommand{\cftchappagefont}{\bfseries}%
+%%\setlength{\cftbeforechapskip}{.1em}%
+%
+%
+%\renewcommand{\cftsecleader}{}
+%\setlength{\cftsecindent}{1cm} %  Einzug bei Sections
+%\renewcommand{\cftsecafterpnum}{\cftparfillskip}
+%\setlength{\cftbeforesecskip}{.4\baselineskip}
+%%\setlength{\cftbeforesubsecskip}{.1\baselineskip}
+%\renewcommand{\cftsubsecleader}{}
+%\setlength{\cftsubsecindent}{2cm} %   Einzug bei Subsections
+%\renewcommand{\cftsubsecafterpnum}{\cftparfillskip}
+%\setlength{\cftbeforesubsecskip}{.4\baselineskip}
+%
+%%%% 
+
+
+%%% https://tex.stackexchange.com/questions/178510/how-can-i-reproduce-this-beautiful-table-of-contents
+\usepackage{etoc}
+\etocsetlevel{section}{2}
+\etocsetlevel{subsection}{3}
+\etocsettocdepth{section} % set to subsection for adding subsections to toc (not recommended)
+
+\newlength{\tocleft}
+\setlength{\tocleft}{2.5cm} % must be made to fit the inntermargin defined in geometry
+
+\newlength{\tocsep}
+\setlength{\tocsep}{2em}
+
+\etocsetstyle{chapter}
+   {}
+   {}
+   {\etocifnumbered
+     {\makebox[0pt][r]
+       {\chaptername\ \etocnumber\hspace{\tocsep}}%
+       \textbf{\etocname\kern1em\relax\etocpage}%
+    }%
+    {\textbf{\etocname\kern1em\relax\etocpage}}%
+    \par\vspace{3ex}%
+   }%
+   {}
+
+\etocsetstyle{section}
+   {\vspace{-2ex}} % Muss von den 3ex aus Chapter abgezogen werden
+   {}
+   {\makebox[0pt][r]{\etocnumber\hspace{\tocsep}}%
+    \etocname\kern1em\etocpage\par%
+   }%
+   {\addvspace{3ex}} % 3ex falls danach Chapter kommt 
+
+\etocsetstyle{subsection} 
+   {\vspace{0ex}} 
+   {} 
+   {\makebox[3em][l]{\etocnumber}\etocname\kern1em\etocpage\par} 
+   {\addvspace{2ex}} % 2ex falls danach Section kommt 
+
+\etocsettocstyle{\chapter*{\contentsname}
+                \thispagestyle{plain}%
+                \leftskip\tocleft\parindent0pt}{}
+%%%
+
+
 
 %----------------------------------------------------------------------------------------
 %		OTHER PACKAGES
@@ -128,9 +282,9 @@
 \usepackage{ragged2e}
 \renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
-\renewcommand*{\marginfont}{\footnotesize\sffamily\itshape}
+\renewcommand*{\marginfont}{\scriptsize\sffamily\itshape}
 
-\renewcommand{\marginnotevadjust}{0.63\baselineskip}
+\renewcommand{\marginnotevadjust}{0.71\baselineskip}
 
 \usepackage{microtype} % Enable better typographic setup
 

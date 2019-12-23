@@ -22,6 +22,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
+\PassOptionsToPackage{english,ngerman}{babel}
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 %oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
@@ -36,7 +37,7 @@ nohyperref, % Uncomment to not load the hyperref package
 headsepline, % Uncomment to get a line under the header
 %chapterinoneline, % Uncomment to place the chapter title next to the number on one line
 consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
-]{MastersDoctoralThesis} % The class file specifying the document structure
+]{PsiThesis} % The class file specifying the document structure
 
 
 \newcommand{\abschluss}{Bachelor}
@@ -69,6 +70,8 @@ consistentlayout, % Uncomment to change the layout of the declaration, abstract 
 \faculty{\href{https://www.uni-bamberg.de/en/wiai/}{Faculty of Information Systems and Applied Computer Sciences}} % Your faculty's name and URL, this is used in the title page, print it elsewhere with \facname
 \begin{document}
 
+\selectlanguage{english}
+
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages 
 
 \include{Misc/titlepage}
@@ -89,8 +92,11 @@ consistentlayout, % Uncomment to change the layout of the declaration, abstract 
 %----------------------------------------------------------------------------------------
 
 \begin{abstract}
-%\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+%\addchaptertocentry{\abstractname} % uncomment to add the abstract to the table of contents (not recommended)
+
 Provide a Thesis Abstract here (length: less than one page).
+A great guide by Kent Beck how to write good abstracts can be found here:
+\url{https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html}
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
@@ -162,19 +168,32 @@ Provide a Thesis Abstract here (length: less than one page).
 	% showframe, % Uncomment to show how the type block is set on the page
 }
 
-\chapter*{References}
+%\chapter*{References}
 %\addcontentsline{toc}{chapter}{References}
 \addchap{References}
 \setcounter{biburllcpenalty}{7000}
 \setcounter{biburlucpenalty}{8000}
 
+\setlength{\biblabelsep}{1\labelsep}% <-- adjust this to your liking, the standard is 2\labelsep
+\defbibenvironment{bibliography}
+  {\list
+     {\hspace{0.5\labelalphawidth}\bfseries\printtext[labelalphawidth]{%
+        \printfield{prefixnumber}%
+        \printfield{labelalpha}%
+        \printfield{extraalpha}}}
+     {\setlength{\labelsep}{\biblabelsep}%
+      \setlength{\leftmargin}{0.5\labelalphawidth}%
+      \setlength{\itemsep}{1.5\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{##1\hss}}
+  {\endlist}
+  {\item}
 
 \setlength\columnsep{2em}
 \begin{multicols}{2}% two columns
 	\begin{refcontext}[sorting=nyt] % make sure that bibliography is sorted by last name, year, title
 		\renewcommand*{\bibfont}{\small\RaggedRight}
 		\linespread{1.0}\selectfont
-		\settowidth\labelalphawidth{[Foo+42]}% 
 		\printbibliography[heading=none]
 	\end{refcontext}
 \end{multicols}
@@ -187,14 +206,26 @@ Provide a Thesis Abstract here (length: less than one page).
 
 \begin{declaration}
 \addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
-Ich erkläre hiermit gemäß § 17 Abs. 2 APO, dass ich die vorstehende {\abschluss}arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+
+%\selectlanguage{ngerman}
+Ich erkläre hiermit gemä\ss\ \S~17 Abs.\,2 APO, dass ich die vorstehende {\abschluss}arbeit selbständig\\ verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+
+\bigskip
+\bigskip
+
+\begin{tabular}{@{}l@{}}
+  Bamberg, den \rule[-0.8em]{10em}{0.5pt}\\[2ex]
+  ~
+\end{tabular}
+\hspace{\fill}%
+\begin{tabular}{@{}c@{}}
+  \rule[-0.8em]{20em}{0.5pt}\\[2ex]
+  \authorname 
+\end{tabular}\hspace{\fill}
 
 
-\noindent Unterschrift:\\
-\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
 
-\noindent Datum:\\
-\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
+
 \end{declaration}
 
 \end{document}

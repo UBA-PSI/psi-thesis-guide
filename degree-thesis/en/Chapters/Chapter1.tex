@@ -1,6 +1,6 @@
 % Chapter 1
 
-\chapter{Chapter Title Here} % Main chapter title
+\chapter{The PSIThesis Template} % Main chapter title
 
 \label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1}
 
@@ -15,7 +15,7 @@
 
 %----------------------------------------------------------------------------------------
 
-\section{Welcome and and a Quick Thank You}
+\section{A Quick Welcome}
 Welcome to this \LaTeX{} Thesis Template, a beautiful and easy to use template for writing a thesis using the \LaTeX{} typesetting system.
 
 If you are writing a thesis (or will be in the future) and its subject is technical or mathematical (though it doesn't have to be), then creating it in \LaTeX{} is highly recommended as a way to make sure you can just get down to the essential writing without having to worry over formatting or wasting time arguing with your word processor.
@@ -26,23 +26,21 @@ If you are writing a thesis (or will be in the future) and its subject is techni
 
 \section{Learning \LaTeX{}}
 
-\LaTeX{} is not a \textsc{wysiwyg} (What You See is What You Get) program, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for \LaTeX{} is actually a simple, plain text file that contains \emph{no formatting}. You tell \LaTeX{} how you want the formatting in the finished document by writing in simple commands amongst the text, for example, if I want to use \emph{italic text for emphasis}, I write the \verb|\emph{text}| command and put the text I want in italics in between the curly braces. This means that \LaTeX{} is a \enquote{mark-up} language, very much like HTML.
+\LaTeX{} is not a \textsc{wysiwyg} (What You See is What You Get) program, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for \LaTeX{} is actually a simple, plain text file that contains \emph{no formatting}. You tell \LaTeX{} how you want the formatting in the finished document by writing in simple commands amongst the text, for example, if I want to use \emph{italic text for emphasis}, I write the \verb|\emph{text}| command and put the text I want in italics in between the curly braces. This means that \LaTeX{} is a \enquote{mark-up} language (like HTML).
 
 \subsection{A (not so short) Introduction to \LaTeX{}}
 
-\marginnote{Here is a fancy marginnote with a looot of text. \LaTeX{} is not a \textsc{wysiwyg} (What You See is What You Get) program, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for \LaTeX{} is actually a simple, plain text file that contains \emph{no formatting}.}
-If you are new to \LaTeX{}, there is a very good eBook -- freely available online as a PDF file -- called, \enquote{The Not So Short Introduction to \LaTeX{}}. The book's title is typically shortened to just \emph{lshort}. You can download the latest version (as it is occasionally updated) from here:
+\marginnote{This template has wide margins. You can liberally use margin notes in your text.}
+If you are new to \LaTeX{}, there is a good eBook -- freely available online as a PDF file -- called, \enquote{The Not So Short Introduction to \LaTeX{}}. The book's title is typically shortened to just \emph{lshort}. You can download the latest version (as it is occasionally updated) from here:
 \url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}
 
-It is also available in several other languages. Find yours from the list on this page: \url{http://www.ctan.org/tex-archive/info/lshort/}
-
-It is recommended to take a little time out to learn how to use \LaTeX{} by creating several, small `test' documents, or having a close look at several templates on:\\
-\url{http://www.LaTeXTemplates.com}\\
+It is recommended to spend time to learn how to use \LaTeX{} by creating small test documents. You can also learn from others by looking at the templates hosted at
+\url{http://www.LaTeXTemplates.com}.
 Making the effort now means you're not stuck learning the system when what you \emph{really} need to be doing is writing your thesis.
 
 \subsection{A Short Math Guide for \LaTeX{}}
 
-If you are writing a technical or mathematical thesis, then you may want to read the document by the AMS (American Mathematical Society) called, \enquote{A Short Math Guide for \LaTeX{}}. It can be found online here:
+If you are writing a technical or mathematical thesis, then you may want to read the document by the AMS (American Mathematical Society) called, \enquote{A Short Math Guide for \LaTeX{}}. It can be found online at
 \url{http://www.ams.org/tex/amslatex.html}
 under the \enquote{Additional Documentation} section towards the bottom of the page.
 
@@ -52,24 +50,26 @@ under the \enquote{Additional Documentation} section towards the bottom of the p
 
 You can use this page as a reference or crib sheet, the symbols are rendered as large, high quality images so you can quickly find the \LaTeX{} command for the symbol you need.
 
-\subsection{\LaTeX{} on a Mac}
+\subsection{\LaTeX{} Distributions}
 
-\marginnote{Here is a fancy marginnote with a looot of text. \LaTeX{} is not a \textsc{wysiwyg} (What You See is What You Get) program, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for \LaTeX{} is actually a simple, plain text file that contains \emph{no formatting}. You tell \LaTeX{} how you want the formatting in the finished document by writing in simple commands amongst the text, for example, if I want to use \emph{italic text for emphasis}, I write the command and put the text I want in italics in between the curly braces. This means that \LaTeX{} is a \enquote{mark-up} language, very much like HTML.}
-The \LaTeX{} distribution is available for many systems including Windows, Linux and Mac OS X. The package for OS X is called MacTeX and it contains all the applications you need -- bundled together and pre-customized -- for a fully working \LaTeX{} environment and work flow.
+The \LaTeX{} distribution is available for Windows, Linux, and macOS\@.
+On Windows and Linux systems, the recommended distribution is \textsc{TexLive}.
 
-MacTeX includes a custom dedicated \LaTeX{} editor called TeXShop for writing your `\file{.tex}' files and BibDesk: a program to manage your references and create your bibliography section just as easily as managing songs and creating playlists in iTunes.
+The package for macOS is called \textsc{MacTeX} and it contains all the applications you need -- bundled together and pre-customized -- for a fully working \LaTeX{} environment and work flow. \textsc{MacTeX} includes a custom dedicated \LaTeX{} editor called \textsc{TeXShop} for writing your `\file{.tex}' files and \textsc{BibDesk}, a program to manage your references and create your bibliography section.
+
+
 
 %----------------------------------------------------------------------------------------
 
 \section{Getting Started with this Template}
 
-If you are familiar with \LaTeX{}, then you should explore the directory structure of the template and then proceed to place your own information into the \emph{THESIS INFORMATION} block of the \file{main.tex} file. You can then modify the rest of this file to your unique specifications based on your degree/university. Section \ref{FillingFile} on page \pageref{FillingFile} will help you do this. Make sure you also read section \ref{ThesisConventions} about thesis conventions to get the most out of this template.
+Once you are familiar with \LaTeX{}, you should explore the directory structure of the template and then proceed to place your own information into the \emph{THESIS INFORMATION} block of the \file{main.tex} file. You can then modify the rest of this file to your unique specifications based on your degree/university. \Cref{FillingFile} on page~\pageref{FillingFile} will help you do this. Make sure you also read Sect.~\ref{ThesisConventions} about thesis conventions to get the most out of this template.
 
 If you are new to \LaTeX{} it is recommended that you carry on reading through the rest of the information in this document.
 
-Before you begin using this template you should ensure that its style complies with the thesis style guidelines imposed by your institution. In most cases this template style and layout will be suitable. If it is not, it may only require a small change to bring the template in line with your institution's recommendations. These modifications will need to be done on the \file{MastersDoctoralThesis.cls} file.
-
 \subsection{About this Template}
+
+The template has its own \emph{document class}, which is defined in \file{PSIThesis.cls} file. The class file has been adapted from \file{MastersDoctoralThesis.cls}, which was obtained from \url{https://www.latextemplates.com/template/masters-doctoral-thesis}.
 
 This \LaTeX{} Thesis Template is originally based and created around a \LaTeX{} style file created by Steve R.\ Gunn from the University of Southampton (UK), department of Electronics and Computer Science. You can find his original thesis style file at his site, here:
 \url{http://www.ecs.soton.ac.uk/~srg/softwaretools/document/templates/}
@@ -85,7 +85,7 @@ Sunil's template was made available through \url{http://www.LaTeXTemplates.com} 
 
 \subsection{Folders}
 
-This template comes as a single zip file that expands out to several files and folders. The folder names are mostly self-explanatory:
+This template comes as a single ZIP file that expands out to several files and folders. The folder names are mostly self-explanatory:
 
 \keyword{Appendices} -- this is the folder where you put the appendices. Each appendix should go into its own separate \file{.tex} file. An example and template are included in the directory.
 
@@ -107,11 +107,17 @@ This chapter layout is specialised for the experimental sciences, your disciplin
 
 Included are also several files, most of them are plain text and you can see their contents in a text editor. After initial compilation, you will see that more auxiliary files are created by \LaTeX{} or BibTeX and which you don't need to delete or worry about:
 
-\keyword{example.bib} -- this is an important file that contains all the bibliographic information and references that you will be citing in the thesis for use with BibTeX. You can write it manually, but there are reference manager programs available that will create and manage it for you. Bibliographies in \LaTeX{} are a large subject and you may need to read about BibTeX before starting with this. Many modern reference managers will allow you to export your references in BibTeX format which greatly eases the amount of work you have to do.
+\keyword{example.bib} -- this is an important file that contains all the bibliographic information and references that you will be citing in the thesis for use with BibTeX\@. You can write it manually, but there are reference manager programs available that will create and manage it for you. Bibliographies in \LaTeX{} are a large subject and you may need to read about BibTeX before starting with this. Modern reference managers will allow you to export your references in BibTeX format which greatly eases the amount of work you have to do.
 
-\keyword{MastersDoctoralThesis.cls} -- this is an important file. It is the class file that tells \LaTeX{} how to format the thesis.
+\keyword{PSIThesis.cls} -- this is an important file. It is the class file that tells \LaTeX{} how to format the thesis.
 
 \keyword{main.pdf} -- this is your beautifully typeset thesis (in the PDF file format) created by \LaTeX{}. It is supplied in the PDF with the template and after you compile the template you should get an identical version.
+
+\paragraph{Compiling the PDF}
+
+We have tested the PSIThesis with \texttt{LuaLaTeX}. Using \texttt{XeTeX} may also work, but \texttt{pdflatex} will definitely not work as we rely on TTF and OTF fonts.
+
+For compilation on Linux and macOS, you can make use of the provided \keyword{Makefile}. Just navigate to the ``en'' directory and enter \texttt{make} in a terminal. This will make calls to the programs \texttt{lualatex} (which creates the PDF) and \texttt{biber} (which is used to compile the bibliography). The \texttt{make} command keeps track of changes you make to your source files. If you add additional files that should be tracked for changes, you should edit the list of files at the top of this file. Otherwise, \texttt{make} may refuse to compile a new version because it believes that \file{main.pdf} is already up to date. In this case, a call to \texttt{make clean} will help: It removes all files generated during compilation. After that, a call to \texttt{make} will regenerate them, including \file{main.pdf}.
 
 \keyword{main.tex} -- this is an important file. This is the file that you tell \LaTeX{} to compile to produce your thesis as a PDF file. It contains the framework and constructs that tell \LaTeX{} how to layout the thesis. It is heavily commented so you can read exactly what each line of code does and why it is there. After you put your own information into the \emph{THESIS INFORMATION} block -- you have now started your thesis!
 
@@ -139,7 +145,7 @@ So from this long list, only the files with the \file{.bib}, \file{.cls} and \fi
 
 You will need to personalise the thesis template and make it your own by filling in your own information. This is done by editing the \file{main.tex} file in a text editor or your favourite LaTeX environment.
 
-Open the file and scroll down to the third large block titled \emph{THESIS INFORMATION} where you can see the entries for \emph{University Name}, \emph{Department Name}, etc \ldots
+Open the file and scroll down to the third large block titled \emph{THESIS INFORMATION} where you can see the entries for \emph{University Name}, \emph{Department Name}, etc.
 
 Fill out the information about yourself, your group and institution. You can also insert web links, if you do, make sure you use the full URL, including the \code{http://} for this. If you don't want these to be linked, simply remove the \verb|\href{url}{name}| and only leave the name.
 
@@ -151,57 +157,58 @@ When you have done this, save the file and recompile \code{main.tex}. All the in
 
 The \file{main.tex} file contains the structure of the thesis. There are plenty of written comments that explain what pages, sections and formatting the \LaTeX{} code is creating. Each major document element is divided into commented blocks with titles in all capitals to make it obvious what the following bit of code is doing. Initially there seems to be a lot of \LaTeX{} code, but this is all formatting, and it has all been taken care of so you don't have to do it.
 
-Begin by checking that your information on the title page is correct. For the thesis declaration, your institution may insist on something different than the text given. If this is the case, just replace what you see with what is required in the \emph{DECLARATION PAGE} block.
+\marginnote{Please check whether the text of the Declaration of Authorship is correct.}Begin by checking that your information on the title page is correct. For the thesis declaration, your institution may insist on something different than the text given. If this is the case, just replace what you see with what is required in the \emph{DECLARATION PAGE} block.
 
-Then comes a page which contains a funny quote. You can put your own, or quote your favourite scientist, author, person, and so on. Make sure to put the name of the person who you took the quote from.
+\marginnote{This is commented out by default.}Then comes a page which contains a funny quote. You can put your own, or quote your favourite scientist, author, person, and so on. Make sure to put the name of the person who you took the quote from.
 
-Following this is the abstract page which summarises your work in a condensed way and can almost be used as a standalone document to describe what you have done. The text you write will cause the heading to move up so don't worry about running out of space.
+Following this is the abstract page which summarises your work in a condensed way.
 
-Next come the acknowledgements. On this page, write about all the people who you wish to thank (not forgetting parents, partners and your advisor/supervisor).
+\marginnote{This is commented out by default.}Next come the acknowledgements. On this page, write about all the people who you wish to thank (not forgetting parents, partners and your advisor/supervisor).
 
 The contents pages, list of figures and tables are all taken care of for you and do not need to be manually created or edited. The next set of pages are more likely to be optional and can be deleted since they are for a more technical thesis: insert a list of abbreviations you have used in the thesis, then a list of the physical constants and numbers you refer to and finally, a list of mathematical symbols used in any formulae. Making the effort to fill these tables means the reader has a one-stop place to refer to instead of searching the internet and references to try and find out what you meant by certain abbreviations or symbols.
 
 The list of symbols is split into the Roman and Greek alphabets. Whereas the abbreviations and symbols ought to be listed in alphabetical order (and this is \emph{not} done automatically for you) the list of physical constants should be grouped into similar themes.
 
-The next page contains a one line dedication. Who will you dedicate your thesis to?
+\marginnote{This is commented out by default.}The next page contains a one line dedication. Who will you dedicate your thesis to?
 
 Finally, there is the block where the chapters are included. Uncomment the lines (delete the \code{\%} character) as you write the chapters. Each chapter should be written in its own file and put into the \emph{Chapters} folder and named \file{Chapter1}, \file{Chapter2}, etc\ldots Similarly for the appendices, uncomment the lines as you need them. Each appendix should go into its own file and placed in the \emph{Appendices} folder.
 
-After the preamble, chapters and appendices finally comes the bibliography. The bibliography style (called \option{authoryear}) is used for the bibliography and is a fully featured style that will even include links to where the referenced paper can be found online. Do not underestimate how grateful your reader will be to find that a reference to a paper is just a click away. Of course, this relies on you putting the URL information into the BibTeX file in the first place.
+After the preamble, chapters and appendices finally comes the bibliography. The bibliography style (called \option{alpha}) is used for the bibliography and is a fully featured style that will even include links to where the referenced paper can be found online. Of course, this relies on you putting the URL information into the BibTeX file in the first place.
 
 %----------------------------------------------------------------------------------------
 
 \section{Thesis Features and Conventions}\label{ThesisConventions}
 
-To get the best out of this template, there are a few conventions that you may want to follow.
+To get the best out of this template, follow the conventions outlined in this section.
 
 One of the most important (and most difficult) things to keep track of in such a long document as a thesis is consistency. Using certain conventions and ways of doing things (such as using a Todo list) makes the job easier. Of course, all of these are optional and you can adopt your own method.
 
 \subsection{Printing Format}
 
-This thesis template is designed for double sided printing (i.e. content on the front and back of pages) as most theses are printed and bound this way. Switching to one sided printing is as simple as uncommenting the \option{oneside} option of the \code{documentclass} command at the top of the \file{main.tex} file. You may then wish to adjust the margins to suit specifications from your institution.
+\marginnote{At the PSI Chair, we highly encourage you to use double-sided printing.}This thesis template is designed for double-sided printing (i.\,e., content on the front and back of pages) as most theses are printed and bound this way. Switching to one-sided printing is as simple as uncommenting the \option{oneside} option of the \code{documentclass} command at the top of the \file{main.tex} file. You may then wish to adjust the margins to suit specifications from your institution.
 
 The headers for the pages contain the page number on the outer side (so it is easy to flick through to the page you want) and the chapter name on the inner side.
 
-The text is set to 11 point by default with single line spacing, again, you can tune the text size and spacing should you want or need to using the options at the very start of \file{main.tex}. The spacing can be changed similarly by replacing the \option{singlespacing} with \option{onehalfspacing} or \option{doublespacing}.
+\marginnote{For a thesis at the PSI Chair, stick with the defaults.}The text is set to 11 point by default with single line spacing, again, you can tune the text size and spacing should you want or need to using the options at the top of \file{main.tex}. The spacing can be changed similarly by replacing the \option{singlespacing} with \option{onehalfspacing} or \option{doublespacing}.
 
 \subsection{Using US Letter Paper}
 
+\marginnote{For a thesis at the PSI Chair, stick with the defaults.}
 The paper size used in the template is A4, which is the standard size in Europe. If you are using this thesis template elsewhere and particularly in the United States, then you may have to change the A4 paper size to the US Letter size. This can be done in the margins settings section in \file{main.tex}.
 
 Due to the differences in the paper size, the resulting margins may be different to what you like or require (as it is common for institutions to dictate certain margin sizes). If this is the case, then the margin sizes can be tweaked by modifying the values in the same block as where you set the paper size. Now your document should be set up for US Letter paper size with suitable margins.
 
 \subsection{References}
 
-The \code{biblatex} package is used to format the bibliography and inserts references such as this one \parencite{murdoch_steven_j._chip_2010}. The options used in the \file{main.tex} file mean that the in-text citations of references are formatted with the author(s) listed with the date \cite{anderson_ross_emv:_2014} of the publication. Multiple references are separated by semicolons (e.g. \parencite{solat_security_2017, bond_chip_2014}) and references with more than three authors only show the first author with \emph{et al.} indicating there are more authors (e.g. \parencite{bond_chip_2014}). This is done automatically for you. To see how you use references, have a look at the \file{Chapter1.tex} source file. Many reference managers allow you to simply drag the reference into the document as you type.
+The \code{biblatex} package is used to format the bibliography and inserts references such as this one \parencite{murdoch_steven_j._chip_2010}. The options used in the \file{main.tex} file mean that the in-text citations of references are formatted with the author(s) initials and the year \cite{anderson_ross_emv:_2014} of the publication. Multiple references are separated by semicolons (e.\,g., \cite{solat_security_2017, bond_chip_2014}). This is done automatically for you. To see how you use references, have a look at the \file{Chapter1.tex} source file. Reference managers may also allow you to simply copy and paste or drag references into the document.
 
-Scientific references should come \emph{before} the punctuation mark if there is one (such as a comma or period). The same goes for footnotes\footnote{Such as this footnote, here down at the bottom of the page. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.}. You can change this but the most important thing is to keep the convention consistent throughout the thesis. Footnotes themselves should be full, descriptive sentences (beginning with a capital letter and ending with a full stop). The APA6 states: \enquote{Footnote numbers should be superscripted, [...], following any punctuation mark except a dash.} The Chicago manual of style states: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}
+Scientific references should come \emph{before} the punctuation mark if there is one (such as a comma or period). Footnotes are either inserted directly after the particular word they refer to or after the punctuation if they relate to the whole clause or sentence.\footnote{Such as this footnote, here down at the bottom of the page. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.} Footnotes themselves should be full, descriptive sentences (beginning with a capital letter and ending with a full stop). The APA6 states: \enquote{Footnote numbers should be superscripted, [...], following any punctuation mark except a dash.} The Chicago manual of style states: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}
 
 The bibliography is typeset with references listed in alphabetical order by the first author's last name. This is similar to the APA referencing style. To see how \LaTeX{} typesets the bibliography, have a look at the very end of this document (or just click on the reference number links in in-text citations).
 
 \paragraph{A Quick Note on bibtex}
 
-The bibtex backend used in the template by default does not correctly handle unicode character encoding (i.e. "international" characters). You may see a warning about this in the compilation log and, if your references contain unicode characters, they may not show up correctly or at all. The solution to this is to use the biber backend instead of the outdated bibtex backend. This is done by finding this in \file{main.tex}: \option{backend=bibtex} and changing it to \option{backend=biber}. You will then need to delete all auxiliary BibTeX files and navigate to the template directory in your terminal (command prompt). Once there, simply type \code{biber main} and biber will compile your bibliography. You can then compile \file{main.tex} as normal and your bibliography will be updated. An alternative is to set up your LaTeX editor to compile with biber instead of bibtex, see \href{http://tex.stackexchange.com/questions/154751/biblatex-with-biber-configuring-my-editor-to-avoid-undefined-citations/}{here} for how to do this for various editors.
+As the ``old'' \code{bibtex} backend does not correctly handle unicode character encoding (i.\,e., ``international'' characters), we use the more modern \code{biber} BibTeX engine in this template.
 
 Let's cite a lot of references so that the list of references gets populated \cite{murdoch_steven_j._chip_2010,anderson_ross_emv:_2014,kou_weidong_secure_2003,solat_security_2017,bond_chip_2014,ortiz_s._is_2006,haselsteiner_security_2006,galloway_visa_2019,zhou_nshield_2014,lalehTaxonomyFraudsFraud2009,ferradiWhenOrganizedCrime2016,emvco_emvco_website,emvco_emvco_book1,emvco_emvco_book2,emvco_emvco_book3,emvco_emvco_book4,Yang10,Kopsell06,VilaGM03,Herrmann12-ipv6prefix,Herrmann14-diss,HBF:2013,Herrmann11-NordSec,AcarEEJND14,Herrmann09,WangG13,Raymond00,Hintz02,Herrmann14-encdns,FederrathFHP11,Goodson12-privacy,Fabian10,Google12,goldberg97,WendolskyHF07,chaum81,BertholdFK00,Dingledine04,rfc5246,LoesingMD10,FuchsHF13}.
 
@@ -221,8 +228,10 @@ Tables are an important way of displaying your results, below is an example tabl
 \midrule
 1 & 0.2 & 0.8\\
 2 & 0.17 & 0.7\\
-3 & 0.24 & 0.75\\
+3 & 0.24 & 0.75\\[0.3ex]
 4 & 0.68 & 0.3\\
+5 & 0.61 & 0.9\\
+6 & 0.18 & 0.1\\
 \bottomrule\\
 \end{tabular}
 \end{table}
@@ -239,21 +248,25 @@ Tables are an important way of displaying your results, below is an example tabl
 \midrule
 1 & 0.2 & 0.8\\
 2 & 0.17 & 0.7\\
-3 & 0.24 & 0.75\\
+3 & 0.24 & 0.75\\[0.3ex]
 4 & 0.68 & 0.3\\
+5 & 0.61 & 0.9\\
+6 & 0.18 & 0.1\\
 \bottomrule\\
 \end{tabular}
 \end{table}
 
-You can reference tables with \verb|\ref{<label>}| where the label is defined within the table environment. See \file{Chapter1.tex} for an example of the label and citation (e.g. Table~\ref{tab:treatments}).
+You can reference tables with \verb|\ref{<label>}| where the label is defined within the table environment. See \file{Chapter1.tex} for an example of the label and citation (e.\,g., Table~\ref{tab:treatments}).
+
+Tables are using the more formal \emph{booktabs} style, which avoids all vertical lines. Horizontal lines should be used sparingly as well. You are encouraged to use bold print to highlight especially relevant parts. Also, you can make use of small amounts of vertical space to group rows together (as was done in Table~\ref{tab:treatments}).
 
 \subsection{Figures}
 
 There will hopefully be many figures in your thesis (that should be placed in the \emph{Figures} folder). The way to insert figures into your thesis is to use a code template like this:
 \begin{verbatim}
-\begin{figure}
+\begin{figure}[t]
 \centering
-\includegraphics{Figures/Electron}
+\includegraphics[width=0.75\textwidth]{Figures/Electron}
 \decoRule
 \caption[An Electron]{An electron (artist's impression).}
 \label{fig:Electron}
@@ -261,19 +274,21 @@ There will hopefully be many figures in your thesis (that should be placed in th
 \end{verbatim}
 Also look in the source file. Putting this code into the source file produces the picture of the electron that you can see in the figure below.
 
-\begin{figure}[th]
+\begin{figure}[t]
 \centering
-\includegraphics{Figures/Electron}
+\includegraphics[width=0.75\textwidth]{Figures/Electron}
 \decoRule
 \caption[An Electron]{An electron (artist's impression).}
 \label{fig:Electron}
 \end{figure}
 
-Sometimes figures don't always appear where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so \LaTeX{} puts it at the top of the next page. Positioning figures is the job of \LaTeX{} and so you should only worry about making them look good!
+The recommended figure placement is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so \LaTeX{} puts it at the top of the next page. Positioning figures is the job of \LaTeX{} and so you should only worry about making them look good!
 
 Figures usually should have captions just in case you need to refer to them (such as in Figure~\ref{fig:Electron}). The \verb|\caption| command contains two parts, the first part, inside the square brackets is the title that will appear in the \emph{List of Figures}, and so should be short. The second part in the curly brackets should contain the longer and more descriptive caption text.
 
-The \verb|\decoRule| command is optional and simply puts an aesthetic horizontal line below the image. If you do this for one image, do it for all of them.
+The \verb|\decoRule| command is optional and simply puts a horizontal line below the image. This can be useful with figures that are not symmetrical or whose exterior is not evenly defined at the bottom.
+
+Make sure to resize figures to an appropriate size.
 
 \LaTeX{} is capable of using images in pdf, jpg and png format.
 
@@ -300,29 +315,39 @@ E = mc^{2}
 \label{eqn:Einstein}
 \end{equation}
 
-All equations you write (which are not in the middle of paragraph text) are automatically given equation numbers by \LaTeX{}. If you don't want a particular equation numbered, use the unnumbered form:
+All equations you write are automatically given equation numbers by \LaTeX{}. If you don't want a particular equation numbered, use the unnumbered form:
 \begin{verbatim}
 \[ a^{2}=4 \]
+\end{verbatim}
+You can also have equations in the middle of a paragraph: \( E = mc^{2} \). This can be achieved with this code: 
+\begin{verbatim}
+\( E = mc^{2} \)
 \end{verbatim}
 
 %----------------------------------------------------------------------------------------
 
 \section{Sectioning and Subsectioning}
 
-You should break your thesis up into nice, bite-sized sections and subsections. \LaTeX{} automatically builds a table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source.
+You should break your thesis up into chapters and sections. \LaTeX{} automatically builds a Table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source. You may even think about using subsubsections (\verb|subsubsection{}|). All of these will be hierarchically numbered.
 
-The Table of Contents should only list the sections to three (3) levels. A \verb|chapter{}| is level zero (0). A \verb|\section{}| is level one (1) and so a \verb|\subsection{}| is level two (2). In your thesis it is likely that you will even use a \verb|subsubsection{}|, which is level three (3). The depth to which the Table of Contents is formatted is set within \file{MastersDoctoralThesis.cls}. If you need this changed, you can do it in \file{main.tex}.
+Note, however, that (sub-)subsections should only be used if you use them consistently in all or multiple chapters. Otherwise, you should opt for a \verb|paragraph{}|, which structures pieces of content with unobtrusive non-numbered inline headings.
+
+The Table of Contents should only list \emph{chapters} and \emph{sections}. Listing \emph{(sub-)subsections} is not recommended as this results in a very long Table of Contents, which may become difficult to read. The depth to which the Table of Contents is formatted is set within \file{setup.tex}. If you need this changed, search for \texttt{\textbackslash etocsettocdepth}.
+
+Use \emph{title case} for your \emph{chapters}, \emph{sections}, and \emph{paragraphs}. Consider, for instance, \url{https://capitalizemytitle.com} for title case capitalization rules.
+
 
 %----------------------------------------------------------------------------------------
 
 \section{In Closing}
 
-You have reached the end of this mini-guide. You can now rename or overwrite this pdf file and begin writing your own \file{Chapter1.tex} and the rest of your thesis. The easy work of setting up the structure and framework has been taken care of for you. It's now your job to fill it out!
+You have reached the end of this mini-guide. You can now rename or overwrite this pdf file and begin writing your own \file{Chapter1.tex} and the rest of your thesis. The tedious tasks of setting up the structure and framework has been taken care of for you. It's now your job to fill it out.
 
-Good luck and have lots of fun!
+Good luck and happy writing!
 
 \begin{flushright}
 Guide written by ---\\
 Sunil Patel: \href{http://www.sunilpatel.co.uk}{www.sunilpatel.co.uk}\\
-Vel: \href{http://www.LaTeXTemplates.com}{LaTeXTemplates.com}
+Vel: \href{http://www.LaTeXTemplates.com}{LaTeXTemplates.com}\\
+with amendments by Dominik Herrmann
 \end{flushright}
