@@ -10,30 +10,38 @@
 \definecolor{ubblue40}{HTML}{99B5CB}
 \definecolor{ubblue20}{HTML}{CCDAE5}
 
+\definecolor{gray75}{gray}{0.75}
+\definecolor{gray50}{gray}{0.50}
 
 %----------------------------------------------------------------------------------------
 %		FONT SETUP
 %----------------------------------------------------------------------------------------
 
 \usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{luainputenc} % makes unicode characters like –, €, and ß work properly
 
-\usepackage{fontspec}
+\usepackage{fontspec} % allows us to use OTF/TTF fonts
 
-\setmainfont[
-	Path           = fonts/,
-    BoldFont       = {Crimson-Semibold.otf},
-    ItalicFont     = {Crimson-Italic.otf},
-    BoldItalicFont = {Crimson-BoldItalic.otf}
-]{Crimson-Roman.otf}
+% If you cannot use the cochineal font, uncomment the following lines to select
+% the Crimson font. Note, however, that you'll have to take care of the math font
+% on your own.
+% 
+%\setmainfont[
+%	Path           = fonts/,
+%    BoldFont       = {Crimson-Semibold.otf},
+%    ItalicFont     = {Crimson-Italic.otf},
+%    BoldItalicFont = {Crimson-BoldItalic.otf}
+%]{Crimson-Roman.otf}
 
-
+% Recommended: use Cochineal with old-style figures (math fonts: see further down)
 \usepackage[p,osf]{cochineal}
  
+% Exception: tables should use "lining figures" (all digits having same width)
 \AtBeginEnvironment{tabular}{%
   \tlfstyle
 }
 
-
+% monospace font, will be used in verbatim and listing environments
 \setmonofont[
 	Path           = fonts/,
     BoldFont       = {UbuntuMono-B.ttf},
@@ -42,14 +50,7 @@
     Scale = MatchLowercase
 ]{UbuntuMono-R.ttf}
 
-%\newfontfamily\headingfont[
-%	Path          	= fonts/,
-%	BoldFont		= Roboto-Bold.otf,
-%	ItalicFont		= Roboto-Italic.otf,
-%	BoldItalicFont	= Roboto-BoldItalic.otf
-%]{Roboto-Regular.otf}
-
-
+% sans-serif font, will be used in the margins
 \setsansfont[
 	Path          	= fonts/,
 	BoldFont		= Roboto-Bold.otf,
@@ -60,23 +61,16 @@
 \renewcommand{\familydefault}{\rmdefault}
 \defaultfontfeatures{Ligatures=TeX}
 
+% math fonts that go well with cochineal 
 \usepackage[cochineal,vvarbb]{newtxmath}
 \usepackage[cal=boondoxo]{mathalfa}
 
 
 %----------------------------------------------------------------------------------------
-%		TITLE SETUP
+%		HEADINGS SETUP (CHAPTERS, SECTIONS, …)
 %----------------------------------------------------------------------------------------
 
-\usepackage[explicit]{titlesec}
-
-\definecolor{gray75}{gray}{0.75}
-\newcommand{\hsp}{\hspace{20pt}}
-
-
-
 % ====== replace Q with \Qswash in Chapters and Sections =========
-
 \newcommand{\swashedletter}{\Qswash}
 \catcode`Q=\active
 \defQ{\swashedletter}
@@ -84,20 +78,24 @@
 \usepackage{xstring}
 \noexpandarg\exploregroups
 \newcommand\ReplaceStrQ[1]{\StrSubstitute{#1}{Q}{\swashedletter}}
-
 % ================================================================
 
+\usepackage[explicit]{titlesec}
+\newcommand{\hsp}{\hspace{20pt}}
 
-
+% chapters have a vertical line between number and title
 \titleformat{\chapter}[hang]{\Huge\bfseries}{\color{ubblue60}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{ubblue60}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright\ReplaceStrQ{#1}\end{tabular}}
 
+% sections
 \titleformat{\section}[hang]{\bfseries\large}{{\color{ubblue80}\arabic{chapter}.\arabic{section}}}{1ex}{{\color{ubblue80}\ReplaceStrQ{#1}}}{}
 
+% subsections
 \titleformat{\subsection}[hang]{\bfseries\large}{{\color{ubblue80}\arabic{chapter}.\arabic{section}.\arabic{subsection}}}{1ex}{{\color{ubblue80}\ReplaceStrQ{#1}}}{}
 
+% subsubsections
 \titleformat{\subsubsection}[hang]{\bfseries}{{\color{ubblue80}\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}}{1ex}{{\color{ubblue80}\ReplaceStrQ{#1}}}{}
 
-
+% vertical spacing for headings ==============
 \titlespacing*{\section}
 {0pt}{7ex}{3ex}
 
@@ -106,127 +104,13 @@
 
 \titlespacing*{\subsubsection}
 {0pt}{4ex}{2ex}
-
+% end of vertical spacing ====================
 
 %----------------------------------------------------------------------------------------
 %		TABLE OF CONTENTS SETUP
 %----------------------------------------------------------------------------------------
 
 \usepackage{tocloft}
-
-% Recommendation is to use 1 or 2
-%\setcounter{tocdepth}{1}
-
-% recommended if you have tocdepth > 1
-%\usepackage{tocloft}
-%\setlength{\cftbeforesecskip}{6pt}
-
-%\usepackage{textcase}
-%\makeatletter
-%\DeclareRobustCommand{\spacedallcaps}[1]{\textsc{\textls[160]{\MakeTextUppercase{#1}}}} \DeclareRobustCommand{\spacedlowsmallcaps}[1]{\textsc{\textls[80]{\MakeTextLowercase{#1}}}}
-%\makeatother
-%%%
-%%%% ********************************************************************
-%%%% layout of the TOC, LOF and LOT (LOL-workaround see next section)
-%%%% ********************************************************************
-%%%\PassOptionsToPackage{titles}{tocloft}
-%%%\RequirePackage{tocloft}
-%%%% avoid page numbers being right-aligned in fixed-size box
-%%%\newlength{\newnumberwidth}
-%%%\settowidth{\newnumberwidth}{999} % yields overfull hbox warnings for pages > 999
-%%%\cftsetpnumwidth{\newnumberwidth}
-%%%
-%%%% have the bib neatly positioned after the rest
-%%%\newlength{\beforebibskip}
-%%%\setlength{\beforebibskip}{0em}
-%%%
-%%%
-%%%
-%%%    \renewcommand{\thepart}{\roman{part}}%
-%%%    \renewcommand{\cftpartpresnum}{\scshape}%  \MakeTextLowercase
-%%%    \renewcommand{\cftpartaftersnum}{}%
-%%%    \renewcommand{\cftpartaftersnumb}{\spacedlowsmallcaps}%
-%%%    \setlength{\cftpartnumwidth}{\cftchapnumwidth}
-%%%    \renewcommand{\cftpartfont}{\color{CTtitle}\normalfont}%
-%%%    \cftpagenumbersoff{part}
-%%%    \renewcommand{\cftpartpagefont}{\normalfont}%
-%%%    \setlength{\cftbeforepartskip}{1em}%
-%%%    \setlength{\cftbeforechapskip}{.1em}%
-%%%    \setlength{\beforebibskip}{1.5\cftbeforepartskip}%
-%%%
-%%%
-%%%        \renewcommand{\cftchappresnum}{\spacedlowsmallcaps}%
-%%%        \renewcommand{\cftchapaftersnumb}{\spacedlowsmallcaps}%
-%%%        \renewcommand{\cftchapfont}{\normalfont}%
-%%%        \renewcommand{\cftchappagefont}{\normalfont}%
-%%%        %\setlength{\cftbeforechapskip}{.1em}%
-%%%
-%%%\renewcommand{\cftsecpresnum}{\scshape\MakeTextLowercase}%
-%%%\renewcommand{\cftsecfont}{\normalfont}%
-%%%\renewcommand{\cftsecpagefont}{\normalfont}%
-%%%
-%%%% subsections
-%%%\renewcommand{\cftsubsecpresnum}{\scshape\MakeTextLowercase}%
-%%%\renewcommand{\cftsubsecfont}{\normalfont}%
-%%%
-%%%% subsubsections
-%%%\renewcommand{\cftsubsubsecpresnum}{\scshape\MakeTextLowercase}%
-%%%\renewcommand{\cftsubsubsecfont}{\normalfont}%
-%%%
-%%%% figures
-%%%\renewcommand{\cftfigpresnum}{\scshape\MakeTextLowercase}%
-%%%\renewcommand{\cftfigfont}{\normalfont}%
-%%%
-%%%\renewcommand{\cftfigpresnum}{\figurename~}%Fig.~}
-%%%\newlength{\figurelabelwidth}
-%%%\settowidth{\figurelabelwidth}{\cftfigpresnum~999}
-%%%\addtolength{\figurelabelwidth}{2.5em}
-%%%\cftsetindents{figure}{0em}{\figurelabelwidth}
-%%%
-%%%% tables
-%%%\renewcommand{\cfttabpresnum}{\scshape\MakeTextLowercase}%
-%%%\renewcommand{\cfttabfont}{\normalfont}%
-%%%
-%%%\renewcommand{\cfttabpresnum}{\tablename~}%Tab.~}
-%%%\newlength{\tablelabelwidth}
-%%%\settowidth{\tablelabelwidth}{\cfttabpresnum~999}
-%%%\addtolength{\tablelabelwidth}{2.5em}
-%%%%\cftsetindents{table}{0em}{\tablelabelwidth}
-%%%\cftsetindents{table}{0em}{\figurelabelwidth}
-%%%
-%%%
-%%%\AtBeginDocument{\addtocontents{toc}{\protect\vspace{-\cftbeforechapskip}}}
-%%%
-%%%
-%%%\newcommand{\tocEntry}[1]{\protect\numberline {}{#1}}%
-%%%
-%%%\DeclareRobustCommand*{\deactivateaddvspace}{\let\addvspace\@gobble}%
-%%%\AtBeginDocument{%
-%%%    \addtocontents{lof}{\deactivateaddvspace}%
-%%%    \addtocontents{lot}{\deactivateaddvspace}%
-%%%}%
-%%%%    }
-
-%%%%% 
-%\renewcommand{\cftchappresnum}{\bfseries}%
-%\renewcommand{\cftchapaftersnumb}{\bfseries}%
-%\renewcommand{\cftchapfont}{\bfseries}%
-%\renewcommand{\cftchappagefont}{\bfseries}%
-%%\setlength{\cftbeforechapskip}{.1em}%
-%
-%
-%\renewcommand{\cftsecleader}{}
-%\setlength{\cftsecindent}{1cm} %  Einzug bei Sections
-%\renewcommand{\cftsecafterpnum}{\cftparfillskip}
-%\setlength{\cftbeforesecskip}{.4\baselineskip}
-%%\setlength{\cftbeforesubsecskip}{.1\baselineskip}
-%\renewcommand{\cftsubsecleader}{}
-%\setlength{\cftsubsecindent}{2cm} %   Einzug bei Subsections
-%\renewcommand{\cftsubsecafterpnum}{\cftparfillskip}
-%\setlength{\cftbeforesubsecskip}{.4\baselineskip}
-%
-%%%% 
-
 
 %%% https://tex.stackexchange.com/questions/178510/how-can-i-reproduce-this-beautiful-table-of-contents
 \usepackage{etoc}
