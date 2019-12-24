@@ -110,16 +110,15 @@
 %		TABLE OF CONTENTS SETUP
 %----------------------------------------------------------------------------------------
 
-\usepackage{tocloft}
-
-%%% https://tex.stackexchange.com/questions/178510/how-can-i-reproduce-this-beautiful-table-of-contents
+% solution inspired from https://tex.stackexchange.com/questions/178510/how-can-i-reproduce-this-beautiful-table-of-contents
 \usepackage{etoc}
 \etocsetlevel{section}{2}
 \etocsetlevel{subsection}{3}
+
 \etocsettocdepth{section} % set to subsection for adding subsections to toc (not recommended)
 
 \newlength{\tocleft}
-\setlength{\tocleft}{2.5cm} % must be made to fit the inntermargin defined in geometry
+\setlength{\tocleft}{2.5cm} % must be set to fit the innermargin defined in geometry (change only if you have changed the margins)
 
 \newlength{\tocsep}
 \setlength{\tocsep}{2em}
@@ -154,8 +153,6 @@
 \etocsettocstyle{\chapter*{\contentsname}
                 \thispagestyle{plain}%
                 \leftskip\tocleft\parindent0pt}{}
-%%%
-
 
 
 %----------------------------------------------------------------------------------------
@@ -163,22 +160,26 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{marginnote} % Enable Notes on the Page Margin
-\usepackage{ragged2e}
+\usepackage{ragged2e} % provides better hyphenation, use with camel case: \RaggedRight 
 \renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
-\renewcommand*{\marginfont}{\scriptsize\sffamily\itshape}
+\renewcommand*{\marginfont}{\scriptsize\sffamily\itshape} % format margin text
 
+% this provides correct alignment for margin text that is inserted
+% right at the beginning of a paragrah; however, it messes up the
+% alignment in all other cases; we might decide to remove this again
 \renewcommand{\marginnotevadjust}{0.71\baselineskip}
 
-\usepackage{microtype} % Enable better typographic setup
+\usepackage{microtype} % enable better typographic setup
 
-\usepackage{multicol} % Enable usage of multiple columns
+\usepackage{multicol} % enable usage of multiple columns
 
-% biblatex setup is inspired by https://anneurai.net/2017/10/18/thesis-formatting-in-latex/
+% biblatex setup
+% inspired by https://anneurai.net/2017/10/18/thesis-formatting-in-latex/
 \usepackage[
   backend=biber,
   style=alphabetic,
-  doi=false,isbn=false,
+  doi=false,isbn=false, % these fields are commonly omitted
   terseinits=true, % no points between initials
   giveninits=true, % always print only initials for given names
   sortcites=true,
@@ -190,6 +191,7 @@
   \clearlist{extra} % clears extra fields such as ISBN nrs
 }
 
+% shorten the strings used in back references
 \DefineBibliographyStrings{english}{%
   backrefpage = {page},
   backrefpages = {pages},
@@ -217,15 +219,16 @@
   backgroundcolor=yellow,linecolor=gray75,bordercolor=gray75,
 ]{todonotes}
 
+% change font of todo notes to sans-serif
 \makeatletter
 \renewcommand{\todo}[2][]{\@bsphack\@todo[#1]{\sffamily #2}\@esphack\ignorespaces}
 \makeatother
 
-\usepackage{booktabs}
+\usepackage{booktabs} % use formal table layout
 
-\urlstyle{same}
+\urlstyle{same} % avoids printing URLs in typewriter font
 
-% URL breaking
+% enable very extensive URL breaking
 \PassOptionsToPackage{hyphens}{url}
 \expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks% save the current one
   \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
@@ -245,45 +248,15 @@
              urlcolor=ubblue60}
 
 
-% makes links appear in black when print
+% should make links appear in black when PDF is printed
 % (do not use, breaks title page layout)
 %\usepackage[ocgcolorlinks]{ocgx2}
 
-% hyperlink for \citeauthor as well
-\DeclareCiteCommand{\citeauthor}
-  {\boolfalse{citetracker}%
-   \boolfalse{pagetracker}%
-   \usebibmacro{prenote}}
-  {\ifciteindex
-     {\indexnames{labelname}}
-     {}%
-   \printtext[bibhyperref]{\printnames{labelname}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
- 
-% https://tex.stackexchange.com/questions/27607/biblatex-authoryear-comp-and-hyperlinks
-% make full author-year into hyperlinks, will be colored grey
-\makeatletter
-\let\abx@macro@citeOrig\abx@macro@cite
-\renewbibmacro{cite}{%
-   \bibhyperref{%
-   \let\bibhyperref\relax\relax%
-   \abx@macro@citeOrig%
-   }%
-}
-\let\abx@macro@textciteOrig\abx@macro@textcite
-\renewbibmacro{textcite}{%
-   \bibhyperref{%
-   \let\bibhyperref\relax\relax%
-   \abx@macro@textciteOrig%
-   }%
-}%
-\makeatother
-
-
+% cleverref allows you to use |Cref{sec:foo} to get the text "Section 1.2".
+% This also works with figures and tables.
 \usepackage{cleveref}
 
-\raggedbottom % dont force the same page length by increasing space between paragraphs
+\raggedbottom % do NOT force all pages to have the same height (which would be done by increasing the space between paragraphs, which can create noisy layouts)
 
 %----------------------------------------------------------------------------------------
 %	SETUP BIBLIOGRAPHY
@@ -297,14 +270,37 @@
   \setlength{\itemsep}{\bibparskip}%
 }
 
+% allow much more liberal line breaks in URLs
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+% adjust space between key and entry, default is 2\labelsep
+\setlength{\biblabelsep}{1\labelsep} 
+
+% configures indentation of bibentries
+\defbibenvironment{bibliography}
+  {\list
+     {\hspace{0.5\labelalphawidth}\bfseries\printtext[labelalphawidth]{%
+        \printfield{prefixnumber}%
+        \printfield{labelalpha}%
+        \printfield{extraalpha}}}
+     {\setlength{\labelsep}{\biblabelsep}%
+      \setlength{\leftmargin}{0.5\labelalphawidth}%
+      \setlength{\itemsep}{1.5\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{##1\hss}}
+  {\endlist}
+  {\item}
+
+
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
 
 \geometry{
-	paper=a4paper, % Change to letterpaper for US letter
+	paper=a4paper, % Change to letterpaper for US letter (not recommended)
 	inner=2cm, % Inner margin
-	outer=5.8cm, % Outer margin
+	outer=5.8cm, % Outer margin, extra wide for margin notes
 	marginparwidth=4cm,
 	marginparsep=4mm,
 	bindingoffset=.5cm, % Binding offset
@@ -318,20 +314,18 @@
 %	SETUP HEADER AND FOOTER
 %----------------------------------------------------------------------------------------
 \automark[chapter]{chapter}
-%\ihead{\textsc{\headmark}}% Inner header - use for Small Caps in header
-\ihead{\textup{\headmark}}% Inner header
-\ohead[]{\pagemark}% Outer header
-\cfoot[\pagemark]{} 
+\ihead{\textup{\headmark}} % Inner header; do not use italics: therefore textup
+%\ihead{\textsc{\headmark}}% Inner header - use this line for Small Caps in header
+\ohead[]{\pagemark} % Outer header
+\cfoot[\pagemark]{} % On chapter opening pages, the page number goes centered into the footer
 \automark*[section]{}%
 
 
 %----------------------------------------------------------------------------------------
-% 	SET PDF METADATA
+%	SET PDF METADATA
 %----------------------------------------------------------------------------------------
 \AtBeginDocument{
 \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
-\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+%\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 }
-
-%\hypersetup{colorlinks=false} % uncomment for to change gray links to black links

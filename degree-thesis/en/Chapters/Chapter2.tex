@@ -27,9 +27,10 @@ This chapter contains only selected recommendations. For a more comprehensive li
 
 \section{Links}
 
-Special care is necessary when you include links in your thesis. URLs are generally embedded using the \verb|\url{}| command. This will allow \LaTeX{} to break them at the end of a line. Moreover, they will become clickable.
+Special care is necessary when you include links in your thesis. URLs are generally embedded using the \verb|\url{}| command. This will allow LaTeX to break them at the end of a line. Moreover, they will become clickable.
 
-It is an open question whether \emph{all} links should be embedded as proper references or not. We recommend to follow these principles:
+It is a frequently asked question whether \emph{all} links should be embedded as proper references or not. We recommend to follow these principles:%
+\marginnote{In the interest of ease of use, we neglect the principles in this guide.}
 
 \begin{itemize}
   \item \textbf{Use a link} in the text (or as a footnote when it is a longer link) when the main purpose of providing the URL is to \emph{provide a reference to that particular location}. Example: links to the website of a service or product or to the homepage of a weblog, when the purpose is to make readers aware of its existence as a whole.
@@ -192,7 +193,7 @@ Also look in the source file. Putting this code into the source file produces th
 \label{fig:Electron}
 \end{figure}
 
-The recommended figure placement is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so \LaTeX{} puts it at the top of the next page. Positioning figures is the job of \LaTeX{} and so you should only worry about making them look good. Generally, everything is fine as long as a figure either appears on the page where it is referred to for the first time or on one of the subsequent pages.
+The recommended figure placement is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so LaTeX puts it at the top of the next page. Positioning figures is the job of LaTeX and so you should only worry about making them look good. Generally, everything is fine as long as a figure either appears on the page where it is referred to for the first time or on one of the subsequent pages.
 
 Every figure needs a descriptive caption and a label. Figure captions must always appear below the included graphics file within the \code{figure} environment.
 
@@ -207,7 +208,7 @@ The \verb|\decoRule| command is optional and simply puts a horizontal line below
 
 Resize your figures, ideally consistently, to an appropriate size, e.\,g., a fraction of \texttt{\textbackslash textwidth}.
 
-\LaTeX{} is capable of using images in PDF, JPG, and PNG format. Using vectorized figures (PDF) is preferred as they usually provide sharper results. If you have to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
+LaTeX is capable of using images in PDF, JPG, and PNG format. Using vectorized figures (PDF) is preferred as they usually provide sharper results. If you have to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
 
 \paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures side-by-side. There are several approaches, for instance, by using the \texttt{subfigure} package. In many cases, a comprehensive subfigure support is not really needed. A lightweight approach as shown in Fig.~\ref{fig:sidebyside} may be sufficient. This result is achieved with the following code:
 
@@ -235,14 +236,14 @@ Resize your figures, ideally consistently, to an appropriate size, e.\,g., a fra
 
 \section{Typesetting Mathematics}
 
-If your thesis is going to contain heavy mathematical content, be sure that \LaTeX{} will make it look beautiful, even though it won't be able to solve the equations for you.
+If your thesis is going to contain heavy mathematical content, be sure that LaTeX will make it look beautiful, even though it won't be able to solve the equations for you.
 
 The \enquote{Not So Short Introduction to \LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, \enquote{A Short Math Guide to \LaTeX} and can be downloaded from:
 \url{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}
 
-There are many different \LaTeX{} symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
+There are many different LaTeX symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
 
-You can write an equation, which is automatically given an equation number by \LaTeX{} like this:
+You can write an equation, which is automatically given an equation number by LaTeX like this:
 \begin{verbatim}
 \begin{equation}
 E = mc^{2}
@@ -256,7 +257,7 @@ E = mc^{2}
 \label{eqn:Einstein}
 \end{equation}
 
-All equations you write are automatically given equation numbers by \LaTeX{}. If you don't want a particular equation numbered, use the unnumbered form:
+All equations you write are automatically given equation numbers by LaTeX. If you don't want a particular equation numbered, use the unnumbered form:
 \begin{verbatim}
 \[ a^{2}=4 \]
 \end{verbatim}
@@ -269,7 +270,7 @@ You can also have equations in the middle of a paragraph: \( E = mc^{2} \). This
 
 \section{Structure}
 
-You should break your thesis up into chapters and sections. \LaTeX{} automatically builds a Table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source. You may even think about using \emph{sub}subsections (\verb|\subsubsection{}|). All of these will be hierarchically numbered.
+You should break your thesis up into chapters and sections. LaTeX automatically builds a Table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source. You may even think about using \emph{sub}subsections (\verb|\subsubsection{}|). All of these will be hierarchically numbered.
 
 Avoid dangling elements in the hierarchy. This means that if you have a Section~1.1, you should also have (at least) Section~1.2. This is true for all levels of the hierarchy.
 
@@ -284,7 +285,7 @@ Use \emph{title case} in your \emph{chapters}, \emph{sections}, and \emph{paragr
 
 Use thin spaces (\verb|\,|) in the appropriate places. For instance, write \verb|i.\,e.,| to obtain i.\,e., which is spoken ``that is''. The same applies to e.\,g. Both abbreviations are followed by a comma in American English.
 
-Dashes can be used instead of colons or pairs of commas to mark off a nested clause. Use an \emph{en dash} for that purpose -- like in this example. If you cannot type an \emph{en dash} on your keyboard, you can write two regular hyphens next to each other. \LaTeX{} will substitute them with an \emph{en dash}. While we have no strict preference, we recommend to use \emph{en dashes} instead of the longer \emph{em dashes}.
+Dashes can be used instead of colons or pairs of commas to mark off a nested clause. Use an \emph{en dash} for that purpose -- like in this example. If you cannot type an \emph{en dash} on your keyboard, you can write two regular hyphens next to each other. LaTeX will substitute them with an \emph{en dash}. While we have no strict preference, we recommend to use \emph{en dashes} instead of the longer \emph{em dashes}.
 
 Use en dashes also within ranges, e.\,g., when you write something like 5--10\,\% (note the thin space before the \% symbol).
 
@@ -296,12 +297,14 @@ If you speak German, consider reading \textsc{typokurz} (\url{https://zvisionwel
 
 \section{Style}
 
-We highly recommend to use the serial comma in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}. It is inserted before the word \emph{and} that leads the last item of a list. Consider this example:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
+This section contains only selected pieces of advice on particular aspects and typical errors. For a more comprehensive treatment, we refer the reader to the paragraph \nameref{par:commonbugs} at the end of this section.
+
+We highly recommend to use the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}. It is inserted before the word \emph{and} that leads the last item of a list. Consider this example:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
 \begin{quote}
   Three important techniques in the design of algorithms are bisection, divide and conquer, and recursion.
 \end{quote}
 
-``Lists are common in all forms of writing. The list items can be included within the text or put on separate lines. Separate lines are used in order to draw attention to the items, to ease reading when the items are long or numerous, or to facilitate cross-reference to specific items.''\footnote{Source: \url{https://nhigham.com/2015/12/17/punctuating-lists/}} The environments \code{itemize} and \code{enumerate} produce lists on separate lines. It is considered good style to use punctuation in such a way that the lists remain readable as full sentences if their items were not split onto separate lines. This can be achieved by ensuring that every list item is a full sentence. If list items are fragments, additional punctuation is necessary (example taken from the source mentioned in the footnote):
+Use \textbf{bullet lists} correctly. ``Lists are common in all forms of writing. The list items can be included within the text or put on separate lines. Separate lines are used in order to draw attention to the items, to ease reading when the items are long or numerous, or to facilitate cross-reference to specific items.''\footnote{Source: \url{https://nhigham.com/2015/12/17/punctuating-lists/}} The environments \code{itemize} and \code{enumerate} produce lists on separate lines. It is considered good style to use punctuation in such a way that the lists form full sentences if their items were not split onto separate lines. This convention is fulfilled when every list item is a full sentence. If list items are sentence fragments, however, additional punctuation is necessary (example taken from the source mentioned in the footnote):
 
 \begin{quote}
   We used three different algorithms in the experiments. The table reports the performance of
@@ -313,5 +316,5 @@ We highly recommend to use the serial comma in all lists to avoid ambiguity. The
 \end{quote}
 
 \paragraph{Common Bugs in Writing}
-
+\label{par:commonbugs}
 Read the comprehensive list of common bugs in writing by Henning Schulzrinne, which is available at \url{http://www.cs.columbia.edu/~hgs/etc/writing-bugs.html}.

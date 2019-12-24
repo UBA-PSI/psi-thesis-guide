@@ -45,6 +45,11 @@ consistentlayout, % layout of declaration, abstract and acknowledgements pages m
 
 \input{Misc/setup.tex}
 
+% Uncomment this command to make all links black:
+%   useful for printing on black-white printers that do a
+%   poor job at rasterizing colored text properly
+%\hypersetup{colorlinks=false}
+
 \addbibresource{literature.bib} % The filename of the bibliography
 
 %----------------------------------------------------------------------------------------
@@ -222,28 +227,6 @@ Moreover, consider the advice by Markus Kuhn on differentiating abstract and int
 }
 
 \addchap{References}
-
-% allow much more liberal line breaks in URLs
-\setcounter{biburllcpenalty}{7000}
-\setcounter{biburlucpenalty}{8000}
-
-% adjust space between key and entry, default is 2\labelsep
-\setlength{\biblabelsep}{1\labelsep} 
-
-% configures indentation of bibentries
-\defbibenvironment{bibliography}
-  {\list
-     {\hspace{0.5\labelalphawidth}\bfseries\printtext[labelalphawidth]{%
-        \printfield{prefixnumber}%
-        \printfield{labelalpha}%
-        \printfield{extraalpha}}}
-     {\setlength{\labelsep}{\biblabelsep}%
-      \setlength{\leftmargin}{0.5\labelalphawidth}%
-      \setlength{\itemsep}{1.5\bibitemsep}%
-      \setlength{\parsep}{\bibparsep}}%
-      \renewcommand*{\makelabel}[1]{##1\hss}}
-  {\endlist}
-  {\item}
 
 % enables two-column layout for bibliography
 \setlength\columnsep{2em}
