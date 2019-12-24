@@ -1,9 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Masters/Doctoral Thesis
-% LaTeX Template
+% 
+% PSI Chair Thesis Template
+% Version 2019-12
+% 
+% based on MastersDoctoralThesis.cls
 % Version 2.5 (27/8/17)
 %
-% This template was downloaded from:
+% which was obtained from:
 % http://www.LaTeXTemplates.com
 %
 % Version 2.x major modifications by:
@@ -24,58 +27,86 @@
 
 \PassOptionsToPackage{english,ngerman}{babel}
 \documentclass[
-11pt, % The default document font size, options: 10pt, 11pt, 12pt
-%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
-english, % ngerman for German 
-singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+11pt, % The default document font size is 11 (recommended), options: 10pt, 11pt, 12pt
+%oneside, % Two-side layout isrecommended; uncomment to switch to one-sided
+english, % replace with ngerman for German; not fully supported so far -- requires changes elsewhere
+singlespacing, % Single line spacing (recommended), alternatives: onehalfspacing or doublespacing
 %draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
 %nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
-%liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
-%toctotoc, % Uncomment to add the main table of contents to the table of contents
-parskip, % Uncomment to add space between paragraphs
-nohyperref, % Uncomment to not load the hyperref package
-headsepline, % Uncomment to get a line under the header
-%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
-consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+%liststotoc, % Uncomment to add list of figures/tables/etc to table of contents (not recommended)
+%toctotoc, % Uncomment to add the main table of contents to the table of contents (not recommended)
+parskip, % add space between paragraphs (recommended)
+nohyperref, % do not load the hyperref package (is loaded in setup.tex)
+headsepline, % print a horizontal line under the page header
+consistentlayout, % layout of declaration, abstract and acknowledgements pages matches the default layout
 %final, % Uncomment to hide all todo notes
 ]{PsiThesis} % The class file specifying the document structure
 
 
-\newcommand{\abschluss}{Bachelor}
-
 \input{Misc/setup.tex}
 
-\addbibresource{example.bib} % The filename of the bibliography
+\addbibresource{literature.bib} % The filename of the bibliography
 
 %----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
-\newcommand{\thesistype}{Bachelors} % The type of you thesis (Bachelors, Masters, Doctoral ...)
+\newcommand{\thesistype}{Bachelors} % type of your thesis (Bachelors, Masters, Doctoral ...)
+\newcommand{\abschluss}{Bachelor} % used in Declaration of Authorship (singular, German)
 
-% Replace Q with \Qswash (defined in setup.tex) in title
+% This construct is used to replace the letter Q with \Qswash (defined in setup.tex) in title
 \catcode`Q=\active
 \defQ{\swashedletter}
-\thesistitle{Just a Quick Example: This is a Thesis Title of Typical Length} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+
+%%% CHANGE THIS:
+% Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\thesistitle{Just a Quick Example: This is a Thesis Title of Typical Length}
+
 \catcode`Q=11 % make Q inactive again
+%
 
-\supervisor{Prof. Dr. Dominik Herrmann} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
-\degree{degree not used} % Your degree name, this is used in the title page, print it elsewhere with \degreename
-\author{Max Mustermann} % Your name, this is used in the title page, print it elsewhere with \authorname
-\addresses{address not used} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+%%% CHANGE THIS:
+% Your name, this is used in the title page, print it elsewhere with \authorname
+\author{Max Mustermann} 
 
-\subject{subject not used} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
-\keywords{keywords not used} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
-\university{\href{https://www.uni-bamberg.de/en/}{University of Bamberg}} % Your university's name and URL, this is used in the title page, print it elsewhere with \univname
-\department{department not used} % Your department's name and URL, this is used in the title page, print it elsewhere with \deptname
-\group{\href{https://www.uni-bamberg.de/en/psi/}{Privacy and Security in Information Systems Group}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
-\faculty{\href{https://www.uni-bamberg.de/en/wiai/}{Faculty of Information Systems and Applied Computer Sciences}} % Your faculty's name and URL, this is used in the title page, print it elsewhere with \facname
+% Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\supervisor{Prof. Dr. Dominik Herrmann} 
+
+% Your university's name and URL, this is used in the title page, print it elsewhere with \univname
+\university{\href{https://www.uni-bamberg.de/en/}{University of Bamberg}}
+
+% Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\group{\href{https://www.uni-bamberg.de/en/psi/}{Privacy and Security in Information Systems Group}}
+
+% Your department's name and URL, this is used in the title page, print it elsewhere with \deptname
+\department{department not used}
+
+% Your faculty's name and URL, this is used in the title page, print it elsewhere with \facname
+\faculty{\href{https://www.uni-bamberg.de/en/wiai/}{Faculty of Information Systems and Applied Computer Sciences}}
+
+
+% Your degree name, this is used in the title page, print it elsewhere with \degreename
+\degree{degree not used}
+
+% Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+\addresses{address not used}
+
+% Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\subject{subject not used}
+
+% Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\keywords{keywords not used}
+%----------------------------------------------------------------------------------------
+%	END OF THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+
 \begin{document}
 
 \selectlanguage{english}
 
 \frenchspacing % do not add additional hspace after end of sentence full stop dot.
 
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages 
+\frontmatter % Uses roman page numbering style (i, ii, iii, iv...) for the pre-content pages 
 
 \include{Misc/titlepage}
 
@@ -90,26 +121,35 @@ consistentlayout, % Uncomment to change the layout of the declaration, abstract 
 
 % \hfill Dave Barry
 
+
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE
 %----------------------------------------------------------------------------------------
 
 \begin{abstract}
-%\addchaptertocentry{\abstractname} % uncomment to add the abstract to the table of contents (not recommended)
+%\addchaptertocentry{\abstractname}
+% uncomment to add the abstract to the table of contents (not recommended)
 
 Provide a Thesis Abstract here (length: less than one page).
+
 A great guide by Kent Beck how to write good abstracts can be found here:
 \url{https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html}
+
+Moreover, consider the advice by Markus Kuhn on differentiating abstract and introduction: \url{https://www.lightbluetouchpaper.org/2007/03/14/how-not-to-write-an-abstract/}
 \end{abstract}
+
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
 %\begin{acknowledgements}
-% %\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+% %\addchaptertocentry{\acknowledgementname}
+% Add the acknowledgements to the table of contents (not recommended)
+%
 %The acknowledgments and the people to thank go here.
 %\end{acknowledgements}
+
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
@@ -121,25 +161,31 @@ A great guide by Kent Beck how to write good abstracts can be found here:
 \tableofcontents % Prints the main table of contents
 }
 
+
 %----------------------------------------------------------------------------------------
 %	DEDICATION
 %----------------------------------------------------------------------------------------
 
 % \dedicatory{For/Dedicated to/To my\ldots}
 
+
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
-\mainmatter % Begin numeric (1,2,3...) page numbering
-
+\mainmatter % From here on, numeric (1,2,3...) page numbering
 \pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+%%% CHANGES NEEDED HERE
+% 
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
+
 \include{Chapters/Chapter1}
 \include{Chapters/Chapter2}
 %\include{Chapters/Chapter3}
 %\include{Chapters/Chapter4}
 %\include{Chapters/Chapter5}
+
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
@@ -147,6 +193,8 @@ A great guide by Kent Beck how to write good abstracts can be found here:
 
 \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
+%%% CHANGES NEEDED HERE
+% 
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
@@ -154,10 +202,12 @@ A great guide by Kent Beck how to write good abstracts can be found here:
 %\include{Appendices/AppendixB}
 %\include{Appendices/AppendixC}
 
+
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
+% Bibliography has no wide margins:
 \newgeometry{
 	inner=2cm, % Inner margin
 	outer=2cm, % Outer margin
@@ -171,13 +221,16 @@ A great guide by Kent Beck how to write good abstracts can be found here:
 	% showframe, % Uncomment to show how the type block is set on the page
 }
 
-%\chapter*{References}
-%\addcontentsline{toc}{chapter}{References}
 \addchap{References}
+
+% allow much more liberal line breaks in URLs
 \setcounter{biburllcpenalty}{7000}
 \setcounter{biburlucpenalty}{8000}
 
-\setlength{\biblabelsep}{1\labelsep}% <-- adjust this to your liking, the standard is 2\labelsep
+% adjust space between key and entry, default is 2\labelsep
+\setlength{\biblabelsep}{1\labelsep} 
+
+% configures indentation of bibentries
 \defbibenvironment{bibliography}
   {\list
      {\hspace{0.5\labelalphawidth}\bfseries\printtext[labelalphawidth]{%
@@ -192,11 +245,12 @@ A great guide by Kent Beck how to write good abstracts can be found here:
   {\endlist}
   {\item}
 
+% enables two-column layout for bibliography
 \setlength\columnsep{2em}
-\begin{multicols}{2}% two columns
-	\begin{refcontext}[sorting=nyt] % make sure that bibliography is sorted by last name, year, title
+\begin{multicols}{2}
+	\begin{refcontext}[sorting=nyt] % sort bibliography by last name, year, title
 		\renewcommand*{\bibfont}{\small\RaggedRight}
-		\linespread{1.0}\selectfont
+		\linespread{1.0}\selectfont % increase linespread if desired (not recommended)
 		\printbibliography[heading=none]
 	\end{refcontext}
 \end{multicols}

@@ -327,7 +327,15 @@
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
-\usepackage[obeyFinal]{todonotes}
+\usepackage[
+  obeyFinal,
+  textsize=scriptsize,
+  backgroundcolor=yellow,linecolor=gray75,bordercolor=gray75,
+]{todonotes}
+
+\makeatletter
+\renewcommand{\todo}[2][]{\@bsphack\@todo[#1]{\sffamily #2}\@esphack\ignorespaces}
+\makeatother
 
 \usepackage{booktabs}
 
