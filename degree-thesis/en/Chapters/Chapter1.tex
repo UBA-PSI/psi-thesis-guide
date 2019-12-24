@@ -92,9 +92,11 @@ This template comes as a single ZIP file that expands out to several files and f
 \item Chapter 7: Conclusion and future directions
 \end{itemize}
 
-This chapter layout is specialised for the experimental sciences, your discipline may be different. You have to include your chapter files in \file{main.tex}.
+This chapter layout is specialized for the experimental sciences, your discipline may be different. You have to include your chapter files in \file{main.tex}.
 
 \keyword{Figures} -- this folder contains all figures for the thesis. These are the final images that will go into the thesis document.
+
+Two additional folders contain files that are internally used by the template: \keyword{fonts} contains the TTF and OTF files of the template's fonts, \keyword{Misc} contains \file{setup.tex}, \file{titlepage.tex}, and the logo of University of Bamberg.
 
 \subsection{Files}
 
@@ -141,17 +143,17 @@ The \file{main.tex} file contains the structure of the thesis. There are plenty 
 
 \marginnote{Please check whether the text of the Declaration of Authorship is correct.}Begin by checking that your information on the title page is correct. For the thesis declaration, your institution may insist on something different than the text given. If this is the case, just replace what you see with what is required in the \emph{DECLARATION PAGE} block.
 
-\marginnote{This is commented out by default.}Then comes a page which contains a funny quote. You can put your own, or quote your favourite scientist, author, person, and so on. Make sure to put the name of the person who you took the quote from.
+\marginnote{This is disabled by default.}Then comes a page which contains a funny quote. You can put your own, or quote your favorite scientist, author, person, and so on. Make sure to put the name of the person who you took the quote from.
 
-Following this is the abstract page which summarises your work in a condensed way.
+Following this is the abstract page which summarizes your work in a condensed way.
 
-\marginnote{This is commented out by default.}Next come the acknowledgements. On this page, write about all the people who you wish to thank (not forgetting parents, partners and your advisor/supervisor).
+\marginnote{This is disabled by default.}Next come the acknowledgements. On this page, write about all the people who you wish to thank (not forgetting parents, partners and your advisor/supervisor).
 
 The contents pages, list of figures and tables are all taken care of for you and do not need to be manually created or edited. The next set of pages are more likely to be optional and can be deleted since they are for a more technical thesis: insert a list of abbreviations you have used in the thesis, then a list of the physical constants and numbers you refer to and finally, a list of mathematical symbols used in any formulae. Making the effort to fill these tables means the reader has a one-stop place to refer to instead of searching the internet and references to try and find out what you meant by certain abbreviations or symbols.
 
 The list of symbols is split into the Roman and Greek alphabets. Whereas the abbreviations and symbols ought to be listed in alphabetical order (and this is \emph{not} done automatically for you) the list of physical constants should be grouped into similar themes.
 
-\marginnote{This is commented out by default.}The next page contains a one line dedication. Who will you dedicate your thesis to?
+\marginnote{This is disabled by default.}The next page contains a one line dedication. Who will you dedicate your thesis to?
 
 Finally, there is the block where the chapters are included. Uncomment the lines (delete the \code{\%} character) as you write the chapters. Each chapter should be written in its own file and put into the \emph{Chapters} folder and named \file{Chapter1}, \file{Chapter2}, etc\ldots Similarly for the appendices, uncomment the lines as you need them. Each appendix should go into its own file and placed in the \emph{Appendices} folder.
 
@@ -167,8 +169,9 @@ When you are ready, you can rename or overwrite this PDF file and begin writing 
 Good luck and happy writing!
 
 \begin{flushright}
-Guide written by ---\\
-Sunil Patel: \href{http://www.sunilpatel.co.uk}{www.sunilpatel.co.uk}\\
-Vel: \href{http://www.LaTeXTemplates.com}{LaTeXTemplates.com}\\[2ex]
-with amendments by Dominik Herrmann
+The original version of this guide has been written by\\
+Sunil Patel (\href{http://www.sunilpatel.co.uk}{www.sunilpatel.co.uk}) and\\
+Vel (\href{http://www.LaTeXTemplates.com}{LaTeXTemplates.com}).\\[2ex]
+The revision for PSIThesis has been contributed by\\
+Dominik Herrmann
 \end{flushright}
