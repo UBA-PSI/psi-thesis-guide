@@ -18,6 +18,8 @@
 This introductory chapter will give you an overview of the PSI Thesis template and its usage.
 It also contains pointers to recommended reading for learning \LaTeX{}.
 
+The remaining chapters of this guide contain conventions and recommendations that will help you create a visually appealing and coherent thesis.
+
 \section{A Quick Welcome}
 
 Welcome to this LaTeX thesis template guide.%
@@ -56,9 +58,9 @@ You can use this page as a reference or crib sheet, the symbols are rendered as 
 \subsection{LaTeX Distributions}
 
 The LaTeX distribution is available for Windows, Linux, and macOS\@.
-On Windows and Linux systems, the recommended distribution is \textsc{TexLive}.
+On Windows and Linux systems, the recommended distribution is \textsc{TeX Live} (\url{https://www.tug.org/texlive/}).
 
-The package for macOS is called \textsc{MacTeX}, and it contains all the applications you need -- bundled together and pre-customized -- for a fully working LaTeX environment and workflow. \textsc{MacTeX} includes a custom dedicated LaTeX editor called \textsc{TeXShop} for writing your `\file{.tex}' files and \textsc{BibDesk}, a program to manage your references and create your bibliography section.
+The package for macOS is called \textsc{MacTeX} (\url{http://www.tug.org/mactex/}), and it contains all the applications you need -- bundled together and pre-customized -- for a fully working LaTeX environment and workflow. \textsc{MacTeX} includes a custom dedicated LaTeX editor called \textsc{TeXShop} for writing your `\file{.tex}' files and \textsc{BibDesk}, a program to manage your references and create your bibliography section.
 
 
 
@@ -66,7 +68,15 @@ The package for macOS is called \textsc{MacTeX}, and it contains all the applica
 
 To use the PSIThesis template, you need a working LaTeX installation with \textbf{LuaLaTeX}, \textbf{biblatex}, and \textbf{biber}. Usually, these tools are available in a typical LaTeX installation.
 
-So far, the template has not been tested with ShareLaTeX and Overleaf.
+We have compiled this guide with TeX Live 2019 (LuaLaTeX 1.10.0, biber 2.14).
+
+\paragraph{Troubleshooting}
+
+As of December 2019, the template does not work with \url{https://www.overleaf.com}. Overleaf uses LuaLaTeX~1.07 from TeX Live 2018. This version of LuaLaTeX has a known bug that prevents compilation of documents that use the \code{microtype} package. The template includes \code{microtype}, not only because of the better typography, but also because it uses microtype's command \verb|\textls{text}| to change the letter spacing of the uppercase text on the title page.
+
+You can use the template on Overleaf by removing that loads the \code{microtype} package in \file{setup.tex}. Moreover, you will have to remove all calls to \code{textls}.
+
+Another option is typesetting the template with XeTeX. That works once you have removed the line \verb|\usepackage[utf8]{luainputenc}| from \file{setup.tex} as well as all calls to \code{textls}.
 
 
 \section{Getting Started with the Template}
@@ -121,10 +131,13 @@ So from this long list, only the files with the \file{.bib}, \file{.cls}, and \f
 
 We have tested the template with \texttt{LuaLaTeX}. Using \texttt{XeTeX} may also work. \texttt{pdLaTeX}, however, will not work, because the template uses TTF and OTF fonts.
 
-For compilation on Linux and macOS, you can make use of the provided \keyword{Makefile}. Just navigate to the ``en'' directory and enter \code{make} in a terminal. \code{make} will call the programs \code{lualatex} (which creates the PDF) and \code{biber} (which is used to compile the bibliography).
+On Windows, you can use the TeXworks application for compilation. To obtain the final PDF, you have to compile \file{main.tex} with \code{lualatex}, then execute \code{biber}, and once more compile main.tex with \code{lualatex}.
+
+On Linux and macOS, you can use the provided \keyword{Makefile}. Just navigate to the ``en'' directory and enter \code{make} in a terminal. Running \code{make} will automatically call the programs \code{lualatex} (which creates the PDF) and \code{biber} (which is used to compile the bibliography).
 
 The \code{make} command keeps track of changes in your source files. If you add additional files that should be tracked for changes, you should edit the list of files at the top of the \file{Makefile}. Otherwise, \code{make} may refuse to compile a new version because it believes that \file{main.pdf} is already up to date. In this case, a call to \code{make clean} will help: It removes all files generated during compilation. After that, a call to \code{make} will regenerate them, including \file{main.pdf}.
 
+Alternatively, you should be able to compile the thesis by executing \code{latexmk -lualatex -pdf main.tex}.
 
 \subsection{Filling in Your Information in \emph{main.tex}}\label{FillingFile}
 

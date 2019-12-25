@@ -18,12 +18,14 @@
 
 
 An essential property of a long document, such as a thesis, is consistency.%
-\todo{This is a todo note. Todo notes can help you ensure consistency. When you print the final thesis, hide all todo notes by adding the parameter \emph{final} to the documentclass declaration.}
+\todo{Todo notes like this one can help with consistency. You can hide all todo notes before printing the final version by adding \emph{final} to the documentclass.}
 It is, however, challenging to keep track of terminology, style, and structure over an extended period.
 
-Following certain conventions can help you achieve a consistent result. This chapter summarizes conventions and recommendations for effective thesis writing.\marginnote{Having a signpost paragraph before the first section in a chapter is considered good style.}
+Following certain conventions can help you achieve a consistent result. This chapter summarizes conventions and recommendations for effective thesis writing.
 
-This chapter contains only selected recommendations. For a more comprehensive list that also includes links to useful tools, consider \url{https://github.com/TheHairyJ/StudentResources/blob/master/Writing.md}.
+This%
+\marginnote{Having a signpost paragraph before the first section in a chapter is considered good style.}
+ chapter contains only selected recommendations. For a more comprehensive list that also includes links to useful tools, consider \url{https://github.com/TheHairyJ/StudentResources/blob/master/Writing.md}.
 
 \section{Links}
 
@@ -107,7 +109,7 @@ Using both margin notes and footnotes for similar purposes may create an inconsi
 
 \section{Tables}
 
-Tables are an important way of displaying your results. \Cref{tab:treatments} is an example table which was generated with the following code:
+Tables are an important way of displaying your results in a concise way. \Cref{tab:treatments} is an example of a table showing experimental results. This table was generated with the following LaTeX code:
 
 \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{table}
@@ -116,7 +118,7 @@ Tables are an important way of displaying your results. \Cref{tab:treatments} is
 \centering
 \begin{tabular}{r r r}
 \toprule
-& \multicolumn{2}{c}{\tabhead{Results}} \\ \cmidrule(lr){2-3}
+& \multicolumn{2}{c}{\tabhead{Experimental results}} \\ \cmidrule(lr){2-3}
 \tabhead{Group} & \tabhead{Treatment X} & \tabhead{Treatment Y} \\
 \midrule
 1 & 0.2 & 0.8\\
@@ -137,7 +139,7 @@ Tables are an important way of displaying your results. \Cref{tab:treatments} is
 \centering
 \begin{tabular}{r r r}
 \toprule
-& \multicolumn{2}{c}{\tabhead{Results}} \\ \cmidrule(lr){2-3}
+& \multicolumn{2}{c}{\tabhead{Experimental results}} \\ \cmidrule(lr){2-3}
 \tabhead{Group} & \tabhead{Treatment X} & \tabhead{Treatment Y} \\
 \midrule
 1 & 0.2 & 0.8\\
@@ -307,8 +309,7 @@ def incmatrix(genl1,genl2):
 
 \section{Mathematics}
 
-The \enquote{Not So Short Introduction to \LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, \enquote{A Short Math Guide to \LaTeX} and can be downloaded from
-\url{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}.
+The \enquote{Not So Short Introduction to LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS: \href{{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}}{A Short Math Guide to LaTeX}.
 
 There are many different LaTeX symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
 
@@ -382,7 +383,7 @@ Use en dashes also within ranges, e.\,g., when you write something like 5--10\,\
 
 Use a proper \emph{minus symbol} (e.\,g., by using math mode like this \(-1.337\)). Also, use a sensible number of digits after the decimal point.
 
-Use proper directional quotation marks like ``these.'' Directional quotation marks are created  \verb|``like this''|, by using \verb||\enquote{text}|, or by copy-and-pasting the respective Unicode characters. Note that in contrast to conventions in the German language the closing quotation mark is placed \emph{after} any subsequent punctuation, e.\,g., ``like this,'' and ``like that.''
+Use proper directional quotation marks like ``these.'' Directional quotation marks are created  \verb|``like this''|, by using \verb|\enquote{text}|, or by copy-and-pasting the respective Unicode characters. Note that in contrast to conventions in the German language the closing quotation mark is placed \emph{after} any subsequent punctuation, e.\,g., ``like this,'' and ``like that.''
 
 If you speak German, consider reading \textsc{typokurz} (\url{https://zvisionwelt.wordpress.com/downloads/}), a short introduction to typographic issues. You can also browse Matthew Butterick's website \url{https://practicaltypography.com}.
 
@@ -392,7 +393,7 @@ Ensure correct spelling throughout your text. Check your writing with a spell ch
 
 Ensure proper hyphenation throughout your text. You will have to intervene, for instance, when words extend into the margin of the page (creating so-called overfull hboxes). You can override LaTeX's hyphenation rules by inserting \verb|\-| into a word. This special character indicates a conditional hyphenation point.
 
-Often, it makes sense to define hyphenation rules globally. To this end, place custom hyphenation definitions like \verb|\hyphenation{FORTRAN Hy-phen-a-tion}| after the \verb|\begin{document}| clause. The example definition prevents any hyphenation of the word FORTRAN and defines three hyphenation points for the word Hyphenation.
+Often, it makes sense to define hyphenation rules globally. To this end, place custom hyphenation definitions like \verb|\hyphenation{FORTRAN Hy-phen-a-tion}| after the \todo{Oh no, an overful hbox!}\verb|\begin{document}| clause. The example definition prevents any hyphenation of the word FORTRAN and defines three hyphenation points for the word Hyphenation.
 
 Also, check your text for common grammar issues (cf. Sect.~\ref{sec:style}).
 
