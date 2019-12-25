@@ -49,9 +49,26 @@ This preserves the content of a website at the given point in time and makes it 
 Archiving is not necessary for academic papers that have a Digital Object Identifier (DOI), have an ISBN/ISSN, or are available on \url{arxiv.org}.
 
 
-\section{References}
+\section{Citation and References}
 
-Scientific references should come \emph{before} the punctuation mark (such as a comma or period) if there is one, as shown in this sentence \cite{Hintz02}.
+Most of the time, paraphrasing content is preferred over literally citing text with quotation marks. The most expressive way to integrate references to literature is to insert the labels right behind key terms or author names:
+\begin{quote}
+  EMV systems \cite{anderson_ross_emv:_2014} are used to secure payment cards. Murdoch et al. \cite{murdoch_steven_j._chip_2010} have shown that EMV systems are broken.
+\end{quote}
+
+Alternatively, you can append them to the end of a sentence or sentence fragment. In this case, the label must come \emph{before} the punctuation mark (such as a comma or period) if there is one, as shown in this sentence \cite{Hintz02}.
+
+When you paraphrase longer pieces, it is considered poor style to add the label at the end of a paragraph that paraphrases content from the literature. Instead, you should make this explicit at the beginning of a paragraph, e.\,g. like this:
+\begin{quote}
+  The following paragraph describes the foo system \cite{kou_weidong_secure_2003}. …
+\end{quote}
+
+This approach is also suitable to indicate larger amounts of paraphrasing:
+\begin{quote}
+  Before we discuss the limitations of the foo system, we present its main functions in this section \cite{kou_weidong_secure_2003}. …
+\end{quote}
+
+When you cite from books or long papers, you can insert the page number like this: \verb|\cite[p. 5]{label}|, which results in \cite[p. 5]{kou_weidong_secure_2003}.
 
 When you cite multiple references in one spot, you should include them in one \verb|\cite| command:
 \begin{quote}
@@ -60,16 +77,16 @@ When you cite multiple references in one spot, you should include them in one \v
 
 Note, however, that this style is not very useful for the reader.\footnote{This recommendation was originally given here: \url{https://nhigham.com/2014/12/22/more-tips-on-book-and-thesis-writing/}} Much more information can be given like this:
 \begin{quote}
-The FOO approach appears in a wide variety of applications, such as \emph{qux systems} \cite{murdoch_steven_j._chip_2010}, \emph{baz systems} \cite{anderson_ross_emv:_2014}, and -- much earlier -- in \emph{bar readers} \cite{kou_weidong_secure_2003}.
+The FOO approach appears in a wide variety of applications, such as qux systems \cite{murdoch_steven_j._chip_2010}, baz systems \cite{anderson_ross_emv:_2014}, and -- much earlier -- in bar readers \cite{kou_weidong_secure_2003}.
 \end{quote}
 
-A remark on style: References should not be treated as nouns. Avoid writing ``\cite{murdoch_steven_j._chip_2010} shows that many EMV systems are broken \ldots'' and replace it with ``Murdoch et al. show that EMV systems are broken  \cite{murdoch_steven_j._chip_2010}.''
+A remark on style: References should \emph{not} be treated as nouns. Avoid writing ``\cite{murdoch_steven_j._chip_2010} shows that many EMV systems are broken \ldots'' and replace it with ``Murdoch et al. show that EMV systems are broken  \cite{murdoch_steven_j._chip_2010}.''
 
 \paragraph{BibTeX Snippets}
 
 For many publications you will find BibTeX snippets online, for instance in the ACM Digital Library or on \url{https://dblp.org}. Using these snippets is generally recommended. Unfortunately, the quality of publicly available BibTeX snippets varies a lot. This means that you will have to edit them to create a consistent bibliography. For instance, make sure that the name of a particular conference is always spelled consistently in all entries. Moreover, you should remove superfluous information such as precise dates, multiple occurrences of the year, and the location of the conference.
 
-A particular issue, is capitalization in titles. Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces. Consider the following example in which we ensure that TCP is printed in uppercase:
+A common issue is the capitalization of words in titles. Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces. Consider the following example in which we ensure that TCP is printed in uppercase:
 \begin{verbatim}
    @inproceedings{... title = "Improving {TCP}-based Communication Systems" ...}
 \end{verbatim}
@@ -172,7 +189,11 @@ If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \u
 
 \section{Figures}
 
-There will hopefully be many figures in your thesis (that should be placed in the \emph{Figures} folder). The way to insert figures into your thesis is to use a code template like this:
+There will hopefully be many figures in your thesis. Place them in the \emph{Figures} folder. 
+
+Ideally, you draw all figures yourself to ensure that they have a consistent style (line thickness, arrow heads, shading). Make sure that your figures work when printed in monochrome, i.\,e., do not rely on colors. If you use colors, use the same color palette in all figures and ensure that the colors can be differentiated by readers with disabilities (color blindness).
+
+Insert figures into your thesis using the following code:
 
 \begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{figure}[t]
@@ -184,7 +205,7 @@ There will hopefully be many figures in your thesis (that should be placed in th
 \end{figure}
 \end{lstlisting}
 
-Also look in the source file. Putting this code into the source file produces the picture of the electron that you can see in the figure below.
+Also look in the source file. Putting the following code into the source file produces the picture of the electron that you can see in Fig.~\ref{fig:Electron}.
 
 \begin{figure}[t]
 \centering
@@ -209,7 +230,7 @@ The \verb|\decoRule| command is optional and simply puts a horizontal line below
 
 Resize your figures, ideally consistently, to an appropriate size, e.\,g., a fraction of \texttt{\textbackslash textwidth}.
 
-LaTeX is capable of using images in PDF, JPG, and PNG format. Using vectorized figures (PDF) is preferred as they usually provide sharper results. If you have to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
+LaTeX is capable of using images in PDF, JPG, and PNG format. Using vectorized figures (PDF) is preferred as they usually provide sharper results at a smaller file size. If you \emph{have} to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
 
 \paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures side-by-side. There are several approaches, for instance, by using the \texttt{subfigure} package. In many cases, a comprehensive subfigure support is not really needed. A lightweight approach as shown in Fig.~\ref{fig:sidebyside} may be sufficient. This result is achieved with the following code:
 
@@ -235,12 +256,10 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using vectorized f
 \label{fig:sidebyside}
 \end{figure}
 
-\section{Typesetting Mathematics}
+\section{Mathematics}
 
-If your thesis is going to contain heavy mathematical content, be sure that LaTeX will make it look beautiful, even though it won't be able to solve the equations for you.
-
-The \enquote{Not So Short Introduction to \LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, \enquote{A Short Math Guide to \LaTeX} and can be downloaded from:
-\url{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}
+The \enquote{Not So Short Introduction to \LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, \enquote{A Short Math Guide to \LaTeX} and can be downloaded from
+\url{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}.
 
 There are many different LaTeX symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
 
@@ -287,6 +306,14 @@ Use \emph{title case} in your \emph{chapters}, \emph{sections}, and \emph{paragr
 
 \section{Typography}
 
+Use emphasis sparingly. This is especially true for \textbf{bold print} (\verb|\textbf{bold print}|). Resist the desire to use it in the main text. Use \emph{italics} (\verb|\textbf{italics}|) instead.
+
+\marginnote{See also \href{https://sblhs2.com/2016/09/15/italics-scare-quotes/}{Italics or Scare Quotes?}} Note, however, that too frequent use of italics can also be annoying. We recommend to limit its use to emphasize the case when an ordinary word will be used as a special term and only at its first occurrence. It can also be used to mark words that you would intonate differently in speech to indicate that they have a special meaning in a sentence.
+
+\marginnote{See \href{https://style.mla.org/quotes-when-nothing-is-being-quoted/}{Quotes When Nothing Is Being Quoted}}Generally, we recommend to avoid using scare quotes. They convey an informal tone and may confuse the reader as the intended meaning is ambiguous.
+
+You should split your content into paragraphs. This is done in LaTeX by having an empty line between adjacent blocks of text in the source file. Using a mixture of paragraphs and line breaks, which are achieved with \verb|\\| at the end of a line is discouraged because it creates a noisy layout.
+
 Use thin spaces (\verb|\,|) in the appropriate places. For instance, write \verb|i.\,e.,| to obtain i.\,e., which is spoken ``that is''. The same applies to e.\,g. Both abbreviations are followed by a comma in American English.
 
 Dashes can be used instead of colons or pairs of commas to mark off a nested clause. Use an \emph{en dash} for that purpose -- like in this example. If you cannot type an \emph{en dash} on your keyboard, you can write two regular hyphens next to each other. LaTeX will substitute them with an \emph{en dash}. While we have no strict preference, we recommend to use \emph{en dashes} instead of the longer \emph{em dashes}.
@@ -299,9 +326,24 @@ Use proper typographic quotation marks like ``these'' (which can be obtained wit
 
 If you speak German, consider reading \textsc{typokurz} (\url{https://zvisionwelt.wordpress.com/downloads/}), a short introduction into typographic issues. More detailed information can be found on Matthew Butterick's website \url{https://practicaltypography.com}.
 
+\section{Language}
+
+Ensure correct spelling throughout your text. Check your writing with a spell checker. There are special spellcheckers for LaTeX, but copy-and-pasting the text into Word may also be an option.
+
+Ensure proper hyphenation throughout your text. This becomes necessary, for instance, when a word extends into the margin of the page (creating a so-called \emph{overfull hbox}). You can override LaTeX's hyphenation rules by inserting \verb|\-| into a word. This special character indicates a conditional hyphenation point.
+
+Often, it makes sense to define hyphenation rules globally. This can be achieved by adding hyphenation instructions after \verb|\begin{document}: |\verb|\hyphenation{FORTRAN Hy-phen-a-tion}| will prevent hyphenation in the word FORTRAN and define hyphenation points in the word Hyphenation.
+
+Also, check your text for common grammar issues (cf. Sect.~\ref{sec:style}).
+
 \section{Style}
+\label{sec:style}
 
 This section contains only selected pieces of advice on particular aspects and typical errors. For a more comprehensive treatment, we refer the reader to the paragraph \nameref{par:commonbugs} at the end of this section.
+
+The main goal of a thesis is to convey information without unambiguity. Write concise and use easy language. Avoid complex sentence structures and unnecessary complex words. A thesis is not the place to show off your mastery of grammar and vocabulary. There are various (mostly web-based and commercial) tools that can help you identify common issues in your text.\footnote{We are aware of \url{https://grammarly.com}, \url{https://languagetool.org}, \url{http://www.hemingwayapp.com} as well as the command-line tool Academic-Writing-Check (\url{https://github.com/devd/Academic-Writing-Check}).}
+
+Write coherently, i.\,e., every sentence should be explicitly connected to its predecessor.
 
 We highly recommend to use the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}. It is inserted before the word \emph{and} that leads the last item of a list. Consider this example:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
 \begin{quote}
@@ -322,3 +364,16 @@ Use \textbf{bullet lists} correctly. ``Lists are common in all forms of writing.
 \paragraph{Common Bugs in Writing}
 \label{par:commonbugs}
 Read the comprehensive list of common bugs in writing by Henning Schulzrinne, which is available at \url{http://www.cs.columbia.edu/~hgs/etc/writing-bugs.html}.
+
+\section{Concluding Remarks}
+
+Scientific work and writing are skills that can be practiced. Seminar papers serve that purpose during the studies. The final thesis should then show which methodical and technical skills have beeb acquired. In addition to good time management, discipline, and willingness to research literature, communication with one's supervisor is a key to success.
+
+There are numerous reports by well-known scientists, which can be helpful when working on a thesis. Selected recommendations:
+
+\begin{itemize}
+\item Randy Pausch: Time Management (\url{http://www.youtube.com/watch?v=oTugjssqOT0})
+\item Richard Hamming: You and Your Research \url{(http://www.cs.virginia.edu/~robins/YouAndYourResearch.html})
+\item Nick Feamster: Writing Tips for Academics (\url{http://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/})
+\end{itemize}
+
