@@ -27,7 +27,11 @@ This%
 \marginnote{Having a signpost paragraph before the first section in a chapter is considered good style.}
  chapter contains only selected recommendations. For a more comprehensive list that also includes links to useful tools, consider \url{https://github.com/TheHairyJ/StudentResources/blob/master/Writing.md}.
 
-\section{Links}
+\section{Links and References}
+
+You will most certainly include links and references in your thesis.
+
+\subsection{Links to Websites}
 
 Special care is necessary when you include links in your thesis. URLs are generally embedded using the \verb|\url{}| command. Using this command allows LaTeX to break URLs at the end of a line. Moreover, the URLs will become clickable.
 
@@ -55,7 +59,7 @@ We recommend to provide the \emph{original link} and add ``(archived at [date])'
 Archiving is not necessary for academic papers that have a Digital Object Identifier (DOI), have an ISBN/ISSN, or are available on \url{arxiv.org}.
 
 
-\section{Citation and References}
+\subsection{Citation and References}
 
 Always try to cite the primary reference, i.\,e., the seminal paper that introduced a particular concept. You can cite well-known academic textbooks (instead of the original paper) when you cite fundamentals. No citation is necessary for widespread knowledge: ``Authentication with passwords is popular.''
 
@@ -107,7 +111,11 @@ Footnotes are either inserted directly after the particular word they refer to o
 
 Using both margin notes and footnotes for similar purposes may create an inconsistent appearance and is therefore discouraged.
 
-\section{Tables}
+\section{Tables, Figures, and Listings}
+
+You should use tables, figures, and (optionally) listings to illustrate your writing. This section explains how these floating elements are included in the source code.
+
+\subsection{Tables}
 
 Tables are an important way of displaying your results in a concise way. \Cref{tab:treatments} is an example of a table showing experimental results. This table was generated with the following LaTeX code:
 
@@ -195,7 +203,7 @@ Creating good tables is a challenge on its own. Recommended readings:
 If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \url{https://www.latex-tables.com} useful. You can also use \texttt{LyX} to build tables and export their source code.
 
 
-\section{Figures}
+\subsection{Figures}
 
 There will hopefully be many figures in your thesis. Place them in the \emph{Figures} folder. 
 
@@ -265,7 +273,7 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using vectorized f
 \end{figure}
 
 
-\section{Listings}
+\subsection{Listings}
 
 If you are new to LaTeX, we recommend to use the \emph{listings} package for code listings.\marginnote{If you have Python, you can consider the more modern package \code{minted}, which uses {pygments} for syntax highlighting.} You can use the environment \code{lstfloat} to create floating listings. Floating listings behave very much like floating figures and tables, i.\,e., they have a caption and can be referenced. Moreover, floating listings are guaranteed to appear on a single page. see Listing~\ref{lst:listing} for an example.
 
@@ -309,6 +317,8 @@ def incmatrix(genl1,genl2):
 
 \section{Mathematics}
 
+Equations allow you to express an approach with high precision and no ambiguity. 
+
 The \enquote{Not So Short Introduction to LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS: \href{{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}}{A Short Math Guide to LaTeX}.
 
 There are many different LaTeX symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
@@ -341,7 +351,7 @@ You can also have equations in the middle of a paragraph: \( E = mc^{2} \) by us
 
 %----------------------------------------------------------------------------------------
 
-\section{Structure}
+\section{Structuring your Thesis}
 
 You should break your thesis up into chapters and sections. LaTeX automatically builds a Table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source. You may even think about using \emph{sub}subsections (\verb|\subsubsection{}|). All of these will be hierarchically numbered.
 
@@ -387,7 +397,11 @@ Use proper directional quotation marks like ``these.'' Directional quotation mar
 
 If you speak German, consider reading \textsc{typokurz} (\url{https://zvisionwelt.wordpress.com/downloads/}), a short introduction to typographic issues. You can also browse Matthew Butterick's website \url{https://practicaltypography.com}.
 
-\section{Language}
+\section{Language and Style}
+
+Language issues distract readers from the content and make it difficult to assess its merits. You should, therefore, pay close attention to language and style.
+
+\subsection{Spelling, Hyphenation, and Grammar}
 
 Ensure correct spelling throughout your text. Check your writing with a spell checker. There are special spellcheckers for LaTeX, but copy-and-pasting the text into Word may also be an option.
 
@@ -397,7 +411,7 @@ Often, it makes sense to define hyphenation rules globally. To this end, place c
 
 Also, check your text for common grammar issues (cf. Sect.~\ref{sec:style}).
 
-\section{Style}
+\subsection{Style}
 \label{sec:style}
 
 This section contains only selected pieces of advice on particular aspects and typical errors. For a more comprehensive treatment, we refer the reader to the paragraph \nameref{par:commonbugs} at the end of this section.
@@ -406,7 +420,7 @@ The main goal of a thesis is to convey information without unambiguity. Write co
 
 Even if a text uses a simple language, it may be difficult to read, because it does not convey the writer's train of thoughts coherently. In short, your goal is to connect every sentence explicitly to its predecessor – which is, of course, easier said than done.
 
-\subsection{The Science of Scientific Writing}
+\subsubsection{The Science of Scientific Writing}
 
 A good resource to develop this skill is the article \emph{The Science of Scientific Writing} by George d. Gopen and Judith A. Swan.\footnote{The article can be obtained from \url{https://cseweb.ucsd.edu/~swanson/papers/science-of-writing.pdf} and \url{https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing}} 
 
@@ -423,7 +437,7 @@ As a result, the reader focuses attention on the arrival of the verb and resists
 The longer the interruption lasts, the more likely it becomes that the “interruptive” material actually contains important information; but its structural location will continue to brand it as merely interruptive.
 Unfortunately, the reader will not discover its true value until too late – until the sentence has ended without having produced anything of much value outside of the subject-verb interruption.
 
-\paragraph{The Stress Position}
+\paragraph{The Stress Position (Excerpt)}
 
 It is a linguistic commonplace that readers naturally emphasize the material that arrives at the end of a sentence. We refer to that location as a “stress position.”
 Beginning with the exciting material and ending with a lack of luster often leaves us disappointed and destroys our sense of momentum.
@@ -432,7 +446,7 @@ The stress position can change in size from sentence to sentence. Sometimes it c
 
 To summarize the principles connected with the stress position, we have the proverbial wisdom, “Save the best for last.”
 
-\paragraph{The Topic Position}
+\paragraph{The Topic Position (Excerpt)}
 
 To summarize the principles connected with the other end of the sentence, which we will call the topic position, we have its proverbial contradiction, “First things first.”
 In the stress position the reader needs and expects closure and fulfillment; in the topic position the reader needs and expects perspective and context.
@@ -441,11 +455,11 @@ The information that begins a sentence establishes for the reader a perspective 
 
 Readers also expect the material occupying the topic position to provide them with linkage (looking backward) and context (looking forward).
 
-\subsection{Selected Syntactical Conventions}
+\subsubsection{Selected Syntactical Conventions}
 
-Avoid using contractions such as \emph{can't}, \emph{don't}, and \emph{it's}. Replace them with \emph{cannot}, \emph{do not}, and \emph{it is}.
+Avoid using \textbf{informal contractions} such as \emph{can't}, \emph{don't}, and \emph{it's}. Replace them with \emph{cannot}, \emph{do not}, and \emph{it is}.
 
-We highly recommend using the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}: Insert  it right before the word \emph{and} that leads the last item of a list. Consider this example:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
+We recommend using the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}: Insert  it right before the word \emph{and} that leads the last item of a list. Consider this example:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
 \begin{quote}
   Three important techniques in the design of algorithms are bisection, divide and conquer, and recursion.
 \end{quote}
