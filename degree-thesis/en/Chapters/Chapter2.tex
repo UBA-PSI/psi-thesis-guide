@@ -51,6 +51,8 @@ Archiving is not necessary for academic papers that have a Digital Object Identi
 
 \section{Citation and References}
 
+Always try to cite the primary reference, i.\,e., the seminal paper that introduced a particular concept. You can cite well-known academic text books (instead of the original paper) when you cite fundamentals. No citation is necessary for popular knowledge: ``Authentication with passwords is popular.''
+
 Most of the time, paraphrasing content is preferred over literally citing text with quotation marks. The most expressive way to integrate references to literature is to insert the labels right behind key terms or author names:
 \begin{quote}
   EMV systems \cite{anderson_ross_emv:_2014} are used to secure payment cards. Murdoch et al. \cite{murdoch_steven_j._chip_2010} have shown that EMV systems are broken.
@@ -178,10 +180,10 @@ The effect of changing to centered alignment can be seen in Table~\ref{tab:treat
 
 Creating good tables is a challenge in its own. Recommended readings: 
 \begin{itemize}
-\item \url{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/}
-\item \url{http://tug.org/pracjourn/2007-1/mori/mori.pdf}
-\item \url{https://inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf}
-\item \url{https://www.cl.uni-heidelberg.de/courses/ss19/wissschreib/material/tableTricks.pdf}
+\item \url{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/},
+\item \url{http://tug.org/pracjourn/2007-1/mori/mori.pdf},
+\item \url{https://inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf}, and
+\item \url{https://www.cl.uni-heidelberg.de/courses/ss19/wissschreib/material/tableTricks.pdf}.
 \end{itemize}
 
 If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \url{https://www.latex-tables.com} useful. You can also use \texttt{LyX} to build tables and export their source code.
@@ -303,6 +305,12 @@ The Table of Contents should only list \emph{chapters} and \emph{sections}. List
 
 Use \emph{title case} in your \emph{chapters}, \emph{sections}, and \emph{paragraphs}. Consider, for instance, \url{https://capitalizemytitle.com} for title case capitalization rules.
 
+Within a section, you should walk the reader through your text:
+\begin{quote}
+In the following, we describe the three primitives of concept X. First, X uses the Y algorithm. …
+
+The second concept is Z …
+\end{quote}
 
 \section{Typography}
 
@@ -343,7 +351,42 @@ This section contains only selected pieces of advice on particular aspects and t
 
 The main goal of a thesis is to convey information without unambiguity. Write concise and use easy language. Avoid complex sentence structures and unnecessary complex words. A thesis is not the place to show off your mastery of grammar and vocabulary. There are various (mostly web-based and commercial) tools that can help you identify common issues in your text.\footnote{We are aware of \url{https://grammarly.com}, \url{https://languagetool.org}, \url{http://www.hemingwayapp.com} as well as the command-line tool Academic-Writing-Check (\url{https://github.com/devd/Academic-Writing-Check}).}
 
-Write coherently, i.\,e., every sentence should be explicitly connected to its predecessor.
+
+\subsection{The Science of Scientific Writing}
+
+Even if a text uses easy language, it may be difficult to read, because it does not convey the writer's train of thoughts coherently. In short, the goal is that every sentence should be explicitly connected to its predecessor. This is, of course, easier said than done.
+
+A recommended resource to acquire this skill is the article \emph{The Science of Scientific Writing} by George d. Gopen and Judith A. Swan.\footnote{The article can be obtained from \url{https://cseweb.ucsd.edu/~swanson/papers/science-of-writing.pdf} and \url{https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing}} The remainder of this section contains some of the key principles of the article. See the original source for a more extended treatment including worked examples.
+
+\paragraph{Subject-Verb Separation}
+
+Readers expect a grammatical subject to be followed immediately by the verb. Anything of length that intervenes between subject and verb is read as an interruption, and therefore as something of lesser importance.
+The reader’s expectation stems from a pressing need for syntactic resolution, fulfilled only by the arrival of the verb. Without the verb, we do not know what the subject is doing, or what the sentence is all about.
+
+As a result, the reader focuses attention on the arrival of the verb and resists recognizing anything in the interrupting material as being of primary importance.
+The longer the interruption lasts, the more likely it becomes that the “interruptive” material actually contains important information; but its structural location will continue to brand it as merely interruptive.
+Unfortunately, the reader will not discover its true value until too late – until the sentence has ended without having produced anything of much value outside of the subject-verb interruption.
+
+\paragraph{The Stress Position}
+
+It is a linguistic commonplace that readers naturally emphasize the material that arrives at the end of a sentence. We refer to that location as a “stress position.”
+Beginning with the exciting material and ending with a lack of luster often leaves us disappointed and destroys our sense of momentum.
+
+The stress position can change in size from sentence to sentence. Sometimes it consists of a single word; sometimes it extends to several lines. The definitive factor is this: The stress position coincides with the moment of syntactic closure. A reader has reached the beginning of the stress position when she knows there is nothing left in the clause or sentence but the material presently being read.
+
+To summarize the principles connected with the stress position, we have the proverbial wisdom, “Save the best for last.”
+
+\paragraph{The Topic Position}
+
+To summarize the principles connected with the other end of the sentence, which we will call the topic position, we have its proverbial contradiction, “First things first.”
+In the stress position the reader needs and expects closure and fulfillment; in the topic position the reader needs and expects perspective and context.
+
+The information that begins a sentence establishes for the reader a perspective for viewing the sentence as a unit: Readers expect a unit of discourse to be a story about whoever shows up first. “Bees disperse pollen” and “Pollen is dispersed by bees” are two different but equally respectable sentences about the same facts. The first tells us something about bees; the second tells us something about pollen. In fact, “Pollen is dispersed by bees” is the superior sentence if it appears in a paragraph that intends to tell us a continuing story about pollen. Pollen’s story at that moment is a passive one.
+
+Readers also expect the material occupying the topic position to provide them with linkage (looking backward) and context (looking forward).
+
+
+\subsection{Selected Syntactical Conventions}
 
 We highly recommend to use the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}. It is inserted before the word \emph{and} that leads the last item of a list. Consider this example:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
 \begin{quote}
@@ -370,10 +413,14 @@ Read the comprehensive list of common bugs in writing by Henning Schulzrinne, wh
 Scientific work and writing are skills that can be practiced. Seminar papers serve that purpose during the studies. The final thesis should then show which methodical and technical skills have beeb acquired. In addition to good time management, discipline, and willingness to research literature, communication with one's supervisor is a key to success.
 
 There are numerous reports by well-known scientists, which can be helpful when working on a thesis. Selected recommendations:
-
 \begin{itemize}
-\item Randy Pausch: Time Management (\url{http://www.youtube.com/watch?v=oTugjssqOT0})
-\item Richard Hamming: You and Your Research \url{(http://www.cs.virginia.edu/~robins/YouAndYourResearch.html})
-\item Nick Feamster: Writing Tips for Academics (\url{http://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/})
+\item Randy Pausch: Time Management (\url{http://www.youtube.com/watch?v=oTugjssqOT0}),
+\item Richard Hamming: You and Your Research (\url{http://www.cs.virginia.edu/~robins/YouAndYourResearch.html}), and
+\item Nick Feamster: Writing Tips for Academics (\url{http://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/}).
 \end{itemize}
 
+There is also an abundant number of books on scientific writing. We can recommend the following:
+\begin{itemize}
+\item M. Alley. The Craft of Scientific Writing; and
+\item W. Strunk and E.B. White. The Elements of Style.
+\end{itemize}
