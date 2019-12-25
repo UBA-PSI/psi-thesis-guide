@@ -198,6 +198,11 @@ Moreover, consider the advice by Markus Kuhn on differentiating abstract and int
 
 \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
+% Ensure proper section numbering in appendix, e.g., A.1, A.2, B.1, …
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
 %%% CHANGES NEEDED HERE
 % 
 % Include the appendices of the thesis as separate files from the Appendices folder

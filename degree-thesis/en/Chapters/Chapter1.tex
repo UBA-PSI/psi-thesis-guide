@@ -125,7 +125,7 @@ We have tested the template with \texttt{LuaLaTeX}. Using \texttt{XeTeX} may als
 For compilation on Linux and macOS, you can make use of the provided \keyword{Makefile}. Just navigate to the ``en'' directory and enter \texttt{make} in a terminal. This will make calls to the programs \texttt{lualatex} (which creates the PDF) and \texttt{biber} (which is used to compile the bibliography). The \texttt{make} command keeps track of changes you make to your source files. If you add additional files that should be tracked for changes, you should edit the list of files at the top of this file. Otherwise, \texttt{make} may refuse to compile a new version because it believes that \file{main.pdf} is already up to date. In this case, a call to \texttt{make clean} will help: It removes all files generated during compilation. After that, a call to \texttt{make} will regenerate them, including \file{main.pdf}.
 
 
-\subsection{Filling in Your Information in \file{main.tex}}\label{FillingFile}
+\subsection{Filling in Your Information in \emph{main.tex}}\label{FillingFile}
 
 You will need to personalize the thesis template and make it your own by filling in your own information. This is done by editing the \file{main.tex} file in a text editor or your favorite LaTeX environment.
 
@@ -137,7 +137,7 @@ When you have done this, save the file and recompile \code{main.tex}. All the in
 
 %----------------------------------------------------------------------------------------
 
-\section{More Information on \code{main.tex}}
+\section{More Information on \emph{main.tex}}
 
 The \file{main.tex} file contains the structure of the thesis. There are plenty of written comments that explain what pages, sections and formatting the LaTeX code is creating. Each major document element is divided into commented blocks with titles in all capitals to make it obvious what the following bit of code is doing. Initially there seems to be a lot of LaTeX code, but this is all formatting, and it has all been taken care of so you don't have to do it.
 

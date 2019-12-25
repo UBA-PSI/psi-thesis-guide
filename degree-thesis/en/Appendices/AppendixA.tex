@@ -31,6 +31,46 @@ As the ``old'' \code{bibtex} backend does not correctly handle unicode character
 
 Here, we cite a lot of references so that the list of references gets populated \cite{murdoch_steven_j._chip_2010,anderson_ross_emv:_2014,kou_weidong_secure_2003,solat_security_2017,bond_chip_2014,ortiz_s._is_2006,haselsteiner_security_2006,galloway_visa_2019,zhou_nshield_2014,lalehTaxonomyFraudsFraud2009,ferradiWhenOrganizedCrime2016,emvco_emvco_website,emvco_emvco_book1,emvco_emvco_book2,emvco_emvco_book3,emvco_emvco_book4,Yang10,Kopsell06,VilaGM03,Herrmann12-ipv6prefix,Herrmann14-diss,HBF:2013,Herrmann11-NordSec,AcarEEJND14,Herrmann09,WangG13,Raymond00,Hintz02,Herrmann14-encdns,FederrathFHP11,Goodson12-privacy,Fabian10,Google12,goldberg97,WendolskyHF07,chaum81,BertholdFK00,Dingledine04,rfc5246,LoesingMD10,FuchsHF13}.
 
+\section{Listings}
+
+Code listings are done with the \emph{listings} package.
+
+An example can be found in Listing~\ref{lst:listing}.
+
+\begin{lstfloat}
+\caption{\label{lst:listing} This is an example of syntax highlighting of Python code with a relatively long caption.}
+\begin{lstlisting}[language=Python]
+import numpy as np
+ 
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+ 
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+ 
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+ 
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+ 
+                VT = np.zeros((n*m,1), int)
+ 
+    return M
+\end{lstlisting}
+\end{lstfloat}
 
 \section{History of this Template}
 The template has been adapted from \file{MastersDoctoralThesis.cls}, which was obtained from \url{https://www.latextemplates.com/template/masters-doctoral-thesis}. The template has its own \emph{document class}, which is defined in \file{PSIThesis.cls} file.

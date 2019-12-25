@@ -84,10 +84,9 @@ Using both margin notes and footnotes for similar purposes may create an inconsi
 
 \section{Tables}
 
-Tables are an important way of displaying your results. Below is an example table which was generated with this code:
+Tables are an important way of displaying your results. \Cref{tab:treatments} is an example table which was generated with the following code:
 
-{\small
-\begin{verbatim}
+\begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{table}
 \caption{The effects of treatments X and Y on the four groups studied.}
 \label{tab:treatments}
@@ -107,7 +106,7 @@ Tables are an important way of displaying your results. Below is an example tabl
 \end{tabular}
 \end{table}
 \end{verbatim}
-}
+\end{lstlisting}
 
 \begin{table}
 \caption{The effects of treatments X and Y on the four groups studied.}
@@ -128,7 +127,7 @@ Tables are an important way of displaying your results. Below is an example tabl
 \end{tabular}
 \end{table}
 
-Column heads should use sentence-format capitalization (see \url{http://www.chicagomanualofstyle.org/15/ch13/ch13_sec019.html}).
+Column heads should use sentence-style capitalization, i.\,e., do not use \emph{title case} as you would in section headings (see \url{http://www.chicagomanualofstyle.org/15/ch13/ch13_sec019.html}).
 
 Tables have captions that always appear \emph{above} the \code{tabular} environment. All tables must be referred to in the main text.
 You can reference tables with \verb|\ref{<label>}| where the label is defined within the table environment. See \file{Chapter1.tex} for an example of the label and citation (e.\,g., Table~\ref{tab:treatments}).
@@ -174,7 +173,8 @@ If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \u
 \section{Figures}
 
 There will hopefully be many figures in your thesis (that should be placed in the \emph{Figures} folder). The way to insert figures into your thesis is to use a code template like this:
-\begin{verbatim}
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.75\textwidth]{Figures/Electron}
@@ -182,7 +182,8 @@ There will hopefully be many figures in your thesis (that should be placed in th
 \caption[An Electron]{An electron (artist's impression).}
 \label{fig:Electron}
 \end{figure}
-\end{verbatim}
+\end{lstlisting}
+
 Also look in the source file. Putting this code into the source file produces the picture of the electron that you can see in the figure below.
 
 \begin{figure}[t]
@@ -212,7 +213,7 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using vectorized f
 
 \paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures side-by-side. There are several approaches, for instance, by using the \texttt{subfigure} package. In many cases, a comprehensive subfigure support is not really needed. A lightweight approach as shown in Fig.~\ref{fig:sidebyside} may be sufficient. This result is achieved with the following code:
 
-\begin{verbatim}
+\begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.48\textwidth]{Figures/Electron}%
@@ -222,7 +223,7 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using vectorized f
 \caption{A blue electron (left) and another one (right).}
 \label{fig:sidebyside}
 \end{figure}
-\end{verbatim}
+\end{lstlisting}
 
 \begin{figure}[t]
 \centering
@@ -244,12 +245,12 @@ The \enquote{Not So Short Introduction to \LaTeX} (available on \href{http://www
 There are many different LaTeX symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
 
 You can write an equation, which is automatically given an equation number by LaTeX like this:
-\begin{verbatim}
+\begin{lstlisting}[language={[LaTeX]TeX}]
 \begin{equation}
 E = mc^{2}
 \label{eqn:Einstein}
 \end{equation}
-\end{verbatim}
+\end{lstlisting}
 
 This will produce Einstein's famous energy-matter equivalence equation:
 \begin{equation}
@@ -258,13 +259,16 @@ E = mc^{2}
 \end{equation}
 
 All equations you write are automatically given equation numbers by LaTeX. If you don't want a particular equation numbered, use the unnumbered form:
-\begin{verbatim}
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
 \[ a^{2}=4 \]
-\end{verbatim}
+\end{lstlisting}
+
 You can also have equations in the middle of a paragraph: \( E = mc^{2} \). This can be achieved with this code: 
-\begin{verbatim}
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
 \( E = mc^{2} \)
-\end{verbatim}
+\end{lstlisting}
 
 %----------------------------------------------------------------------------------------
 
