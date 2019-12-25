@@ -49,7 +49,7 @@ As the web is quite dynamic, many links do not work forever.%
 \marginnote{See also: \href{https://en.wikipedia.org/wiki/Link_rot}{Link Rot in Wikipedia}}
 Content may change or move to different URLs, and sites may go out of service altogether. This phenomenon is called Link Rot, and it has become a significant issue in academia.
 
-Therefore, we ask you to \emph{archive all websites} whose URLs you provide using \textsc{The Wayback Machine} of the Internet Archive, which is available at \url{archive.org}.
+Therefore, we ask you to \textbf{archive all websites} whose URLs you provide using \textsc{The Wayback Machine} of the Internet Archive, which is available at \url{archive.org}.
 This preserves the content of a website at the given point in time and makes it permanently available in the Internet Archive.
 
 You should inform the reader about the availability of an archived version.%
@@ -61,9 +61,11 @@ Archiving is not necessary for academic papers that have a Digital Object Identi
 
 \subsection{Citation and References}
 
-Always try to cite the primary reference, i.\,e., the seminal paper that introduced a particular concept. You can cite well-known academic textbooks (instead of the original paper) when you cite fundamentals. No citation is necessary for widespread knowledge: ``Authentication with passwords is popular.''
+Always try to \textbf{cite the primary reference},%
+\marginnote{To allow for fast scanning, we use bold print liberally throughout this guide (which would not be appropriate in a thesis).}
+i.\,e., the seminal paper that introduced a particular concept. You can cite well-known academic textbooks (instead of the original paper) when you cite fundamentals. No citation is necessary for widespread knowledge: ``Authentication with passwords is popular.''
 
-Most of the time, paraphrasing content is preferred over literally citing text with quotation marks. The most expressive way to integrate references to literature is to insert the labels right behind key terms or author names:
+Most of the time, \textbf{paraphrasing content is preferred} over literally citing text with quotation marks. The most expressive way to integrate references to literature is to insert the labels right behind key terms or author names:
 \begin{quote}
   EMV systems \cite{anderson_ross_emv:_2014} are used to secure payment cards. Murdoch et al. \cite{murdoch_steven_j._chip_2010} have shown that EMV systems are broken.
 \end{quote}
@@ -92,22 +94,22 @@ Note, however, that this style is not very useful for the reader.\footnote{Sourc
 The FOO approach appears in a wide variety of applications, such as qux systems \cite{murdoch_steven_j._chip_2010}, baz systems \cite{anderson_ross_emv:_2014}, and -- much earlier -- in bar readers \cite{kou_weidong_secure_2003}.
 \end{quote}
 
-A remark on style: Do not treat references as nouns. You should, therefore, avoid ``\cite{murdoch_steven_j._chip_2010} shows that many EMV systems are broken \ldots'' The label becomes less distracting like this: ``Murdoch et al. show that EMV systems are broken  \cite{murdoch_steven_j._chip_2010}.''
+A remark on style: \textbf{Do not treat references as nouns.} You should, therefore, avoid ``\cite{murdoch_steven_j._chip_2010} shows that many EMV systems are broken \ldots'' The label becomes less distracting like this: ``Murdoch et al. show that EMV systems are broken  \cite{murdoch_steven_j._chip_2010}.''
 
 \paragraph{BibTeX Snippets}
 
-For many publications, you will find BibTeX snippets online, for instance, in the ACM Digital Library or on \url{https://dblp.org}. Using these snippets is generally recommended. Unfortunately, the quality of publicly available BibTeX snippets varies a lot. You will have to edit them to create a consistent bibliography. For instance, make sure that the name of a particular conference is always spelled consistently in all entries. Moreover, you should remove superfluous information such as precise dates, multiple occurrences of the year, and the location of the conference.
+For many publications, you will find BibTeX snippets online, for instance, in the ACM Digital Library or on \url{https://dblp.org}. Using these snippets is generally recommended. Unfortunately, the quality of publicly available BibTeX snippets varies a lot. You will have to edit them to create a consistent bibliography. For instance, make sure that the name of a particular conference is always spelled consistently in all entries. Moreover, you should \textbf{remove superfluous information} such as precise dates, multiple occurrences of the year, and the location of the conference.
 
-A common issue is the capitalization of words in titles. Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces. Consider the following example, which ensures that TCP remains in uppercase:
+A common issue is the \textbf{capitalization of words in titles}. Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces. Consider the following example, which ensures that TCP remains in uppercase:
 \begin{verbatim}
    @inproceedings{... title = "Improving {TCP}-based Communication Systems" ...}
 \end{verbatim}
 
 \section{Margin Notes and Footnotes}
 
-The template offers you the option to use margin notes and footnotes. You can use Margin notes (\verb|\marginnote|) as a replacement for footnotes. You can also use them with keywords or short phrases to attract the reader's attention.
+The template offers you the option to use margin notes and footnotes. You can use \textbf{margin notes} (\verb|\marginnote|) as a replacement for footnotes. You can also use them with keywords or short phrases to attract the reader's attention.
 
-Footnotes are either inserted directly after the particular word they refer to or after the punctuation if they relate to the whole clause or sentence.\footnote{Such as this footnote, here down at the bottom of the page: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.} Footnotes themselves should be full, descriptive sentences (beginning with a capital letter and ending with a full stop). The APA6 states: \enquote{Footnote numbers should be superscripted, [...], following any punctuation mark except a dash.} The Chicago Manual of Style states: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}
+\textbf{Footnotes} are either inserted directly after the particular word they refer to or after the punctuation if they relate to the whole clause or sentence.\footnote{Such as this footnote, here down at the bottom of the page: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.} Footnotes themselves should be full, descriptive sentences (beginning with a capital letter and ending with a full stop). The APA6 states: \enquote{Footnote numbers should be superscripted, [...], following any punctuation mark except a dash.} The Chicago Manual of Style states: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}
 
 Using both margin notes and footnotes for similar purposes may create an inconsistent appearance and is therefore discouraged.
 
@@ -160,14 +162,14 @@ Tables are an important way of displaying your results in a concise way. \Cref{t
 \end{tabular}
 \end{table}
 
-Column heads should use sentence-style capitalization, i.\,e., do not use \emph{title case} as you would in section headings.
+\textbf{Column heads} should use sentence-style capitalization, i.\,e., do not use \emph{title case} as you would in section headings.
 
-Tables have captions that always appear \emph{above} the \code{tabular} environment. You must reference all tables in the main text at least once.
+Tables have \textbf{captions} that always appear \emph{above} the \code{tabular} environment. You must \textbf{reference all tables} in the main text at least once.
 To reference a table you use the command \verb|\ref{<label>}|, where \verb|<label>| corresponds to a label defined within the table environment. See \file{Chapter2.tex} for an example of the label and citation (e.\,g., Table~\ref{tab:treatments}).
 
 In the PSI Thesis template, tables use the \emph{booktabs} style, which avoids visual clutter such as vertical lines. If you want to group columns, do it in the headers using \verb|\cmidrule|.
 
-Horizontal lines should be used sparingly as well. You can add additional vertical space (using \verb|\addlinespace|) to group consecutive rows (as was done in Table~\ref{tab:treatments}). You can also use bold print to highlight especially relevant parts.
+\textbf{Horizontal lines} should be used sparingly as well. You can add additional vertical space (using \verb|\addlinespace|) to group consecutive rows (as was done in Table~\ref{tab:treatments}). You can also use bold print to highlight especially relevant parts.
 
 Note that Table~\ref{tab:treatments} is not laid out ideally: the numbers are given with different precision, which disturbs their alignment. Besides, strictly aligning  all numeric columns to the right is not always appropriate.
 Centered alignment makes more sense here (cf. Table~\ref{tab:treatments2}).
@@ -205,9 +207,9 @@ If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \u
 
 \subsection{Figures}
 
-There will hopefully be many figures in your thesis. Place them in the \emph{Figures} folder. 
+There will hopefully be many figures in your thesis. Place them in the \emph{Figures} folder. Ideally, you draw all figures yourself to ensure that they use a \textbf{consistent graphical language} (such as line thickness, arrowheads, and shading).
 
-Ideally, you draw all figures yourself to ensure that they use a consistent graphical language (such as line thickness, arrowheads, and shading). Make sure that your figures work when printed in monochrome, i.\,e., do not rely on colors. If you use colors, use the same color palette in all figures, and ensure that readers with color blindness can differentiate all colors.
+Make sure that your figures work when \textbf{printed in monochrome}, i.\,e., do not rely on colors. If you use colors, use the same color palette in all figures, and ensure that readers with color blindness can differentiate all colors.
 
 Insert figures into your thesis using the following code:
 
@@ -231,11 +233,11 @@ Also, look in the source file. Putting the following code into the source file p
 \label{fig:Electron}
 \end{figure}
 
-Figures should appear on the page where they are referenced first or on one of the subsequent pages. The recommended figure placement is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so LaTeX puts it at the top of the next page.
+Figures should appear on the page where they are referenced first or on one of the subsequent pages. The recommended \textbf{figure placement} is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so LaTeX puts it at the top of the next page.
 
-Every figure needs a descriptive caption and a label. Figure captions must always appear below the included graphics file within the \code{figure} environment.
+Every figure needs a \textbf{descriptive caption and a label}. Figure captions must always appear below the included graphics file within the \code{figure} environment.
 
-Every figure must be referenced in the text at least once, either in parentheses (cf. Fig.~\ref{fig:Electron}) or explicitly in the sentence: Figure~\ref{fig:Electron} shows an electron. Refer to figures using the abbreviation \code{Fig.} followed by a protected space (\verb|~|) and \verb|\ref|. Exception: write \code{Figure} if it is the first word of a sentence. Note \verb|Fig.| and \verb|Figure| are capitalized when they are used as part of a reference.
+Every figure \textbf{must be referenced} in the text at least once, either in parentheses (cf. Fig.~\ref{fig:Electron}) or explicitly in the sentence: Figure~\ref{fig:Electron} shows an electron. Refer to figures using the abbreviation \code{Fig.} followed by a protected space (\verb|~|) and \verb|\ref|. Exception: write \code{Figure} if it is the first word of a sentence. Note \verb|Fig.| and \verb|Figure| are capitalized when they are used as part of a reference.
 
 The \verb|\caption| command contains two parts,%
 \marginnote{Theses at PSI usually do not have a List of Figures. You can, therefore, omit the part in square brackets.} 
@@ -246,7 +248,7 @@ The \verb|\decoRule| command is optional and simply puts a horizontal line below
 
 Resize your figures, ideally consistently, to an appropriate size, e.\,g., a fraction of \texttt{\textbackslash textwidth}.
 
-LaTeX is capable of using images in PDF, JPG, and PNG format. Using vectorized figures (PDF) is preferred as they usually provide sharper results at smaller file size. If you \emph{have} to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
+LaTeX is capable of using images in PDF, JPG, and PNG format. Using \textbf{vectorized figures} (PDF) is preferred as they usually provide sharper results at smaller file size. If you \emph{have} to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
 
 \paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures side-by-side. There are several approaches, for instance, by using the \texttt{subfigure} package. In many cases, a comprehensive subfigure support is not really needed. A lightweight approach as shown in Fig.~\ref{fig:sidebyside} may be sufficient. This result is achieved with the following code:
 
@@ -355,15 +357,15 @@ You can also have equations in the middle of a paragraph: \( E = mc^{2} \) by us
 
 You should break your thesis up into chapters and sections. LaTeX automatically builds a Table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source. You may even think about using \emph{sub}subsections (\verb|\subsubsection{}|). All of these will be hierarchically numbered.
 
-Avoid dangling elements in the hierarchy: If you have a Section~1.1, you should also have (at least) Section~1.2. This rule applies to all levels of the hierarchy.
+Use \textbf{(sub-)subsections} only if you use them consistently in all or at least multiple chapters. Otherwise, you should opt for a \verb|paragraph{}|, which structures pieces of content with bold non-numbered inline headings (examples throughout this guide).
 
-Note, however, that (sub-)subsections should only be used if you use them consistently in all or multiple chapters. Otherwise, you should opt for a \verb|paragraph{}|, which structures pieces of content with unobtrusive non-numbered inline headings.
+\textbf{Avoid dangling elements} in the hierarchy: If you have a Section~1.1, you should also have (at least) Section~1.2. This rule applies to all levels of the hierarchy.
 
-The Table of Contents should only list \emph{chapters} and \emph{sections}. We do not recommend to include \emph{(sub-)subsections} as this results in a very long Table of Contents, which may become difficult to read. If you do want to change the depth of the Table of Contents, you can change the value \verb|\etocsettocdepth| in \file{setup.tex}.
+The Table of Contents is configured to only list \emph{chapters} and \emph{sections}. We do not recommend to include \emph{(sub-)subsections} as this results in a very long Table of Contents, which may become difficult to read. If you do want to change the depth of the Table of Contents, you can change the value \verb|\etocsettocdepth| in \file{setup.tex}.
 
-Use \emph{title case} in your \emph{chapters}, \emph{sections}, and \emph{paragraphs}. Consider, for instance, \url{https://capitalizemytitle.com} for title case capitalization rules.
+Use \textbf{title case} in your \emph{chapters}, \emph{sections}, and \emph{paragraphs}. Consider, for instance, \url{https://capitalizemytitle.com} for title case capitalization rules.
 
-Within a section, you should walk the reader through your text:
+Within a section, you should \textbf{walk the reader through your text}:
 \begin{quote}
 In the following, we describe the three primitives of concept X. First, X uses the Y algorithm. …
 
@@ -374,26 +376,28 @@ The second concept is Z …
 
 Use emphasis sparingly. This advice is especially true for \textbf{bold print} (\verb|\textbf{bold print}|). Resist the urge to use it in the main text; use \emph{italics} (\verb|\emph{italics}|) instead.
 
-Note, however, that too frequent use of italics can also be annoying.%
+Note, however, that \textbf{too frequent use of italics} can also be annoying.%
 \marginnote{See also \href{https://sblhs2.com/2016/09/15/italics-scare-quotes/}{Italics or Scare Quotes?}} 
 We recommend limiting its use to emphasize the case when an ordinary word is used as a special term – and only at its first occurrence. Also, you should emphasize words that you would stress when reading aloud, indicating that they are especially relevant for the meaning.
 
 
-Generally, we recommend avoiding scare quotes.%
+Generally, we recommend \textbf{avoiding scare quotes}.%
 \marginnote{See \href{https://style.mla.org/quotes-when-nothing-is-being-quoted/}{Quotes When Nothing Is Being Quoted}}
 Some authors use scare quotes to signal that they are using a word in a non-standard, ironic, or otherwise special sense (cf. Chicago Manual of Style). Scare quotes convey an informal tone. Moreover, they cause ambiguity, as the reader cannot be sure about the intention of the author.
 
-You should split your content into multiple paragraphs by adding empty lines between adjacent blocks of text in the source file. Using a mixture of paragraphs and line breaks, which you could create with \verb|\\| at the end of a line, is strongly discouraged because this practice creates a noisy layout.
+You should split your content into \textbf{proper paragraphs} by adding empty lines between adjacent blocks of text in the source file. Using a mixture of paragraphs and line breaks, which you could create with \verb|\\| at the end of a line, is strongly discouraged because this practice creates a noisy layout.
 
-Use thin spaces (\verb|\,|) in the appropriate places. For instance, write \verb|i.\,e.,| to obtain i.\,e. (pronunciation: ``that means''). The same applies to e.\,g. (pronunciation: ``for example''). These two abbreviations are normally followed by a comma in American English.
+Use \textbf{thin spaces} (\verb|\,|) in the appropriate places. For instance, write \verb|i.\,e.,| to obtain i.\,e. (pronunciation: ``that means''). The same applies to e.\,g. (pronunciation: ``for example''). These two abbreviations are normally followed by a comma in American English.
 
-Dashes can be used instead of colons or pairs of commas to mark off a nested clause. Use an \emph{en dash} for that purpose -- like in this example. If you cannot type an \emph{en dash} on your keyboard, you can write two regular hyphens next to each other. LaTeX will substitute them with an \emph{en dash}. While we have no strict preference, we recommend using \emph{en dashes} instead of the longer \emph{em dashes}.
+\textbf{Dashes} can be used instead of colons or pairs of commas to mark off a nested clause. Use an \emph{en dash} for that purpose -- like in this example. If you cannot type an \emph{en dash} on your keyboard, you can write two regular hyphens next to each other. LaTeX will substitute them with an \emph{en dash}. While we have no strict preference, we recommend using \emph{en dashes} instead of the longer \emph{em dashes}.
 
-Use en dashes also within ranges, e.\,g., when you write something like 5--10\,\% (note the thin space before the \% symbol).
+Use en dashes also for ranges, e.\,g., when you write something like 5--10\,\% (note the thin space before the \% symbol).
 
-Use a proper \emph{minus symbol} (e.\,g., by using math mode like this \(-1.337\)). Also, use a sensible number of digits after the decimal point.
+Use a proper \textbf{minus symbol} (e.\,g., by using math mode like this \(-1.337\)). Also, use a sensible number of digits after the decimal point.
 
-Use proper directional quotation marks like ``these.'' Directional quotation marks are created  \verb|``like this''|, by using \verb|\enquote{text}|, or by copy-and-pasting the respective Unicode characters. Note that in contrast to conventions in the German language the closing quotation mark is placed \emph{after} any subsequent punctuation, e.\,g., ``like this,'' and ``like that.''
+Use proper \textbf{directional quotation marks} like ``these.'' Directional quotation marks are created  \verb|``like this''|, by using \verb|\enquote{text}|, or by copy-and-pasting the respective Unicode characters. Note that in contrast to conventions in the German language the closing quotation mark is placed \emph{after} any subsequent punctuation, e.\,g., ``like this,'' and ``like that.''
+
+\paragraph{Further Reading}
 
 If you speak German, consider reading \textsc{typokurz} (\url{https://zvisionwelt.wordpress.com/downloads/}), a short introduction to typographic issues. You can also browse Matthew Butterick's website \url{https://practicaltypography.com}.
 
