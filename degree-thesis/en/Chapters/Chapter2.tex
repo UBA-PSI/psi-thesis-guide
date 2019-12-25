@@ -146,7 +146,7 @@ Tables are an important way of displaying your results. \Cref{tab:treatments} is
 \end{tabular}
 \end{table}
 
-Column heads should use sentence-style capitalization, i.\,e., do not use \emph{title case} as you would in section headings (see \url{http://www.chicagomanualofstyle.org/15/ch13/ch13_sec019.html}).
+Column heads should use sentence-style capitalization, i.\,e., do not use \emph{title case} as you would in section headings.
 
 Tables have captions that always appear \emph{above} the \code{tabular} environment. All tables must be referred to in the main text.
 You can reference tables with \verb|\ref{<label>}| where the label is defined within the table environment. See \file{Chapter1.tex} for an example of the label and citation (e.\,g., Table~\ref{tab:treatments}).
@@ -258,6 +258,49 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using vectorized f
 \label{fig:sidebyside}
 \end{figure}
 
+
+\section{Listings}
+
+Code listings are done with the \emph{listings} package.\marginnote{If you have Python, you can consider the more modern package \code{minted}, which uses {pygments} for syntax highlighting.} You can use the environment \code{lstfloat} to create floating listings. Floating listings behave very much like floating figures and tables, i.\,e., they have a caption and can be referenced. Moreover, floating listings are guaranteed to appear on a single page. An example can be found in Listing~\ref{lst:listing}.
+
+The properties of floating listings may not always be desired. For short code fragments, it often makes more sense to use a non-floating listing.
+
+\begin{lstfloat}
+\caption{\label{lst:listing} This is an example of syntax highlighting of Python code with a relatively long caption.}
+\begin{lstlisting}[language=Python]
+import numpy as np
+ 
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+ 
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+ 
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+ 
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)
+ 
+                VT = np.zeros((n*m,1), int)
+ 
+    return M
+\end{lstlisting}
+\end{lstfloat}
+
+
 \section{Mathematics}
 
 The \enquote{Not So Short Introduction to \LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, \enquote{A Short Math Guide to \LaTeX} and can be downloaded from
@@ -357,7 +400,7 @@ Even if a text uses easy language, it may be difficult to read, because it does 
 
 A good resource to develop this skill is the article \emph{The Science of Scientific Writing} by George d. Gopen and Judith A. Swan.\footnote{The article can be obtained from \url{https://cseweb.ucsd.edu/~swanson/papers/science-of-writing.pdf} and \url{https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing}} 
 
-The advice from this article is also part of the three lessons on scientific writing offered by Duke University.\footnote{Homepage of the lessons: \url{https://cgi.duke.edu/web/sciwriting/}, PDF slides: \url{https://cgi.duke.edu/web/sciwriting/resources/201108_DukeScientificWritingWorkshop.pdf}.}
+The advice from this article is also part of the three lessons on scientific writing offered by Duke University.\footnote{Homepage of the lessons: \url{https://cgi.duke.edu/web/sciwriting/}, PDF slides: \url{https://cgi.duke.edu/web/sciwriting/resources/201108_DukeScientificWritingWorkshop.pdf} (these URLs could not be archived).}
 
 The remainder of this section contains three excerpts from \emph{The Science of Scientific Writing}. See the original source for a more extended treatment including worked examples.
 
@@ -414,7 +457,7 @@ Read the comprehensive list of common bugs in writing by Henning Schulzrinne, wh
 
 \section{Concluding Remarks}
 
-Scientific work and writing are skills that can be practiced. Seminar papers serve that purpose during the studies. The final thesis should then show which methodical and technical skills have beeb acquired. In addition to good time management, discipline, and willingness to research literature, communication with one's supervisor is a key to success.
+Scientific work and writing are skills that can be practiced. Seminar papers serve that purpose during the studies. The final thesis should then show which methodical and technical skills have been acquired. In addition to good time management, discipline, and willingness to research literature, communication with one's supervisor is a key to success.
 
 \paragraph{Further Reading}
 
@@ -432,3 +475,5 @@ Finally, if you seek inspiration, we recommend to read these reports by well-kno
 \item Richard Hamming: You and Your Research (\url{http://www.cs.virginia.edu/~robins/YouAndYourResearch.html}), and
 \item Nick Feamster: Writing Tips for Academics (\url{http://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/}).
 \end{itemize}
+
+The remaining parts of this guide contain less often needed technical details and historical information about the template as well as a loose collection of assorted advice.
