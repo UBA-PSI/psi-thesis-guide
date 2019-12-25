@@ -221,7 +221,7 @@ The recommended figure placement is the top of the page (denoted by \code{[t]}).
 
 Every figure needs a descriptive caption and a label. Figure captions must always appear below the included graphics file within the \code{figure} environment.
 
-Every figure must be referred to in the text at least once, either in parentheses (cf. Fig.~\ref{fig:Electron}) or explicitly in the sentence: Figure~\ref{fig:Electron} shows an electron. Refer to figures using the abbreviation \code{Fig.} followed by a protected space (\verb|~|) and \verb|\ref|. Exception: write \code{Figure} if it is the first word of a sentence.
+Every figure must be referenced in the text at least once, either in parentheses (cf. Fig.~\ref{fig:Electron}) or explicitly in the sentence: Figure~\ref{fig:Electron} shows an electron. Refer to figures using the abbreviation \code{Fig.} followed by a protected space (\verb|~|) and \verb|\ref|. Exception: write \code{Figure} if it is the first word of a sentence. Note \verb|Fig.| and \verb|Figure| are capitalized when they are used as part of a reference.
 
 The \verb|\caption| command contains two parts,%
 \marginnote{Theses at PSI usually do not have a List of Figures. You can, therefore, omit the part in square brackets.} 
@@ -351,16 +351,19 @@ This section contains only selected pieces of advice on particular aspects and t
 
 The main goal of a thesis is to convey information without unambiguity. Write concise and use easy language. Avoid complex sentence structures and unnecessary complex words. A thesis is not the place to show off your mastery of grammar and vocabulary. There are various (mostly web-based and commercial) tools that can help you identify common issues in your text.\footnote{We are aware of \url{https://grammarly.com}, \url{https://languagetool.org}, \url{http://www.hemingwayapp.com} as well as the command-line tool Academic-Writing-Check (\url{https://github.com/devd/Academic-Writing-Check}).}
 
+Even if a text uses easy language, it may be difficult to read, because it does not convey the writer's train of thoughts coherently. In short, the goal is that every sentence should be explicitly connected to its predecessor. This is, of course, easier said than done.
 
 \subsection{The Science of Scientific Writing}
 
-Even if a text uses easy language, it may be difficult to read, because it does not convey the writer's train of thoughts coherently. In short, the goal is that every sentence should be explicitly connected to its predecessor. This is, of course, easier said than done.
+A good resource to develop this skill is the article \emph{The Science of Scientific Writing} by George d. Gopen and Judith A. Swan.\footnote{The article can be obtained from \url{https://cseweb.ucsd.edu/~swanson/papers/science-of-writing.pdf} and \url{https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing}} 
 
-A recommended resource to acquire this skill is the article \emph{The Science of Scientific Writing} by George d. Gopen and Judith A. Swan.\footnote{The article can be obtained from \url{https://cseweb.ucsd.edu/~swanson/papers/science-of-writing.pdf} and \url{https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing}} The remainder of this section contains some of the key principles of the article. See the original source for a more extended treatment including worked examples.
+The advice from this article is also part of the three lessons on scientific writing offered by Duke University.\footnote{Homepage of the lessons: \url{https://cgi.duke.edu/web/sciwriting/}, PDF slides: \url{https://cgi.duke.edu/web/sciwriting/resources/201108_DukeScientificWritingWorkshop.pdf}.}
 
-\paragraph{Subject-Verb Separation}
+The remainder of this section contains three excerpts from \emph{The Science of Scientific Writing}. See the original source for a more extended treatment including worked examples.
 
-Readers expect a grammatical subject to be followed immediately by the verb. Anything of length that intervenes between subject and verb is read as an interruption, and therefore as something of lesser importance.
+\paragraph{Subject-Verb Separation (Excerpt)}
+
+  Readers expect a grammatical subject to be followed immediately by the verb. Anything of length that intervenes between subject and verb is read as an interruption, and therefore as something of lesser importance.
 The reader’s expectation stems from a pressing need for syntactic resolution, fulfilled only by the arrival of the verb. Without the verb, we do not know what the subject is doing, or what the sentence is all about.
 
 As a result, the reader focuses attention on the arrival of the verb and resists recognizing anything in the interrupting material as being of primary importance.
@@ -385,8 +388,9 @@ The information that begins a sentence establishes for the reader a perspective 
 
 Readers also expect the material occupying the topic position to provide them with linkage (looking backward) and context (looking forward).
 
-
 \subsection{Selected Syntactical Conventions}
+
+Avoid using contractions such as \emph{can't}, \emph{don't}, and \emph{it's}. Replace them with \emph{cannot}, \emph{do not}, and \emph{it is}.
 
 We highly recommend to use the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}. It is inserted before the word \emph{and} that leads the last item of a list. Consider this example:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
 \begin{quote}
@@ -412,15 +416,19 @@ Read the comprehensive list of common bugs in writing by Henning Schulzrinne, wh
 
 Scientific work and writing are skills that can be practiced. Seminar papers serve that purpose during the studies. The final thesis should then show which methodical and technical skills have beeb acquired. In addition to good time management, discipline, and willingness to research literature, communication with one's supervisor is a key to success.
 
-There are numerous reports by well-known scientists, which can be helpful when working on a thesis. Selected recommendations:
-\begin{itemize}
-\item Randy Pausch: Time Management (\url{http://www.youtube.com/watch?v=oTugjssqOT0}),
-\item Richard Hamming: You and Your Research (\url{http://www.cs.virginia.edu/~robins/YouAndYourResearch.html}), and
-\item Nick Feamster: Writing Tips for Academics (\url{http://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/}).
-\end{itemize}
+\paragraph{Further Reading}
+
+This guide is not meant to cover all topics of scientific writing in detail. We recommend to consider the very comprehensive document \emph{Scientific Writing for Computer Science Students} by Wilhelmiina Hämäläinen (\url{http://www.cs.joensuu.fi/pages/whamalai/sciwri/sciwri.pdf}). Hämäläinen has collected a substantial amount of advice with a particular focus on English grammar and the peculiarities of computer science.
 
 There is also an abundant number of books on scientific writing. We can recommend the following:
 \begin{itemize}
 \item M. Alley. The Craft of Scientific Writing; and
 \item W. Strunk and E.B. White. The Elements of Style.
+\end{itemize}
+
+Finally, if you seek inspiration, we recommend to read these reports by well-known scientists:
+\begin{itemize}
+\item Randy Pausch: Time Management (\url{http://www.youtube.com/watch?v=oTugjssqOT0}),
+\item Richard Hamming: You and Your Research (\url{http://www.cs.virginia.edu/~robins/YouAndYourResearch.html}), and
+\item Nick Feamster: Writing Tips for Academics (\url{http://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/}).
 \end{itemize}
