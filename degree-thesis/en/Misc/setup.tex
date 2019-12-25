@@ -167,8 +167,11 @@
 
 % this provides correct alignment for margin text that is inserted
 % right at the beginning of a paragrah; however, it messes up the
-% alignment in all other cases; we might decide to remove this again
-\renewcommand{\marginnotevadjust}{0.71\baselineskip}
+% alignment in all other cases.
+%% therefore, removed for now:
+%%\renewcommand{\marginnotevadjust}{0.71\baselineskip}
+% The following is the necessary correction for in-paragraph use
+\renewcommand{\marginnotevadjust}{0.21\baselineskip} 
 
 \usepackage{microtype} % enable better typographic setup
 

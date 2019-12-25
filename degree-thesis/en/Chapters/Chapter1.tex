@@ -21,115 +21,116 @@ It also contains pointers to recommended reading for learning \LaTeX{}.
 \section{A Quick Welcome}
 
 Welcome to this LaTeX thesis template guide.%
-\footnote{This guide has been rewritten based on the guide provided in the MastersDoctoralThesis template, which can be obtained from \url{https://www.latextemplates.com/template/masters-doctoral-thesis}.}
+\footnote{This document is based on the guide provided in the MastersDoctoralThesis template (\url{https://www.latextemplates.com/template/masters-doctoral-thesis}). The original text has been revised and extended.}
 We have prepared this template to help you with writing a thesis using the LaTeX typesetting system.
 
 If you are writing a thesis and its subject is technical, then creating it in LaTeX is highly recommended. LaTeX allows you to focus on the essential writing without having to worry over formatting or wasting time arguing with your word processor.
 
-LaTeX is able to professionally typeset documents that run to hundreds or thousands of pages long. With simple mark-up commands, it automatically sets out the table of contents, margins, page headers and footers and keeps the formatting consistent and visually pleasing. One of its main strengths is the way it can easily typeset mathematics, even \emph{heavy} mathematics.
+LaTeX can professionally typeset documents that run to hundreds or thousands of pages long. With simple mark-up commands, it automatically sets out the table of contents, margins, headers, and footers and keeps the formatting consistent and visually pleasing. One of its main strengths is the way it can easily typeset mathematics, even \emph{heavy} mathematics.
 
 
 \section{Learning LaTeX}
 
-If you are new to LaTeX it is recommended that you carry on reading through this section.
+If you are new to LaTeX, we recommended to carry on reading this section.
 
-LaTeX is not a \textsc{wysiwyg} (What You See is What You Get) tool, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for LaTeX is actually a simple, plain text file that contains \emph{no formatting}. You tell LaTeX how you want the formatting in the finished document by writing in simple commands amongst the text, for example, if I want to use \emph{italic text for emphasis}, I write the \verb|\emph{text}| command and put the text I want in italics in between the curly braces. This means that LaTeX is a \enquote{mark-up} language (like HTML).
+LaTeX is not a \textsc{wysiwyg} (What You See is What You Get) tool, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for LaTeX is a simple, plain text file that contains \emph{no formatting}. LaTeX is a \enquote{mark-up} language (like HTML): You tell the LaTeX processor about the desired formatting in simple commands amongst the text. For instance, if you want to use \emph{italic text for emphasis}, you write the \verb|\emph{text}| command and put the text you want in italics in between the curly braces.
 
 \subsection{A (not so short) Introduction to LaTeX}
 
-If you are new to LaTeX, there is a good eBook -- freely available online as a PDF file -- called, \enquote{The Not So Short Introduction to LaTeX}. The book's title is typically shortened to just \emph{lshort}. You can download the latest version (as it is occasionally updated) from here:
-\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}
+If you are new to LaTeX, there is an excellent eBook, \enquote{The Not So Short Introduction to LaTeX} (aka ``lshort''), which is freely available online. You can download the latest version from
+\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}.
 
-It is recommended to spend time to learn how to use LaTeX by creating small test documents. You can also learn from others by looking at other templates.
-Making the effort now means you're not stuck learning the system when what you \emph{really} need to be doing is writing your thesis.
+To learn how LaTeX works, we recommend creating small test documents to reduce complexity. You can also learn from others by looking at other templates.
 
 \paragraph{A Short Math Guide for LaTeX}
 
-If you are writing a technical or mathematical thesis, then you may want to read the document by the AMS (American Mathematical Society) called, \enquote{A Short Math Guide for LaTeX}. It can be found online at
+If you are writing a technical or mathematical thesis, then you may want to read the document by the AMS (American Mathematical Society) called, \enquote{A Short Math Guide for LaTeX.} It can be found online at
 \url{http://www.ams.org/tex/amslatex.html}
 under the \enquote{Additional Documentation} section towards the bottom of the page.
 
 \paragraph{Common LaTeX Math Symbols}
-There are a multitude of mathematical symbols available for LaTeX and it would take a great effort to learn the commands for them all. The most common ones you are likely to use are shown on this page:
+LaTeX supports many mathematical symbols and it would take a great effort to memorize the commands for all of them. The most common ones are shown at
 \url{http://www.sunilpatel.co.uk/latex-type/latex-math-symbols/}.
-You can use this page as a reference or crib sheet, the symbols are rendered as large, high quality images so you can quickly find the LaTeX command for the symbol you need.
+You can use this page as a reference or crib sheet, the symbols are rendered as large, high-quality images, so you can quickly find the LaTeX command for the symbol you need.
 
 \subsection{LaTeX Distributions}
 
 The LaTeX distribution is available for Windows, Linux, and macOS\@.
 On Windows and Linux systems, the recommended distribution is \textsc{TexLive}.
 
-The package for macOS is called \textsc{MacTeX} and it contains all the applications you need -- bundled together and pre-customized -- for a fully working LaTeX environment and work flow. \textsc{MacTeX} includes a custom dedicated LaTeX editor called \textsc{TeXShop} for writing your `\file{.tex}' files and \textsc{BibDesk}, a program to manage your references and create your bibliography section.
+The package for macOS is called \textsc{MacTeX}, and it contains all the applications you need -- bundled together and pre-customized -- for a fully working LaTeX environment and workflow. \textsc{MacTeX} includes a custom dedicated LaTeX editor called \textsc{TeXShop} for writing your `\file{.tex}' files and \textsc{BibDesk}, a program to manage your references and create your bibliography section.
 
 
 
 \section{Required Software}
 
-In order to use the PSIThesis template, you need a working LaTeX installation with \textbf{LuaLaTeX}, \textbf{biblatex} and \textbf{biber}. Usually, these tools will be installed when you install a common LaTeX distributions.
+To use the PSIThesis template, you need a working LaTeX installation with \textbf{LuaLaTeX}, \textbf{biblatex}, and \textbf{biber}. Usually, these tools are available in a typical LaTeX installation.
 
 So far, the template has not been tested with ShareLaTeX and Overleaf.
 
 
 \section{Getting Started with the Template}
 
-Once you are familiar with LaTeX, you should explore the directory structure of the template and then proceed to place your own information into the \emph{THESIS INFORMATION} block of the \file{main.tex} file. You can then modify the rest of this file to your unique specifications based on your degree/university. \Cref{FillingFile} on page~\pageref{FillingFile} will help you do this. Make sure you also read \cref{ThesisFeatures} about the template features.
+Once you are familiar with LaTeX, you should explore the directory structure of the template. After that, place your datails into the \emph{THESIS INFORMATION} block of the \file{main.tex} file. You can then modify the rest of this file to your unique specifications based on your degree/university. \Cref{FillingFile} on page~\pageref{FillingFile} will help you do this. Make sure you also read \cref{ThesisFeatures} about the template features.
 
 
 \subsection{Folder Structure}
 
 This template comes as a single ZIP file that expands out to several files and folders. The folder names are mostly self-explanatory:
 
-\keyword{Appendices} -- this is the folder where you put the appendices. Each appendix should go into its own separate \file{.tex} file. An example and template are included in the directory. You have to include your appendix files in \file{main.tex}.
+\keyword{Appendices} -- this is the folder where you put the appendices. Each appendix should go into a separate \file{.tex} file. You have to include your appendix files in \file{main.tex}.
 
-\keyword{Chapters} -- this is the folder where you put the thesis chapters. A thesis usually has about six chapters, though there is no hard rule on this. Each chapter should go in its own separate \file{.tex} file and they can be split as:
+\keyword{Chapters} -- this is the folder where you put the thesis chapters. Each chapter should go into a separate \file{.tex} file. A typical structure looks like this:
 \begin{itemize}
 \item Chapter 1: Introduction to the thesis topic
 \item Chapter 2: Background information and theory
 \item Chapter 3: Experimental setup
-\item Chapter 4: Implementation
-\item Chapter 5: Results
-\item Chapter 6: Discussion and limitations
+\item Chapter 4: Implementation considerations
+\item Chapter 5: Presentation of results
+\item Chapter 6: Discussion and results and limitations
 \item Chapter 7: Conclusion and future directions
 \end{itemize}
 
-This chapter layout is specialized for the experimental sciences, your discipline may be different. You have to include your chapter files in \file{main.tex}.
+This chapter layout is specialized for an experimental thesis; your thesis may be different. You have to include your chapter files in \file{main.tex}.
 
 \keyword{Figures} -- this folder contains all figures for the thesis. These are the final images that will go into the thesis document.
 
-Two additional folders contain files that are internally used by the template: \keyword{fonts} contains the TTF and OTF files of the template's fonts, \keyword{Misc} contains \file{setup.tex}, \file{titlepage.tex}, and the logo of University of Bamberg.
+Two additional folders contain files that are internally used by the template. The folder \keyword{fonts} contains the TTF and OTF files of the template's fonts, the folder \keyword{Misc} contains \file{setup.tex}, \file{titlepage.tex}, and the logo of University of Bamberg.
 
 \subsection{Files}
 
-Included are also several files, most of them are plain text and you can see their contents in a text editor. After initial compilation, you will see that more auxiliary files are created by LaTeX or BibTeX and which you don't need to delete or worry about:
+Most of the template's files are plain text, and you can see their contents in a text editor. During compilation, LuaLaTeX and biber will create additional auxiliary files, which you don't need to delete or worry about. Important files are:
 
-\keyword{literature.bib} -- This file contains all the bibliographic information and references that you will be citing in the thesis for use with BibTeX. You can write it manually, but there are reference manager programs available that will create and manage it for you. Bibliographies in LaTeX are a large subject and you may need to read about BibTeX before starting with this.
+\keyword{literature.bib} -- This is a BibTeX file that contains all the bibliographic information for literature that you cite in the thesis. You can write it manually, but there are reference manager programs available that will create and manage it for you. Bibliographies in LaTeX are a subject of their own, and you may need to read about BibTeX before starting with this.
 
 \keyword{PSIThesis.cls} -- This is the class file that tells LaTeX how to format the thesis.
 
-\keyword{main.pdf} -- This is your typeset thesis created by LaTeX. It is supplied in the ZIP file with the template and after you compile the template you should get an identical version.
+\keyword{main.pdf} -- This is your typeset thesis created by LaTeX. It is part of the template's ZIP file. When you compile the template, you should get an identical version.
 
-\keyword{main.tex} -- This is the file that you tell LaTeX to compile to produce ˜file{main.pdf}. It contains the framework and constructs that tell LaTeX how to layout the thesis. It is heavily commented so you can read exactly what each line of code does and why it is there. Fill in your own information into the \emph{THESIS INFORMATION} block.
+\keyword{main.tex} -- This is the file that you tell LaTeX to compile to produce ˜file{main.pdf}. It contains the framework and constructs that tell LaTeX how to layout the thesis. It contains many comments that explain the purpose of each line of code. Fill in your details into the \emph{THESIS INFORMATION} block.
 
 \keyword{setup.tex} -- This file loads and sets up additional LaTeX packages. It changes some defaults of the MastersDoctoralThesis and controls the layout of the thesis.
 
 Files that are \emph{not} included, but are created by LaTeX as auxiliary files include: \keyword{main.aux}, \keyword{main.bbl}, \file{main.aux}, \keyword{main.blg}, 
 \keyword{main.lof}, \keyword{main.log}, \keyword{main.lot}, and \keyword{main.out}.
 
-So from this long list, only the files with the \file{.bib}, \file{.cls} and \file{.tex} extensions are the most important ones. The other auxiliary files can be ignored or deleted as LaTeX and BibTeX will regenerate them.
+So from this long list, only the files with the \file{.bib}, \file{.cls}, and \file{.tex} extensions are relevant. The other auxiliary files can be ignored or deleted as every compilation will regenerate them.
 
 
 \subsection{Compiling the PDF}
 
-We have tested the template with \texttt{LuaLaTeX}. Using \texttt{XeTeX} may also work. \texttt{pdLaTeX}, however, will definitely not work because the template uses TTF and OTF fonts.
+We have tested the template with \texttt{LuaLaTeX}. Using \texttt{XeTeX} may also work. \texttt{pdLaTeX}, however, will not work, because the template uses TTF and OTF fonts.
 
-For compilation on Linux and macOS, you can make use of the provided \keyword{Makefile}. Just navigate to the ``en'' directory and enter \texttt{make} in a terminal. This will make calls to the programs \texttt{lualatex} (which creates the PDF) and \texttt{biber} (which is used to compile the bibliography). The \texttt{make} command keeps track of changes you make to your source files. If you add additional files that should be tracked for changes, you should edit the list of files at the top of this file. Otherwise, \texttt{make} may refuse to compile a new version because it believes that \file{main.pdf} is already up to date. In this case, a call to \texttt{make clean} will help: It removes all files generated during compilation. After that, a call to \texttt{make} will regenerate them, including \file{main.pdf}.
+For compilation on Linux and macOS, you can make use of the provided \keyword{Makefile}. Just navigate to the ``en'' directory and enter \code{make} in a terminal. \code{make} will call the programs \code{lualatex} (which creates the PDF) and \code{biber} (which is used to compile the bibliography).
+
+The \code{make} command keeps track of changes in your source files. If you add additional files that should be tracked for changes, you should edit the list of files at the top of the \file{Makefile}. Otherwise, \code{make} may refuse to compile a new version because it believes that \file{main.pdf} is already up to date. In this case, a call to \code{make clean} will help: It removes all files generated during compilation. After that, a call to \code{make} will regenerate them, including \file{main.pdf}.
 
 
 \subsection{Filling in Your Information in \emph{main.tex}}\label{FillingFile}
 
-You will need to personalize the thesis template and make it your own by filling in your own information. This is done by editing the \file{main.tex} file in a text editor or your favorite LaTeX environment.
+You will need to personalize the thesis template by filling in your details. in  \file{main.tex} file with a text editor or your favorite LaTeX environment.
 
-Open the file and scroll down to the third large block titled \emph{THESIS INFORMATION}. You will see entries for \emph{University Name}, \emph{Department Name}, etc. Fill out the information about yourself, your group and institution.%
+Open the file and scroll down to the third large block titled \emph{THESIS INFORMATION}. You will see entries for \emph{University Name}, \emph{Department Name}, etc. Fill out the information about yourself, your group, and institution.%
 \marginnote{If you write a thesis at the PSI chair, you can keep the defaults.}
 You can also insert web links; if you do, make sure you use the full URL, including the \code{http://} for this. If you don't want these to be linked, simply remove the \verb|\href{url}{name}| and only leave the name.
 
@@ -139,32 +140,35 @@ When you have done this, save the file and recompile \code{main.tex}. All the in
 
 \section{More Information on \emph{main.tex}}
 
-The \file{main.tex} file contains the structure of the thesis. There are plenty of written comments that explain what pages, sections and formatting the LaTeX code is creating. Each major document element is divided into commented blocks with titles in all capitals to make it obvious what the following bit of code is doing. Initially there seems to be a lot of LaTeX code, but this is all formatting, and it has all been taken care of so you don't have to do it.
+The \file{main.tex} file contains the structure of the thesis. There are plenty of written comments that explain what pages, sections, and formatting the LaTeX code is creating. Each major document element is divided into commented blocks with titles in all capitals to make it obvious what the following bit of code is doing. Initially, there seems to be a lot of LaTeX code. Most of that code takes care of the formatting of the thesis, so you don't have to worry about it.
 
-\marginnote{Please check whether the text of the Declaration of Authorship is correct.}Begin by checking that your information on the title page is correct. For the thesis declaration, your institution may insist on something different than the text given. If this is the case, just replace what you see with what is required in the \emph{DECLARATION PAGE} block.
+Begin%
+\marginnote{Check whether the text is still correct!}
+ by checking that your information on the title page is correct. For the thesis declaration, your institution may insist on something different than the text given. If this is the case, just replace the text in the \emph{DECLARATION PAGE} block.
 
-\marginnote{This is disabled by default.}Then comes a page which contains a funny quote. You can put your own, or quote your favorite scientist, author, person, and so on. Make sure to put the name of the person who you took the quote from.
+After that, you can insert a page with a quote.\marginnote{This is disabled by default.}
 
-Following this is the abstract page which summarizes your work in a condensed way.
+Next up is the abstract page, which concisely summarizes your work.
 
-\marginnote{This is disabled by default.}Next come the acknowledgements. On this page, write about all the people who you wish to thank (not forgetting parents, partners and your advisor/supervisor).
+After the abstract you can insert an acknowledgments page.\marginnote{This is disabled by default.}
+ You can use this space to write about all the people who you wish to thank.
 
-The contents pages, list of figures and tables are all taken care of for you and do not need to be manually created or edited. The next set of pages are more likely to be optional and can be deleted since they are for a more technical thesis: insert a list of abbreviations you have used in the thesis, then a list of the physical constants and numbers you refer to and finally, a list of mathematical symbols used in any formulae. Making the effort to fill these tables means the reader has a one-stop place to refer to instead of searching the internet and references to try and find out what you meant by certain abbreviations or symbols.
+The contents pages,%
+\marginnote{If you write a thesis at the PSI chair, your thesis should only contain a Table of Contents. Therefore, the remaining directories are disabled by default.}
+list of figures and tables are all taken care of for you. The next set of pages are more likely to be optional and can be deleted since they are for a more technical thesis: insert a list of abbreviations you have used in the thesis, then a list of the physical constants and numbers you refer to and finally, a list of mathematical symbols used in any formulae. Making the effort to fill these tables means the reader has a one-stop place to refer to instead of searching the internet and references to try and find out what you meant by certain abbreviations or symbols.
 
-The list of symbols is split into the Roman and Greek alphabets. Whereas the abbreviations and symbols ought to be listed in alphabetical order (and this is \emph{not} done automatically for you) the list of physical constants should be grouped into similar themes.
+The next optional page contains a one-line dedication.\marginnote{This is disabled by default.}
 
-\marginnote{This is disabled by default.}The next page contains a one line dedication. Who will you dedicate your thesis to?
+Finally, there is a block which includes all the chapters. Uncomment the lines (delete the \code{\%} character) as you add chapters to your thesis. Each chapter should be saved in a separate file and put into the \emph{Chapters} folder. Similarly for the appendices, uncomment the respective lines as you need them. Each appendix should be saved in a separate file in the \emph{Appendices} folder.
 
-Finally, there is the block where the chapters are included. Uncomment the lines (delete the \code{\%} character) as you write the chapters. Each chapter should be written in its own file and put into the \emph{Chapters} folder and named \file{Chapter1}, \file{Chapter2}, etc\ldots Similarly for the appendices, uncomment the lines as you need them. Each appendix should go into its own file and placed in the \emph{Appendices} folder.
-
-After the preamble, chapters and appendices finally comes the bibliography. The bibliography style (called \option{alpha}) is used for the bibliography and is a fully featured style that will even include links to where the referenced paper can be found online. Of course, this relies on you putting the URL information into the BibTeX file in the first place.
+The next block sets up the bibliography. The template uses the bibliography style \option{alpha}. the \option{alpha} style creates reference labels that contain the first letters or initials of authors and a two-digit number for the year.
 
 
-\section{In Closing}
+\section{Your Turn Now}
 
-You have reached the end of this introductory chapter. The following chapter continues with a set of recommendations and conventions.
+The easiest way to start your thesis is replacing text in the existing files. You might want to keep copies of the \file{.tex} to look up the source code as you move on.
 
-When you are ready, you can rename or overwrite this PDF file and begin writing your own \file{Chapter1.tex} and the rest of your thesis. The tedious tasks of setting up the structure and framework has been taken care of for you. It's now your job to fill it out.
+We hope that this template helps you get up to speed. The tedious task of setting up the structure has been taken care of for you. It's now your job to create the content.
 
 Good luck and happy writing!
 
