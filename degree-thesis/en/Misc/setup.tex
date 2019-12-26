@@ -314,6 +314,9 @@
 	% showframe, % Uncomment to show how the type block is set on the page
 }
 
+% Wide figures span text and margin.
+% Use the pre-calculated length \widefigurewidth in \includegraphics.
+\def\widefigurewidth{\dimexpr(\marginparwidth + \textwidth + \marginparsep)}
 
 %----------------------------------------------------------------------------------------
 %	SETUP HEADER AND FOOTER
@@ -347,20 +350,20 @@
 \lstset{
     aboveskip={1\baselineskip},
     basicstyle=\small\ttfamily\linespread{4},
-    breaklines=false,
+    breaklines=true,
     columns=flexible,
-    commentstyle=\color[rgb]{0.127,0.427,0.514}\ttfamily\itshape,
+    commentstyle=\color{gray50}\ttfamily\itshape,
     escapechar=@,
     extendedchars=true,
     frame=single,
     identifierstyle=\color{black},
     inputencoding=latin1,
-    keywordstyle=\color[HTML]{228B22}\bfseries,
-    ndkeywordstyle=\color[HTML]{228B22}\bfseries,
+    keywordstyle=\color{ubblue80}\bfseries,
+    ndkeywordstyle=\color{ubblue80}\bfseries,
     numbers=left,
     numberstyle=\footnotesize,
     prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
-    stringstyle=\color[rgb]{0.639,0.082,0.082}\ttfamily,
+    stringstyle=\color{ubblue60}\ttfamily,
     upquote=true,
     showstringspaces=false,
 }
@@ -378,26 +381,29 @@
     {9}{{{\color{darkgray}9}}}1
 }
 
-% make listings floating
-\usepackage{float}
 
-% Define our own float style "listing" based on "plaintop"
-% used to reduce vspace between caption and lstlisting
-% which otherwise would be artificialy large due to
-% lstlisting's aboveskip line (which we want to keep for
-% the case that a listing is *not* embedded in a float)
+
+%----------------------------------------------------------------------------------------
+%	MARGINAL CAPTIONS
+%----------------------------------------------------------------------------------------
+
+\usepackage{sidenotes}
+\usepackage{scrextend} % for ifthispageodd
 \makeatletter
-\newcommand\fs@listing{\fs@plain
-\def\@fs@mid{\vspace\belowcaptionskip\relax}%
-\let\@fs@iftopcapt\iftrue}
-\let\floatc@plaintop=\floatc@plain
+
+% objective: automatically justify sidecaptions to match the other marginnotes
+% captions of marginfigures etc. shall always be raggedright
+\DeclareCaptionJustification{outerragged}{\ifthispageodd{\RaggedRight}{\RaggedLeft}}
+
+\DeclareCaptionStyle{sidecaption}{format=plain,font={scriptsize,sf,it},labelfont=bf,margin=0pt,singlelinecheck=true,justification=outerragged} 
+\DeclareCaptionStyle{marginfigure}{format=plain,font={scriptsize,sf,it},labelfont=bf,margin=0pt,singlelinecheck=true}
+\DeclareCaptionStyle{margintable}{format=plain,font={scriptsize,sf,it},labelfont=bf,margin=0pt,singlelinecheck=true}
+\DeclareCaptionStyle{widefigure}{format=plain,font=small,labelfont=bf,justification=raggedright,singlelinecheck=true}
+\DeclareCaptionStyle{widetable}{format=plain,font=small,labelfont=bf,justification=raggedright,singlelinecheck=true}
+%\DeclareCaptionStyle{widefigure}{format=plain,justification=RaggedRight,font=small,labelfont=bf,margin=20pt,singlelinecheck=true,tableposition=top}
+
+
 \makeatother
-
-% defining the lstfloat environment
-\floatstyle{listing}
-\newfloat{lstfloat}{htbp}{lop}
-\floatname{lstfloat}{Listing}
-
 
 %----------------------------------------------------------------------------------------
 %	SET PDF METADATA

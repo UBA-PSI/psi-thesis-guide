@@ -180,6 +180,16 @@ Moreover, consider the advice by Markus Kuhn on differentiating abstract and int
 \mainmatter % From here on, numeric (1,2,3...) page numbering
 \pagestyle{thesis} % Return the page headers back to the "thesis" style
 
+% Define some commands to keep the formatting separated from the content
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+% Figures will automatically be searched for in the Figures subdirectory
+\graphicspath{{./Figures/}}
+
 %%% CHANGES NEEDED HERE
 % 
 % Include the chapters of the thesis as separate files from the Chapters folder
