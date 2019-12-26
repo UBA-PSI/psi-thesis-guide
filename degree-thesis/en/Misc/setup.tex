@@ -10,6 +10,13 @@
 \definecolor{ubblue40}{HTML}{99B5CB}
 \definecolor{ubblue20}{HTML}{CCDAE5}
 
+\definecolor{ubyellow}{HTML}{FFD300}
+\definecolor{ubyellow25}{HTML}{FFF4BF}
+
+\definecolor{ubred}{HTML}{e6444F}
+
+\definecolor{ubgreen}{HTML}{97BF0D}
+
 \definecolor{gray75}{gray}{0.75}
 \definecolor{gray50}{gray}{0.50}
 
@@ -38,6 +45,9 @@
  
 % Exception: tables should use "lining figures" (all digits having same width)
 \AtBeginEnvironment{tabular}{%
+  \tlfstyle
+}
+\AtBeginEnvironment{tabularx}{%
   \tlfstyle
 }
 
@@ -130,7 +140,7 @@
    {}
    {\etocifnumbered
      {\makebox[0pt][r]
-       {\chaptername\ \etocnumber\hspace{\tocsep}}%
+       {\textsc{\MakeLowercase\chaptername\ \etocnumber}\hspace{\tocsep}}%
        \textbf{\etocname\kern1em\relax\etocpage}%
     }%
     {\textbf{\etocname\kern1em\relax\etocpage}}%
@@ -160,6 +170,8 @@
 %----------------------------------------------------------------------------------------
 %		OTHER PACKAGES
 %----------------------------------------------------------------------------------------
+
+\usepackage{tabularx} % for more flexible tables
 
 \usepackage{marginnote} % Enable Notes on the Page Margin
 \usepackage{ragged2e} % provides better hyphenation, use with camel case: \RaggedRight 
@@ -221,7 +233,7 @@
 \usepackage[
   obeyFinal,
   textsize=scriptsize,
-  backgroundcolor=yellow,linecolor=gray75,bordercolor=gray75,
+  backgroundcolor=ubyellow25,linecolor=ubyellow,bordercolor=ubyellow,
 ]{todonotes}
 
 % change font of todo notes to sans-serif
@@ -323,7 +335,7 @@
 %----------------------------------------------------------------------------------------
 \automark[chapter]{chapter}
 \ihead{\textup{\headmark}} % Inner header; do not use italics: therefore textup
-%\ihead{\textsc{\headmark}}% Inner header - use this line for Small Caps in header
+\ihead{\textup{\textsc{\MakeLowercase\headmark}}}% Inner header - use this line for Small Caps in header
 \ohead[]{\pagemark} % Outer header
 \cfoot[\pagemark]{} % On chapter opening pages, the page number goes centered into the footer
 \automark*[section]{}%
@@ -349,6 +361,8 @@
 
 \lstset{
     aboveskip={1\baselineskip},
+    abovecaptionskip=-1\baselineskip,
+    belowcaptionskip=2ex,
     basicstyle=\small\ttfamily\linespread{4},
     breaklines=true,
     columns=flexible,
@@ -381,7 +395,9 @@
     {9}{{{\color{darkgray}9}}}1
 }
 
-
+\lstnewenvironment{latex}
+    {\lstset{language=[LaTeX]TeX}}
+    {}
 
 %----------------------------------------------------------------------------------------
 %	MARGINAL CAPTIONS
@@ -389,20 +405,20 @@
 
 \usepackage{sidenotes}
 \usepackage{scrextend} % for ifthispageodd
-\makeatletter
+
 
 % objective: automatically justify sidecaptions to match the other marginnotes
 % captions of marginfigures etc. shall always be raggedright
+% solution from: https://tex.stackexchange.com/questions/358010/subfigures-break-figure-numbering-with-sidecaptions-from-sidenotes-package/358012#358012
+
+\makeatletter
 \DeclareCaptionJustification{outerragged}{\ifthispageodd{\RaggedRight}{\RaggedLeft}}
 
 \DeclareCaptionStyle{sidecaption}{format=plain,font={scriptsize,sf,it},labelfont=bf,margin=0pt,singlelinecheck=true,justification=outerragged} 
 \DeclareCaptionStyle{marginfigure}{format=plain,font={scriptsize,sf,it},labelfont=bf,margin=0pt,singlelinecheck=true}
 \DeclareCaptionStyle{margintable}{format=plain,font={scriptsize,sf,it},labelfont=bf,margin=0pt,singlelinecheck=true}
-\DeclareCaptionStyle{widefigure}{format=plain,font=small,labelfont=bf,justification=raggedright,singlelinecheck=true}
-\DeclareCaptionStyle{widetable}{format=plain,font=small,labelfont=bf,justification=raggedright,singlelinecheck=true}
-%\DeclareCaptionStyle{widefigure}{format=plain,justification=RaggedRight,font=small,labelfont=bf,margin=20pt,singlelinecheck=true,tableposition=top}
-
-
+\DeclareCaptionStyle{widefigure}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
+\DeclareCaptionStyle{widetable}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
 \makeatother
 
 %----------------------------------------------------------------------------------------
