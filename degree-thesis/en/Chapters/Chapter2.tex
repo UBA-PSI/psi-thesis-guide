@@ -94,7 +94,7 @@ A common issue is the \textbf{capitalization of words in titles}.%
 \marginnote{This should not be an issue in this template. Nevertheless, to check for inconsistent capitalization.}
 Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces. Consider the following example, which ensures that TCP remains in uppercase:
 \begin{verbatim}
-   @inproceedings{... title = "Improving {TCP}-based Communication Systems" ...}
+@inproceedings{... title = "Improving {TCP}-based  Systems" ...}
 \end{verbatim}
 
 \section{Margin Notes and Footnotes}
@@ -529,7 +529,9 @@ Ensure correct spelling throughout your text. Check your writing with a spell ch
 
 Ensure proper hyphenation throughout your text. You will have to intervene, for instance, when words extend into the margin of the page (creating so-called overfull hboxes). You can override LaTeX's hyphenation rules by inserting \verb|\-| into a word. This special character indicates a conditional hyphenation point.
 
-Often, it makes sense to define hyphenation rules globally. To this end, place custom hyphenation definitions like \verb|\hyphenation{FORTRAN Hy-phen-a-tion}| after the \verb|\begin{document}| clause.\todo[noline]{Oh no, an overful hbox!} The example definition prevents any hyphenation of the word FORTRAN and defines three hyphenation points for the word Hyphenation.
+It makes sense to define hyphenation rules globally. To this end, place custom hyphenation definitions like \verb|\hyphenation{FORTRAN Hy-phen-a-tion}| after the \verb|\begin{document}| clause.
+\todo[noline]{Oh no, an overful hbox!}
+The example definition prevents any hyphenation of the word FORTRAN and defines three hyphenation points for the word Hyphenation.
 
 Also, check your text for common grammar issues (cf. Sect.~\ref{sec:style}).
 
