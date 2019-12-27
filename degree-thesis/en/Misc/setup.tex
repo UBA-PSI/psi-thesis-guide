@@ -178,7 +178,7 @@
 \usepackage{ragged2e} % provides better hyphenation, use with camel case: \RaggedRight 
 \renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
-\renewcommand*{\marginfont}{\scriptsize\sffamily\itshape} % format margin text
+\renewcommand*{\marginfont}{\scriptsize\sffamily} % format margin text
 
 % this provides correct alignment for margin text that is inserted
 % right at the beginning of a paragrah; however, it messes up the
@@ -460,9 +460,9 @@
 \makeatletter
 \DeclareCaptionJustification{outerragged}{\ifthispageodd{\RaggedRight}{\RaggedLeft}}
 
-\DeclareCaptionStyle{sidecaption}{format=plain,font={scriptsize,sf,it},labelfont=bf,margin=0pt,singlelinecheck=true,justification=outerragged} 
-\DeclareCaptionStyle{marginfigure}{format=plain,font={scriptsize,sf,it},labelfont=bf,margin=0pt,singlelinecheck=true}
-\DeclareCaptionStyle{margintable}{format=plain,font={scriptsize,sf,it},labelfont=bf,margin=0pt,singlelinecheck=true}
+\DeclareCaptionStyle{sidecaption}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true,justification=outerragged} 
+\DeclareCaptionStyle{marginfigure}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true}
+\DeclareCaptionStyle{margintable}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true}
 \DeclareCaptionStyle{widefigure}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
 \DeclareCaptionStyle{widetable}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
 \makeatother
