@@ -315,16 +315,32 @@
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
 
+%\geometry{
+%	paper=a4paper, % Change to letterpaper for US letter (not recommended)
+%	inner=2cm, % Inner margin
+%	outer=6.2cm, % Outer margin, extra wide for margin notes
+%	marginparwidth=4cm,
+%	marginparsep=4mm,
+%	bindingoffset=.5cm, % Binding offset
+%	top=2.0cm, % Top margin
+%	bottom=2.5cm, % Bottom margin
+%	% showframe, % Uncomment to show how the type block is set on the page
+%}
+
+% testing, from kaobook
 \geometry{
-	paper=a4paper, % Change to letterpaper for US letter (not recommended)
-	inner=2cm, % Inner margin
-	outer=5.8cm, % Outer margin, extra wide for margin notes
-	marginparwidth=4cm,
-	marginparsep=4mm,
-	bindingoffset=.5cm, % Binding offset
-	top=1.5cm, % Top margin
-	bottom=2.5cm, % Bottom margin
-	% showframe, % Uncomment to show how the type block is set on the page
+		paper=a4paper,
+		top=27.4mm,
+		bottom=27.4mm,
+		inner=24.8mm,
+		%outer=24.8mm,
+		%right=2.183cm,
+		textwidth=107mm,
+		marginparsep=8.2mm,
+		marginparwidth=49.4mm,
+		%textheight=49\baselineskip,
+		includemp,
+		% showframe
 }
 
 % Wide figures span text and margin.
@@ -334,6 +350,14 @@
 %----------------------------------------------------------------------------------------
 %	SETUP HEADER AND FOOTER
 %----------------------------------------------------------------------------------------
+
+
+\newlength{\overflowingheadlen}
+\setlength{\overflowingheadlen}{\textwidth}
+\addtolength{\overflowingheadlen}{\marginparsep}
+\addtolength{\overflowingheadlen}{\marginparwidth}
+
+% old header/footer, maybe not necessary any more?
 \automark[chapter]{chapter}
 \ihead{\textup{\headmark}} % Inner header; do not use italics: therefore textup
 \ihead{\textup{\textsc{\MakeLowercase\headmark}}}% Inner header - use this line for Small Caps in header
@@ -341,6 +365,25 @@
 \cfoot[\pagemark]{} % On chapter opening pages, the page number goes centered into the footer
 \automark*[section]{}%
 
+% new header/footer, from kaobook; we could probably remove the original definitions from the cls
+\renewpagestyle{thesis}{
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\thepage\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad{}\textup{\textsc{\MakeLowercase \leftmark}}}}%
+  {\makebox[\overflowingheadlen][r]{\textup{\textsc{\MakeLowercase \rightmark}}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\thepage}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.thesis}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\makebox[\overflowingheadlen][r]{\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\thepage}}%
+  {}
+}
 
 %----------------------------------------------------------------------------------------
 %	LISTINGS SETTINGS

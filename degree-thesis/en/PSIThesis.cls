@@ -261,12 +261,12 @@
 %----------------------------------------------------------------------------------------
 
 \RequirePackage{geometry}
-\geometry{
-	outer=5cm,
-	headheight=4ex,
-	includehead,
-	includefoot
-}
+%\geometry{
+%	outer=5cm,
+%	headheight=4ex,
+%	includehead,
+%	includefoot
+%}
 
 \raggedbottom
 
