@@ -53,6 +53,7 @@ The package for macOS is called \textsc{MacTeX} (\url{http://www.tug.org/mactex/
 
 
 \section{Required Software}
+\label{sec:requirements}
 
 To use the PSIThesis template, you need a working LaTeX installation with \textbf{LuaLaTeX}, \textbf{biblatex}, and \textbf{biber}. Usually, these tools are available in a typical LaTeX installation.
 
@@ -62,14 +63,14 @@ We have compiled this guide with TeX Live 2019 (LuaLaTeX 1.10.0, biber 2.14).
 
 As of December 2019, the template does not work with \url{https://www.overleaf.com}. Overleaf uses LuaLaTeX~1.07 from TeX Live 2018. This version of LuaLaTeX has a known bug that prevents compilation of documents that use the \code{microtype} package. The template includes \code{microtype}, not only because of the better typography, but also because it uses microtype's command \verb|\textls{text}| to change the letter spacing of the uppercase text on the title page.
 
-You can use the template on Overleaf by removing that loads the \code{microtype} package in \file{setup.tex}. Moreover, you will have to remove all calls to \code{textls}.
+You \emph{can} use the template with Overleaf if you remove the line that loads the \code{microtype} package in \file{setup.tex}. Moreover, you will have to remove all calls to \code{textls}.
 
 Another option is typesetting the template with XeTeX. That works once you have removed the line \verb|\usepackage[utf8]{luainputenc}| from \file{setup.tex} as well as all calls to \code{textls}.
 
 
 \section{Getting Started with the Template}
 
-Once you are familiar with LaTeX, you should explore the directory structure of the template. After that, place your details into the \emph{THESIS INFORMATION} block of the \file{main.tex} file. You can then modify the rest of this file to your unique specifications based on your degree/university. \Cref{FillingFile} on page~\pageref{FillingFile} will help you do this. Make sure you also read \cref{ThesisFeatures} about the template features. Text  {\sffamily Hallo} \texttt{Foo}
+Once you are familiar with LaTeX, you should explore the directory structure of the template. After that, place your details into the \emph{THESIS INFORMATION} block of the \file{main.tex} file. You can then modify the rest of this file to your unique specifications based on your degree/university. \Cref{FillingFile} on page~\pageref{FillingFile} will help you do this. Make sure you also read \Cref{ThesisFeatures} about the template features.
 
 
 \subsection{Folder Structure}
@@ -91,6 +92,8 @@ This template comes as a single ZIP file that expands out to several files and f
 
 This chapter layout is specialized for an experimental thesis; your thesis may be different. You have to include your chapter files in \file{main.tex}.
 
+\keyword{Examples} -- this folder contains a Python script to generate a figure used in this guide. You do not need that folder for your thesis.
+
 \keyword{Figures} -- this folder contains all figures for the thesis. These are the final images that will go into the thesis document.
 
 Two additional folders contain files that are internally used by the template. The folder \keyword{fonts} contains the TTF and OTF files of the template's fonts, the folder \keyword{Misc} contains \file{setup.tex}, \file{titlepage.tex}, and the logo of University of Bamberg.
@@ -105,19 +108,19 @@ Most of the template's files are plain text, and you can see their contents in a
 
 \keyword{main.pdf} -- This is your typeset thesis created by LaTeX. It is part of the template's ZIP file. When you compile the template, you should get an identical version.
 
-\keyword{main.tex} -- This is the file that you tell LaTeX to compile to produce ˜file{main.pdf}. It contains the framework and constructs that tell LaTeX how to layout the thesis. It contains many comments that explain the purpose of each line of code. Fill in your details into the \emph{THESIS INFORMATION} block.
+\keyword{main.tex} -- This is the file that you tell LaTeX to compile to produce \file{main.pdf}. It contains the framework and constructs that tell LaTeX how to layout the thesis. It contains many comments that explain the purpose of each line of code. Fill in your details into the \emph{THESIS INFORMATION} block.
 
-\keyword{setup.tex} -- This file loads and sets up additional LaTeX packages. It changes some defaults of the MastersDoctoralThesis and controls the layout of the thesis.
+\keyword{setup.tex} -- This file loads and sets up additional LaTeX packages. It changes some defaults of the MastersDoctoralThesis, on which this template is based, and controls the layout of the thesis.
 
-Files that are \emph{not} included, but are created by LaTeX as auxiliary files include: \keyword{main.aux}, \keyword{main.bbl}, \file{main.aux}, \keyword{main.blg}, 
-\keyword{main.lof}, \keyword{main.log}, \keyword{main.lot}, and \keyword{main.out}.
+Files that are \emph{not} included, but are created by LaTeX as auxiliary files include: \file{main.aux}, \file{main.bbl}, \file{main.aux}, \file{main.blg}, 
+\file{main.lof}, \file{main.log}, \file{main.lot}, and \file{main.out}.
 
 So from this long list, only the files with the \file{.bib}, \file{.cls}, and \file{.tex} extensions are relevant. The other auxiliary files can be ignored or deleted as every compilation will regenerate them.
 
 
 \subsection{Compiling the PDF}
 
-We have tested the template with \texttt{LuaLaTeX}. Using \texttt{XeTeX} may also work. \texttt{pdLaTeX}, however, will not work, because the template uses TTF and OTF fonts.
+You have to compile this template with \texttt{LuaLaTeX} (cf. Sect.~\ref{sec:requirements}). Using \texttt{pdLaTeX}, however, is not possible, because the template uses TTF and OTF fonts.
 
 On Windows, you can use the TeXworks application for compilation. To obtain the final PDF, you have to compile \file{main.tex} with \code{lualatex}, then execute \code{biber}, and once more compile main.tex with \code{lualatex}.
 
@@ -131,7 +134,7 @@ We haven't prepared the template to be used with the convenient LaTeX editor \te
 
 \subsection{Filling in Your Information in \emph{main.tex}}\label{FillingFile}
 
-You will need to personalize the thesis template by filling in your details. in  \file{main.tex} file with a text editor or your favorite LaTeX environment.
+You will need to personalize the thesis template by filling in your details in \file{main.tex} with a text editor or your favorite LaTeX environment.
 
 Open the file and scroll down to the third large block titled \emph{THESIS INFORMATION}. You will see entries for \emph{University Name}, \emph{Department Name}, etc. Fill out the information about yourself, your group, and institution.%
 \marginnote{If you write a thesis at the PSI chair, you can keep the defaults.}
@@ -164,7 +167,7 @@ The next optional page contains a one-line dedication.\marginnote{This is disabl
 
 Finally, there is a block which includes all the chapters. Uncomment the lines (delete the \code{\%} character) as you add chapters to your thesis. Each chapter should be saved in a separate file and put into the \emph{Chapters} folder. Similarly for the appendices, uncomment the respective lines as you need them. Each appendix should be saved in a separate file in the \emph{Appendices} folder.
 
-The next block sets up the bibliography. The template uses the bibliography style \option{alpha}. the \option{alpha} style creates reference labels that contain the first letters or initials of authors and a two-digit number for the year.
+The next block sets up the bibliography. The template uses the bibliography style \emph{alpha}. The alpha style creates reference labels that contain the first letters or initials of authors and a two-digit number for the year.
 
 
 \section{Your Turn Now}

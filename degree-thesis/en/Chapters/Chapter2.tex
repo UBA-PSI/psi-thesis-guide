@@ -84,9 +84,15 @@ A remark on style: \textbf{Do not treat references as nouns.} You should, theref
 
 \paragraph{BibTeX Snippets}
 
-For many publications, you will find BibTeX snippets online, for instance, in the ACM Digital Library or on \url{https://dblp.org}. Using these snippets is generally recommended. Unfortunately, the quality of publicly available BibTeX snippets varies a lot. You will have to edit them to create a consistent bibliography. For instance, make sure that the name of a particular conference is always spelled consistently in all entries. Moreover, you should \textbf{remove superfluous information} such as precise dates, multiple occurrences of the year, and the location of the conference.
+For many publications, you will find BibTeX snippets online, for instance, in the ACM Digital Library or on \url{https://dblp.org}. Using these snippets is generally recommended. Unfortunately, the quality of publicly available BibTeX snippets varies a lot. You will have to edit them to create a consistent bibliography.
 
-A common issue is the \textbf{capitalization of words in titles}. Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces. Consider the following example, which ensures that TCP remains in uppercase:
+For instance,%
+\marginnote{We have not cleaned up all items in the bibliography of this guide.}
+ make sure that the name of a particular conference is always spelled consistently in all entries. Moreover, you should \textbf{remove superfluous information} such as precise dates, multiple occurrences of the year, and the location of the conference. An example of a poorly styled reference is \cite{BuchananRSS08}, a cleaned up item is \cite{DietrichKBF18}.
+
+A common issue is the \textbf{capitalization of words in titles}.%
+\marginnote{This should not be an issue in this template. Nevertheless, to check for inconsistent capitalization.}
+Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces. Consider the following example, which ensures that TCP remains in uppercase:
 \begin{verbatim}
    @inproceedings{... title = "Improving {TCP}-based Communication Systems" ...}
 \end{verbatim}
@@ -155,7 +161,7 @@ To reference a table you use the command \verb|\ref{<label>}|, where \verb|<labe
 
 In the PSI Thesis template, tables use the \emph{booktabs} style, which \textbf{avoids visual clutter such as vertical lines}. If you want to group columns, do it in the headers using \verb|\cmidrule|.
 
-\textbf{Horizontal lines} should be used sparingly as well. You can add additional vertical space (using \verb|\addlinespace|) to group consecutive rows (as was done in Table~\ref{tab:treatments}). You can also use bold print to highlight especially relevant parts.
+\textbf{Horizontal lines} should be used sparingly as well. Instead of horizontal lines, you should group consecutive rows with additional vertical space (using \verb|\addlinespace|, cf. Table~\ref{tab:treatments}). You can also use bold print to highlight especially relevant parts.
 
 Note that Table~\ref{tab:treatments} is not laid out ideally: the numbers are given with different precision, which disturbs their alignment. Besides, strictly aligning  all numeric columns to the right is not always appropriate.
 Centered alignment makes more sense here (cf. Table~\ref{tab:treatments2}). For a step-by-step illustration of cleaning up tables, watch the presentation entitled ``Less is more (attractive)'' at \url{https://www.darkhorseanalytics.com/blog/clear-off-the-table}.
@@ -179,7 +185,7 @@ Centered alignment makes more sense here (cf. Table~\ref{tab:treatments2}). For 
 \end{tabular}
 \end{table}
 
-Example of more complex tables are Tables~\ref{tab:complex} and \ref{tab:complextext}. Table~\ref{tab:complextext} shows how to build wide tables that span the margin and the text. If you need to create similar tables, feel free to re-use the code in \file{chapter2.tex}.
+Example of more complex tables are Tables~\ref{tab:complex} and \ref{tab:complextext}. Table~\ref{tab:complextext} shows how to build wide tables that span the margin and the text. If you need to create similar tables, feel free to re-use the code from \file{chapter2.tex}.
 
 
 \newcommand*{\redt}{\textcolor{ubred}{\ding{115}}}%
@@ -270,9 +276,6 @@ you should remove all non-data ink and redundant data ink, within reason, to inc
 \includegraphics[width=0.48\textwidth]{barplot-after}
 \sidecaption{\label{fig:barplot}%
    Removing unnecessary clutter.}[-2\baselineskip]
-   % manual justification override with \raggedleft because caption appears
-   % on an even page; unclear how to automate raggedness in sidecaption
-   % 
    % using optional last parameter: negative offset to correct vertical
    % position of caption (this caption is two lines high)
 \end{figure}
@@ -280,7 +283,7 @@ you should remove all non-data ink and redundant data ink, within reason, to inc
 
 Make sure that your figures work when \textbf{printed in monochrome}, i.\,e., you shouldn't rely on the colors too much. If you do use colors, use the same color palette in all figures, and ensure that readers with color blindness can differentiate all colors.
 
-If you present plots of experimental results, use a tool that allows you to \textbf{recreate the plots} without any effort. Write scripts that create the plots based on raw data, so you can recreate the plots easily. You will also be able to change the design of all plots with little effort. Common tools are Python's \textsc{matplotlib} (also consider using \textsc{seaborn}), R's \textsc{ggplot2}, and \textsc{gnuplot}. Make sure to export your plots as PDFs.
+If you present plots of experimental results, use a tool that allows you to automatically \textbf{recreate plots}. To this end, you recommend to write scripts that create the plots based on raw data. Another benefit is that you will be able to change the design of all plots with little effort. Common tools are Python's \textsc{matplotlib} (also consider using \textsc{seaborn}), R's \textsc{ggplot2}, and \textsc{gnuplot}. Make sure to export your plots as PDFs.
 
 \subsubsection{Figure Layout Options}
 
@@ -320,7 +323,7 @@ The \verb|\decoRule| command is optional and simply puts a horizontal line below
 
 Resize your figures, ideally consistently, to an appropriate size, e.\,g., a fraction of \texttt{\textbackslash textwidth}. Check that the font size (after scaling) is consistent. This advice is especially important when you include figures with different aspect ratios.
 
-LaTeX is capable of using images in PDF, JPG, and PNG format. Using \textbf{vectorized figures} (PDF) is preferred as they usually provide sharper results at smaller file size. If you \emph{have} to use pixel graphics, create them with a sufficiently high resolution, i.\,e, at least 300 dpi.
+LaTeX is capable of using images in PDF, JPG, and PNG format. Using \textbf{vectorized figures} (PDF) is preferred as they usually provide sharper results at smaller file size. If you \emph{have} to use pixel graphics, create them with a sufficiently high resolution, i.\,e., at least 300 dpi.
 
 
 \paragraph{Wide Figures} You can also add wide figures that span the full width of a page. These should be placed at the top of the page. The following code creates the example figure (Fig.~\ref{fig:widefig}):
@@ -339,7 +342,7 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using \textbf{vect
 \end{figure*}
 
 
-\paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures next to each other There are several approaches for that, e.\,g., using the \texttt{subfigure} package. In many cases, however, a comprehensive subfigure support is not needed. A lightweight approach as shown in Fig.~\ref{fig:barplot} may be sufficient. This result is achieved with the following code:
+\paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures next to each other. There are several approaches for that, e.\,g., using the \texttt{subfigure} package. In many cases, however, a comprehensive subfigure support is not needed. A lightweight approach as shown in Fig.~\ref{fig:barplot} may be sufficient. This result is achieved with the following code:
 \begin{latex}
 \begin{figure}[t]
 \centering
@@ -347,10 +350,7 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using \textbf{vect
 \hspace{\fill}%
 \includegraphics[width=0.48\textwidth]{barplot-after}
 \sidecaption{\label{fig:barplot}%
-   \raggedleft Removing unnecessary clutter.}[-2\baselineskip]
-   % manual justification override with \raggedleft because caption appears
-   % on an even page; unclear how to automate raggedness in sidecaption
-   % 
+   Removing unnecessary clutter.}[-2\baselineskip]
    % using optional last parameter: negative offset to correct vertical
    % position of caption (this caption is two lines high)
 \end{figure}
@@ -365,7 +365,7 @@ Just ensure to place all captions consistently, i.\,e., either in the margin or 
 \caption{\label{fig:marfig}This is a margin figure with a short caption.}
 \end{marginfigure}
 
-\paragraph{Margin Figures} Sometimes, it makes sense to place figures in the margin. Margin figures work best when they are simple and unobtrusive. They can be used to illustrate concepts and to visualize trends. Do not use them for figures that convey primary results.
+\paragraph{Margin Figures} Sometimes, it makes sense to place figures in the margin. Margin figures work best when they are simple and unobtrusive. They can be used to illustrate concepts and to visualize trends. Do not use them for figures that convey essential results.
 %
 You can create margin figures like Fig.~\ref{fig:marfig} with the following code:
 \begin{latex}
@@ -382,7 +382,7 @@ If you are new to LaTeX,%
 \marginnote{If you have Python, you can consider the more modern package \code{minted}, which uses {pygments} for syntax highlighting.}
 we recommend to use the \emph{listings} package for code listings. With the template's default monospace font, lines can have up to 89 characters.
 
-You can create floating listings, which behave very much like floating figures and tables, i.\,e., they have a caption and can be referenced (cf. Listing~\ref{lst:listing} for an example). Sometimes, the properties of floating listings are undesirable. For short code fragments, it often makes more sense to use a non-floating listing.
+You can create floating listings, which behave very much like floating figures and tables, i.\,e., they have a caption and can be referenced (cf. Listing~\ref{lst:listing} for an example). Sometimes, however, the properties of floating listings are undesirable. For short code fragments, it often makes more sense to use a non-floating listing.
 
 Listing~\ref{lst:listing} has been generated with the following code:
 \begin{latex}
@@ -438,7 +438,7 @@ def incmatrix(genl1,genl2):
 
 \section{Mathematics}
 
-Equations allow you to express an approach with high precision and no ambiguity. 
+Equations allow you to express yourself with high precision and no ambiguity. 
 
 The \enquote{Not So Short Introduction to LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS: \href{{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}}{A Short Math Guide to LaTeX}.
 
@@ -463,7 +463,7 @@ LaTeX automatically gives all equations you write equation numbers. If you don't
 \[ a^{2}=4 \]
 \end{latex}
 
-You can also have equations in the middle of a paragraph: \( E = mc^{2} \) by using code like this: 
+You can also have equations in the middle of a paragraph, e.\,g., \( E = mc^{2} \), with this syntax: 
 
 \begin{latex}
 \( E = mc^{2} \)
@@ -496,7 +496,7 @@ Use emphasis sparingly. This advice is especially true for \textbf{bold print} (
 
 Note, however, that \textbf{too frequent use of italics} can also be annoying.%
 \marginnote{See also \href{https://sblhs2.com/2016/09/15/italics-scare-quotes/}{Italics or Scare Quotes?}} 
-We recommend limiting its use to emphasize the case when an ordinary word is used as a special term – and only at its first occurrence. Also, you should emphasize words that you would stress when reading aloud, indicating that they are especially relevant for the meaning.
+We recommend using it to emphasize ordinary words that are used as special terms – and only at its first occurrence. Also, you should emphasize words that you would stress when reading aloud, indicating that they are especially relevant for the meaning.
 
 
 Generally, we recommend \textbf{avoiding scare quotes}.%
@@ -513,7 +513,7 @@ Use en dashes also for ranges, e.\,g., when you write something like 5--10\,\% (
 
 Use a proper \textbf{minus symbol} (e.\,g., by using math mode like this \(-1.337\)). Also, use a sensible number of digits after the decimal point.
 
-Use proper \textbf{directional quotation marks} like ``these.'' Directional quotation marks are created  \verb|``like this''|, by using \verb|\enquote{text}|, or by copy-and-pasting the respective Unicode characters. Note that in contrast to conventions in the German language the closing quotation mark is placed \emph{after} any subsequent punctuation, e.\,g., ``like this,'' and ``like that.''
+Use proper \textbf{directional quotation marks} like ``these.'' Directional quotation marks are created  \verb|``like this''|, by using \verb|\enquote{text}|, or by copy-and-pasting the respective Unicode characters. Note that in contrast to conventions in the German language, the closing quotation mark is placed \emph{after} any subsequent punctuation, e.\,g., ``like this,'' and ``like that.''
 
 \paragraph{Further Reading}
 
@@ -529,28 +529,28 @@ Ensure correct spelling throughout your text. Check your writing with a spell ch
 
 Ensure proper hyphenation throughout your text. You will have to intervene, for instance, when words extend into the margin of the page (creating so-called overfull hboxes). You can override LaTeX's hyphenation rules by inserting \verb|\-| into a word. This special character indicates a conditional hyphenation point.
 
-Often, it makes sense to define hyphenation rules globally. To this end, place custom hyphenation definitions like \verb|\hyphenation{FORTRAN Hy-phen-a-tion}| after the \todo{Oh no, an overful hbox!}\verb|\begin{document}| clause. The example definition prevents any hyphenation of the word FORTRAN and defines three hyphenation points for the word Hyphenation.
+Often, it makes sense to define hyphenation rules globally. To this end, place custom hyphenation definitions like \verb|\hyphenation{FORTRAN Hy-phen-a-tion}| after the \verb|\begin{document}| clause.\todo[noline]{Oh no, an overful hbox!} The example definition prevents any hyphenation of the word FORTRAN and defines three hyphenation points for the word Hyphenation.
 
 Also, check your text for common grammar issues (cf. Sect.~\ref{sec:style}).
 
 \subsection{Style}
 \label{sec:style}
 
-This section contains only selected pieces of advice on particular aspects and typical errors. For a more comprehensive treatment, we refer the reader to the paragraph \nameref{par:commonbugs} at the end of this section.
+This section contains selected pieces of advice on particular aspects and typical errors. For a more comprehensive treatment, we refer the reader to the paragraph \nameref{par:commonbugs} at the end of this section.
 
-The main goal of a thesis is to convey information without unambiguity. Write concise and use a simple language. Avoid complex sentence structures and unnecessary complex words. A thesis is not the place to show off your mastery of grammar and vocabulary. There are various (mostly web-based and commercial) tools that can help you identify common issues in your text.\footnote{We are aware of \url{https://grammarly.com}, \url{https://languagetool.org}, \url{http://www.hemingwayapp.com} as well as the command-line tool Academic-Writing-Check (\url{https://github.com/devd/Academic-Writing-Check}).}
+The main goal of a thesis is to convey information without ambiguity. Write concisely and use a simple language. Avoid complex sentence structures, unnecessary words, and unnecessarily complicated words. A thesis is not the place to show off your mastery of grammar and vocabulary. There are various (mostly web-based and commercial) tools that can help you identify common issues in your text.\footnote{We are aware of \url{https://grammarly.com}, \url{https://languagetool.org}, \url{http://www.hemingwayapp.com} as well as the command-line tool Academic-Writing-Check (\url{https://github.com/devd/Academic-Writing-Check}).}
 
-Even if a text uses a simple language, it may be difficult to read, because it does not convey the writer's train of thoughts coherently. In short, your goal is to connect every sentence explicitly to its predecessor – which is, of course, easier said than done.
 
 \subsubsection{The Science of Scientific Writing}
 
-A good resource to develop this skill is the article \emph{The Science of Scientific Writing} by George d. Gopen and Judith A. Swan.\footnote{The article can be obtained from \url{https://cseweb.ucsd.edu/~swanson/papers/science-of-writing.pdf} and \url{https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing}} 
+Even if a text uses a simple language, it may be difficult to read, because it does not convey the writer's train of thoughts coherently. In short, your goal is to connect every sentence explicitly to its predecessor – which is, of course, easier said than done.
 
+A good resource to develop this skill is the article \emph{The Science of Scientific Writing} by George D. Gopen and Judith A. Swan.\footnote{The article can be obtained from \url{https://cseweb.ucsd.edu/~swanson/papers/science-of-writing.pdf} and \url{https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing}} 
 The advice from this article is also part of the three lessons on scientific writing offered by Duke University.\footnote{Homepage of the lessons: \url{https://cgi.duke.edu/web/sciwriting/}, PDF slides: \url{https://cgi.duke.edu/web/sciwriting/resources/201108_DukeScientificWritingWorkshop.pdf} (these URLs could not be archived).}
 
-The remainder of this section contains three excerpts from \emph{The Science of Scientific Writing}. See the original article for a more extended treatment, including worked examples.
+The remainder of this section contains selected excerpts from \emph{The Science of Scientific Writing}. Consider reading the original article for a more extended treatment, including worked examples.
 
-\paragraph{Subject-Verb Separation (Excerpt)}
+\paragraph{Subject-Verb Separation (Excerpts)}
 
   Readers expect a grammatical subject to be followed immediately by the verb. Anything of length that intervenes between subject and verb is read as an interruption, and therefore as something of lesser importance.
 The reader’s expectation stems from a pressing need for syntactic resolution, fulfilled only by the arrival of the verb. Without the verb, we do not know what the subject is doing, or what the sentence is all about.
@@ -559,7 +559,7 @@ As a result, the reader focuses attention on the arrival of the verb and resists
 The longer the interruption lasts, the more likely it becomes that the “interruptive” material actually contains important information; but its structural location will continue to brand it as merely interruptive.
 Unfortunately, the reader will not discover its true value until too late – until the sentence has ended without having produced anything of much value outside of the subject-verb interruption.
 
-\paragraph{The Stress Position (Excerpt)}
+\paragraph{The Stress Position (Excerpts)}
 
 It is a linguistic commonplace that readers naturally emphasize the material that arrives at the end of a sentence. We refer to that location as a “stress position.”
 Beginning with the exciting material and ending with a lack of luster often leaves us disappointed and destroys our sense of momentum.
@@ -568,7 +568,7 @@ The stress position can change in size from sentence to sentence. Sometimes it c
 
 To summarize the principles connected with the stress position, we have the proverbial wisdom, “Save the best for last.”
 
-\paragraph{The Topic Position (Excerpt)}
+\paragraph{The Topic Position (Excerpts)}
 
 To summarize the principles connected with the other end of the sentence, which we will call the topic position, we have its proverbial contradiction, “First things first.”
 In the stress position the reader needs and expects closure and fulfillment; in the topic position the reader needs and expects perspective and context.
@@ -581,7 +581,7 @@ Readers also expect the material occupying the topic position to provide them wi
 
 Avoid using \textbf{informal contractions} such as \emph{can't}, \emph{don't}, and \emph{it's}. Replace them with \emph{cannot}, \emph{do not}, and \emph{it is}.
 
-We recommend using the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}: Insert  it right before the word \emph{and} that leads the last item of a list. Consider this example:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
+We recommend using the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}: Insert  it right before the word \emph{and} that leads the last item of a list. The following example illustrates the benefit of using a serial comma:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
 \begin{quote}
   Three important techniques in the design of algorithms are bisection, divide and conquer, and recursion.
 \end{quote}
@@ -622,4 +622,4 @@ Finally, if you seek inspiration, we recommend to read these reports by well-kno
 \item Nick Feamster: Writing Tips for Academics (\url{http://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/}).
 \end{itemize}
 
-The remaining parts of this guide contain less often needed technical details and historical information about the template as well as a loose collection of assorted advice.
+The remaining parts of this guide contain less-often needed technical details and historical information about the template as well as a loose collection of assorted advice.
