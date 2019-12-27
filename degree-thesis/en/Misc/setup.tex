@@ -180,6 +180,16 @@
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
 \renewcommand*{\marginfont}{\scriptsize\sffamily} % format margin text
 
+% for sidenotes: change marginpar font
+\usepackage{xparse}
+\let\oldmarginpar\marginpar
+\RenewDocumentCommand{\marginpar}{om}{%
+  \IfNoValueTF{#1}
+    {\oldmarginpar{\mymparsetup #2}}
+    {\oldmarginpar[\mymparsetup #1]{\mymparsetup #2}}}
+\newcommand{\mymparsetup}{\scriptsize\sffamily}
+
+
 % this provides correct alignment for margin text that is inserted
 % right at the beginning of a paragrah; however, it messes up the
 % alignment in all other cases.
@@ -452,6 +462,20 @@
 \usepackage{sidenotes}
 \usepackage{scrextend} % for ifthispageodd
 
+% objective: instead of having the sidenode numbner in superscript, want something like 1:
+\makeatletter
+\ExplSyntaxOn
+\RenewDocumentCommand \sidenotetext { o o +m }
+{
+  \IfNoValueOrEmptyTF{#1}
+    {
+      \@sidenotes@placemarginal{#2}{\thesidenote{}:~#3}
+  \refstepcounter{sidenote}
+}
+    {\@sidenotes@placemarginal{#2}{#1{}:~#3}}
+}
+\ExplSyntaxOff
+\makeatother
 
 % objective: automatically justify sidecaptions to match the other marginnotes
 % captions of marginfigures etc. shall always be raggedright
