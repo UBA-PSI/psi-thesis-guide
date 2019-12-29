@@ -21,9 +21,7 @@ You will most certainly include links and references in your thesis.
 
 Special care is necessary when you include links in your thesis. URLs are generally embedded using the \verb|\url{}| command. Using this command allows LaTeX to break URLs at the end of a line. Moreover, the URLs will become clickable.
 
-It is a frequently asked question%
-\marginnote{In the interest of ease of use, we neglect the principles in this guide.}
-whether one should embed \emph{all} links as proper references (with a dedicated entry in the bibliography) or not. We recommend to follow these principles:
+It is a frequently asked question whether one should embed \emph{all} links as proper references (with a dedicated entry in the bibliography) or not. We recommend to follow these principles:\sidenote{In the interest of ease of use, we neglect the principles in this guide.}
 \begin{itemize}
   \item \textbf{Use a link} in the text (or a footnote when it is a long link) when the primary purpose is to \emph{provide a reference to a particular location}. Examples: websites of services or products or weblogs; when the purpose is to make readers aware of its existence as a whole.
   \item \textbf{Use a reference} when the purpose is to \emph{refer to or discuss the content} on a website. Note that bibliographic references should generally mention the author and the publication date (at least the year). If you cannot identify the author, you can resort to using the name of the respective organization instead (use an additional pair of curly braces in BibTeX -- otherwise, LaTeX will misinterpret the name as first name and last name). Example: linking to a \emph{particular} blog post.
@@ -31,24 +29,23 @@ whether one should embed \emph{all} links as proper references (with a dedicated
 
 \paragraph{Link Rot}
 
-As the web is quite dynamic, many links do not work forever.%
-\marginnote{See also: \href{https://en.wikipedia.org/wiki/Link_rot}{Link Rot in Wikipedia}}
-Content may change or move to different URLs, and sites may go out of service altogether. This phenomenon is called Link Rot, and it has become a significant issue in academia.
+As the web is quite dynamic, many links do not work forever.
+Content may change or move to different URLs, and sites may go out of service altogether. This phenomenon is called Link Rot, and it has become a significant issue in academia.\sidenote{See also: \href{https://en.wikipedia.org/wiki/Link_rot}{Link Rot in Wikipedia}}
 
 Therefore, we ask you to \textbf{archive all websites} whose URLs you provide using \textsc{The Wayback Machine} of the Internet Archive, which is available at \url{archive.org}.
 This preserves the content of a website at the given point in time and makes it permanently available in the Internet Archive.
 
-You should inform the reader about the availability of an archived version.%
-\marginnote{We have archived all websites mentioned in this guide.}
-We recommend to provide the \emph{original link} and add ``(archived at [date])'' after the URL. This practice applies to URLs in the main text, in footnotes, and in references.
+You should inform the reader about the availability of an archived version.
+We recommend to provide the \emph{original URL} and add ``(archived at [date])'' after the URL.
+\sidenote{We have archived all websites mentioned in this guide. In the interest of readability, we will omit the suffix after links.}
+This practice applies to URLs in the main text, in footnotes, and in references.
 
 Archiving is not necessary for academic papers that have a Digital Object Identifier (DOI), have an ISBN/ISSN, or are available on \url{arxiv.org}.
 
 
 \subsection{Citation and References}
 
-Always try to \textbf{cite the primary reference},%
-\marginnote{To allow for fast skimming, we use bold print liberally throughout this guide (which would not be appropriate in a thesis).}
+Always try to \textbf{cite the primary reference},
 i.\,e., the seminal paper that introduced a particular concept. You can cite well-known academic textbooks (instead of the original paper) when you cite fundamentals. No citation is necessary for widespread knowledge: ``Authentication with passwords is popular.''
 
 Most of the time, \textbf{paraphrasing content is preferred} over literally citing text with quotation marks. The most expressive way to integrate references to literature is to insert the labels right behind key terms or author names:
@@ -75,7 +72,9 @@ When you cite multiple references in one spot, you should include them in one \v
   The FOO approach appears in a wide variety of applications \cite{murdoch_steven_j._chip_2010,anderson_ross_emv:_2014,kou_weidong_secure_2003}.
 \end{quote}
 
-Note, however, that the result is not very informative.\footnote{Source of this advice: \url{https://nhigham.com/2014/12/22/more-tips-on-book-and-thesis-writing/}} The following version provides much more information:
+Note, however, that the result is not very informative.%
+\sidenote{Source of this advice: \url{https://nhigham.com/2014/12/22/more-tips-on-book-and-thesis-writing/}}
+The following version provides much more information:
 \begin{quote}
 The FOO approach appears in a wide variety of applications, such as qux systems \cite{murdoch_steven_j._chip_2010}, baz systems \cite{anderson_ross_emv:_2014}, and -- much earlier -- in bar readers \cite{kou_weidong_secure_2003}.
 \end{quote}
@@ -86,24 +85,28 @@ A remark on style: \textbf{Do not treat references as nouns.} You should, theref
 
 For many publications, you will find BibTeX snippets online, for instance, in the ACM Digital Library or on \url{https://dblp.org}. Using these snippets is generally recommended. Unfortunately, the quality of publicly available BibTeX snippets varies a lot. You will have to edit them to create a consistent bibliography.
 
-For instance,%
-\marginnote{We have not cleaned up all items in the bibliography of this guide.}
- make sure that the name of a particular conference is always spelled consistently in all entries. Moreover, you should \textbf{remove superfluous information} such as precise dates, multiple occurrences of the year, and the location of the conference. An example of a poorly styled reference is \cite{BuchananRSS08}, a cleaned up item is \cite{DietrichKBF18}.
+For instance,
+ make sure that the name of a particular conference is always spelled consistently in all entries. Moreover, you should \textbf{remove superfluous information} such as precise dates, multiple occurrences of the year, and the location of the conference.%
+\sidenote{We have not cleaned up all items in the bibliography of this guide.}
+An example of a poorly styled reference is \cite{BuchananRSS08}, a cleaned up item is \cite{DietrichKBF18}.
 
-A common issue is the \textbf{capitalization of words in titles}.%
-\marginnote{This should not be an issue in this template. Nevertheless, to check for inconsistent capitalization.}
-Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces. Consider the following example, which ensures that TCP remains in uppercase:
+A common issue is the \textbf{capitalization of words in titles}.
+Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces to protect them.%
+\sidenote{The template will print the items exactly as they are defined in the BibTex file, i.\,e., you will probably not have to worry about abbreviations.}
+Consider the following example, which ensures that TCP remains in uppercase:
 \begin{verbatim}
-@inproceedings{... title = "Improving {TCP}-based  Systems" ...}
-\end{verbatim}
+@inproceedings{…, title = "A new {TCP}-based System", …}
+\end{verbatim} 
 
-\section{Margin Notes and Footnotes}
+\section{Side Notes, Margin Notes and Footnotes}
 
-The template offers you the option to use margin notes and footnotes. You can use \textbf{margin notes} (\verb|\marginnote|) as a replacement for footnotes. You can also use them with keywords or short phrases to attract the reader's attention.
+The template offers you the option to use side notes, margin notes, and footnotes. We \textbf{do not recommend footnotes} (\verb|\footnote|) because the reader's eye has to travel long distances. You should use \textbf{side notes} (\verb|\sidenote|) as a replacement instead of footnotes.
 
-\textbf{Footnotes} are either inserted directly after the particular word they refer to or after the punctuation if they relate to the whole clause or sentence.\footnote{Such as this footnote, here down at the bottom of the page: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.} Footnotes themselves should be full, descriptive sentences (beginning with a capital letter and ending with a full stop). The APA6 states: \enquote{Footnote numbers should be superscripted, [...], following any punctuation mark except a dash.} The Chicago Manual of Style states: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}
+You can also use \textbf{margin notes} (\verb|\marginnote|). In contrast to side notes, margin notes are not numbered. Margin notes can be used to add remarks to a paragraph that are not closely related to a particular sentence or word. Moreover, you can use margin notes for links whose relationship with the main text is obvious). Finally, you can use margin notes as a means of emphasis: placing important keywords in the margin captures the reader's attention.
 
-Using both margin notes and footnotes for similar purposes may create an inconsistent appearance and is therefore discouraged.
+Like footnotes side notes are either inserted directly after the particular word\sidenote{This is a side note after a word.} they refer to or after the punctuation if they relate to the whole clause or sentence.\sidenote{Consider, e.\,g., the Chicago Manual of Style: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}} Side notes should be full, descriptive sentences (beginning with a capital letter and ending with a full stop).
+
+Using both side notes and footnotes creates an inconsistent appearance and is therefore discouraged.
 
 \section{Tables, Figures, and Listings}
 
@@ -116,12 +119,12 @@ should use tables, figures, and (optionally) listings to illustrate your writing
 Tables are an important way of displaying your results in a concise way. \Cref{tab:treatments} is an example of a table showing experimental results. This table was generated with the following LaTeX code:
 \begin{latex}
 \begin{table}
-\caption{The effects of treatments X and Y on the four groups studied.}
+\caption{The effects of treatments X and Y on the …}
 \label{tab:treatments}
 \centering
 \begin{tabular}{r r r}
 \toprule
-& \multicolumn{2}{c}{\tabhead{Experimental results}} \\ \cmidrule(lr){2-3}
+& \multicolumn{2}{c}{\tabhead{Observed results}} \\ \cmidrule(lr){2-3}
 \tabhead{Group} & \tabhead{Treatment X} & \tabhead{Treatment Y} \\
 \midrule
 1 & 0.2 & 0.8\\
@@ -141,7 +144,7 @@ Tables are an important way of displaying your results in a concise way. \Cref{t
 \centering
 \begin{tabular}{r r r}
 \toprule
-& \multicolumn{2}{c}{\tabhead{Experimental results}} \\ \cmidrule(lr){2-3}
+& \multicolumn{2}{c}{\tabhead{Observed results}} \\ \cmidrule(lr){2-3}
 \tabhead{Group} & \tabhead{Treatment X} & \tabhead{Treatment Y} \\
 \midrule
 1 & 0.2 & 0.8\\
@@ -154,7 +157,7 @@ Tables are an important way of displaying your results in a concise way. \Cref{t
 \end{tabular}
 \end{table}
 
-\textbf{Column heads} should use sentence-style capitalization, i.\,e., do not use \emph{title case} as you would in section headings.
+As shown in \Cref{tab:treatments}, \textbf{column heads} should use sentence-style capitalization, i.\,e., do not use \emph{title case} as you would in section headings.
 
 Tables have \textbf{captions} that always appear \emph{above} the \code{tabular} environment. You must \textbf{reference all tables} in the main text at least once.
 To reference a table you use the command \verb|\ref{<label>}|, where \verb|<label>| corresponds to a label defined within the table environment. See \file{chapter2.tex} for an example of the label and citation (e.\,g., Table~\ref{tab:treatments}).
@@ -164,7 +167,7 @@ In the PSI Thesis template, tables use the \emph{booktabs} style, which \textbf{
 \textbf{Horizontal lines} should be used sparingly as well. Instead of horizontal lines, you should group consecutive rows with additional vertical space (using \verb|\addlinespace|, cf. Table~\ref{tab:treatments}). You can also use bold print to highlight especially relevant parts.
 
 Note that Table~\ref{tab:treatments} is not laid out ideally: the numbers are given with different precision, which disturbs their alignment. Besides, strictly aligning  all numeric columns to the right is not always appropriate.
-Centered alignment makes more sense here (cf. Table~\ref{tab:treatments2}). For a step-by-step illustration of cleaning up tables, watch the presentation entitled ``Less is more (attractive)'' at \url{https://www.darkhorseanalytics.com/blog/clear-off-the-table}.
+Centered alignment makes more sense here (cf. Table~\ref{tab:treatments2}). For a step-by-step illustration of cleaning up tables, watch the presentation entitled ``Less is more (attractive)''.\marginnote{\url{https://www.darkhorseanalytics.com/blog/clear-off-the-table}}[-1\baselineskip]
 
 \begin{table}
 \caption{The effects of treatments X and Y on the four groups studied.}
@@ -185,12 +188,12 @@ Centered alignment makes more sense here (cf. Table~\ref{tab:treatments2}). For 
 \end{tabular}
 \end{table}
 
-Example of more complex tables are Tables~\ref{tab:complex} and \ref{tab:complextext}. Table~\ref{tab:complextext} shows how to build wide tables that span the margin and the text. If you need to create similar tables, feel free to re-use the code from \file{chapter2.tex}.
+Example of more complex tables are Tables~\ref{tab:complex} and \ref{tab:complextext}. Table~\ref{tab:complextext} shows how to build \emph{wide tables} that span the margin and the text. If you need to create similar tables, feel free to re-use the code from \file{chapter2.tex}.
 
 
-\newcommand*{\redt}{\textcolor{ubred}{\ding{115}}}%
-\newcommand*{\green}{\textcolor{ubgreen}{\ding{108}}}%
-\newcommand*{\yell}{\textcolor{ubyellow}{\ding{110}}}%
+\newcommand*{\redt}{\textcolor{ubred}{\ding[0.8]{115}}}%
+\newcommand*{\green}{\textcolor{ubgreen}{\ding[0.8]{108}}}%
+\newcommand*{\yell}{\textcolor{ubyellow}{\ding[0.8]{110}}}%
 \begin{table}[t]
 \caption{\label{tab:complex}%
   A more complex table comparing experimentally obtained results for five systems.
@@ -239,6 +242,7 @@ iOS               & Carmadillo           & \redt  & \redt  & \green & \green  & 
   }
 \end{table*}
 
+If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \url{https://www.latex-tables.com} useful. You can also use the convenient LaTeX editor \textsc{LyX} (\url{https://www.lyx.org/}) to build tables and export their source code.
 
 
 
@@ -246,13 +250,11 @@ iOS               & Carmadillo           & \redt  & \redt  & \green & \green  & 
 
 Creating good tables is a challenge on its own. Recommended readings: 
 \begin{itemize}
-\item \url{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/},
-\item \url{http://tug.org/pracjourn/2007-1/mori/mori.pdf},
-\item \url{https://inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf}, and
-\item \url{https://www.cl.uni-heidelberg.de/courses/ss19/wissschreib/material/tableTricks.pdf}.
+\item Nick Higham. Better LaTeX Tables with Booktabs (\url{https://nhigham.com/2019/11/19/better-latex-tables-with-booktabs/}),
+\item Lapo Filippo Mori. Tables in \LaTeX{}2ε: Packages and Methods (\url{http://tug.org/pracjourn/2007-1/mori/mori.pdf}),
+\item Markus Püschel. Small Guide to Making Nice Table (\url{https://inf.ethz.ch/personal/markusp/teaching/guides/guide-tables.pdf}), and
+\item Adrian P. Robson. \LaTeX{} Table Hints and Tips (\url{https://www.cl.uni-heidelberg.de/courses/ss19/wissschreib/material/tableTricks.pdf}).
 \end{itemize}
-
-If you are in a hurry, you may find \url{https://www.tablesgenerator.com} and \url{https://www.latex-tables.com} useful. You can also use the convenient LaTeX editor \textsc{LyX} (\url{https://www.lyx.org/}) to build tables and export their source code.
 
 \subsection{Figures}
 
@@ -265,10 +267,10 @@ There will hopefully be many figures in your thesis. Creating effective and visu
 Ideally, you draw all figures yourself to ensure that they use a \textbf{consistent graphical language}, which includes colors, fonts, text sizes, line styles, arrowheads, fill styles, padding, margins, and the radius of rounded corners. Ensure to align elements properly and to provide sufficient whitespace.
 
 When it comes to figures and data plots, \textbf{less is more}! According to Edward Tufte,%
-\marginnote{Edward Tufte (1983): The Visual Display of Quantitative Information}
+\sidenote{Edward Tufte (1983): The Visual Display of Quantitative Information.}
 you should remove all non-data ink and redundant data ink, within reason, to increase the data to ink ratio and create a sound graphical design. This means, among others, that you should avoid shadows and 3D effects.
 
-Watch the illustrative presentation entitled ``Remove to improve'' at \url{https://www.darkhorseanalytics.com/blog/data-looks-better-naked/}. The plots in Fig.~\ref{fig:barplot} (taken from linked website) demonstrate the benefits of removing unnecessary clutter.
+Watch the illustrative presentation entitled ``Remove to improve''\marginnote{\url{https://www.darkhorseanalytics.com/blog/data-looks-better-naked/}}. The plots in Fig.~\ref{fig:barplot} (taken from linked website) demonstrate the benefits of removing unnecessary clutter.
 
 
 \begin{figure}[t]
@@ -285,15 +287,16 @@ Watch the illustrative presentation entitled ``Remove to improve'' at \url{https
 
 Make sure that your figures work when \textbf{printed in monochrome}, i.\,e., you shouldn't rely on the colors too much. If you do use colors, use the same color palette in all figures, and ensure that readers with color blindness can differentiate all colors.
 
-If you present plots of experimental results, use a tool that allows you to automatically \textbf{recreate plots}. To this end, you recommend to write scripts that create the plots based on raw data. Another benefit is that you will be able to change the design of all plots with little effort. Common tools are Python's \textsc{matplotlib} (also consider using \textsc{seaborn}), R's \textsc{ggplot2}, and \textsc{gnuplot}. Make sure to export your plots as PDFs.
+If you present plots of experimental results, use a tool that allows you to automatically \textbf{recreate plots}. To this end, you recommend to write scripts that create the plots based on raw data. Another benefit is that you will be able to change the design of all plots with little effort.%
+\marginnote{\url{https://matplotlib.org}, \url{https://seaborn.pydata.org}, \url{https://ggplot2.tidyverse.org}, and \url{http://www.gnuplot.info}}
+Common tools are Python's \textsc{matplotlib} (also consider using \textsc{seaborn}), R's \textsc{ggplot2}, and \textsc{gnuplot}. Make sure to export your plots as PDFs.
 
 \subsubsection{Figure Layout Options}
 
-Place your figures in the \emph{Figures} folder. This will allow you to omit the directory name when you refer to them in the \verb|\includegraphics{filename}| command.
-
-Putting the following code into the source file produces the picture of the electron that you can see in Fig.~\ref{fig:Electron}.
+Place your figures in the \file{figures} folder, which allows you to omit the directory name in the \verb|\includegraphics{filename}| command.
+The following code produces Fig.~\ref{fig:Electron}:
 \begin{latex}
-\begin{figure}[t] % place at top of page (recommended)
+\begin{figure}[t] % [t]: place at top of page (recommended)
 \centering
 \includegraphics[width=0.75\textwidth]{Electron}
 \decoRule
@@ -302,7 +305,7 @@ Putting the following code into the source file produces the picture of the elec
 \end{figure}
 \end{latex}
 
-\begin{figure}[t] % place at top of page (recommended)
+\begin{figure}[t] % [t]: place at top of page (recommended)
 \centering
 \includegraphics[width=0.75\textwidth]{Electron}
 \decoRule
@@ -316,9 +319,10 @@ Every figure needs a \textbf{descriptive caption and a label}. Figure captions m
 
 Every figure \textbf{must be referenced} in the text at least once, either in parentheses (cf. Fig.~\ref{fig:Electron}) or explicitly in the sentence: Figure~\ref{fig:Electron} shows an electron. Refer to figures using the abbreviation \code{Fig.} followed by a protected space (\verb|~|) and \verb|\ref|. Exception: write \code{Figure} if it is the first word of a sentence. Note \verb|Fig.| and \verb|Figure| are capitalized when they are used as part of a reference.
 
-The \verb|\caption| command contains two parts,%
-\marginnote{Theses at PSI usually do not have a List of Figures. You can, therefore, omit the part in square brackets.} 
-the first part, inside the square brackets is the title that will appear in the \emph{List of Figures}, and so should be short.
+The \verb|\caption| command contains two parts,
+the first part, inside the square brackets%
+\sidenote{Theses at PSI usually do not have a List of Figures. You can, therefore, omit the part in square brackets.} 
+is the title that will appear in the \emph{List of Figures}, and so should be short.
  The second part in the curly brackets should contain the longer and more descriptive caption text.
 
 The \verb|\decoRule| command is optional and simply puts a horizontal line below the image. Such a line can be useful with figures that are not symmetrical or whose exterior is uneven at the bottom.
@@ -358,7 +362,7 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using \textbf{vect
 \end{figure}
 \end{latex}
 
-Figure \ref{fig:barplot} also shows how to create \textbf{captions in the margin} (\code{sidecaption}). Whether you do this or not is up to you.
+Figure \ref{fig:barplot} uses a \textbf{side caption} (\code{sidecaption}). Whether you use side captions or not is up to you.
 Just ensure to place all captions consistently, i.\,e., either in the margin or above or below floats for tables and figures, respectively. Note that \code{sidecaption} does not work with floating listings.
 
 
@@ -367,7 +371,7 @@ Just ensure to place all captions consistently, i.\,e., either in the margin or 
 \caption{\label{fig:marfig}This is a margin figure with a short caption.}
 \end{marginfigure}
 
-\paragraph{Margin Figures} Sometimes, it makes sense to place figures in the margin. Margin figures work best when they are simple and unobtrusive. They can be used to illustrate concepts and to visualize trends. Do not use them for figures that convey essential results.
+\paragraph{Margin Figures} Sometimes, it makes sense to place figures in the margin. Margin figures work best for figures that are simple and unobtrusive. They are a useful mechanism to include figures that illustrate concepts and for graphs that are meant to give an overall impression. Do not use margin figures for figures that convey essential results.
 %
 You can create margin figures like Fig.~\ref{fig:marfig} with the following code:
 \begin{latex}
@@ -380,11 +384,11 @@ You can create margin figures like Fig.~\ref{fig:marfig} with the following code
 
 \subsection{Listings}
 
-If you are new to LaTeX,%
-\marginnote{If you have Python, you can consider the more modern package \code{minted}, which uses {pygments} for syntax highlighting.}
-we recommend to use the \emph{listings} package for code listings. With the template's default monospace font, lines can have up to 89 characters.
+If you are new to LaTeX, we recommend to use the \emph{listings} package for code listings.%
+\sidenote{If you have Python, you can consider the more modern package \code{minted}, which uses \code{pygments} for syntax highlighting.}
+With the template's default monospace font, lines can have up to 70 characters. Longer lines are automatically wrapped. An arrow at the end of the line indicates the line wrapping.
 
-You can create floating listings, which behave very much like floating figures and tables, i.\,e., they have a caption and can be referenced (cf. Listing~\ref{lst:listing} for an example). Sometimes, however, the properties of floating listings are undesirable. For short code fragments, it often makes more sense to use a non-floating listing.
+You can create floating listings, which behave very much like floating figures and tables, i.\,e., they have a caption and can be referenced (cf. Listing~\ref{lst:listing} for an example).\sidenote{As of now, the template does not offer wide listings that span the text and the margin.} Sometimes, however, the properties of floating listings are undesirable. For short code fragments, it often makes more sense to use a non-floating listing.
 
 Listing~\ref{lst:listing} has been generated with the following code:
 \begin{latex}
@@ -440,13 +444,11 @@ def incmatrix(genl1,genl2):
 
 \section{Mathematics}
 
-Equations allow you to express yourself with high precision and no ambiguity. 
+The \enquote{Not So Short Introduction to LaTeX}\sidenote{\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}} should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS.\sidenote{``A Short Math Guide to LaTeX,'' available at \url{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}}.
 
-The \enquote{Not So Short Introduction to LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS: \href{{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}}{A Short Math Guide to LaTeX}.
+There are many different LaTeX symbols to remember, luckily you can find the most common symbols in ``The Comprehensive \LaTeX~Symbol List'' (\url{http://ctan.org/pkg/comprehensive}).
 
-There are many different LaTeX symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
-
-You can write an equation, which is automatically given an equation number by LaTeX like this:
+You can write a numbered equation like this:
 \begin{latex}
 \begin{equation}
 E = mc^{2}
@@ -468,7 +470,7 @@ LaTeX automatically gives all equations you write equation numbers. If you don't
 You can also have equations in the middle of a paragraph, e.\,g., \( E = mc^{2} \), with this syntax: 
 
 \begin{latex}
-\( E = mc^{2} \)
+e.\,g., \( E = mc^{2} \), with this syntax:
 \end{latex}
 
 %----------------------------------------------------------------------------------------
@@ -494,15 +496,16 @@ The second concept is Z …
 
 \section{Typography}
 
-Use emphasis sparingly. This advice is especially true for \textbf{bold print} (\verb|\textbf{bold print}|). Resist the urge to use it in the main text; use \emph{italics} (\verb|\emph{italics}|) instead.
+Use emphasis sparingly. This advice is especially true for \textbf{bold print} (\verb|\textbf{bold print}|).%
+\sidenote{To allow for fast skimming, we use bold print liberally throughout this guide (which would not be appropriate in a thesis).}
+Resist the urge to use it in the main text; use \emph{italics} (\verb|\emph{italics}|) instead.
 
-Note, however, that \textbf{too frequent use of italics} can also be annoying.%
-\marginnote{See also \href{https://sblhs2.com/2016/09/15/italics-scare-quotes/}{Italics or Scare Quotes?}} 
-We recommend using it to emphasize ordinary words that are used as special terms – and only at its first occurrence. Also, you should emphasize words that you would stress when reading aloud, indicating that they are especially relevant for the meaning.
+Note, however, that \textbf{too frequent use of italics} can also be annoying.
+We recommend using it to emphasize ordinary words that are used as special terms – and only at its first occurrence. Also, you should emphasize words that you would stress when reading aloud, indicating that they are especially relevant for the meaning. Do not mix italics and quotes for emphasis, because this confuses the reader.\sidenote{More on the topic ``Italics or Scare Quotes?'' is available at \url{https://sblhs2.com/2016/09/15/italics-scare-quotes/}.}
 
 
 Generally, we recommend \textbf{avoiding scare quotes}.%
-\marginnote{See \href{https://style.mla.org/quotes-when-nothing-is-being-quoted/}{Quotes When Nothing Is Being Quoted}}
+\sidenote{Reasons given in ``Quotes When Nothing Is Being Quoted'', which is available at \url{https://style.mla.org/quotes-when-nothing-is-being-quoted/}.}
 Some authors use scare quotes to signal that they are using a word in a non-standard, ironic, or otherwise special sense (cf. Chicago Manual of Style). Scare quotes convey an informal tone. Moreover, they cause ambiguity, as the reader cannot be sure about the intention of the author.
 
 You should split your content into \textbf{proper paragraphs} by adding empty lines between adjacent blocks of text in the source file. Using a mixture of paragraphs and line breaks, which you could create with \verb|\\| at the end of a line, is strongly discouraged because this practice creates a noisy layout.
@@ -531,8 +534,7 @@ Ensure correct spelling throughout your text. Check your writing with a spell ch
 
 Ensure proper hyphenation throughout your text. You will have to intervene, for instance, when words extend into the margin of the page (creating so-called overfull hboxes). You can override LaTeX's hyphenation rules by inserting \verb|\-| into a word. This special character indicates a conditional hyphenation point.
 
-It makes sense to define hyphenation rules globally. To this end, place custom hyphenation definitions like \verb|\hyphenation{FORTRAN Hy-phen-a-tion}| after the \verb|\begin{document}| clause.
-\todo[noline]{Oh no, an overful hbox!}
+Often, it makes sense to define custom hyphenation rules globally. To this end, define your custom hyphenation definitions with\todo[noline]{Oh no, an overful hbox!}\ \verb|\hyphenation{FORTRAN Hy-phen-a-tion}| and insert them after the \verb|\begin{document}| clause.
 The example definition prevents any hyphenation of the word FORTRAN and defines three hyphenation points for the word Hyphenation.
 
 Also, check your text for common grammar issues (cf. Sect.~\ref{sec:style}).
@@ -542,15 +544,17 @@ Also, check your text for common grammar issues (cf. Sect.~\ref{sec:style}).
 
 This section contains selected pieces of advice on particular aspects and typical errors. For a more comprehensive treatment, we refer the reader to the paragraph \nameref{par:commonbugs} at the end of this section.
 
-The main goal of a thesis is to convey information without ambiguity. Write concisely and use a simple language. Avoid complex sentence structures, unnecessary words, and unnecessarily complicated words. A thesis is not the place to show off your mastery of grammar and vocabulary. There are various (mostly web-based and commercial) tools that can help you identify common issues in your text.\footnote{We are aware of \url{https://grammarly.com}, \url{https://languagetool.org}, \url{http://www.hemingwayapp.com} as well as the command-line tool Academic-Writing-Check (\url{https://github.com/devd/Academic-Writing-Check}).}
+The main goal of a thesis is to convey information without ambiguity. Write concisely and use a simple language. Avoid complex sentence structures, unnecessary words, and unnecessarily complicated words. A thesis is not the place to show off your mastery of grammar and vocabulary. There are various (mostly web-based and commercial) tools%
+\sidenote{\url{http://hemingwayapp.com}, \url{https://grammarly.com}, \url{https://languagetool.org}, and the command-line tool (\url{https://github.com/devd/Academic-Writing-Check}).}
+that can help you identify common issues in your text.
 
 
 \subsubsection{The Science of Scientific Writing}
 
 Even if a text uses a simple language, it may be difficult to read, because it does not convey the writer's train of thoughts coherently. In short, your goal is to connect every sentence explicitly to its predecessor – which is, of course, easier said than done.
 
-A good resource to develop this skill is the article \emph{The Science of Scientific Writing} by George D. Gopen and Judith A. Swan.\footnote{The article can be obtained from \url{https://cseweb.ucsd.edu/~swanson/papers/science-of-writing.pdf} and \url{https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing}} 
-The advice from this article is also part of the three lessons on scientific writing offered by Duke University.\footnote{Homepage of the lessons: \url{https://cgi.duke.edu/web/sciwriting/}, PDF slides: \url{https://cgi.duke.edu/web/sciwriting/resources/201108_DukeScientificWritingWorkshop.pdf} (these URLs could not be archived).}
+A good resource to develop this skill is the article \emph{The Science of Scientific Writing} by George D. Gopen and Judith A. Swan.\sidenote{The article can be obtained from \url{https://cseweb.ucsd.edu/~swanson/papers/science-of-writing.pdf} and \url{https://www.americanscientist.org/blog/the-long-view/the-science-of-scientific-writing}.} 
+The advice from this article is also part of the three lessons on scientific writing offered by Duke University.\sidenote{Homepage of the lessons: \url{https://cgi.duke.edu/web/sciwriting/}, PDF slides: \url{https://cgi.duke.edu/web/sciwriting/resources/201108_DukeScientificWritingWorkshop.pdf} (these URLs could not be archived).}
 
 The remainder of this section contains selected excerpts from \emph{The Science of Scientific Writing}. Consider reading the original article for a more extended treatment, including worked examples.
 
@@ -585,12 +589,14 @@ Readers also expect the material occupying the topic position to provide them wi
 
 Avoid using \textbf{informal contractions} such as \emph{can't}, \emph{don't}, and \emph{it's}. Replace them with \emph{cannot}, \emph{do not}, and \emph{it is}.
 
-We recommend using the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}: Insert  it right before the word \emph{and} that leads the last item of a list. The following example illustrates the benefit of using a serial comma:\footnote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
+We recommend using the \textbf{serial comma} in all lists to avoid ambiguity. The serial comma is also known as the \emph{Oxford comma}: Insert  it right before the word \emph{and} that leads the last item of a list. The following example%
+\sidenote{Source: \url{https://nhigham.com/2016/02/16/the-serial-or-oxford-comma/}}
+illustrates the benefit of using a serial comma:
 \begin{quote}
   Three important techniques in the design of algorithms are bisection, divide and conquer, and recursion.
 \end{quote}
 
-Use \textbf{bullet lists} correctly. ``Lists are common in all forms of writing. The list items can be included within the text or put on separate lines. Separate lines are used in order to draw attention to the items, to ease reading when the items are long or numerous, or to facilitate cross-reference to specific items.''\footnote{Source: \url{https://nhigham.com/2015/12/17/punctuating-lists/}} The environments \code{itemize} and \code{enumerate} produce lists on separate lines. It is considered good style to use punctuation in such a way that the lists form full sentences if their items were \emph{not} split into separate lines. One way to achieve this goal is to only put full sentences into the list. If list items, however, are sentence fragments, additional punctuation is necessary (example taken from source mentioned in footnote):
+Use \textbf{bullet lists} correctly. ``Lists are common in all forms of writing. The list items can be included within the text or put on separate lines. Separate lines are used in order to draw attention to the items, to ease reading when the items are long or numerous, or to facilitate cross-reference to specific items.''\sidenote{Source of cited text: \url{https://nhigham.com/2015/12/17/punctuating-lists/}.} The environments \code{itemize} and \code{enumerate} produce lists on separate lines. It is considered good style to use punctuation in such a way that the lists form full sentences if their items were \emph{not} split into separate lines. One way to achieve this goal is to only put full sentences into the list. If list items, however, are sentence fragments, additional punctuation is necessary (example taken from source mentioned in footnote):
 
 \begin{quote}
   We used three different algorithms in the experiments. The table reports the performance of
@@ -611,7 +617,9 @@ Scientific work and writing are skills that you can practice. Seminar papers ser
 
 \paragraph{Further Reading}
 
-This guide is not meant to cover all topics of scientific writing in detail. Consider the very comprehensive document \emph{Scientific Writing for Computer Science Students} by Wilhelmiina Hämäläinen (\url{http://www.cs.joensuu.fi/pages/whamalai/sciwri/sciwri.pdf}). Hämäläinen has collected a substantial amount of advice with a particular focus on English grammar and the peculiarities of computer science.
+This guide is not meant to cover all topics of scientific writing in detail. Consider the very comprehensive document \emph{Scientific Writing for Computer Science Students} by Wilhelmiina Hämäläinen.%
+\sidenote{Available at \url{http://www.cs.joensuu.fi/pages/whamalai/sciwri/sciwri.pdf}.}
+Hämäläinen has collected a substantial amount of advice with a particular focus on English grammar and the peculiarities of computer science.
 
 There is also an abundant number of books on scientific writing. We can recommend the following:
 \begin{itemize}
