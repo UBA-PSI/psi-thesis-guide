@@ -178,7 +178,9 @@
 \usepackage{ragged2e} % provides better hyphenation, use with camel case: \RaggedRight 
 \renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
-\renewcommand*{\marginfont}{\scriptsize\sffamily} % format margin text
+\renewcommand*{\marginfont}{\setlength{\parskip}{0.5ex}\scriptsize\sffamily} % format margin text
+
+
 
 % for sidenotes: change marginpar font
 \usepackage{xparse}
@@ -197,6 +199,7 @@
 %%\renewcommand{\marginnotevadjust}{0.71\baselineskip}
 % The following is the necessary correction for in-paragraph use
 \renewcommand{\marginnotevadjust}{0.21\baselineskip} 
+\renewcommand{\marginnotevadjust}{0.55\baselineskip}
 
 \usepackage{microtype} % enable better typographic setup
 
@@ -257,6 +260,7 @@
 \urlstyle{same} % avoids printing URLs in typewriter font
 
 % enable very extensive URL breaking
+% https://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url
 \PassOptionsToPackage{hyphens}{url}
 \expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks% save the current one
   \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
@@ -265,6 +269,18 @@
   \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
   \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
   \do\Y\do\Z\do\*\do\-\do\~\do\'\do\"\do\-}%
+
+% TODO consider using package xurl, which is supposed to handle urL breaking 
+
+% https://tex.stackexchange.com/a/450695
+% allow URLs to be spaced out at / => much better URL breaking in margins
+\makeatletter
+\g@addto@macro\UrlSpecials
+{%
+    \do\/{\mbox{\UrlFont/}\hskip 0pt plus 2pt}%
+}
+\Urlmuskip=0mu plus 1mu\relax
+\makeatother
 
 
 % hyperlink layout
@@ -417,7 +433,7 @@
     aboveskip={1\baselineskip},
     abovecaptionskip=-1\baselineskip,
     belowcaptionskip=2ex,
-    basicstyle=\small\ttfamily\linespread{4},
+    basicstyle=\footnotesize\ttfamily\linespread{4},
     breaklines=true,
     columns=flexible,
     commentstyle=\color{gray50}\ttfamily\itshape,
@@ -431,7 +447,7 @@
     ndkeywordstyle=\color{ubblue80}\bfseries,
     numbers=left,
     numbersep=1em,
-    numberstyle=\footnotesize,
+    numberstyle=\scriptsize\tlfstyle,
     prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
     stringstyle=\color{ubblue60}\ttfamily,
     upquote=true,
@@ -490,6 +506,30 @@
 \DeclareCaptionStyle{widefigure}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
 \DeclareCaptionStyle{widetable}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
 \makeatother
+
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+\usepackage{pifont}
+\let\oldding\ding% Store old \ding in \oldding
+\renewcommand{\ding}[2][1]{\scalebox{#1}{\oldding{#2}}}% Scale \oldding via optional argument
+% usage \ding{number} or |ding[factor]{number}
+
+\usepackage{amssymb}
+
+%----------------------------------------------------------------------------------------
+%	ITEMIZE AND ENUMERATE ENVIRONMENTS
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\labelitemi}{\color{ubblue80}{\scalebox{0.8}{\raisebox{0.2ex}{$\blacktriangleright$}}}}
+\renewcommand{\labelitemii}{\textbullet}
+\usepackage{enumitem}
+\setlist[itemize]{parsep=0.8\parskip,left=0pt,topsep=0pt,partopsep=0pt}
+\setlist[enumerate]{parsep=0.8\parskip,left=0pt,topsep=0pt,partopsep=0pt}
+\setlist[description]{parsep=0.8\parskip,left=0pt,topsep=0pt,partopsep=0pt}
+
 
 %----------------------------------------------------------------------------------------
 %	SET PDF METADATA
