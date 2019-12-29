@@ -136,12 +136,15 @@
 \newlength{\tocsep}
 \setlength{\tocsep}{2em}
 
+\usepackage{textcase}
+
 \etocsetstyle{chapter}
    {}
    {}
    {\etocifnumbered
      {\makebox[0pt][r]
-       {\textsc{\MakeLowercase\chaptername\ \etocnumber}\hspace{\tocsep}}%
+       % we use \etocthenumber instead of \etocnumber to avoid the href, which is part of \etocthenumber, messing with MakeTextLowercase
+       {\textsc{\MakeTextLowercase\chaptername\ \MakeTextLowercase\etocthenumber}\hspace{\tocsep}}%
        \textbf{\etocname\kern1em\relax\etocpage}%
     }%
     {\textbf{\etocname\kern1em\relax\etocpage}}%
@@ -152,7 +155,8 @@
 \etocsetstyle{section}
    {\vspace{-2ex}} % Muss von den 3ex aus Chapter abgezogen werden
    {}
-   {\makebox[0pt][r]{\etocnumber\hspace{\tocsep}}%
+   % see the comment regarding etocthenumber in the chapter style definition
+   {\makebox[0pt][r]{\textsc{\MakeTextLowercase\etocthenumber}\hspace{\tocsep}}%
     \etocname\kern1em\etocpage\par%
    }%
    {\addvspace{3ex}} % 3ex falls danach Chapter kommt 
