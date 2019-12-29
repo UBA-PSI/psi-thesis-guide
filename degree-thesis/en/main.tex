@@ -198,6 +198,10 @@ Moreover, consider the advice by Markus Kuhn on differentiating abstract and int
 % Uncomment the lines as you write the chapters
 
 \include{chapters/chapter1}
+% TODO - get rid of this poor hack:
+% This is needed to have the correct APPENDIX prefix in the TOC for the APPENDICES.
+% This line must be inserted *before* the \include line for the last ordinary chapter
+\addtocontents{toc}{\string\def\string\chaptername{Appendix}} 
 \include{chapters/chapter2}
 %\include{chapters/chapter3}
 %\include{chapters/chapter4}
