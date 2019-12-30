@@ -4,10 +4,19 @@
 
 This section contains recommendations on designing effective figures. We will cover graphs as well as diagrams.
 
+We compiled the material in this appendix from the following sources:
+\begin{itemize}
+  \item the book ``Designing Science Presentations: A Visual Guide to Figures, Papers, Slides, Posters, and More'' \cite{Carter12},
+  \item …, and 
+  \item .
+\end{itemize}
+
 \section{Fundamental Concepts}
 
-\subsection{Layout}
+\subsection{Gestalt Theory}
 
+% Gestalt Theory and Instructional Design , Moore and Fitz 1993
+% http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.1026.6390&rep=rep1&type=pdf
 % Gestalt
 
 % alignment
@@ -16,6 +25,39 @@ This section contains recommendations on designing effective figures. We will co
 % 
 
 \subsection{Color}
+
+% Hue, Saturation, Brightness
+
+Different colors are often used to ease visual perception (cf. Fig.~\ref{fig:coloredgraphs}). For instance, it can be used for emphasis, to group subsets of elements, or to make it easier to distinguish different elements that have a similar shape.
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=1\textwidth]{color-plots}
+\sidecaption{\label{fig:coloredgraphs} Using colors to ease visual perception \cite{Carter12}.}[-1\baselineskip]
+\end{marginfigure}
+
+
+Be aware of the monochrome representation of colors, which makes it impossible to distinguish a subset of colors. Red and green are particularly difficult to distinguish in monochrome print, especially if they have the same saturation and brightness (cf. Fig.~\ref{fig:monochrome}).
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=0.8\textwidth]{color-mono}
+\sidecaption{\label{fig:monochrome} Colors in monochrome \cite{Carter12}.}[-1\baselineskip]
+\end{marginfigure}
+
+The risk of confusion in monochrome prints is not the only reason why changing the hue is problematic. Different hues are difficult to make out when the area is small, as in the line plot in  Fig.~\ref{fig:coloredgraphs}. Moreover, different colors (hues) have different connotations (such as green means good, red means danger). Finally, different colors have different visual weight that may create unwanted emphasis (blue is heavier than orange).
+
+Therefore, it is often better to stick with one hue and use different levels of brightness or saturation to easy visual perception. Figure~\ref{fig:monographs} uses three shades of gray and is easier to read than the colorful version in Fig.~\ref{fig:coloredgraphs}.
+
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=1\textwidth]{color-plots-mono}
+\sidecaption{\label{fig:monographs} Shades of gray can be very effective \cite{Carter12}.}[-1\baselineskip]
+\end{marginfigure}
+
+When you use more than four different grayscale colors, however, the differences become too small to perceive with ease. Too many grayscale colors are especially problematic when color is used on its own, such as in line plots. It is less problematic in bar plots, because the bars can be sorted with decreasing levels of brightness to create (good) redundancy.
+
 
 \section{Diagrams}
 
@@ -29,7 +71,7 @@ You can use diagrams to describe concepts and their relationship, the structure 
 
 \subsection{Before You Start}
 
-Questions to ask when designing a diagram:\sidenote{Taken from the book ``Designing Science Presentations: A Visual Guide to Figures, Papers, Slides, Posters, and More'' \cite{Carter12}.}
+Questions to ask when designing a diagram as proposed by \cite{Carter12}.
 \begin{itemize}
 \item What is absolutely necessary to show?
 \item What is not necessary to show?
@@ -72,7 +114,7 @@ In the absence of strong emphasis, readers process diagrams similar to text (cf.
 \end{marginfigure}
 
 
-Ensure that all elements of a diagram are properly aligned. Alignment helps readers to grasp the overall structure. Proper alignment can also save you from creating additional outlines to depict (systems) boundaries – proximity and neat alignment can create strong cohesion by themselves.
+Ensure that all elements of a diagram are properly aligned. Alignment helps readers to grasp the overall structure. Proper alignment can also save you from creating additional outlines to depict (systems) boundaries – proximity and neat alignment can create strong cohesion by themselves (closure).
 
 Make conscious decisions about distances and dimensions (proximity, repetition). You \emph{can} use a \emph{grid} to enforce consistent distances. Note, however, that snapping every element to the grid lines, may still cause mis-alignment in some cases.\sidenote{Consider a shape that is four grid lines high. Then, a horizontal line that leaves the box cannot be aligned in the middle.} Make use of the horizontal and vertical alignment tools that space out elements equally. An advanced technique is to create a dummy box shape to measure and compare dimensions yourself.
 
