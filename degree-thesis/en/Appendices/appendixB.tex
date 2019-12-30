@@ -41,6 +41,7 @@ Questions to ask when designing a diagram:\sidenote{Taken from the book ``Design
 \item What symbols should be consistent throughout the diagram?
 \end{itemize}
 
+
 \subsection{Emphasizing Elements}
 
 Good diagrams are self-explanatory and guide the reader's attention. Humans constantly search for patterns and deviations. Consistent use of shapes and colors indicates that the presented elements are similar (cf. Fig.~\ref{fig:emphasis}). Deviation from the norm indicate differences that need attention. Be aware of that and do not create emphasis unintentionally.
@@ -59,6 +60,9 @@ Do not choose the size of elements arbitrarily. Differences translate into domin
 \sidecaption{\label{fig:dominance} Relative differences in size indicate dominance relationships \cite{Carter12}.}[-4\baselineskip]
 \end{figure}
 
+
+\subsection{Layout}
+
 In the absence of strong emphasis, readers process diagrams similar to text (cf. Fig.~\ref{fig:direction}). In western cultures, readers will start in the top left corner and proceed horizontally in a zig-zag pattern. The general flow of information should be consistent with this expectation.
 
 \begin{marginfigure}
@@ -67,7 +71,18 @@ In the absence of strong emphasis, readers process diagrams similar to text (cf.
 \sidecaption{\label{fig:direction} Respect the expected flow of information in western cultures \cite{Carter12}.}[-1\baselineskip]
 \end{marginfigure}
 
-Many diagrams consist of shapes and lines, annotated with text labels. The labels should be as close as possible to the shapes (proximity) and exactly aligned. Whenever possible, consider moving the labels into the shapes (Fig.~\ref{labelsinside}). Inside labels reduce visual clutter and make it easier to create a well-balanced diagram that has no ragged edges.
+
+Ensure that all elements of a diagram are properly aligned. Alignment helps readers to grasp the overall structure. Proper alignment can also save you from creating additional outlines to depict (systems) boundaries – proximity and neat alignment can create strong cohesion by themselves.
+
+Make conscious decisions about distances and dimensions (proximity, repetition). You \emph{can} use a \emph{grid} to enforce consistent distances. Note, however, that snapping every element to the grid lines, may still cause mis-alignment in some cases.\sidenote{Consider a shape that is four grid lines high. Then, a horizontal line that leaves the box cannot be aligned in the middle.} Make use of the horizontal and vertical alignment tools that space out elements equally. An advanced technique is to create a dummy box shape to measure and compare dimensions yourself.
+
+\subsection{Labels}
+
+Many diagrams consist of shapes and lines, annotated with text labels.
+
+A commonplace technique is to use bold print to express some property of an element. For instance, the labels of all shapes that correspond to systems are printed in bold to differentiate these shapes from the ones that correspond to exchanged  messages. In general, we recommend to avoid this practice. Reserve bold print for emphasizing \emph{one particular element} in a diagram. Use another visual style to signify differences, such as shading, colors, or shape form. Also consider the option of giving an element no surrounding shape at all, for instance, if the notion of its \emph{boundary} is not relevant.
+
+In any case, the labels should be as close as possible to the shapes (proximity) and exactly aligned. Whenever possible, consider moving the labels into the shapes (Fig.~\ref{labelsinside}). Inside labels reduce visual clutter and make it easier to create a well-balanced diagram that has no ragged edges.
 
 \begin{figure}[t]
 \centering
