@@ -7,8 +7,8 @@ This section contains recommendations on designing effective figures. We will co
 We compiled the material in this appendix from the following sources:
 \begin{itemize}
   \item the book ``Designing Science Presentations: A Visual Guide to Figures, Papers, Slides, Posters, and More'' \cite{Carter12},
-  \item …, and 
-  \item .
+  \item the book ``Information Visualization: Perception for Design'' \cite{Ware12}, and 
+  \item …
 \end{itemize}
 
 \section{Fundamental Concepts}
@@ -26,22 +26,22 @@ We compiled the material in this appendix from the following sources:
 
 \subsection{Color}
 
-You are probably used to defining colors in terms of red, green, and blue (RGB) or cyan, magenta, yellow, and black (CMYK). A third way, which is more useful, is the \textbf{HSB model}. It defines color in terms of hue, saturation, and brightness.\sidenote{Read the primer at \url{https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html} for more details.}
-
-The first value, \textbf{hue}, defines the color according to its position (given in degrees ranging from 0 to 360) on the color wheel. For instance, the value 60 corresponds to the hue yellow. \textbf{Saturation} (0 to 100) corresponds to the richness of the color, where 0 means that there is no trace of the hue, i.\,e., a gray color between white and black. The value 100 means that the hue is fully present, i.\,e., the color is as colorful as possible. The final value is \textbf{brightness} (0 to 100). A value of 0 corresponds to a solid black (regardless of hue and saturation), a value of 100 corresponds to the brightest version of the hue at the given saturation. Consider the color picker shown in Fig.~\ref{fig:hsb} for an example.
+You are probably used to defining colors in terms of red, green, and blue (RGB) or cyan, magenta, yellow, and black (CMYK). A third way, which is more useful, is the \textbf{HSB model}. It defines color in terms of hue, saturation, and brightness.\sidenote{Read the primer at \url{https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html} for more details.} Consider the color picker shown in Fig.~\ref{fig:hsb} for an example.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.85\textwidth]{hsb}
-\sidecaption{\label{fig:hsb} A HSB color picker (\url{https://codepen.io/HunorMarton/full/eWvewo})}[-2\baselineskip]
+\includegraphics[width=0.85\textwidth]{color-hsb}
+\sidecaption{\label{fig:hsb} A HSB color picker (\url{https://codepen.io/HunorMarton/full/eWvewo})}[-1\baselineskip]
 \end{figure}
+
+The first value, \textbf{hue}, defines the color according to its position (given in degrees ranging from 0 to 360) on the color wheel. For instance, the value 60 corresponds to the hue yellow. \textbf{Saturation} (0 to 100) corresponds to the richness of the color, where 0 means that there is no trace of the hue, i.\,e., a gray color between white and black. The value 100 means that the hue is fully present, i.\,e., the color is as colorful as possible. The final value is \textbf{brightness} (0 to 100). A value of 0 corresponds to a solid black (regardless of hue and saturation), a value of 100 corresponds to the brightest version of the hue at the given saturation.
 
 Different colors are often used to ease visual perception (cf. Fig.~\ref{fig:coloredgraphs}). For instance, it can be used for emphasis, to group subsets of elements, or to make it easier to distinguish different elements that have a similar shape.
 
 \begin{marginfigure}
 \centering
 \includegraphics[width=1\textwidth]{color-plots}
-\sidecaption{\label{fig:coloredgraphs} Using colors to ease visual perception \cite{Carter12}.}[-1\baselineskip]
+\caption{\label{fig:coloredgraphs} Using colors to ease visual perception \cite{Carter12}.}%[-1\baselineskip]
 \end{marginfigure}
 
 
@@ -50,21 +50,32 @@ Be aware of the monochrome representation of colors, which makes it impossible t
 \begin{marginfigure}
 \centering
 \includegraphics[width=0.8\textwidth]{color-mono}
-\sidecaption{\label{fig:monochrome} Colors in monochrome \cite{Carter12}.}[-1\baselineskip]
+\caption{\label{fig:monochrome} Colors in monochrome \cite{Carter12}.}%[-1\baselineskip]
 \end{marginfigure}
 
 The risk of confusion in monochrome prints is not the only reason why changing the hue is problematic. Different hues are difficult to make out when the area is small, as in the line plot in  Fig.~\ref{fig:coloredgraphs}. Moreover, different colors (hues) have different connotations (such as green means good, red means danger). Finally, different colors have different visual weight that may create unwanted emphasis (blue is heavier than orange).
 
-Therefore, it is often better to stick with one hue and use different levels of brightness or saturation to easy visual perception. Figure~\ref{fig:monographs} uses three shades of gray and is easier to read than the colorful version in Fig.~\ref{fig:coloredgraphs}.
+Therefore, it is often better to stick with one hue and use different levels of brightness or saturation to ease visual perception. Figure~\ref{fig:monographs} uses three shades of gray and is easier to read than the colorful version in Fig.~\ref{fig:coloredgraphs}.
 
 
 \begin{marginfigure}
 \centering
 \includegraphics[width=1\textwidth]{color-plots-mono}
-\sidecaption{\label{fig:monographs} Shades of gray can be very effective \cite{Carter12}.}[-1\baselineskip]
+\caption{\label{fig:monographs} Shades of gray can be very effective \cite{Carter12}.}%[-1\baselineskip]
 \end{marginfigure}
 
-When you use more than four different grayscale colors, however, the differences become too small to perceive with ease. Too many grayscale colors are especially problematic when color is used on its own, such as in line plots. It is less problematic in bar plots, because the bars can be sorted with decreasing levels of brightness to create (good) redundancy.
+When you use more than four different grayscale colors, however, the differences become too small to perceive with ease. Too many grayscale colors are especially problematic when color is used on its own, such as in line plots. It is less problematic in bar plots, because the bars can be sorted with decreasing levels of brightness to create (good) redundancy. If brightness is used to encode values of data, darker color should be used for higher values.
+
+Similar principles apply for saturation: ``If using color saturation to encode numerical quantity, use greater saturation to represent greater numerical quantities. Avoid using a saturation sequence to encode more than three values.'' \cite{Ware12} Consider varying both brightness and saturation at the same time to create shades that are easier to distinguish from another.
+
+The effects of different levels of saturation vary depending on the size of the colored area (cf. Fig.~\ref{fig:saturation}). If you consider varying saturation, stick to the following guidelines: ``Use more saturated colors when color coding small symbols, thin lines, or other small areas. Use less saturated colors for coding large areas.'' \cite{Ware12}
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=1\textwidth]{color-saturation}
+\caption{\label{fig:saturation} Use less saturation for large shapes, and more for thin lines \cite{Ware12}.}%[-2\baselineskip]
+\end{marginfigure}
+
 
 
 \section{Diagrams}
@@ -118,7 +129,7 @@ In the absence of strong emphasis, readers process diagrams similar to text (cf.
 \begin{marginfigure}
 \centering
 \includegraphics[width=1\textwidth]{diagram-direction}
-\sidecaption{\label{fig:direction} Respect the expected flow of information in western cultures \cite{Carter12}.}[-1\baselineskip]
+\caption{\label{fig:direction} Respect the expected flow of information in western cultures \cite{Carter12}.}%[-1\baselineskip]
 \end{marginfigure}
 
 
@@ -145,7 +156,7 @@ Figure~\ref{fig:labelsoutside} illustrates key principles when labels are outsid
 \begin{marginfigure}
 \centering
 \includegraphics[width=1\textwidth]{diagram-labelsoutside}
-\sidecaption{\label{fig:labelsoutside} Outside labels should not distract the reader \cite{Carter12}.}[-1\baselineskip]
+\caption{\label{fig:labelsoutside} Outside labels should not distract the reader \cite{Carter12}.}%[-1\baselineskip]
 \end{marginfigure}
 
 \section{Figures}
