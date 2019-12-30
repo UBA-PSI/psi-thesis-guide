@@ -151,13 +151,34 @@ In any case, the labels should be as close as possible to the shapes (proximity)
 \sidecaption{\label{fig:dominance} Moving the labels inside objects reduces clutter. Note how the left-hand-side figure is centered in the left part of the figure to keep the figure balanced \cite{Carter12}.}[-6\baselineskip]
 \end{figure}
 
-Figure~\ref{fig:labelsoutside} illustrates key principles when labels are outside of a shape. First of all, keep the lines as short as possible (proximity). Consider removing the arrowheads from the lines that point into an object to avoid confusion with other arrows in the diagram. Also, avoid crossing lines. Align labels on the left-hand side of an object flush right and vice versa. Aim for consistency by making the lines parallel. Keep adequate amounts of surrounding whitespace.
-
 \begin{marginfigure}
 \centering
 \includegraphics[width=1\textwidth]{diagram-labelsoutside}
 \caption{\label{fig:labelsoutside} Outside labels should not distract the reader \cite{Carter12}.}%[-1\baselineskip]
 \end{marginfigure}
+
+Figure~\ref{fig:labelsoutside} illustrates key principles when labels are outside of a shape. First of all, keep the lines as short as possible (proximity). Consider removing the arrowheads from the lines that point into an object to avoid confusion with other arrows in the diagram. Also, avoid crossing lines. Align labels on the left-hand side of an object flush right and vice versa. Aim for consistency by making the lines parallel. Keep adequate amounts of surrounding whitespace.
+
+
+\subsection{Variations}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=1\widefigurewidth]{diagram-variations}
+\sidecaption{\label{fig:diagvariations} Eight variations resulting from combining different outline, shade, and arrow styles.}[-1\baselineskip]
+\end{figure*}
+
+Common drawing tools provide a large number of shapes. What is missing, however, is guidance on how to combine them reasonably. Figure~\ref{fig:diagvariations} displays eight combinations.\sidenote{The advice in the following paragraphs has been compiled from \url{https://www.slideshare.net/otikik/how-to-make-awesome-diagrams-for-your-slides/19-Size_doesnt_mean_long_name}}
+
+The first variation in the left-hand column shows a style useful for depicting information exchange between systems, such as servers and clients. The second variation uses an arrow shape. This emphasizes that the arrow corresponds to an activity itself. The third and fourth examples in the left-hand column depict two steps from a process without too much visual clutter. We prefer the latter one because the text wraps at sensible points.
+
+The right-hand column shows variations without outlines. At first glance, this sounds like a good  idea: after all, it avoids visual clutter (the outlines). Note, however, that shapes without outlines need more saturated and darker color to differentiate them from the background.  If the number of shapes in a diagram is large, this approach can actually make it more difficult to read the diagram because all shapes appear to be emphasized at the same time.
+
+If you use dark-colored shapes, you should avoid having white text on dark background for small font sizes. As shown in the second variation on the right-hand side of Fig.~\ref{fig:diagvariations}, you will have to make changes to some shapes.
+
+In any case, you should choose the sizes of shapes consciously. Represent objects with identical properties with shapes of the same size. If the labels do not fit into the shapes, you can either reduce the font size, put the labels next to the box, or increase the size of all shapes (by rearranging the diagram).
+
+Finally, consider the option of using negative space, as shown in the bottom-right corner of the Fig.~\ref{fig:diagvariations}.Again, this can be a useful means to avoid visual clutter. However, if you just increase the stroke width (as was done for the example figure), the (vertical) padding in the shape will become too narrow. Moreover, you cannot easily align such shapes with other shapes with thinner strokes.
 
 \section{Figures}
 
