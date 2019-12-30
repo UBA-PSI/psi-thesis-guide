@@ -138,6 +138,7 @@
 
 \usepackage{textcase}
 
+
 \etocsetstyle{chapter}
    {}
    {}
@@ -377,6 +378,7 @@
 % Use the pre-calculated length \widefigurewidth in \includegraphics.
 \def\widefigurewidth{\dimexpr(\marginparwidth + \textwidth + \marginparsep)}
 
+
 %----------------------------------------------------------------------------------------
 %	SETUP HEADER AND FOOTER
 %----------------------------------------------------------------------------------------
@@ -510,6 +512,17 @@
 \DeclareCaptionStyle{widefigure}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
 \DeclareCaptionStyle{widetable}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
 \makeatother
+
+
+%----------------------------------------------------------------------------------------
+%	RESET SIDENOTE COUNTER AT EVERY CHAPTER
+%----------------------------------------------------------------------------------------
+
+\let\oldchapter\chapter
+\def\chapter{%
+  \setcounter{sidenote}{1}%
+  \oldchapter
+}
 
 
 %----------------------------------------------------------------------------------------
