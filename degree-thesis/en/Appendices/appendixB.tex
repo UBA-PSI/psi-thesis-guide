@@ -129,13 +129,13 @@ When you use more than four different grayscale colors, however, the differences
 
 Similar principles apply for saturation: ``If using color saturation to encode numerical quantity, use greater saturation to represent greater numerical quantities. Avoid using a saturation sequence to encode more than three values.'' \cite{Ware12} Consider varying both brightness and saturation at the same time to create shades that are easier to distinguish from another.
 
-The effects of different levels of saturation vary depending on the size of the colored area (cf. Fig.~\ref{fig:saturation}). If you consider varying saturation, stick to the following guidelines: ``Use more saturated colors when color coding small symbols, thin lines, or other small areas. Use less saturated colors for coding large areas.'' \cite{Ware12}
-
 \begin{marginfigure}
 \centering
 \includegraphics[width=1\textwidth]{color-saturation}
 \caption{\label{fig:saturation} Use less saturation for large shapes, and more for thin lines \cite{Ware12}.}%[-2\baselineskip]
 \end{marginfigure}
+
+The effects of different levels of saturation vary depending on the size of the colored area (cf. Fig.~\ref{fig:saturation}). If you consider varying saturation, stick to the following guidelines: ``Use more saturated colors when color coding small symbols, thin lines, or other small areas. Use less saturated colors for coding large areas.'' \cite{Ware12}
 
 
 
@@ -151,9 +151,36 @@ You can use diagrams to describe concepts and their relationship, the structure 
 
 \subsection{Before You Start}
 
-Your first task is to decide whether a visualization makes sense at all. As Ware explains for the example of a flow chart of a program flow \cite{Ware12}, sometimes it makes sense to choose a text-only representation such as pseudo code.
+Your first task is to decide \emph{whether a visualization makes sense at all}. Sometimes it makes sense to choose a text-only representation such as pseudo code instead of a diagram. Ware \cite{Ware12} shares the example of a flow chart, which is supposed to make it easier to understand the program flow (cf. Fig.~\ref{fig:flowchart}). He argues that pseudo code is superior. After all, the flow chart takes more effort to parse than the natural language used in the pseudo code (and, as Edward Tufte would argue, the flow chart contains more visual clutter than the pseudo code).
 
-Questions to ask when designing a diagram as proposed by \cite{Carter12}.
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{diagram-flowchart}
+\sidecaption{\label{fig:flowchart} According to Ware \cite{Ware12}, in comparison to pseudo code a flow chart is a poor representation of program flow.}[-4\baselineskip]
+\end{figure}
+
+On the other hand, Ware argues, there are concepts that we can grasp much faster if we see a visual representation. Consider the following statements about a management hierarchy \cite{Ware12}:
+
+\begin{itemize}
+  \item Jane is Jim’s boss.
+  \item Jim is Joe’s boss.
+  \item Anne works for Jane.
+  \item Mark works for Jim.
+  \item Anne is Mary’s boss.
+  \item Anne is Mike’s boss
+\end{itemize}
+
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=1\textwidth]{diagram-tree}
+\caption{\label{fig:tree} A tree helps us grasp static relationships \cite{Ware12}.}%[-2\baselineskip]
+\end{marginfigure}
+
+It is difficult to keep track of all relationships in this presentations. You might even feel the urge to draw a tree. And, indeed, a graphical representation is much more accessible (cf. Fig.~\ref{fig:tree}). Ware concludes: ``Diagrams should be used to express structural relationships among program elements, whereas words should be used to express detailed procedural logic'' \cite{Ware12}.
+
+
+Now, if you decide that you do want to create a diagram, you should ask yourself the following questions \cite{Carter12}:
 \begin{itemize}
 \item What is absolutely necessary to show?
 \item What is not necessary to show?
@@ -165,6 +192,7 @@ Questions to ask when designing a diagram as proposed by \cite{Carter12}.
 \item What symbols should be consistent throughout the diagram?
 \end{itemize}
 
+In the following sections we will explain the most important aspects to create effective diagrams.
 
 \subsection{Elements and Relationships}
 
@@ -249,6 +277,14 @@ In any case, the labels should be as close as possible to the shapes (Gestalt la
 
 Figure~\ref{fig:labelsoutside} illustrates key principles when labels are outside of a shape. First of all, keep the lines as short as possible (proximity). Consider removing the arrowheads from the lines that point into an object to avoid confusion with other arrows in the diagram. Also, avoid crossing lines. Align labels on the left-hand side of an object flush right and vice versa (symmetry). Aim for consistency by making the lines parallel. Keep adequate amounts of surrounding whitespace.
 
+Diagrams that visualize structures can work fine with few labels. In contrast, diagrams that visualize procedures or more complex relationships need more textual explanation. Consider adding longer explanations right next to the corresponding locations (proximity) as shown in Fig.~\ref{fig:explanations}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{diagram-explanations} 
+\sidecaption{\label{fig:explanations} Complex diagrams benefit from integrated explanations. Source of figure as cited by \cite{Ware12}: R Chandler and J. Sweller (1991). Cognitive load theory and the format of instruction. \emph{Cognition and Instruction, 8,} 293–332.}[-7\baselineskip]
+\end{figure}
+
 
 \subsection{Variations}
 
@@ -268,7 +304,7 @@ If you use dark-colored shapes, you should avoid having white text on dark backg
 
 In any case, you should choose the sizes of shapes consciously. Represent objects with identical properties with shapes of the same size. If the labels do not fit into the shapes, you can either reduce the font size, put the labels next to the box, or increase the size of all shapes (by rearranging the diagram).
 
-Finally, consider the option of using negative space, as shown in the bottom-right corner of the Fig.~\ref{fig:diagvariations}.Again, this can be a useful means to avoid visual clutter. However, if you just increase the stroke width (as was done for the example figure), the (vertical) padding in the shape will become too narrow. Moreover, you cannot easily align such shapes with other shapes with thinner strokes.
+Finally, consider the option of using negative space, as shown in the bottom-right corner of the Fig.~\ref{fig:diagvariations}. Again, this can be a useful means to avoid visual clutter. However, if you just increase the stroke width (as was done for the example figure), the (vertical) padding in the shape will become too narrow. Moreover, you cannot easily align such shapes with other shapes with thinner strokes.
 
 \section{Figures}
 
