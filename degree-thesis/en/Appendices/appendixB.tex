@@ -44,13 +44,41 @@ The first law, \textbf{proximity}, refers to the spatial relationships between g
 
 \textbf{Connectedness} is a powerful principle that is stronger than proximity, shape, and style.  (cf. Fig.~\ref{fig:connectedness}). Consider connecting related objects with lines.
 
-The next principle, \textbf{continuity}, ``states that we are more likely to construct visual enti- ties out of visual elements that are smooth and continuous, rather than ones that contain abrupt changes in direction.'' \cite{Ware12} It is, therefore, not surprising that node-link diagrams with smooth lines are easier to read than those with straight lines (cf. Fig.~\ref{fig:continuity}).
+The next principle, \textbf{continuity}, ``states that we are more likely to construct visual entities out of visual elements that are smooth and continuous, rather than ones that contain abrupt changes in direction.'' \cite{Ware12} It is, therefore, not surprising that node-link diagrams with smooth lines are easier to read than those with straight lines (cf. Fig.~\ref{fig:continuity}).
 
 \begin{marginfigure}
 \centering
 \includegraphics[width=1\textwidth]{gestalt-continuity}
 \caption{\label{fig:continuity} Continuity makes the left-hand diagram easier to read \cite{Ware12}.}%[-1\baselineskip]
 \end{marginfigure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{gestalt-symmetry}
+\sidecaption{\label{fig:symmetry} We can spot differences in these age distribution plots faster when data is plotted symmetrically (Data source: \url{https://destatis.de}).}[-4\baselineskip]
+\end{figure}
+
+Another principle is \textbf{symmetry}. Symmetrical figures are visually pleasing and we are good at detecting asymmetry. Symmetry is a form of high-level similarity. If you organize groups of elements in a diagram symmetrically, readers will assume that this means that they are similar. If you design diagrams asymmetrically, the asymmetric parts get emphasized. Our ability to check for symmetry can also be useful during visual data analysis (cf. Fig.~\ref{fig:symmetry}).
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=1\textwidth]{gestalt-closure}
+\caption{\label{fig:closure} Left: closure makes us perceive a full circle \cite{Ware12}; right: the orange dot is perceived to sit inside of a rectangle.}%[-1\baselineskip]
+\end{marginfigure}
+
+We are also on the lookout for \textbf{closure and common ground}. Closed contours are perceived as objects. Our search for closure is so strong that our brain interpolates missing parts of contours to form whole objects. This is why we see a rectangle and a complete circle on the left-hand side of Fig.~\ref{fig:closure} instead of a circle with a missing segment. Moreover, contours create a notion of a common ground with an ``inside'' and an ``outside''.
+
+Common grounds are perceived for complete contours as well as for contours that we perceive due to closure. Thus, on the right-hand side of Fig.~\ref{fig:closure} we perceive the orange dot to be inside an imaginary rectangle built by shapes. Ware recommends: ``Consider putting related information inside a closed contour. A line is ade- quate for regions having a simple shape. Color or texture can be used to define regions that have more complex shapes.'' \cite{Ware12}.
+
+The final Gestalt law to discuss is \textbf{figure and ground}. Figures are perceived as objects that are positioned in the foreground. The ground lies behind the figures. We perceive an object as a figure when it consists of a closed contour that forms a common ground and when it is considerably smaller in comparison to its surroundings.
+
+\begin{marginfigure}
+\centering
+\includegraphics[width=1\textwidth]{gestalt-figureground}
+\caption{\label{fig:figureground} Figure and ground are difficult to pick apart in this diagram (also note how PowerPoint fails to draw straight connectors).}%[-1\baselineskip]
+\end{marginfigure}
+
+This principle is important when drawing diagrams that use contours to demarcate the boundaries of various systems. When multiple systems are nested and the size differences are too small, it can become difficult to perceive the difference between figure and ground. Consider the diagram shown in Fig.~\ref{fig:figureground}). In the left-hand side of this diagram too many rectangular shapes have been nested. Due to equal amounts of whitespace around every shape, multiple interpretations are possible. The right-hand side of the diagram is slightly better because the circles are considerably smaller than the surrounding rectangle. Moreover, together with the arrows the circles are perceived as a (symmetric) shape, which is easily perceived as a figure sitting on the rectangle in the background.
 
 
 % Gestalt Theory and Instructional Design , Moore and Fitz 1993
@@ -69,7 +97,7 @@ You are probably used to defining colors in terms of red, green, and blue (RGB) 
 \begin{figure}
 \centering
 \includegraphics[width=0.85\textwidth]{color-hsb}
-\sidecaption{\label{fig:hsb} A HSB color picker (\url{https://codepen.io/HunorMarton/full/eWvewo})}[-1\baselineskip]
+\sidecaption{\label{fig:hsb} A HSB color picker (\url{https://codepen.io/HunorMarton/full/eWvewo})}[-2\baselineskip]
 \end{figure}
 
 The first value, \textbf{hue}, defines the color according to its position (given in degrees ranging from 0 to 360) on the color wheel. For instance, the value 60 corresponds to the hue yellow. \textbf{Saturation} (0 to 100) corresponds to the richness of the color, where 0 means that there is no trace of the hue, i.\,e., a gray color between white and black. The value 100 means that the hue is fully present, i.\,e., the color is as colorful as possible. The final value is \textbf{brightness} (0 to 100). A value of 0 corresponds to a solid black (regardless of hue and saturation), a value of 100 corresponds to the brightest version of the hue at the given saturation.
@@ -179,9 +207,9 @@ Make conscious decisions about distances and dimensions (proximity, repetition).
 
 Many diagrams consist of shapes and lines, annotated with text labels.
 
-A commonplace technique is to use bold print to express some property of an element. For instance, the labels of all shapes that correspond to systems are printed in bold to differentiate these shapes from the ones that correspond to exchanged  messages. In general, we recommend to avoid this practice. Reserve bold print for emphasizing \emph{one particular element} in a diagram. Use another visual style to signify differences, such as shading, colors, or shape form. Also consider the option of giving an element no surrounding shape at all, for instance, if the notion of its \emph{boundary} is not relevant.
+A commonplace technique is to use bold print to express some property of an element. For instance, the labels of all shapes that correspond to systems are printed in bold to differentiate these shapes from the ones that correspond to exchanged  messages. In general, we recommend to avoid this practice. Reserve bold print for emphasizing \emph{one particular element} in a diagram. Use another visual style to show differences, such as shading, colors, or shape form. Also consider the option of giving an element no surrounding shape at all, for instance, if the notion of its \emph{boundary} is not relevant or if the arrangement of sub-elements establishes a common ground due to the Gestalt law of \emph{closure}.
 
-In any case, the labels should be as close as possible to the shapes (proximity) and exactly aligned. Whenever possible, consider moving the labels into the shapes (Fig.~\ref{labelsinside}). Inside labels reduce visual clutter and make it easier to create a well-balanced diagram that has no ragged edges.
+In any case, the labels should be as close as possible to the shapes (proximity) and exactly aligned. Whenever possible, consider moving the labels into the shapes (Fig.~\ref{labelsinside}). Inside labels rely on the Gestalt law of \emph{common ground}. They reduce visual clutter and make it easier to create a well-balanced diagram that has no ragged edges (laws of symmetry and closure).
 
 \begin{figure}[t]
 \centering
