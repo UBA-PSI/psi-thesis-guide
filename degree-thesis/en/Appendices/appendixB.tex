@@ -83,12 +83,7 @@ This principle is important when drawing diagrams that use contours to demarcate
 
 % Gestalt Theory and Instructional Design , Moore and Fitz 1993
 % http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.1026.6390&rep=rep1&type=pdf
-% Gestalt
 
-% alignment
-% proximity
-% connectedness
-% 
 
 \subsection{Color}
 
@@ -156,6 +151,8 @@ You can use diagrams to describe concepts and their relationship, the structure 
 
 \subsection{Before You Start}
 
+Your first task is to decide whether a visualization makes sense at all. As Ware explains for the example of a flow chart of a program flow \cite{Ware12}, sometimes it makes sense to choose a text-only representation such as pseudo code.
+
 Questions to ask when designing a diagram as proposed by \cite{Carter12}.
 \begin{itemize}
 \item What is absolutely necessary to show?
@@ -169,9 +166,36 @@ Questions to ask when designing a diagram as proposed by \cite{Carter12}.
 \end{itemize}
 
 
+\subsection{Elements and Relationships}
+
+According to the Gestalt laws, you should
+``use small, closed shapes to represent data entities, and use the color, shape, and size of those shapes to represent attributes of those entities'' \cite{Ware12}. Figure~\ref{fig:entities} shows the effect of different properties of shapes.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{diagram-entities}
+\sidecaption{\label{fig:entities} Semantics of four properties of shapes \cite{Ware12}.}[-3\baselineskip]
+\end{figure}
+
+Many diagrams are supposed to visualize relationships of elements. Ware recommends to use ``connecting lines, enclosure, grouping, and attachment to represent relationships between entities. The shape, color, and thickness of lines and enclosures can represent the types of relationships'' \cite{Ware12}. Figure~\ref{fig:relationships} visualizes ten alternatives and how we perceive them.
+
+Of note are the tapered lines in Number 6 of Fig.~\ref{fig:relationships}. As explained by Ware, these are easier to recognize than arrows \cite{Ware12}, especially in busy diagrams. If you only use straight lines, you can use very thin triangles to create tapered lines. The broad end is located at the source of the line.
+
+For more complex lines, you will need a vector drawing tool like Inkscape, Adobe Illustrator, and Affinity Designer. Such tools will also allow you to draw the wiggly line shown in Number 7 of Fig.~\ref{fig:relationships}. In contrast, most drawing tools will allow you to create shapes with receptables (cf. Number 9 of Fig.~\ref{fig:relationships}) by creating unions and differences of shapes.
+
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=1\textwidth]{diagram-relationships}
+\sidecaption{\label{fig:relationships} Semantics of ten types of visual relationships \cite{Ware12}.}[-3\baselineskip]
+\end{figure}
+
+
+
 \subsection{Emphasizing Elements}
 
-Good diagrams are self-explanatory and guide the reader's attention. Humans constantly search for patterns and deviations. Consistent use of shapes and colors indicates that the presented elements are similar (cf. Fig.~\ref{fig:emphasis}). Deviation from the norm indicate differences that need attention. Be aware of that and do not create emphasis unintentionally.
+Good diagrams are self-explanatory and guide the reader's attention. Humans constantly search for patterns and deviations. Consistent use of shapes and colors indicates that the presented elements are similar (cf. Fig.~\ref{fig:emphasis}). Deviations from the norm indicate differences that need attention. Be aware of that and do not create emphasis unintentionally.
 
 \begin{figure}[t]
 \centering
@@ -209,12 +233,12 @@ Many diagrams consist of shapes and lines, annotated with text labels.
 
 A commonplace technique is to use bold print to express some property of an element. For instance, the labels of all shapes that correspond to systems are printed in bold to differentiate these shapes from the ones that correspond to exchanged  messages. In general, we recommend to avoid this practice. Reserve bold print for emphasizing \emph{one particular element} in a diagram. Use another visual style to show differences, such as shading, colors, or shape form. Also consider the option of giving an element no surrounding shape at all, for instance, if the notion of its \emph{boundary} is not relevant or if the arrangement of sub-elements establishes a common ground due to the Gestalt law of \emph{closure}.
 
-In any case, the labels should be as close as possible to the shapes (proximity) and exactly aligned. Whenever possible, consider moving the labels into the shapes (Fig.~\ref{labelsinside}). Inside labels rely on the Gestalt law of \emph{common ground}. They reduce visual clutter and make it easier to create a well-balanced diagram that has no ragged edges (laws of symmetry and closure).
+In any case, the labels should be as close as possible to the shapes (Gestalt law proximity) and exactly aligned. Whenever possible, consider moving the labels into the shapes (Fig.~\ref{fig:labelsinside}). Inside labels rely on the Gestalt law of \emph{common ground}. They reduce visual clutter and make it easier to create a well-balanced diagram that has no ragged edges (laws of symmetry and closure). 
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=1\textwidth]{diagram-labelsinside}
-\sidecaption{\label{fig:dominance} Moving the labels inside objects reduces clutter. Note how the left-hand-side figure is centered in the left part of the figure to keep the figure balanced \cite{Carter12}.}[-6\baselineskip]
+\sidecaption{\label{fig:labelsinside} Moving the labels inside objects reduces clutter. Note how the left-hand-side figure is centered in the left part of the figure to keep the figure balanced \cite{Carter12}.}[-6\baselineskip]
 \end{figure}
 
 \begin{marginfigure}
@@ -223,7 +247,7 @@ In any case, the labels should be as close as possible to the shapes (proximity)
 \caption{\label{fig:labelsoutside} Outside labels should not distract the reader \cite{Carter12}.}%[-1\baselineskip]
 \end{marginfigure}
 
-Figure~\ref{fig:labelsoutside} illustrates key principles when labels are outside of a shape. First of all, keep the lines as short as possible (proximity). Consider removing the arrowheads from the lines that point into an object to avoid confusion with other arrows in the diagram. Also, avoid crossing lines. Align labels on the left-hand side of an object flush right and vice versa. Aim for consistency by making the lines parallel. Keep adequate amounts of surrounding whitespace.
+Figure~\ref{fig:labelsoutside} illustrates key principles when labels are outside of a shape. First of all, keep the lines as short as possible (proximity). Consider removing the arrowheads from the lines that point into an object to avoid confusion with other arrows in the diagram. Also, avoid crossing lines. Align labels on the left-hand side of an object flush right and vice versa (symmetry). Aim for consistency by making the lines parallel. Keep adequate amounts of surrounding whitespace.
 
 
 \subsection{Variations}
