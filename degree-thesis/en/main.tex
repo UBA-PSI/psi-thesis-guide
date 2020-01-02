@@ -197,21 +197,25 @@ Moreover, consider the advice by Markus Kuhn on differentiating abstract and int
 %
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
+% Mind the \input instead of the \include here, that change is necessary for the appendix formatting
+% Due to the \input command you also need to provide the .tex file ending
 
-\include{chapters/chapter1}
-% TODO - get rid of this poor hack:
-% This is needed to have the correct APPENDIX prefix in the TOC for the APPENDICES.
-% This line must be inserted *before* the \include line for the last ordinary chapter
-\addtocontents{toc}{\string\def\string\chaptername{Appendix}} 
-\include{chapters/chapter2}
-%\include{chapters/chapter3}
-%\include{chapters/chapter4}
-%\include{chapters/chapter5}
+\input{Chapters/chapter1.tex}
+\input{Chapters/chapter2.tex}
+%\input{Chapters/chapter3.tex}
+%\input{Chapters/chapter4.tex}
+%\input{Chapters/chapter5.tex}
 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
+
+% By using input instead of include for the chapters we are able to move the following line here
+% Therefore the addition before the last chapter is not necessary anymore.
+
+% Call the following chapters "Appendix" inside the table of contents
+\addtocontents{toc}{\string\def\string\chaptername{Appendix}}
 
 \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
