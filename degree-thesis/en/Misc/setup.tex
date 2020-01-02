@@ -3,7 +3,7 @@
 %----------------------------------------------------------------------------------------
 
 % http://www.brandwares.com/RGBTintCalculator.php
-% Base Color value obtained from UB Corporate Identity Manual 
+% Base Color value obtained from UB Corporate Identity Manual
 \definecolor{ubblue}{HTML}{00457D}
 \definecolor{ubblue80}{HTML}{336A97}
 \definecolor{ubblue60}{HTML}{668FB1}
@@ -32,7 +32,7 @@
 % If you cannot use the cochineal font, uncomment the following lines to select
 % the Crimson font. Note, however, that you'll have to take care of the math font
 % on your own.
-% 
+%
 %\setmainfont[
 %	Path           = fonts/,
 %    BoldFont       = {Crimson-Semibold.otf},
@@ -42,7 +42,7 @@
 
 % Recommended: use Cochineal with old-style figures (math fonts: see further down)
 \usepackage[p,osf]{cochineal}
- 
+
 % Exception: tables should use "lining figures" (all digits having same width)
 \AtBeginEnvironment{tabular}{%
   \tlfstyle
@@ -72,7 +72,7 @@
 \renewcommand{\familydefault}{\rmdefault}
 \defaultfontfeatures{Ligatures=TeX}
 
-% math fonts that go well with cochineal 
+% math fonts that go well with cochineal
 \usepackage[cochineal,vvarbb]{newtxmath}
 \usepackage[cal=boondoxo]{mathalfa}
 
@@ -160,13 +160,13 @@
    {\makebox[0pt][r]{\textsc{\MakeTextLowercase\etocthenumber}\hspace{\tocsep}}%
     \etocname\kern1em\etocpage\par%
    }%
-   {\addvspace{3ex}} % 3ex falls danach Chapter kommt 
+   {\addvspace{3ex}} % 3ex falls danach Chapter kommt
 
-\etocsetstyle{subsection} 
-   {\vspace{0ex}} 
-   {} 
-   {\makebox[3em][l]{\etocnumber}\etocname\kern1em\etocpage\par} 
-   {\addvspace{2ex}} % 2ex falls danach Section kommt 
+\etocsetstyle{subsection}
+   {\vspace{0ex}}
+   {}
+   {\makebox[3em][l]{\etocnumber}\etocname\kern1em\etocpage\par}
+   {\addvspace{2ex}} % 2ex falls danach Section kommt
 
 \etocsettocstyle{\chapter*{\contentsname}
                 \thispagestyle{plain}%
@@ -181,7 +181,7 @@
 
 \usepackage{marginnote} % Enable Notes on the Page Margin
 \usepackage{marginfix} % Enables floating for margin figures
-\usepackage{ragged2e} % provides better hyphenation, use with camel case: \RaggedRight 
+\usepackage{ragged2e} % provides better hyphenation, use with camel case: \RaggedRight
 \renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
 \renewcommand*{\marginfont}{\setlength{\parskip}{0.5ex}\scriptsize\sffamily} % format margin text
@@ -204,7 +204,7 @@
 %% therefore, removed for now:
 %%\renewcommand{\marginnotevadjust}{0.71\baselineskip}
 % The following is the necessary correction for in-paragraph use
-\renewcommand{\marginnotevadjust}{0.21\baselineskip} 
+\renewcommand{\marginnotevadjust}{0.21\baselineskip}
 \renewcommand{\marginnotevadjust}{0.55\baselineskip}
 
 \usepackage{microtype} % enable better typographic setup
@@ -276,7 +276,7 @@
   \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
   \do\Y\do\Z\do\*\do\-\do\~\do\'\do\"\do\-}%
 
-% TODO consider using package xurl, which is supposed to handle urL breaking 
+% TODO consider using package xurl, which is supposed to handle urL breaking
 
 % https://tex.stackexchange.com/a/450695
 % allow URLs to be spaced out at / => much better URL breaking in margins
@@ -302,7 +302,7 @@
 % (do not use, breaks title page layout)
 %\usepackage[ocgcolorlinks]{ocgx2}
 
-% cleverref allows you to use |Cref{sec:foo} to get the text "Section 1.2".
+% cleverref allows you to use \Cref{sec:foo} to get the text "Section 1.2".
 % This also works with figures and tables.
 \usepackage{cleveref}
 
@@ -325,7 +325,7 @@
 \setcounter{biburlucpenalty}{8000}
 
 % adjust space between key and entry, default is 2\labelsep
-\setlength{\biblabelsep}{1\labelsep} 
+\setlength{\biblabelsep}{1\labelsep}
 
 % configures indentation of bibentries
 \defbibenvironment{bibliography}
@@ -507,7 +507,7 @@
 \makeatletter
 \DeclareCaptionJustification{outerragged}{\ifthispageodd{\RaggedRight}{\RaggedLeft}}
 
-\DeclareCaptionStyle{sidecaption}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true,justification=outerragged} 
+\DeclareCaptionStyle{sidecaption}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true,justification=outerragged}
 \DeclareCaptionStyle{marginfigure}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true}
 \DeclareCaptionStyle{margintable}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true}
 \DeclareCaptionStyle{widefigure}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
