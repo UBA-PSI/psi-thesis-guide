@@ -43,7 +43,8 @@ consistentlayout, % layout of declaration, abstract and acknowledgements pages m
 ]{PsiThesis} % The class file specifying the document structure
 
 
-\input{misc/setup.tex}
+\input{Misc/setup.tex} % Load the settings from Misc/setup.tex
+\input{Misc/commands.tex} % Load the custom commands from Misc/commands.tex
 
 % Uncomment this command to make all links black:
 %   useful for printing on black-white printers that do a
@@ -115,7 +116,7 @@ consistentlayout, % layout of declaration, abstract and acknowledgements pages m
 
 \frontmatter % Uses roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
-\include{misc/titlepage}
+\include{Misc/titlepage} % Typeset the titlepage
 
 
 %----------------------------------------------------------------------------------------
