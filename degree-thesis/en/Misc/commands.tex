@@ -1,0 +1,37 @@
+% --------------------------------------------------------
+% 			CUSTOM COMMANDS FOR BETTER USABILITY
+% --------------------------------------------------------
+
+% Custom image command to save some typing
+% This command uses 4 arguments/parameters with the following meaning:
+% 1 - Width of the image
+% 2 - Path to the image (inside the Figures folder)
+% 3 - Caption of the image
+% 4 - Label for the image (a universal fig: is prepended)
+%
+% Example Usage: \image{\textwidth}{barplot-before}{This is a fancy barplot.}{barplot-before}
+
+\newcommand{\image}[4]{
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=#1]{../Figures/#2}
+		\caption{#3}
+		\label{fig:#4}
+	\end{figure}
+}
+
+% Custom image command without a caption to save some typing
+% This command uses 4 arguments/parameters with the following meaning:
+% 1 - Width of the image
+% 2 - Path to the image (inside the Figures folder)
+% 3 - Label for the image (a universal fig: is prepended)
+%
+% Example Usage: \image{\textwidth}{barplot-before}{barplot-before}
+
+\newcommand{\imagenocap}[4]{
+	\begin{figure}[t]
+		\centering
+		\includegraphics[width=#1]{../Figures/#2}
+		\label{fig:#3}
+	\end{figure}
+}
