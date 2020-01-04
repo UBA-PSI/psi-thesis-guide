@@ -382,37 +382,43 @@ You can create margin figures like Fig.~\ref{fig:marfig} with the following code
 \end{marginfigure}
 \end{latex}
 
-\paragraph{Margin Tables} Simularly, there are also margin tables. Due to the limited space of the margin the content of a margin table should be carefully considered. Otherwise the table will clip into the main body or overflow over the page.
+\paragraph{Margin Tables} You can also place tables into the margin. Due to the limited space of the margin the content of a margin table should be carefully considered. Otherwise the table will clip into the main body or overflow over the page. In general, we recommend to create the table with the full width of the margin, otherwise the margin layout may become ragged. Moreover, we reduce the font size of margin tables to \emph{footnotesize} so that they do not attract too much attention.
 %
-You can create margin tables like Fig.~\ref{fig:martab} with the following code:
+You can create a full-width margin table like Table~\ref{fig:martab} with the following code:
 
+% left-aligned table columns with automated line breaks 
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
 \begin{margintable}[1\baselineskip] % move figure down by 1 line
-\begin{tabular}{r r r}
+\caption{\label{tab:martab}This is a margin table with a short caption that spans two lines.}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}Lcc@{}}
 \toprule
-& \multicolumn{2}{c}{\tabhead{Observed results}} \\ \cmidrule(lr){2-3}
+& \multicolumn{2}{c}{\tabhead{Observed results}} \\ \cmidrule(){2-3}
 \tabhead{Group} & \tabhead{X} & \tabhead{Y} \\
 \midrule
-1 & 0.2 & 0.8\\
-2 & 0.17 & 0.7\\
+1 & 0.20 & 0.81\\
+2 & 0.17 & 0.70\\
 3 & 0.24 & 0.75\\
 \bottomrule\\
-\end{tabular}
-\caption{\label{fig:martab}This is a margin table with a short caption.}
+\end{tabularx}
 \end{margintable}
 
 \begin{latex}
+% left-aligned table columns with automated line breaks 
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
 \begin{margintable}[1\baselineskip] % move figure down by 1 line
-\begin{tabular}{r r r}
+\caption{\label{tab:martab}This is a margin table with a short caption that spans two lines.}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}Lcc@{}}
 \toprule
-& \multicolumn{2}{c}{\tabhead{Observed results}} \\ \cmidrule(lr){2-3}
+& \multicolumn{2}{c}{\tabhead{Observed results}} \\ \cmidrule(){2-3}
 \tabhead{Group} & \tabhead{X} & \tabhead{Y} \\
 \midrule
-1 & 0.2 & 0.8\\
-2 & 0.17 & 0.7\\
+1 & 0.20 & 0.81\\
+2 & 0.17 & 0.70\\
 3 & 0.24 & 0.75\\
 \bottomrule\\
-\end{tabular}
-\caption{\label{fig:martab}This is a margin table with a short caption.}
+\end{tabularx}
 \end{margintable}
 \end{latex}
 
