@@ -2,36 +2,140 @@
 % 			CUSTOM COMMANDS FOR BETTER USABILITY
 % --------------------------------------------------------
 
-% Custom image command to save some typing
-% This command uses 4 arguments/parameters with the following meaning:
+
+% Custom image command to insert an image
+% This command uses 4 required and one optional arguments/parameters with the following meaning:
+%
+% Optional:
+% 1 - Position of the figure (the default position is 't' for top; if no argument is provided, 't' is used
+%
+% Required:
 % 1 - Width of the image
 % 2 - Path to the image (inside the Figures folder)
 % 3 - Caption of the image
 % 4 - Label for the image (a universal fig: is prepended)
 %
-% Example Usage: \image{\textwidth}{barplot-before}{This is a fancy barplot.}{barplot-before}
+% Required ----------------------------------------------------------------------------
+% Optional -------------|		|			  |					|					  |
+% 						V		V (1)		  V	(2)				V (3)				  V (4)
+% Example Usage: \image[h]{\textwidth}{barplot-before}{This is a fancy barplot.}{barplot-before}
+%
+% The result will be the same as:
+%
+% \begin{figure}[h]
+% 	\centering
+% 	\includegraphics[width=\textwidth]{../Figures/barplot-before}
+% 	\caption{This is a fancy barplot.}
+% 	\label{fig:barplot-before}
+% \end{figure}
 
-\newcommand{\image}[4]{
-	\begin{figure}[t]
+\newcommand{\image}[5][t]{
+	\begin{figure}[#1]
 		\centering
-		\includegraphics[width=#1]{../Figures/#2}
-		\caption{#3}
-		\label{fig:#4}
+		\includegraphics[width=#2]{../Figures/#3}
+		\caption{#4}
+		\label{fig:#5}
 	\end{figure}
 }
 
-% Custom image command without a caption to save some typing
-% This command uses 4 arguments/parameters with the following meaning:
-% 1 - Width of the image
-% 2 - Path to the image (inside the Figures folder)
+% Custom command to insert two images next to each other with a margin caption
+% This command uses 6 required and one optional arguments/parameters with the following meaning:
+%
+% Optional:
+% 1 - Position of the figure (the default position is 't' for top; if no argument is provided, 't' is used
+%
+% Required:
+% 1 - Path to the frist image (inside the Figures folder)
+% 2 - Path to the second image (inside the Figures folder)
+% 3 - Caption of the image
+% 4 - Label for the image (a universal fig: is prepended)
+%
+% Required --------------------------------------------------------------------------------------
+% Optional -----------------|		  |			    |					|					    |
+% 						    V		  V (1)		    V (2)				V (3)				    V (4)
+% Example Usage: \twoimages[h]{barplot-before}{barplot-after}{This is a fancy barplot.}{barplot-sidebyside}
+%
+% The result will be the same as:
+%
+% \begin{figure}[h]
+% 	\centering
+% 	\includegraphics[width=0.48\textwidth]{../Figures/barplot-before}
+% 	\hspace{\fill}
+% 	\includegraphics[width=0.48\textwidth]{../Figures/barplot-after}
+% 	\caption{\label{fig:barplot-sidebyside}This is a fancy barplot.}
+% \end{figure}
+
+\newcommand{\twoimages}[7][t]{
+	\begin{figure}[#1]
+		\centering
+		\includegraphics[width=0.48\textwidth]{../Figures/#2}
+		\hspace{\fill}
+		\includegraphics[width=0.48\textwidth]{../Figures/#3}
+		\sidecaption{\label{fig:#5}#4}[-2\baselineskip]
+	\end{figure}
+}
+
+
+% Custom image command for wide figures
+% This command uses 4 required and one optional arguments/parameters with the following meaning:
+%
+% Optional:
+% 1 - Position of the figure (the default position is 't' for top; if no argument is provided, 't' is used
+%
+% Required:
+% 1 - Path to the image (inside the Figures folder)
+% 2 - Caption of the image
 % 3 - Label for the image (a universal fig: is prepended)
 %
-% Example Usage: \image{\textwidth}{barplot-before}{barplot-before}
+% Required ------------------------------------------------------------------
+% Optional -----------------|		  |				 	 |					|
+% 						    V		  V (1)		 	  	 V	(2)				V (3)
+% Example Usage: \wideimage[h]{barplot-before}{This is a fancy barplot.}{barplot-before}
+%
+% The result will be the same as:
+%
+% \begin{figure*}[h]
+% 	\includegraphics[width=\widefigurewidth]{../Figures/barplot-before}
+% 	\caption{This is a fancy barplot.}
+% 	\label{fig:barplot-before}
+% \end{figure*}
+%
+% %%%%%%%%%%%%%%%%%%%%%%%
+% % 	ATTENTION		%
+% %%%%%%%%%%%%%%%%%%%%%%%
+% It seems this command messes with the position of other images, therefore it is advised to check the placement of other images.
 
-\newcommand{\imagenocap}[4]{
-	\begin{figure}[t]
-		\centering
-		\includegraphics[width=#1]{../Figures/#2}
-		\label{fig:#3}
-	\end{figure}
+\newcommand{\wideimage}[5][t]{
+	\begin{figure*}[#1]
+		\includegraphics[width=\widefigurewidth]{../Figures/#2}
+		\caption{\label{fig:#4}#3}
+	\end{figure*}
+}
+
+% This command uses 3 required and one optional arguments/parameters with the following meaning:
+%
+% Optional:
+% 1 - Vertical offset of the figure (the default offset is 1 for one line lower (negative numbers move the image up); if no argument is provided, 1 is used
+%
+% Required:
+% 1 - Path to the image (inside the Figures folder)
+% 2 - Caption of the image
+% 3 - Label for the image (a universal fig: is prepended)
+%
+% Required ----------------------------------------------------------------------
+% Optional -------------------|			|				  |						|
+% 							  V			V (1)			  V	(2)					V (3)
+% Example Usage: \marginimage[2]{barplot-before}{This is a fancy barplot.}{barplot-before}
+%
+% The result will be the same as:
+%
+% \begin{marginfigure}[2\baselineskip]
+% 	\includegraphics[width=\marginparwidth]{../Figures/barplot-before}
+% 	\caption{\label{fig:barplot-before}This is a fancy barplot.}
+% \end{marginfigure}
+\newcommand{\marginimage}[4][1]{
+	\begin{marginfigure}[#1\baselineskip]
+		\includegraphics[width=\marginparwidth]{../Figures/#2}
+		\caption{\label{fig:#4}#3}
+	\end{marginfigure}
 }
