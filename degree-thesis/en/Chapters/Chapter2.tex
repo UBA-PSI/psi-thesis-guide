@@ -382,6 +382,39 @@ You can create margin figures like Fig.~\ref{fig:marfig} with the following code
 \end{marginfigure}
 \end{latex}
 
+\paragraph{Margin Tables} Simularly, there are also margin tables. Due to the limited space of the margin the content of a margin table should be carefully considered. Otherwise the table will clip into the main body or overflow over the page.
+%
+You can create margin tables like Fig.~\ref{fig:martab} with the following code:
+
+\begin{margintable}[1\baselineskip] % move figure down by 1 line
+\begin{tabular}{r r r}
+\toprule
+& \multicolumn{2}{c}{\tabhead{Observed results}} \\ \cmidrule(lr){2-3}
+\tabhead{Group} & \tabhead{X} & \tabhead{Y} \\
+\midrule
+1 & 0.2 & 0.8\\
+2 & 0.17 & 0.7\\
+3 & 0.24 & 0.75\\
+\bottomrule\\
+\end{tabular}
+\caption{\label{fig:martab}This is a margin table with a short caption.}
+\end{margintable}
+
+\begin{latex}
+\begin{margintable}[1\baselineskip] % move figure down by 1 line
+\begin{tabular}{r r r}
+\toprule
+& \multicolumn{2}{c}{\tabhead{Observed results}} \\ \cmidrule(lr){2-3}
+\tabhead{Group} & \tabhead{X} & \tabhead{Y} \\
+\midrule
+1 & 0.2 & 0.8\\
+2 & 0.17 & 0.7\\
+3 & 0.24 & 0.75\\
+\bottomrule\\
+\end{tabular}
+\caption{\label{fig:martab}This is a margin table with a short caption.}
+\end{margintable}
+\end{latex}
 
 \subsection{Listings}
 
