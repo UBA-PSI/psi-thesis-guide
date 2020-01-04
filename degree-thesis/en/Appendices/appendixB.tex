@@ -89,6 +89,7 @@ This principle is important when drawing diagrams that use contours to demarcate
 
 
 \subsection{Color}
+\label{sec:color}
 
 You are probably used to defining colors in terms of red, green, and blue (RGB) or cyan, magenta, yellow, and black (CMYK). A third way, which is more useful, is the \textbf{HSB model}. It defines color in terms of hue, saturation, and brightness.\sidenote{Read the primer at \url{https://learnui.design/blog/the-hsb-color-system-practicioners-primer.html} for more details.} Consider the color picker shown in Fig.~\ref{fig:hsb} for an example.
 
@@ -367,9 +368,21 @@ In any case, you should choose the sizes of shapes consciously. Represent object
 Finally, consider the option of using negative space, as shown in the bottom-right corner of the Fig.~\ref{fig:diagvariations}. Again, this can be a useful means to avoid visual clutter. However, if you just increase the stroke width (as was done for the example figure), the (vertical) padding in the shape will become too narrow. Moreover, you cannot easily align such shapes with other shapes with thinner strokes.
 
 
-\section{Figures}
+\section{Graphs}
 
-% carter12 guidelines
+In this section we review common design principles for graphs (also called charts or plots). To this end, we present the examples shown by Carter \cite{Carter12}.
+
+A general advice for any graph is to have legible axis labels and, if more than one data series is visualized, a legend for the data series. Moreover, remember to use colors effectively (cf. Sect.~\ref{sec:color}).
+
+\subsection{Line Charts}
+
+Line charts are primarily used to visualize time series. In principle, they are supposed to show how a variable (the one on the y-axis) changes when another one is varied within a given range. Figure~\ref{fig:linecharts}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=1\widefigurewidth]{graphs-linecharts}
+\sidecaption{\label{fig:linecharts} Advice for line charts \cite{Carter12}.}[-1\baselineskip]
+\end{figure*}
 
 
 \section{Tables}
