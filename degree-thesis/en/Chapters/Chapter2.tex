@@ -314,15 +314,14 @@ The following code produces Fig.~\ref{fig:Electron}:
 \label{fig:Electron}
 \end{figure}
 
-Alternatively you can also use the following custom command for inserting a figure.
+You can also use the custom command \code{image} for inserting a figure.
 
 \begin{latex}
 	\image[h]{\textwidth}{Electron}{An electron (artist's impression).}{Electron}
 \end{latex}
 
-This command will produce the same result as using the previously shown commands.
-
-For further information on the usage of the custom commands you should take at the extensive documentation with usage examples.
+This command will produce the same result as the previously shown commands.
+For further information on the usage of the custom commands you should take a look at the extensive documentation in \file{commands.tex} in the \emph{misc} folder.
 
 Figures should appear on the page where they are referenced first or on one of the subsequent pages. The recommended \textbf{figure placement} is the top of the page (denoted by \code{[t]}). Don't worry about figures not appearing exactly where you write them in the source. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so LaTeX puts it at the top of the next page.
 
@@ -358,15 +357,14 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using \textbf{vect
 \caption{\label{fig:widefig}This is a full-width figure. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.}
 \end{figure*}
 
-Alternatively you can also use the following custom command for inserting a figure.
+You can also use the following custom command \code{wideimage} for inserting a figure.
 
 \begin{latex}
 \wideimage[h]{plot.pdf}{This is a full-width figure. Lorem ipsum dolor sit amet, …}{widefig}
 \end{latex}
 
-This command will produce the same result as using the previously shown commands.
-
-For further information on the usage of the custom commands you should take at the extensive documentation with usage examples.
+This command will produce the same result as the previously shown commands.
+For further information on the usage of the custom commands you should take a look at the extensive documentation in \file{commands.tex} in the \emph{misc} folder.
 
 \paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures next to each other. There are several approaches for that, e.\,g., using the \texttt{subfigure} package. In many cases, however, a comprehensive subfigure support is not needed. A lightweight approach as shown in Fig.~\ref{fig:barplot} may be sufficient. This result is achieved with the following code:
 \begin{latex}
@@ -382,13 +380,15 @@ For further information on the usage of the custom commands you should take at t
 \end{figure}
 \end{latex}
 
-Alternatively you can also use the following custom command for inserting a two figures next to each other.
+You can also use the custom command \code{twoimages} for inserting two figures next to each other.
 
 \begin{latex}
 \twoimages[h]{barplot-before}{barplot-after}{Removing unnecessary clutter.}{barplot}
 \end{latex}
 
-For further information on the usage of the custom commands you should take at the extensive documentation with usage examples.
+This command will produce the same result as the previously shown commands.
+For further information on the usage of the custom commands you should take a look at the extensive documentation in \file{commands.tex} in the \emph{misc} folder.
+
 
 Figure \ref{fig:barplot} uses a \textbf{side caption} (\code{sidecaption}). Whether you use side captions or not is up to you.
 Just ensure to place all captions consistently, i.\,e., either in the margin or above or below floats for tables and figures, respectively. Note that \code{sidecaption} does not work with floating listings.
@@ -408,13 +408,14 @@ You can create margin figures like Fig.~\ref{fig:marfig} with the following code
 \end{marginfigure}
 \end{latex}
 
-Alternatively you can also use the following custom command for inserting a two figures next to each other.
+You can also use the custom command \code{marginimage} for inserting a figure in the margin.
 
 \begin{latex}
 \marginimage[1]{Electron}{This is a margin figure with a short caption.}{marfig}
 \end{latex}
 
-For further information on the usage of the custom commands you should take at the extensive documentation with usage examples.
+This command will produce the same result as the previously shown commands.
+For further information on the usage of the custom commands you should take a look at the extensive documentation in \file{commands.tex} in the \emph{misc} folder.
 
 \paragraph{Margin Tables} You can also place tables into the margin. Due to the limited space of the margin the content of a margin table should be carefully considered. Otherwise the table will clip into the main body or overflow over the page. In general, we recommend to create the table with the full width of the margin, otherwise the margin layout may become ragged. Moreover, we reduce the font size of margin tables to \emph{footnotesize} so that they do not attract too much attention.
 %
