@@ -376,12 +376,17 @@ A general advice for any graph is to have legible axis labels and, if more than 
 
 \subsection{Line Charts}
 
-Line charts show how one variable (the one on the y-axis) changes when another one is varied within a given range. Line charts are particularly useful to visualize time series. Figure~\ref{fig:linecharts} summarizes Carter's advice on line charts.
+Line charts show how one variable (the one on the y-axis) changes when another one is varied within a given range. Line charts are particularly useful to visualize time series.
+
+Often, there are many lines to be plotted. Resist the temptation to add more than three lines into one line chart if the lines overlap. Instead, create multiple charts where one of the lines is repeated to serve as a baseline.
+
+Figure~\ref{fig:linecharts} summarizes Carter's advice on line charts.
 
 \begin{figure*}[t]
 \centering
+%\vspace{3\baselineskip}
 \includegraphics[width=1\widefigurewidth]{graphs-linecharts}
-\sidecaption{\label{fig:linecharts} Advice for line charts \cite{Carter12}.}[-1\baselineskip]
+\sidecaption{\label{fig:linecharts} Advice for line charts \cite{Carter12}. Remark on the layout: As seen in this case, putting a wide figure below another one does not look very pleasing.}[-1\baselineskip]
 \end{figure*}
 
 \subsection{Bar Charts}
@@ -389,6 +394,30 @@ Line charts show how one variable (the one on the y-axis) changes when another o
 Bar charts are useful to compare the value of a single variable under different circumstances. The value of the variable corresponds to the length of a bar. In principle, a single bar chart can also show the values of \emph{different} variables. Note, however, that such a chart is more difficult to read, especially when the variables need differently scaled Y-axes (one to the left and one to the right of the chart).
 
 The bars can be drawn horizontally and vertically. The advice in this section assumes vertical bars. In vertical bar charts the Y-axis corresponds to the value of the variable and the X-axis is typically used for a categorial variable, which represents the different circumstances.
+
+Figure~\ref{fig:barcharts} summarizes Carter's advice on bar charts.
+
+\begin{figure*}[t]
+\centering
+\vspace{4\baselineskip}
+\includegraphics[width=1\widefigurewidth]{graphs-barcharts}
+\sidecaption{\label{fig:barcharts} Advice for bar charts \cite{Carter12}.}
+\end{figure*}
+
+\paragraph{Histograms} A special kind of bar graphs are histograms. Carter gives a concise explanation of the purpose of a histogram: ``A histogram shows the distribution of data and the relative frequency with which the data occur. It essentially offers the audience an estimate of the probability distribution of a dataset'' \cite{Carter12}.
+
+Figure~\ref{fig:histograms} summarizes Carter's advice on histograms.
+
+\begin{figure*}[t]
+\centering
+\vspace{4\baselineskip}
+\includegraphics[width=1\widefigurewidth]{graphs-histograms}
+\sidecaption{\label{fig:histograms} Advice for histograms \cite{Carter12}.}
+\end{figure*}
+
+
+
+
 
 
 \section{Tables}
