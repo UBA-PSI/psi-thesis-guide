@@ -72,6 +72,10 @@
 \renewcommand{\familydefault}{\rmdefault}
 \defaultfontfeatures{Ligatures=TeX}
 
+% amssymb should be loaded before newtxmath to avoid this error:
+% Command `\Bbbk' already defined
+\usepackage{amssymb}
+
 % math fonts that go well with cochineal
 \usepackage[cochineal,vvarbb]{newtxmath}
 \usepackage[cal=boondoxo]{mathalfa}
@@ -535,7 +539,6 @@
 \renewcommand{\ding}[2][1]{\scalebox{#1}{\oldding{#2}}}% Scale \oldding via optional argument
 % usage \ding{number} or |ding[factor]{number}
 
-\usepackage{amssymb}
 
 %----------------------------------------------------------------------------------------
 %	ITEMIZE AND ENUMERATE ENVIRONMENTS
