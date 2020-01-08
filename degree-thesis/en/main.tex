@@ -72,6 +72,11 @@ consistentlayout, % layout of declaration, abstract and acknowledgements pages m
 \catcode`Q=11 % make Q inactive again
 %
 
+% date to be printed on the title
+\def\tdate{\today}
+% for the final version, insert the date of submission in the format "Month YYYY", e.g., January 2020
+%\def\tdate{January 2020}
+
 %%% CHANGE THIS:
 % Your name, this is used in the title page, print it elsewhere with \authorname
 \author{Max Mustermann}
@@ -89,7 +94,15 @@ consistentlayout, % layout of declaration, abstract and acknowledgements pages m
 \department{department not used}
 
 % Your faculty's name and URL, this is used in the title page, print it elsewhere with \facname
-\faculty{\href{https://www.uni-bamberg.de/en/wiai/}{Faculty of Information Systems and Applied Computer Sciences}}
+% TODO: insert *your* degree program in the \faculty command below
+% Applied Computer Science
+% Computing in the Humanities
+% Information Systems
+% International Information Systems Management
+% International Software Systems Science
+% Software Systems Science
+% Education in Business and Information Systems
+\faculty{Software Systems Science Degree Program in the\\ \href{https://www.uni-bamberg.de/en/wiai/}{Faculty of Information Systems and Applied Computer Sciences}}
 
 % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
 \addresses{address not used}
@@ -112,15 +125,11 @@ consistentlayout, % layout of declaration, abstract and acknowledgements pages m
 
 \frontmatter % Uses roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
-\hypersetup{hidelinks}
+\hypersetup{urlcolor=black}
 
 \include{Misc/titlepage} % Typeset the titlepage
 
-\hypersetup{colorlinks,breaklinks,unicode,
-             citecolor=ubblue60,
-             linkcolor=ubblue60,
-             filecolor=ubblue60,
-             urlcolor=ubblue60}
+\hypersetup{urlcolor=ubblue80}
 
 
 %----------------------------------------------------------------------------------------
