@@ -25,7 +25,7 @@ If you are new to LaTeX, we recommended to carry on reading this section.
 
 LaTeX is not a \textsc{wysiwyg} (What You See is What You Get) tool, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for LaTeX is a simple, plain text file that contains \emph{no formatting}. LaTeX is a \enquote{mark-up} language (like HTML): You tell the LaTeX processor about the desired formatting in simple commands amongst the text. For instance, if you want to use \emph{italic text for emphasis}, you write the \verb|\emph{text}| command and put the text you want in italics in between the curly braces.
 
-\subsection{A (not so short) Introduction to LaTeX}
+\subsection{Introduction to LaTeX}
 
 If you are new to LaTeX, there is an excellent eBook, \enquote{The Not So Short Introduction to LaTeX} (aka ``lshort''), which is freely available online.\marginnote{\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}.}
 
@@ -63,12 +63,12 @@ As of December 2019, the template does not work with \url{https://www.overleaf.c
 
 You \emph{can} use the template with Overleaf if you remove the line that loads the \code{microtype} package in \file{setup.tex}. Moreover, you will have to remove all calls to \code{textls}.
 
-Another option is typesetting the template with XeTeX: For XeTeX you have to remove the line that loads the package \code{luainputenc} from \file{setup.tex} as well as all calls to \code{textls}.
+Another option is typesetting the template with XeTeX. To compile the template with XeTeX, you have to remove the line that loads the package \code{luainputenc} from \file{setup.tex} as well as all calls to \code{textls}.
 
 
 \section{Getting Started with the Template}
 
-Once you are familiar with LaTeX, you should explore the directory structure of the template (cf. \Cref{sec:folders,sec:files}). Before you start to make changes, we recommend you to compile this guide on your own machine (cf. \Cref{sec:compile}). If there are no errors, it is time to place your details into the \emph{THESIS INFORMATION} block of the \file{main.tex} file (cf. \Cref{sec:fillingdetails}).\marginnote{Additional features of the template are described in \Cref{ThesisFeatures}.}[-1\baselineskip]
+Once you are familiar with LaTeX, you should explore the directory structure of the template (cf. \Cref{sec:folders,sec:files}). Before you start to make changes, we recommend you to compile this guide on your own machine (cf. \Cref{sec:compile}). If there are no errors, it is time to place your details into the THESIS INFORMATION block of the \file{main.tex} file (cf. \Cref{sec:fillingdetails}).\marginnote{Additional features of the template are described in \Cref{ThesisFeatures}.}[-1\baselineskip]
 
 
 \subsection{Folder Structure}
@@ -106,7 +106,7 @@ Most of the template's files are plain text, and you can see their contents in a
 
 \keyword{main.pdf} -- This is your typeset thesis created by LaTeX. It is part of the template's ZIP file. When you compile the template, you should get an identical version.
 
-\keyword{main.tex} -- This is the file that you tell LaTeX to compile to produce \file{main.pdf}. It contains the framework and constructs that tell LaTeX how to layout the thesis. It contains many comments that explain the purpose of each line of code. Fill in your details into the \emph{THESIS INFORMATION} block.
+\keyword{main.tex} -- This is the file that you tell LaTeX to compile to produce \file{main.pdf}. It contains the framework and constructs that tell LaTeX how to layout the thesis. It contains many comments that explain the purpose of each line of code. Fill in your details into the THESIS INFORMATION block.
 
 \keyword{PSIThesis.cls} -- This is the class file that tells LaTeX how to format the thesis. You should not have to make changes here.
 

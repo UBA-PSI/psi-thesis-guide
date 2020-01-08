@@ -8,6 +8,7 @@ An essential property of a long document, such as a thesis, is consistency.%
 It is, however, challenging to keep track of terminology, style, and structure over an extended period.
 
 Following certain conventions can help you achieve a consistent result. This chapter summarizes conventions and recommendations for effective thesis writing.
+Appendices~A contains additional guidelines, while Appendix~B provides more information on designing figures and tables.
 
 This%
 \marginnote{Having a signpost paragraph before the first section in a chapter is considered good style.}
@@ -29,8 +30,8 @@ It is a frequently asked question whether one should embed \emph{all} links as p
 
 \paragraph{Link Rot}
 
-As the web is quite dynamic, many links do not work forever.
-Content may change or move to different URLs, and sites may go out of service altogether. This phenomenon is called Link Rot, and it has become a significant issue in academia.\sidenote{See also: \href{https://en.wikipedia.org/wiki/Link_rot}{Link Rot in Wikipedia}}
+Many links become invalid at some point.
+Content may change or move to different URLs. Sites may go out of service altogether. This phenomenon is called \emph{link rot}, and it has become an issue for academia.\sidenote{See also: \href{https://en.wikipedia.org/wiki/Link_rot}{Link Rot in Wikipedia}}
 
 Therefore, we ask you to \textbf{archive all websites} whose URLs you provide using \textsc{The Wayback Machine} of the Internet Archive, which is available at \url{archive.org}.
 This preserves the content of a website at the given point in time and makes it permanently available in the Internet Archive.
@@ -38,6 +39,7 @@ This preserves the content of a website at the given point in time and makes it 
 You should inform the reader about the availability of an archived version.
 We recommend to provide the \emph{original URL} and add ``(archived at [date])'' after the URL.%
 \sidenote{We have archived all websites mentioned in this guide. In the interest of readability, we will omit the suffix after links.}
+Alternatively, you can just provide the \emph{archive.org} URL of a location.
 This practice applies to URLs in the main text, in footnotes, and in references.
 
 Archiving is not necessary for academic papers that have a Digital Object Identifier (DOI), have an ISBN/ISSN, or are available on \url{arxiv.org}.
@@ -46,7 +48,7 @@ Archiving is not necessary for academic papers that have a Digital Object Identi
 \subsection{Citation and References}
 
 Always try to \textbf{cite the primary reference},
-i.\,e., the seminal paper that introduced a particular concept. You can cite well-known academic textbooks (instead of the original paper) when you cite fundamentals. No citation is necessary for widespread knowledge: ``Authentication with passwords is popular.''
+i.\,e., the seminal paper that introduced a particular concept. When there is no fitting (seminal) paper, you can also choose to cite a well-known academic textbook that covers the topic. No citation is necessary for widespread knowledge, for instance, in the following sentence: ``Many web sites rely on passwords for user authentication.''
 
 Most of the time, \textbf{paraphrasing content is preferred} over literally citing text with quotation marks. The most expressive way to integrate references to literature is to insert the labels right behind key terms or author names:
 \begin{quote}
@@ -538,19 +540,20 @@ E = mc^{2}
 \end{equation}
 
 LaTeX automatically gives all equations you write equation numbers. If you don't want a particular equation numbered, use the unnumbered form:
-\begin{latex}
+% use of verbatim here because we do not need syntax highlighting and want to avoid lstlsting style for a one-line listing
+\begin{verbatim}
 \[ a^{2}=4 \]
-\end{latex}
+\end{verbatim}
 
 You can also have equations in the middle of a paragraph, e.\,g., \( E = mc^{2} \), with this syntax: 
-
-\begin{latex}
+% use of verbatim here because we do not need syntax highlighting and want to avoid lstlsting style for a one-line listing
+\begin{verbatim}
 e.\,g., \( E = mc^{2} \), with this syntax:
-\end{latex}
+\end{verbatim}
 
 %----------------------------------------------------------------------------------------
 
-\section{Structuring your Thesis}
+\section{Structuring Your Thesis}
 
 You should break your thesis up into chapters and sections. LaTeX automatically builds a Table of Contents by looking at all the \verb|\chapter{}|, \verb|\section{}|  and \verb|\subsection{}| commands you write in the source. You may even think about using \emph{sub}subsections (\verb|\subsubsection{}|). All of these will be hierarchically numbered.
 
@@ -560,7 +563,7 @@ Use \textbf{(sub-)subsections} only if you use them consistently in all or at le
 
 The Table of Contents is configured to only list \emph{chapters} and \emph{sections}. We do not recommend to include \emph{(sub-)subsections} as this results in a very long Table of Contents, which may become difficult to read. If you do want to change the depth of the Table of Contents, you can change the value \verb|\etocsettocdepth| in \file{setup.tex}.
 
-Use \textbf{title case} in your \emph{chapters}, \emph{sections}, and \emph{paragraphs}. Consider, for instance, \url{https://capitalizemytitle.com} for title case capitalization rules.
+Use \textbf{title case} in \emph{chapter}, \emph{section}, \emph{(sub)subsection}, and \emph{paragraph} environments. Consider, for instance, \url{https://capitalizemytitle.com} for common title case capitalization rules.
 
 Within a section, you should \textbf{walk the reader through your text}:
 \begin{quote}
@@ -585,13 +588,13 @@ Some authors use scare quotes to signal that they are using a word in a non-stan
 
 You should split your content into \textbf{proper paragraphs} by adding empty lines between adjacent blocks of text in the source file. Using a mixture of paragraphs and line breaks, which you could create with \verb|\\| at the end of a line, is strongly discouraged because this practice creates a noisy layout.
 
-Use \textbf{thin spaces} (\verb|\,|) in the appropriate places. For instance, write \verb|i.\,e.,| to obtain i.\,e. (pronunciation: ``that means''). The same applies to e.\,g. (pronunciation: ``for example''). These two abbreviations are normally followed by a comma in American English.
+Use \textbf{thin spaces} (\verb|\,|) in the appropriate places. For instance, write \verb|i.\,e.,| to obtain ``i.\,e.,'' (pronunciation: ``that is''). The same applies to ``e.\,g.,'' (pronunciation: ``for example''). These two abbreviations are normally followed by a comma in American English.
 
 \textbf{Dashes} can be used instead of colons or pairs of commas to mark off a nested clause. Use an \emph{en dash} for that purpose -- like in this example. If you cannot type an \emph{en dash} on your keyboard, you can write two regular hyphens next to each other. LaTeX will substitute them with an \emph{en dash}. While we have no strict preference, we recommend using \emph{en dashes} instead of the longer \emph{em dashes}.
 
 Use en dashes also for ranges, e.\,g., when you write something like 5--10\,\% (note the thin space before the \% symbol).
 
-Use a proper \textbf{minus symbol} (e.\,g., by using math mode like this \(-1.337\)). Also, use a sensible number of digits after the decimal point.
+Use a proper \textbf{minus symbol} (e.\,g., by using math mode like this \(-1.337\)). Also, use a sensible number of digits after the decimal point.\sidenote{Have you noticed that the main text uses \emph{old-style figures} for numbers, while math mode uses \emph{lining figures}? Do not  print numbers with differing figure styles close to each other (as we are doing in this section).}
 
 Use proper \textbf{directional quotation marks} like ``these.'' Directional quotation marks are created  \verb|``like this''|, by using \verb|\enquote{text}|, or by copy-and-pasting the respective Unicode characters. Note that in contrast to conventions in the German language, the closing quotation mark is placed \emph{after} any subsequent punctuation, e.\,g., ``like this,'' and ``like that.''
 
@@ -609,7 +612,7 @@ Ensure correct spelling throughout your text. Check your writing with a spell ch
 
 Ensure proper hyphenation throughout your text. You will have to intervene, for instance, when words extend into the margin of the page (creating so-called overfull hboxes). You can override LaTeX's hyphenation rules by inserting \verb|\-| into a word. This special character indicates a conditional hyphenation point.
 
-Often, it makes sense to define custom hyphenation rules globally. To this end, define your custom hyphenation definitions with\todo[noline]{Oh no, an overful hbox!}\ \verb|\hyphenation{FORTRAN Hy-phen-a-tion}| and insert them after the \verb|\begin{document}| clause.
+Often, it makes sense to define custom hyphenation rules globally. To this end, define your custom hyphenation definitions with\verb|\hyphenation{FORTRAN Hy-phen-a-tion}| and insert them after the \verb|\begin{document}| clause.\todo[noline]{Oh no, an overful hbox!}\ 
 The example definition prevents any hyphenation of the word FORTRAN and defines three hyphenation points for the word Hyphenation.
 
 Also, check your text for common grammar issues (cf. Sect.~\ref{sec:style}).
