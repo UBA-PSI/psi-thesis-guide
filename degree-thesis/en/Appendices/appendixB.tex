@@ -179,6 +179,7 @@ Usually, child elements are located below or to the right of their parents. As L
 Finally, \emph{stair structures} stack child elements below and to the right of parent elements. Stair visualizations are common in outlines. They can be used to capture arbitrarily complex hierarchies, especially when they are used interactively and individual nodes can be collapsed. Stair visualization also have a disadvantage: they may falsely imply a sequential relationship between the stacked child elements.
 
 \subsection{Five Ways of Organization}
+\label{sec:fivehatracks}
 
 The so-called \emph{Five Hat Racks} design principle suggests that there are five common ways to organize information: by category, time, location, alphabet, and continuum \cite{Lidwell10}.
 
@@ -370,15 +371,20 @@ Finally, consider the option of using negative space, as shown in the bottom-rig
 
 \section{Graphs}
 
-In this section we review common design principles for graphs (also called charts or plots). To this end, we present the examples shown by Carter \cite{Carter12}.
+In this section we review common design principles for graphs (also called charts or plots). Besides our own guidelines, we will present the examples shown by Carter \cite{Carter12}.
 
-A general advice for any graph is to have legible axis labels and, if more than one data series is visualized, a legend for the data series. Moreover, remember to use colors effectively (cf. Sect.~\ref{sec:color}).
+The first step in data visualization is to \textbf{pick a reasonable chart type}. Most visualization needs that arise in a thesis can be addressed with line charts, bar charts and histograms, and scatter plots. There are many more chart types such as Chord Diagrams, Sankey Diagrams and the Nightingale Rose Chart.\sidenote{For comprehensive overviews and guidance see \url{https://datavizcatalogue.com}, \url{https://depictdatastudio.com/charts/}, \url{https://www.data-to-viz.com/img/poster/poster_big.png} and \url{https://www.labnol.org/images/2008/data-chart-type.png}.}
+These and other advanced chart types can be useful in very specific situations. In general, however, we recommend to stick to more basic chart types. In particular, \textbf{avoid pie charts} unless you really know what you are doing.
+
+A general advice for any graph is to have \textbf{legible axis labels} and, if more than one data series is visualized, a legend for the data series. Moreover, remember to use colors effectively (cf. Sect.~\ref{sec:color}).
+
+The following sections provide more information on two important chart types, line charts and bar charts. The recommendations are very specific. You may find that you cannot follow all of them using your plotting tool of choice. If this limitation bothers you, consider editing the output of the plotting tool with a vector drawing program such as Inkscape or Adobe Illustrator.
 
 \subsection{Line Charts}
 
 Line charts show how one variable (the one on the y-axis) changes when another one is varied within a given range. Line charts are particularly useful to visualize time series.
 
-Often, there are many lines to be plotted. Resist the temptation to add more than three lines into one line chart if the lines overlap. Instead, create multiple charts where one of the lines is repeated to serve as a baseline.
+Often, there are many lines to be plotted. Resist the temptation to add more than three lines into one line chart if the lines overlap. Instead, create multiple charts which have one of the lines in common. This line serves as a baseline, easing comparison.
 
 Figure~\ref{fig:linecharts} summarizes Carter's advice on line charts.
 
@@ -391,29 +397,34 @@ Figure~\ref{fig:linecharts} summarizes Carter's advice on line charts.
 
 \subsection{Bar Charts}
 
+The top row of Fig.~\ref{fig:barcharts} summarizes Carter's advice on bar charts.
 Bar charts are useful to compare the value of a single variable under different circumstances. The value of the variable corresponds to the length of a bar. In principle, a single bar chart can also show the values of \emph{different} variables. Note, however, that such a chart is more difficult to read, especially when the variables need differently scaled Y-axes (one to the left and one to the right of the chart).
 
-The bars can be drawn horizontally and vertically. The advice in this section assumes vertical bars. In vertical bar charts the Y-axis corresponds to the value of the variable and the X-axis is typically used for a categorial variable, which represents the different circumstances.
+The bars can be drawn horizontally and vertically.\sidenote{See \url{https://depictdatastudio.com/when-to-use-horizontal-bar-charts-vs-vertical-column-charts/} for more guidance.} It is common to use vertical bars for time series (time on the x-axis). You can also use vertical bars if the values on the x-axis are on an ordinal scale (i.\,e., they are arranged in their natural order). Vertical bars do not work well with long labels. Rotating labels makes them difficult to read. Horizontal bar charts, on the other hand, work well with longer labels (align the labels flush right next to the bars).
 
-Figure~\ref{fig:barcharts} summarizes Carter's advice on bar charts.
+The advice in this section assumes vertical bars. In vertical bar charts the Y-axis corresponds to the value of the variable and the X-axis is typically used for a categorial variable, which represents the different circumstances.
+
+An advanced version of a classical bar chart is a stacked bar chart, which are a good alternative to visualize proportions of a whole. In contrast, to pie charts, which can be deceiving, stacked bar charts are more accurate and can be easily compared with each other.
 
 \begin{figure*}[t]
 \centering
 \vspace{4\baselineskip}
 \includegraphics[width=1\widefigurewidth]{graphs-barcharts}
-\sidecaption{\label{fig:barcharts} Advice for bar charts \cite{Carter12}.}
-\end{figure*}
 
-\paragraph{Histograms} A special kind of bar graphs are histograms. Carter gives a concise explanation of the purpose of a histogram: ``A histogram shows the distribution of data and the relative frequency with which the data occur. It essentially offers the audience an estimate of the probability distribution of a dataset'' \cite{Carter12}.
+\bigskip
 
-Figure~\ref{fig:histograms} summarizes Carter's advice on histograms.
-
-\begin{figure*}[t]
-\centering
-\vspace{4\baselineskip}
 \includegraphics[width=1\widefigurewidth]{graphs-histograms}
-\sidecaption{\label{fig:histograms} Advice for histograms \cite{Carter12}.}
+\sidecaption{\label{fig:barcharts} Advice for bar charts and histograms \cite{Carter12}.}
 \end{figure*}
+
+\paragraph{Histograms} A special kind of bar charts are histograms. Carter gives a concise explanation of the purpose of a histogram: ``A histogram shows the distribution of data and the relative frequency with which the data occur. It essentially offers the audience an estimate of the probability distribution of a dataset'' \cite{Carter12}. The bottom row of Fig.~\ref{fig:barcharts} summarizes Carter's advice on histograms.
+
+%\begin{figure*}[t]
+%\centering
+%\vspace{4\baselineskip}
+%\includegraphics[width=1\widefigurewidth]{graphs-histograms}
+%\sidecaption{\label{fig:histograms} Advice for histograms \cite{Carter12}.}
+%\end{figure*}
 
 
 
@@ -422,17 +433,125 @@ Figure~\ref{fig:histograms} summarizes Carter's advice on histograms.
 
 \section{Tables}
 
-% hierarchy principle => carter12 examples
+This section summarizes Carter's guidelines for designing effective tables \cite{Carter12}.
 
-% Order of information based on five hat rack (see table examples in carter12)
+Tables are a good means to display multiple properties for several entities. Often, the properties have different scales and units. Readers usually expect that rows correspond to entities and columns correspond to properties. This organization makes it easier to compare entities in terms of individual properties by focusing on the values in particular columns. Special cases can be spotted easily if they are printed vertically and the eye can move downwards. The example in Table~\ref{tab:colrows} shows this effect with two tables that contain the same data.
 
+\begin{table*}[thb]
+  \caption{\label{tab:colrows} The table to the left is easier to read than the table to the right \cite{Carter12}.}
+  \centering
+  \footnotesize % use smaller fontsize in the table
+  {\renewcommand{\arraystretch}{1.1} % increase vertical space between rows
+  \begin{tabularx}{0.45\linewidth}{@{}Xccr@{}} % @{} omits outer horizontal margins, the "X" column uses up all remaining available space 
+    \toprule
+    Lake & Area ($\mathrm{km}^2$) & Length (km) & Depth (m)\\
+    \midrule
+    Malawi & 30,044 & 579 & 706 \\
+    Tanganyika & 32,893 & 676 & 1470 \\
+    Victoria & 59,485 & 322 & 84\\
+    \bottomrule
+  \end{tabularx}
+  \hspace{\fill}
+  \begin{tabularx}{0.45\linewidth}{@{}Xccr@{}} % @{} omits outer horizontal margins, the "X" column uses up all remaining available space 
+    \toprule
+    Lake & Malawi & Tanganyika & Victoria\\
+    \midrule
+    Area ($\mathrm{km}^2$) & 30,044 & 32,893 & 59,485 \\
+    Length (km) & 579 & 676 & 322 \\
+    Depth (m) & 706 & 1470 & 84\\
+    \bottomrule
+  \end{tabularx}
+  }
+\end{table*}
 
+Follow the Gestalt principle of Hierarchy when you display information that can be grouped. Often, there is more than one way how to group data. Make a conscious decision about how you organize the table. Different ways of organization put emphasis on different aspects. For instance, the table to the left in Table~\ref{tab:groups} puts emphasis on the comparison between men and women. In contrast, the table to the right emphasizes differences between the years.
 
+\begin{table*}[thb]
+\caption{Number of men and women selected by NASA to be astronauts by year of selection \cite{Carter12}.}
+\label{tab:groups}
+\centering
+\footnotesize % use smaller fontsize in the table
+{\renewcommand{\arraystretch}{1.1} % increase vertical space between rows
+  \begin{tabularx}{0.53\linewidth}{@{}Xcccccc@{}} % @{} omits outer horizontal margins, the "X" column uses up all remaining available space 
+  \toprule
+  & \multicolumn{3}{c}{\tabhead{Men}} & \multicolumn{3}{c}{\tabhead{Women}} \\
+  \cmidrule(lr){2-4} \cmidrule(l){5-7}
+  & \tabhead{1980} & \tabhead{1990} & \tabhead{2000} & \tabhead{1980} & \tabhead{1990} & \tabhead{2000}\\
+  \midrule
+  Mission specialist & 9 & 12 & 7 & 2 & 4 & 3\\
+  Pilot &              8 &  6 & 7 & 0 & 1 & 0\\
+  \midrule
+  Total &             17 & 18 & 14 & 2 & 5 & 3\\
+  \bottomrule
+  \end{tabularx}
+\hspace{\fill}
+  \begin{tabularx}{0.42\linewidth}{@{}Xcccccc@{}} % @{} omits outer horizontal margins, the "X" column uses up all remaining available space 
+  \toprule
+  & \multicolumn{2}{c}{\tabhead{1980}} & \multicolumn{2}{c}{\tabhead{1990}} & \multicolumn{2}{c}{\tabhead{2000}}\\
+  \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(l){6-7}
+  & \tabhead{M} & \tabhead{F} & \tabhead{M} & \tabhead{F} & \tabhead{M} & \tabhead{F}\\
+  \midrule
+  Mission specialist & 9 & 2 & 12 & 4 & 7 & 3\\
+  Pilot &              8 & 0 &  6 & 1 & 7 & 0\\
+  \midrule
+  Total &             17 & 2 & 18 & 5 & 14 & 3\\
+  \bottomrule
+  \end{tabularx}
+}
+\end{table*}
 
+Make a conscious decision how to order the columns. Revisit the five hat racks design principle in Sect.~\ref{sec:fivehatracks}. If there is no logical ordering, e.\,g.,  from very generic properties to more specific ones, order the columns alphabetically. Usually, derived pieces of information, results, and insights are to the right of labels and descriptive pieces of information.
 
+Choosing an adequate order also applies to rows. Instead of sorting the rows alphabetically based on their label in the first column, consider sorting them based on the value of a particular column. This can improve legibility a lot (principle of \emph{continuity}). Note that sorting the table by a particular column puts some emphasis on that particular column. This principle is visualized in Table~\ref{tab:roworder}.
 
-
-
-
-
-
+\begin{table*}[thb]
+  \caption{\label{tab:roworder} Listing planets in order from the sun, in alphabetical order, and in descending order of diameter \cite{Carter12}.}
+  \centering
+  \footnotesize % use smaller fontsize in the table
+  {\renewcommand{\arraystretch}{1.1} % increase vertical space between rows
+  \begin{tabularx}{0.3\linewidth}{@{}Xrr@{}} % @{} omits outer horizontal margins, the "X" column uses up all remaining available space 
+    \toprule
+    Planet & Diameter & Mass \\
+    \midrule
+    Mercury & 0.38 & 0.06 \\
+    Venus & 0.95 & 0.82 \\
+    Earth & 1.00 & 1.00 \\
+    Mars & 0.53 & 0.11 \\
+    Jupiter & 11.21 & 317.80 \\
+    Saturn & 9.45 & 95.20 \\
+    Uranus & 4.01 & 14.60 \\
+    Neptune & 3.88 & 17.20 \\
+    \bottomrule
+  \end{tabularx}
+  \hspace{\fill}
+  \begin{tabularx}{0.3\linewidth}{@{}Xrr@{}} % @{} omits outer horizontal margins, the "X" column uses up all remaining available space 
+    \toprule
+    Planet & Diameter & Mass \\
+    \midrule
+    Earth & 1.00 & 1.00 \\
+    Jupiter & 11.21 & 317.80 \\
+    Mars & 0.53 & 0.11 \\
+    Mercury & 0.38 & 0.06 \\
+    Neptune & 3.88 & 17.20 \\
+    Saturn & 9.45 & 95.20 \\
+    Uranus & 4.01 & 14.60 \\
+    Venus & 0.95 & 0.82 \\
+    \bottomrule
+  \end{tabularx}
+  \hspace{\fill}
+  \begin{tabularx}{0.3\linewidth}{@{}Xrr@{}} % @{} omits outer horizontal margins, the "X" column uses up all remaining available space 
+    \toprule
+    Planet & Diameter & Mass \\
+    \midrule
+    Jupiter & 11.21 & 317.80 \\
+    Saturn & 9.45 & 95.20 \\
+    Uranus & 4.01 & 14.60 \\
+    Neptune & 3.88 & 17.20 \\
+    Earth & 1.00 & 1.00 \\
+    Venus & 0.95 & 0.82 \\
+    Mars & 0.53 & 0.11 \\
+    Mercury & 0.38 & 0.06 \\
+    \bottomrule
+  \end{tabularx}
+  }
+\end{table*}
