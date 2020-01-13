@@ -190,6 +190,14 @@
 \usepackage{ragged2e} % provides better hyphenation, use with camel case: \RaggedRight
 \renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
 \renewcommand*{\raggedrightmarginnote}{\RaggedRight}
+
+% justified margin notes:
+% uncomment the following two lines to for justified layout of margin notes
+%\renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
+%\renewcommand*{\raggedrightmarginnote}{\RaggedRight}
+
+
+
 \renewcommand*{\marginfont}{\setlength{\parskip}{0.5ex}\scriptsize\sffamily} % format margin text
 
 
@@ -282,7 +290,7 @@
   \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
   \do\Y\do\Z\do\*\do\-\do\~\do\'\do\"\do\-}%
 
-% TODO consider using package xurl, which is supposed to handle urL breaking
+% TODO consider using package xurl, which is supposed to handle url breaking
 
 % https://tex.stackexchange.com/a/450695
 % allow URLs to be spaced out at / => much better URL breaking in margins
@@ -491,7 +499,7 @@
 \usepackage{sidenotes}
 \usepackage{scrextend} % for ifthispageodd
 
-% objective: instead of having the sidenode numbner in superscript, want something like 1:
+% objective: instead of having the sidenode number in superscript, we want it like "1:"
 \makeatletter
 \ExplSyntaxOn
 \RenewDocumentCommand \sidenotetext { o o +m }
@@ -506,14 +514,16 @@
 \ExplSyntaxOff
 \makeatother
 
-% objective: automatically justify sidecaptions to match the other marginnotes
+% optional objective: automatically justify sidecaptions to match the other marginnotes
 % captions of marginfigures etc. shall always be raggedright
 % solution from: https://tex.stackexchange.com/questions/358010/subfigures-break-figure-numbering-with-sidecaptions-from-sidenotes-package/358012#358012
 
 \makeatletter
+% Instead of "justified" you *can* use "outerraged" in the DeclareCaptionStyle below.
+% This may create a inconsistent layout, therefore, we stick to justified by default.
 \DeclareCaptionJustification{outerragged}{\ifthispageodd{\RaggedRight}{\RaggedLeft}}
 
-\DeclareCaptionStyle{sidecaption}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true,justification=outerragged}
+\DeclareCaptionStyle{sidecaption}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true,justification=justified}
 \DeclareCaptionStyle{marginfigure}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true}
 \DeclareCaptionStyle{margintable}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true}
 \DeclareCaptionStyle{widefigure}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}

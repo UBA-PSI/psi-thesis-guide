@@ -104,11 +104,13 @@ Consider the following example, which ensures that TCP remains in uppercase:
 
 The template offers you the option to use side notes, margin notes, and footnotes. We \textbf{do not recommend footnotes} (\verb|\footnote|) because the reader's eye has to travel long distances. You should use \textbf{side notes} (\verb|\sidenote|) as a replacement instead of footnotes.
 
-You can also use \textbf{margin notes} (\verb|\marginnote|). In contrast to side notes, margin notes are not numbered. Margin notes can be used to add remarks to a paragraph that are not closely related to a particular sentence or word. Moreover, you can use margin notes for links whose relationship with the main text is obvious. Finally, you can use margin notes as a means of emphasis: placing important keywords in the margin captures the reader's attention. Whatever you choose to use margin notes for, be consistent.
+You can also use \textbf{margin notes} (\verb|\marginnote|). In contrast to side notes, margin notes are not numbered. By default, margin notes are set flush left or flush right (i.\,e., as close as possible to the main text), while side notes are justified.
+
+Margin notes can be used to add remarks to a paragraph that are not closely related to a particular sentence or word. Moreover, you can use margin notes for links whose relationship with the main text is obvious. Finally, you can use margin notes as a means of emphasis: placing important keywords in the margin captures the reader's attention. Whatever you choose to use margin notes for, be consistent.
 
 Like footnotes side notes are either inserted directly after the particular word\sidenote{This is a side note after a word.} they refer to or after the punctuation if they relate to the whole clause or sentence.\sidenote{Consider, e.\,g., the Chicago Manual of Style: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}} Side notes should be full, descriptive sentences (beginning with a capital letter and ending with a full stop).
 
-Using a mixture of side notes and footnotes creates an inconsistent appearance and is therefore discouraged.
+Using a mixture of side notes, margin notes, and footnotes creates an inconsistent appearance and is therefore discouraged. If you decide to mix side notes and margin notes, consider changing the layout of margin notes to \emph{justified} for better consistency. We have prepared commands for the necessary changes in \file{setup.tex} (look for the comment ``justified margin notes'').
 
 One final remark on margins: If you cannot find any relevant content to put into the margin, leave it empty. We will use the empty space during grading the thesis for our comments.
 
