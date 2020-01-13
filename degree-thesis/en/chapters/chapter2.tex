@@ -38,16 +38,16 @@ This preserves the content of a website at the given point in time and makes it 
 
 You should inform the reader about the availability of an archived version.
 We recommend to provide the \emph{original URL} and add ``(archived at [date])'' after the URL.%
-\sidenote{We have archived all websites mentioned in this guide. In the interest of readability, we will omit the suffix after links.}
+\sidenote{We have archived all websites mentioned in this guide. In the interest of readability, we omit the archival remark after links.}
 Alternatively, you can just provide the \emph{archive.org} URL of a location.
 This practice applies to URLs in the main text, in footnotes, and in references.
 
-Archiving is not necessary for academic papers that have a Digital Object Identifier (DOI), have an ISBN/ISSN, or are available on \url{arxiv.org}.
+Archiving is not necessary for academic papers that have a Digital Object Identifier (DOI), have an ISBN/ISSN, or are available on preprint servers such as \url{arxiv.org}.
 
 
 \subsection{Citation and References}
 
-Always try to \textbf{cite the primary reference},
+Whenever possible, you should \textbf{cite the primary reference},
 i.\,e., the seminal paper that introduced a particular concept. When there is no fitting (seminal) paper, you can also choose to cite a well-known academic textbook that covers the topic. No citation is necessary for widespread knowledge, for instance, in the following sentence: ``Many web sites rely on passwords for user authentication.''
 
 Most of the time, \textbf{paraphrasing content is preferred} over literally citing text with quotation marks. The most expressive way to integrate references to literature is to insert the labels right behind key terms or author names:
@@ -104,11 +104,13 @@ Consider the following example, which ensures that TCP remains in uppercase:
 
 The template offers you the option to use side notes, margin notes, and footnotes. We \textbf{do not recommend footnotes} (\verb|\footnote|) because the reader's eye has to travel long distances. You should use \textbf{side notes} (\verb|\sidenote|) as a replacement instead of footnotes.
 
-You can also use \textbf{margin notes} (\verb|\marginnote|). In contrast to side notes, margin notes are not numbered. Margin notes can be used to add remarks to a paragraph that are not closely related to a particular sentence or word. Moreover, you can use margin notes for links whose relationship with the main text is obvious). Finally, you can use margin notes as a means of emphasis: placing important keywords in the margin captures the reader's attention.
+You can also use \textbf{margin notes} (\verb|\marginnote|). In contrast to side notes, margin notes are not numbered. Margin notes can be used to add remarks to a paragraph that are not closely related to a particular sentence or word. Moreover, you can use margin notes for links whose relationship with the main text is obvious. Finally, you can use margin notes as a means of emphasis: placing important keywords in the margin captures the reader's attention. Whatever you choose to use margin notes for, be consistent.
 
 Like footnotes side notes are either inserted directly after the particular word\sidenote{This is a side note after a word.} they refer to or after the punctuation if they relate to the whole clause or sentence.\sidenote{Consider, e.\,g., the Chicago Manual of Style: \enquote{A note number should be placed at the end of a sentence or clause. The number follows any punctuation mark except the dash, which it precedes. It follows a closing parenthesis.}} Side notes should be full, descriptive sentences (beginning with a capital letter and ending with a full stop).
 
-Using both side notes and footnotes creates an inconsistent appearance and is therefore discouraged.
+Using a mixture of side notes and footnotes creates an inconsistent appearance and is therefore discouraged.
+
+One final remark on margins: If you cannot find any relevant content to put into the margin, leave it empty. We will use the empty space during grading the thesis for our comments.
 
 \section{Tables, Figures, and Listings}
 \label{sec:tablesfigureslistings}
@@ -171,6 +173,7 @@ In the PSI Thesis template, tables use the \emph{booktabs} style, which \textbf{
 
 Note that Table~\ref{tab:treatments} is not laid out ideally: the numbers are given with different precision, which disturbs their alignment. Besides, strictly aligning  all numeric columns to the right is not always appropriate.
 Centered alignment makes more sense here (cf. Table~\ref{tab:treatments2}). For a step-by-step illustration of cleaning up tables, watch the presentation entitled ``Less is more (attractive)''.\marginnote{\url{https://www.darkhorseanalytics.com/blog/clear-off-the-table}}[-1\baselineskip]
+Moreover, consider the guidelines on organizing information in Sect.~\ref{sec:tableguide} in the appendix.
 
 \begin{table}
 \caption{The effects of treatments X and Y on the four groups studied.}
@@ -273,7 +276,7 @@ When it comes to figures and data plots, \textbf{less is more}! According to Edw
 \sidenote{Edward Tufte (1983): The Visual Display of Quantitative Information.}
 you should remove all non-data ink and redundant data ink, within reason, to increase the data to ink ratio and create a sound graphical design. This means, among others, that you should avoid shadows and 3D effects.
 
-Watch the illustrative presentation entitled ``Remove to improve.''\marginnote{\url{https://www.darkhorseanalytics.com/blog/data-looks-better-naked/}} The plots in Fig.~\ref{fig:barplot} (taken from linked website) demonstrate the benefits of removing unnecessary clutter.
+Watch the illustrative presentation entitled ``Remove to improve.''\marginnote{\url{https://www.darkhorseanalytics.com/blog/data-looks-better-naked/}} The plots in Fig.~\ref{fig:barplot} (taken from linked website) demonstrate the benefits of removing unnecessary clutter. Find more guidelines in Appendix~\ref{cha:designingfigtab}.
 
 
 \begin{figure}[t]
@@ -319,7 +322,7 @@ The following code produces Fig.~\ref{fig:Electron}:
 You can also use the custom command \code{image} for inserting a figure.
 
 \begin{latex}
-	\image[h]{\textwidth}{Electron}{An electron (artist's impression).}{Electron}
+\image[h]{\textwidth}{Electron}{An electron (artist's impression).}{Electron}
 \end{latex}
 
 This command will produce the same result as the previously shown commands.
@@ -341,7 +344,7 @@ The \verb|\decoRule| command is optional and simply puts a horizontal line below
 
 Resize your figures, ideally consistently, to an appropriate size, e.\,g., a fraction of \texttt{\textbackslash textwidth}. Check that the font size (after scaling) is consistent. This advice is especially important when you include figures with different aspect ratios.
 
-LaTeX is capable of using images in PDF, JPG, and PNG format. Using \textbf{vectorized figures} (PDF) is preferred as they usually provide sharper results at smaller file size. If you \emph{have} to use pixel graphics, create them with a sufficiently high resolution, i.\,e., at least 300 dpi.
+LaTeX is capable of using images in PDF, JPG, and PNG format. Whenever possible, use \textbf{vectorized figures} (PDF). PDFs provide sharper results at smaller file sizes. If you \emph{have} to use pixel graphics, create them with a sufficiently high resolution (at least 300 dpi).
 
 
 \paragraph{Wide Figures} You can also add wide figures that span the full width of a page. These should be placed at the top of the page. The following code creates the example figure (Fig.~\ref{fig:widefig}):
@@ -359,7 +362,7 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Using \textbf{vect
 \caption{\label{fig:widefig}This is a full-width figure. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.}
 \end{figure*}
 
-You can also use the following custom command \code{wideimage} for inserting a figure.
+You can also use the custom command \code{wideimage} for inserting a figure.
 
 \begin{latex}
 \wideimage[h]{plot.pdf}{This is a full-width figure. Lorem ipsum dolor sit amet, …}{widefig}
