@@ -1,0 +1,565 @@
+%----------------------------------------------------------------------------------------
+%		UNIVERSITY OF BAMBERG COLORS
+%----------------------------------------------------------------------------------------
+
+% http://www.brandwares.com/RGBTintCalculator.php
+% Base Color value obtained from UB Corporate Identity Manual
+\definecolor{ubblue}{HTML}{00457D}
+\definecolor{ubblue80}{HTML}{336A97}
+\definecolor{ubblue60}{HTML}{668FB1}
+\definecolor{ubblue40}{HTML}{99B5CB}
+\definecolor{ubblue20}{HTML}{CCDAE5}
+
+\definecolor{ubyellow}{HTML}{FFD300}
+\definecolor{ubyellow25}{HTML}{FFF4BF}
+
+\definecolor{ubred}{HTML}{e6444F}
+
+\definecolor{ubgreen}{HTML}{97BF0D}
+
+\definecolor{gray75}{gray}{0.75}
+\definecolor{gray50}{gray}{0.50}
+
+%----------------------------------------------------------------------------------------
+%		FONT SETUP
+%----------------------------------------------------------------------------------------
+
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{luainputenc} % makes unicode characters like –, €, and ß work properly
+
+\usepackage{fontspec} % allows us to use OTF/TTF fonts
+
+% If you cannot use the cochineal font, uncomment the following lines to select
+% the Crimson font. Note, however, that you'll have to take care of the math font
+% on your own.
+%
+%\setmainfont[
+%	Path           = fonts/,
+%    BoldFont       = {Crimson-Semibold.otf},
+%    ItalicFont     = {Crimson-Italic.otf},
+%    BoldItalicFont = {Crimson-BoldItalic.otf}
+%]{Crimson-Roman.otf}
+
+% Recommended: use Cochineal with old-style figures (math fonts: see further down)
+\usepackage[p,osf]{cochineal}
+
+% Exception: tables should use "lining figures" (all digits having same width)
+\AtBeginEnvironment{tabular}{%
+  \tlfstyle
+}
+\AtBeginEnvironment{tabularx}{%
+  \tlfstyle
+}
+
+% monospace font, will be used in verbatim and listing environments
+\setmonofont[
+	Path           = fonts/,
+    BoldFont       = {UbuntuMono-B.ttf},
+    ItalicFont       = {UbuntuMono-RI.ttf},
+    BoldItalicFont       = {UbuntuMono-BI.ttf},
+    Scale = 0.92 % manually determined value; MatchLowercase does not work with Cochineal because it is not included loaded via fontspec
+]{UbuntuMono-R.ttf}
+
+% sans-serif font, will be used in the margins
+\setsansfont[
+	Path          	= fonts/,
+	BoldFont		= Roboto-Bold.otf,
+	ItalicFont		= Roboto-Italic.otf,
+	BoldItalicFont	= Roboto-BoldItalic.otf,
+	Scale = 0.83 % manually determined value; MatchLowercase does not work with Cochineal because it is not included loaded via fontspec
+]{Roboto-Regular.otf}
+
+\renewcommand{\familydefault}{\rmdefault}
+\defaultfontfeatures{Ligatures=TeX}
+
+% amssymb should be loaded before newtxmath to avoid this error:
+% Command `\Bbbk' already defined
+\usepackage{amssymb}
+
+% math fonts that go well with cochineal
+\usepackage[cochineal,vvarbb]{newtxmath}
+\usepackage[cal=boondoxo]{mathalfa}
+
+
+%----------------------------------------------------------------------------------------
+%		HEADINGS SETUP (CHAPTERS, SECTIONS, …)
+%----------------------------------------------------------------------------------------
+
+% ====== replace Q with \Qswash in Chapters and Sections =========
+\newcommand{\swashedletter}{\Qswash}
+\catcode`Q=\active
+\defQ{\swashedletter}
+\catcode`Q=11
+\usepackage{xstring}
+\noexpandarg\exploregroups
+\newcommand\ReplaceStrQ[1]{\StrSubstitute{#1}{Q}{\swashedletter}}
+% ================================================================
+
+\usepackage[explicit]{titlesec}
+\newcommand{\hsp}{\hspace{20pt}}
+
+\setcounter{secnumdepth}{3}
+
+% We use lining figures for headers (tlfstyle) because they fit better with uppercase letters than old-style figures.
+
+% chapters have a vertical line between number and title
+\titleformat{\chapter}[hang]{\Huge\bfseries\tlfstyle}{\color{black}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{ubblue60}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright\ReplaceStrQ{#1}\end{tabular}}
+
+% sections
+\titleformat{\section}[hang]{\bfseries\large\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}}}{1ex}{{\color{ubblue}\ReplaceStrQ{#1}}}{}
+
+% subsections
+\titleformat{\subsection}[hang]{\bfseries\large\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}.\arabic{subsection}}}{1ex}{{\color{ubblue}\ReplaceStrQ{#1}}}{}
+
+% subsubsections
+\titleformat{\subsubsection}[hang]{\bfseries\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}}{1ex}{{\color{ubblue}\ReplaceStrQ{#1}}}{}
+
+% vertical spacing for headings ==============
+\titlespacing*{\section}
+{0pt}{7ex}{3ex}
+
+\titlespacing*{\subsection}
+{0pt}{4ex}{2ex}
+
+\titlespacing*{\subsubsection}
+{0pt}{4ex}{2ex}
+% end of vertical spacing ====================
+
+%----------------------------------------------------------------------------------------
+%		TABLE OF CONTENTS SETUP
+%----------------------------------------------------------------------------------------
+
+% solution inspired from https://tex.stackexchange.com/questions/178510/how-can-i-reproduce-this-beautiful-table-of-contents
+\usepackage{etoc}
+\etocsetlevel{section}{2}
+\etocsetlevel{subsection}{3}
+
+\etocsettocdepth{section} % set to subsection for adding subsections to toc (not recommended)
+
+\newlength{\tocleft}
+\setlength{\tocleft}{2.5cm} % must be set to fit the innermargin defined in geometry (change only if you have changed the margins)
+
+\newlength{\tocsep}
+\setlength{\tocsep}{2em}
+
+\usepackage{textcase}
+
+
+\etocsetstyle{chapter}
+   {}
+   {}
+   {\etocifnumbered
+     {\makebox[0pt][r]
+       % we use \etocthenumber instead of \etocnumber to avoid the href, which is part of \etocthenumber, messing with MakeTextLowercase
+       {\textsc{\MakeTextLowercase\chaptername\ \MakeTextLowercase\etocthenumber}\hspace{\tocsep}}%
+       \textbf{\etocname\kern1em\relax\etocpage}%
+    }%
+    {\textbf{\etocname\kern1em\relax\etocpage}}%
+    \par\vspace{3ex}%
+   }%
+   {}
+
+\etocsetstyle{section}
+   {\vspace{-2ex}} % Muss von den 3ex aus Chapter abgezogen werden
+   {}
+   % see the comment regarding etocthenumber in the chapter style definition
+   {\makebox[0pt][r]{\textsc{\MakeTextLowercase\etocthenumber}\hspace{\tocsep}}%
+    \etocname\kern1em\etocpage\par%
+   }%
+   {\addvspace{3ex}} % 3ex falls danach Chapter kommt
+
+\etocsetstyle{subsection}
+   {\vspace{0ex}}
+   {}
+   {\makebox[3em][l]{\etocnumber}\etocname\kern1em\etocpage\par}
+   {\addvspace{2ex}} % 2ex falls danach Section kommt
+
+\etocsettocstyle{\chapter*{\contentsname}
+                \thispagestyle{plain}%
+                \leftskip\tocleft\parindent0pt}{}
+
+
+%----------------------------------------------------------------------------------------
+%		OTHER PACKAGES
+%----------------------------------------------------------------------------------------
+
+\usepackage{tabularx} % for more flexible tables
+
+\usepackage{marginnote} % Enable Notes on the Page Margin
+\usepackage{marginfix} % Enables floating for margin figures
+\usepackage{ragged2e} % provides better hyphenation, use with camel case: \RaggedRight
+\renewcommand*{\raggedleftmarginnote}{\RaggedLeft}
+\renewcommand*{\raggedrightmarginnote}{\RaggedRight}
+\renewcommand*{\marginfont}{\setlength{\parskip}{0.5ex}\scriptsize\sffamily} % format margin text
+
+
+
+% for sidenotes: change marginpar font
+\usepackage{xparse}
+\let\oldmarginpar\marginpar
+\RenewDocumentCommand{\marginpar}{om}{%
+  \IfNoValueTF{#1}
+    {\oldmarginpar{\mymparsetup #2}}
+    {\oldmarginpar[\mymparsetup #1]{\mymparsetup #2}}}
+\newcommand{\mymparsetup}{\scriptsize\sffamily}
+
+
+% this provides correct alignment for margin text that is inserted
+% right at the beginning of a paragrah; however, it messes up the
+% alignment in all other cases.
+%% therefore, removed for now:
+%%\renewcommand{\marginnotevadjust}{0.71\baselineskip}
+% The following is the necessary correction for in-paragraph use
+\renewcommand{\marginnotevadjust}{0.21\baselineskip}
+\renewcommand{\marginnotevadjust}{0.55\baselineskip}
+
+\usepackage{microtype} % enable better typographic setup
+
+\usepackage{multicol} % enable usage of multiple columns
+
+% biblatex setup
+% inspired by https://anneurai.net/2017/10/18/thesis-formatting-in-latex/
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  doi=false,isbn=false, % these fields are commonly omitted
+  terseinits=true, % no points between initials
+  giveninits=true, % always print only initials for given names
+  sortcites=true,
+  language=english,
+  backref=true, % show on what pages a ref has been cited
+]{biblatex} % Use biber backend with alphabetic reference style
+\AtEveryBibitem{%
+  \clearlist{language} % don't show "en."
+  \clearlist{extra} % clears extra fields such as ISBN nrs
+}
+
+% shorten the strings used in back references
+\DefineBibliographyStrings{english}{%
+  backrefpage = {page},
+  backrefpages = {pages},
+}
+
+%-- no "quotes" around titles of chapters/article titles
+\DeclareFieldFormat[article, inbook, incollection, inproceedings, misc, thesis, unpublished]{title}{#1}
+%-- no punctuation after volume
+\DeclareFieldFormat[article]{volume}{{#1}}
+%-- puts number/issue between brackets
+\DeclareFieldFormat[article, inbook, incollection, inproceedings, misc, thesis, unpublished]{number}{\mkbibparens{#1}}
+%-- and then for articles directly the pages w/o any "pages" or "pp."
+\DeclareFieldFormat[article]{pages}{#1}
+%-- format 16(4):224--225 for articles
+\renewbibmacro*{volume+number+eid}{\printfield{volume}\printfield{number}\printunit{\addcolon}
+}
+\DeclareFieldFormat{url}{\url{#1}}
+
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\usepackage[
+  obeyFinal,
+  textsize=scriptsize,
+  backgroundcolor=ubyellow25,linecolor=ubyellow,bordercolor=ubyellow,
+]{todonotes}
+
+% change font of todo notes to sans-serif
+\makeatletter
+\renewcommand{\todo}[2][]{\@bsphack\@todo[#1]{\sffamily #2}\@esphack\ignorespaces}
+\makeatother
+
+\usepackage{booktabs} % use formal table layout
+
+\urlstyle{same} % avoids printing URLs in typewriter font
+
+% enable very extensive URL breaking
+% https://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url
+\PassOptionsToPackage{hyphens}{url}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks% save the current one
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+  \do\Y\do\Z\do\*\do\-\do\~\do\'\do\"\do\-}%
+
+% TODO consider using package xurl, which is supposed to handle urL breaking
+
+% https://tex.stackexchange.com/a/450695
+% allow URLs to be spaced out at / => much better URL breaking in margins
+\makeatletter
+\g@addto@macro\UrlSpecials
+{%
+    \do\/{\mbox{\UrlFont/}\hskip 0pt plus 0.1em minus 0.1em}%
+}
+\Urlmuskip=0mu plus 1mu\relax
+\makeatother
+
+
+% hyperlink layout
+\usepackage{hyperref}
+ \hypersetup{colorlinks,breaklinks,unicode,
+             citecolor=ubblue60,
+             linkcolor=ubblue60,
+             filecolor=ubblue60,
+             urlcolor=ubblue60}
+
+
+% should make links appear in black when PDF is printed
+% (do not use, breaks title page layout)
+%\usepackage[ocgcolorlinks]{ocgx2}
+
+% cleverref allows you to use \Cref{sec:foo} to get the text "Section 1.2".
+% This also works with figures and tables.
+\usepackage{cleveref}
+
+\raggedbottom % do NOT force all pages to have the same height (which would be done by increasing the space between paragraphs, which can create noisy layouts)
+
+%----------------------------------------------------------------------------------------
+%	SETUP BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\setlength{\bibitemsep}{.3\baselineskip plus .05\baselineskip minus .05\baselineskip}
+\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
+\let\oldthebibliography\thebibliography
+\renewcommand\thebibliography[1]{%
+  \oldthebibliography{#1}%
+  \setlength{\parskip}{\bibitemsep}%
+  \setlength{\itemsep}{\bibparskip}%
+}
+
+% allow much more liberal line breaks in URLs
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+% adjust space between key and entry, default is 2\labelsep
+\setlength{\biblabelsep}{1\labelsep}
+
+% configures indentation of bibentries
+\defbibenvironment{bibliography}
+  {\list
+     {\hspace{0.5\labelalphawidth}\bfseries\printtext[labelalphawidth]{%
+        \printfield{prefixnumber}%
+        \printfield{labelalpha}%
+        \printfield{extraalpha}}}
+     {\setlength{\labelsep}{\biblabelsep}%
+      \setlength{\leftmargin}{0.5\labelalphawidth}%
+      \setlength{\itemsep}{1.5\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{##1\hss}}
+  {\endlist}
+  {\item}
+
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+%\geometry{
+%	paper=a4paper, % Change to letterpaper for US letter (not recommended)
+%	inner=2cm, % Inner margin
+%	outer=6.2cm, % Outer margin, extra wide for margin notes
+%	marginparwidth=4cm,
+%	marginparsep=4mm,
+%	bindingoffset=.5cm, % Binding offset
+%	top=2.0cm, % Top margin
+%	bottom=2.5cm, % Bottom margin
+%	% showframe, % Uncomment to show how the type block is set on the page
+%}
+
+% testing, from kaobook
+\geometry{
+		paper=a4paper,
+		top=27.4mm,
+		bottom=27.4mm,
+		inner=24.8mm,
+		%outer=24.8mm,
+		%right=2.183cm,
+		textwidth=107mm,
+		marginparsep=8.2mm,
+		marginparwidth=49.4mm,
+		%textheight=49\baselineskip,
+		includemp,
+		% showframe
+}
+
+% Wide figures span text and margin.
+% Use the pre-calculated length \widefigurewidth in \includegraphics.
+\def\widefigurewidth{\dimexpr(\marginparwidth + \textwidth + \marginparsep)}
+
+
+%----------------------------------------------------------------------------------------
+%	SETUP HEADER AND FOOTER
+%----------------------------------------------------------------------------------------
+
+
+\newlength{\overflowingheadlen}
+\setlength{\overflowingheadlen}{\textwidth}
+\addtolength{\overflowingheadlen}{\marginparsep}
+\addtolength{\overflowingheadlen}{\marginparwidth}
+
+% old header/footer, maybe not necessary any more?
+\automark[chapter]{chapter}
+\ihead{\textup{\headmark}} % Inner header; do not use italics: therefore textup
+\ihead{\textup{\textsc{\MakeLowercase\headmark}}}% Inner header - use this line for Small Caps in header
+\ohead[]{\pagemark} % Outer header
+\cfoot[\pagemark]{} % On chapter opening pages, the page number goes centered into the footer
+\automark*[section]{}%
+
+% new header/footer, from kaobook; we could probably remove the original definitions from the cls
+\renewpagestyle{thesis}{
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\thepage\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad{}\textup{\textsc{\MakeLowercase \leftmark}}}}%
+  {\makebox[\overflowingheadlen][r]{\textup{\textsc{\MakeLowercase \rightmark}}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\thepage}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.thesis}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\makebox[\overflowingheadlen][r]{\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\thepage}}%
+  {}
+}
+
+%----------------------------------------------------------------------------------------
+%	LISTINGS SETTINGS
+%----------------------------------------------------------------------------------------
+
+\usepackage{textcomp}
+\usepackage{listings}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+    aboveskip={1\baselineskip},
+    abovecaptionskip=-1\baselineskip,
+    belowcaptionskip=2ex,
+    basicstyle=\footnotesize\ttfamily\linespread{4},
+    breaklines=true,
+    columns=flexible,
+    commentstyle=\color{gray50}\ttfamily\itshape,
+    escapechar=@,
+    extendedchars=true,
+    frame=l,
+    framerule=.5pt,
+    identifierstyle=\color{black},
+    inputencoding=latin1,
+    keywordstyle=\color{ubblue80}\bfseries,
+    ndkeywordstyle=\color{ubblue80}\bfseries,
+    numbers=left,
+    numbersep=1.25em,
+    numberstyle=\scriptsize\tlfstyle,
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    stringstyle=\color{ubblue60}\ttfamily,
+    upquote=true,
+    showstringspaces=false,
+}
+
+\lstset{literate=%
+   *{0}{{{\color{darkgray}0}}}1
+    {1}{{{\color{darkgray}1}}}1
+    {2}{{{\color{darkgray}2}}}1
+    {3}{{{\color{darkgray}3}}}1
+    {4}{{{\color{darkgray}4}}}1
+    {5}{{{\color{darkgray}5}}}1
+    {6}{{{\color{darkgray}6}}}1
+    {7}{{{\color{darkgray}7}}}1
+    {8}{{{\color{darkgray}8}}}1
+    {9}{{{\color{darkgray}9}}}1
+}
+
+\lstnewenvironment{latex}
+    {\lstset{language=[LaTeX]TeX}}
+    {}
+
+%----------------------------------------------------------------------------------------
+%	MARGINAL CAPTIONS
+%----------------------------------------------------------------------------------------
+
+\usepackage{sidenotes}
+\usepackage{scrextend} % for ifthispageodd
+
+% objective: instead of having the sidenode numbner in superscript, want something like 1:
+\makeatletter
+\ExplSyntaxOn
+\RenewDocumentCommand \sidenotetext { o o +m }
+{
+  \IfNoValueOrEmptyTF{#1}
+    {
+      \@sidenotes@placemarginal{#2}{\thesidenote{}:~#3}
+  \refstepcounter{sidenote}
+}
+    {\@sidenotes@placemarginal{#2}{#1{}:~#3}}
+}
+\ExplSyntaxOff
+\makeatother
+
+% objective: automatically justify sidecaptions to match the other marginnotes
+% captions of marginfigures etc. shall always be raggedright
+% solution from: https://tex.stackexchange.com/questions/358010/subfigures-break-figure-numbering-with-sidecaptions-from-sidenotes-package/358012#358012
+
+\makeatletter
+\DeclareCaptionJustification{outerragged}{\ifthispageodd{\RaggedRight}{\RaggedLeft}}
+
+\DeclareCaptionStyle{sidecaption}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true,justification=outerragged}
+\DeclareCaptionStyle{marginfigure}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true}
+\DeclareCaptionStyle{margintable}{format=plain,font={scriptsize,sf},labelfont=bf,margin=0pt,singlelinecheck=true}
+\DeclareCaptionStyle{widefigure}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
+\DeclareCaptionStyle{widetable}[justification=centering]{format=plain,font=small,labelfont=bf,justification=RaggedRight,singlelinecheck=true}
+\makeatother
+
+
+%----------------------------------------------------------------------------------------
+%	RESET SIDENOTE COUNTER AT EVERY CHAPTER
+%----------------------------------------------------------------------------------------
+
+\let\oldchapter\chapter
+\def\chapter{%
+  \setcounter{sidenote}{1}%
+  \oldchapter
+}
+
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+\usepackage{pifont}
+\let\oldding\ding% Store old \ding in \oldding
+\renewcommand{\ding}[2][1]{\scalebox{#1}{\oldding{#2}}}% Scale \oldding via optional argument
+% usage \ding{number} or |ding[factor]{number}
+
+
+%----------------------------------------------------------------------------------------
+%	ITEMIZE AND ENUMERATE ENVIRONMENTS
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\labelitemi}{\color{ubblue80}{\scalebox{0.8}{\raisebox{0.2ex}{$\blacktriangleright$}}}}
+\renewcommand{\labelitemii}{\textbullet}
+\usepackage{enumitem}
+\setlist[itemize]{parsep=0.8\parskip,left=0pt,topsep=0pt,partopsep=0pt}
+\setlist[enumerate]{parsep=0.8\parskip,left=0pt,topsep=0pt,partopsep=0pt}
+\setlist[description]{parsep=0.8\parskip,left=0pt,topsep=0pt,partopsep=0pt}
+
+
+%----------------------------------------------------------------------------------------
+%	SET PDF METADATA
+%----------------------------------------------------------------------------------------
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+%\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}

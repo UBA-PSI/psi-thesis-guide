@@ -1,0 +1,68 @@
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newgeometry{
+	inner=4cm, % Inner margin
+	outer=4cm, % Outer margin
+	marginparwidth=0cm,
+	marginparsep=0mm,
+	bindingoffset=.5cm, % Binding offset
+	top=2.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin
+	showframe % Uncomment to show how the type block is set on the page
+}
+
+\begin{center}
+
+\vspace*{.06\textheight}
+
+\includegraphics[width=35mm]{Misc/UB_Logo_20mm_CMYK.pdf}
+
+\vspace*{.06\textheight}
+
+{\LARGE \textls[130]{\MakeUppercase{\univname}}\par}\vspace{2\baselineskip} % University name
+
+{\large \facname}
+
+\vspace{1.5cm}
+
+\textsc{\Large \thesistype 's~Thesis}\\[1cm] % Thesis type
+
+%\HRule \\[0.4cm] % Horizontal line
+%
+{\huge \bfseries \ttitle\par}\vspace{1cm} % Thesis title
+
+%\HRule \\[1.5cm] % Horizontal line
+
+
+\textsc{\Large by}\\[1cm]
+
+{\Large \authorname}
+
+\vspace{1.5cm}
+
+\emph{Supervisor:} \\
+\supname\\[1cm]
+%
+%\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+%\textit{in the}\\[0.4cm]
+%
+\groupname%\\[2cm] % Research group name and department name
+
+\vfill
+
+{\large \tdate} % Date
+
+\vfill
+\end{center}
+
+\restoregeometry
+
+\end{titlepage}
+
+
