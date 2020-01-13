@@ -55,11 +55,16 @@ The package for macOS is called \textsc{MacTeX} (\url{http://www.tug.org/mactex/
 
 To use the PSIThesis template, you need a working LaTeX installation with \textbf{LuaLaTeX}, \textbf{biblatex}, and \textbf{biber}.%
 \sidenote{We have compiled this guide with TeX Live 2019 (LuaLaTeX 1.10.0, biber 2.14).}
-Usually, these tools are available in a typical LaTeX installation.
+Usually, these tools are available in a typical LaTeX installation. We have tested the template with TeX Live 2019 in December~2019.
+
+Use a current version of TeX Live that is available at \url{https://www.tug.org/texlive/}. The TeX Live version that is part of Debian Linux may contain an outdated version of lualatex.
+If you are using an outdated version of lualatex, compilation may fail with \textbf{error: (vf): invalid DVI command (1)}. This is a known bug\sidenote{\url{https://de.comp.text.tex.narkive.com/fC1xfeb2/lualtex-microtype-error-vf-invalid-dvi-command-1}} in old versions of lualatex that is triggered by the \texttt{microtype} package. In this case we recommend upgrading to a current version of TeX Live.
 
 \paragraph{Using Overlaf and XeTeX}
 
-As of December 2019, the template does not work with \url{https://www.overleaf.com}. Overleaf uses LuaLaTeX~1.07 from TeX Live 2018. This version of LuaLaTeX has a known bug that prevents compilation of documents that use the \code{microtype} package. The template includes \code{microtype}, not only because of the better typography, but also because it uses microtype's command \verb|\textls{text}| to change the letter spacing of the uppercase text on the title page.
+As of December 2019, the template does not work with \url{https://www.overleaf.com}. Overleaf uses the outdated version lualatex~1.07 from TeX Live 2018, which is subject to the aforementioned bug that prevents compilation of documents that use the \code{microtype} package.
+
+The template includes \code{microtype}, not only because of the better typography, but also because it uses microtype's command \verb|\textls{text}| to change the letter spacing of the uppercase text on the title page.
 
 You \emph{can} use the template with Overleaf if you remove the line that loads the \code{microtype} package in \file{setup.tex}. Moreover, you will have to remove all calls to \code{textls}.
 
@@ -131,7 +136,7 @@ Just navigate to the ``en'' directory and enter \code{make} in a terminal. Runni
 The \code{make} command keeps track of changes in your source files. If you add additional files that should be tracked for changes, you should edit the list of files at the top of the \file{Makefile}. Otherwise, \code{make} may refuse to compile a new version because it believes that \file{main.pdf} is already up to date. In this case, a call to \code{make clean} will help: It removes all files generated during compilation. After that, a call to \code{make} will regenerate them, including \file{main.pdf}.
 
 
-We haven't prepared the template to be used with the convenient LaTeX editor \textsc{LyX}. LyX hides the LaTeX code from authors and offers a user interface, which resembles a word processor. If LaTeX code puts you off, check out LyX and start writing there. Eventually, you can still export the LaTeX source code of your document and copy and paste it into the template. You will, however, need some time to debug compatibility issues.
+We haven't prepared the template to be used with the convenient LaTeX editor \textsc{LyX}.\marginnote{\url{https://www.lyx.org}} LyX hides the LaTeX code from authors and offers a user interface, which resembles a word processor. If LaTeX code puts you off, check out LyX and start writing there. Eventually, you can still export the LaTeX source code and copy and paste it into the PSIThesis template. Be sure to reserve some days to debug compatibility issues.
 
 \subsection{Filling in Your Information in \emph{main.tex}}\label{sec:fillingdetails}
 
