@@ -24,7 +24,7 @@
 %		FONT SETUP
 %----------------------------------------------------------------------------------------
 
-\usepackage[T1]{fontenc} % Output font encoding for international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters - do not use T1 encoding with luatex!
 \usepackage[utf8]{luainputenc} % makes unicode characters like –, €, and ß work properly
 
 \usepackage{fontspec} % allows us to use OTF/TTF fonts
@@ -41,7 +41,20 @@
 %]{Crimson-Roman.otf}
 
 % Recommended: use Cochineal with old-style figures (math fonts: see further down)
-\usepackage[p,osf]{cochineal}
+%\usepackage[p,osf]{cochineal}
+
+\setmainfont{Cochineal}[
+  Numbers={Proportional,OldStyle},
+  Style=Swash % for nice swashed Q letter, see https://golatex.de/spezeielle-opentype-features-in-fontspec-aktivieren-t19831.html
+]
+%\setmainlanguage{english}
+
+% imitate the behavior of the cochineal package as follows:
+% cf. https://tex.stackexchange.com/questions/448895/fontenc-vs-fontspec-with-xelatex
+\DeclareRobustCommand{\lfstyle}{\addfontfeatures{Numbers=Lining}}
+\DeclareTextFontCommand{\textlf}{\lfstyle}
+\DeclareRobustCommand{\tlfstyle}{\addfontfeatures{Numbers={Tabular,Lining}}}
+\DeclareTextFontCommand{\texttlf}{\tlfstyle}
 
 % Exception: tables should use "lining figures" (all digits having same width)
 \AtBeginEnvironment{tabular}{%
@@ -50,6 +63,15 @@
 \AtBeginEnvironment{tabularx}{%
   \tlfstyle
 }
+
+% amssymb should be loaded before newtxmath to avoid this error:
+% Command `\Bbbk' already defined
+\usepackage{amssymb}
+
+% math fonts that go well with cochineal
+\usepackage[cochineal,vvarbb]{newtxmath}
+\usepackage[cal=boondoxo]{mathalfa}
+
 
 % monospace font, will be used in verbatim and listing environments
 \setmonofont[
@@ -72,27 +94,18 @@
 \renewcommand{\familydefault}{\rmdefault}
 \defaultfontfeatures{Ligatures=TeX}
 
-% amssymb should be loaded before newtxmath to avoid this error:
-% Command `\Bbbk' already defined
-\usepackage{amssymb}
-
-% math fonts that go well with cochineal
-\usepackage[cochineal,vvarbb]{newtxmath}
-\usepackage[cal=boondoxo]{mathalfa}
-
-
 %----------------------------------------------------------------------------------------
 %		HEADINGS SETUP (CHAPTERS, SECTIONS, …)
 %----------------------------------------------------------------------------------------
 
 % ====== replace Q with \Qswash in Chapters and Sections =========
-\newcommand{\swashedletter}{\Qswash}
-\catcode`Q=\active
-\defQ{\swashedletter}
-\catcode`Q=11
-\usepackage{xstring}
-\noexpandarg\exploregroups
-\newcommand\ReplaceStrQ[1]{\StrSubstitute{#1}{Q}{\swashedletter}}
+%\newcommand{\swashedletter}{\Qswash}
+%\catcode`Q=\active
+%\defQ{\swashedletter}
+%\catcode`Q=11
+%\usepackage{xstring}
+%\noexpandarg\exploregroups
+%\newcommand\ReplaceStrQ[1]{\StrSubstitute{#1}{Q}{\swashedletter}}
 % ================================================================
 
 \usepackage[explicit]{titlesec}
