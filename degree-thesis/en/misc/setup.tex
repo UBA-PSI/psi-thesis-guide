@@ -432,8 +432,8 @@
 
 % new header/footer, from kaobook; we could probably remove the original definitions from the cls
 \renewpagestyle{thesis}{
-  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\thepage\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad{}\textup{\textsc{\MakeLowercase \leftmark}}}}%
-  {\makebox[\overflowingheadlen][r]{\textup{\textsc{\MakeLowercase \rightmark}}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\thepage}}%
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\textup{\thepage}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad{}\textup{\textsc{\MakeLowercase \leftmark}}}}%
+  {\makebox[\overflowingheadlen][r]{\textup{\textsc{\MakeLowercase \rightmark}}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\textup{\thepage}}}%
   {}
 }{
   {}%
@@ -445,8 +445,8 @@
   {}%
   {}
 }{
-  {\thepage}%
-  {\makebox[\overflowingheadlen][r]{\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\thepage}}%
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\textup{\textsc{\thepage}}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}}}%
+  {\makebox[\overflowingheadlen][r]{\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\textup{\textsc{\thepage}}}}%
   {}
 }
 

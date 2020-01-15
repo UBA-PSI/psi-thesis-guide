@@ -171,17 +171,29 @@ Moreover, consider the advice by Markus Kuhn on differentiating abstract and int
 %The acknowledgments and the people to thank go here.
 %\end{acknowledgements}
 
+\include{main.tex}
 
 %----------------------------------------------------------------------------------------
 %	TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
 
 \cleardoublepage
+
+% Table of Contents uses a wider layout than the main content
+\newgeometry{
+		paper=a4paper,
+		top=27.4mm,
+		bottom=27.4mm,
+		inner=24.8mm,
+		outer=24.8mm,
+		marginparsep=0mm,
+		marginparwidth=0mm,
+}
 {
 \hypersetup{linkcolor=black}
-\tableofcontents % Prints the main table of contents
+\tableofcontents % Prints the ToC entries
 }
-
+\restoregeometry
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION
@@ -245,6 +257,7 @@ Moreover, consider the advice by Markus Kuhn on differentiating abstract and int
 \include{appendices/appendixA}
 \include{appendices/appendixB}
 \include{appendices/appendixC}
+
 
 
 %----------------------------------------------------------------------------------------
