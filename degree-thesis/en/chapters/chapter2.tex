@@ -128,6 +128,7 @@ Tables are an important way of displaying your results in a concise way. \Cref{t
 \begin{table}
 \caption{The effects of treatments X and Y on the …}
 \label{tab:treatments}
+\footnotesize
 \centering
 \begin{tabular}{r r r}
 \toprule
@@ -140,7 +141,7 @@ Tables are an important way of displaying your results in a concise way. \Cref{t
 4 & 0.68 & 0.3\\
 5 & 0.61 & 0.9\\
 6 & 0.18 & 0.1\\
-\bottomrule\\
+\bottomrule
 \end{tabular}
 \end{table}
 \end{latex}
@@ -148,6 +149,7 @@ Tables are an important way of displaying your results in a concise way. \Cref{t
 \begin{table}
 \caption{The effects of treatments X and Y on the four groups studied.}
 \label{tab:treatments}
+\footnotesize
 \centering
 \begin{tabular}{r r r}
 \toprule
@@ -160,11 +162,11 @@ Tables are an important way of displaying your results in a concise way. \Cref{t
 4 & 0.68 & 0.3\\
 5 & 0.61 & 0.9\\
 6 & 0.18 & 0.1\\
-\bottomrule\\
+\bottomrule
 \end{tabular}
 \end{table}
 
-As shown in \Cref{tab:treatments}, \textbf{column heads} should use sentence-style capitalization, i.\,e., do not use \emph{title case} as you would in section headings.
+As shown in \Cref{tab:treatments}, \textbf{column heads} should use sentence-style capitalization, i.\,e., do not use \emph{title case} as you would in section headings. In general, we recommend using a slightly smaller font size in tables than in the main text. The text in the example table uses \texttt{footnotesize}.
 
 Tables have \textbf{captions} that always appear \emph{above} the \code{tabular} environment. You must \textbf{reference all tables} in the main text at least once.
 To reference a table you use the command \verb|\ref{<label>}|, where \verb|<label>| corresponds to a label defined within the table environment. See \file{chapter2.tex} for an example of the label and citation (e.\,g., Table~\ref{tab:treatments}).
@@ -181,6 +183,7 @@ Moreover, consider the guidelines on organizing information in Sect.~\ref{sec:ta
 \caption{The effects of treatments X and Y on the four groups studied.}
 \label{tab:treatments2}
 \centering
+\footnotesize
 \begin{tabular}{c c c}
 \toprule
 & \multicolumn{2}{c}{\tabhead{Results}} \\ \cmidrule(lr){2-3}
@@ -207,6 +210,7 @@ Example of more complex tables are Tables~\ref{tab:complex} and \ref{tab:complex
   A more complex table comparing experimentally obtained results for five systems.
 }
 \resizebox{\textwidth}{!}{% table should span the full textwidth
+% \footnotesize % do not use footnotesize here because due to resizebox this would result in too small font size
 \begin{tabular}{@{}llccccccccccc@{}} % @{} omits outer horizontal margins, 
 \toprule
                   & \multicolumn{1}{c}{} & \multicolumn{3}{c}{A: Usability} & \multicolumn{4}{c}{B: Security} & \multicolumn{4}{c}{C: Privacy} \\ \cmidrule(lr){3-5} \cmidrule(lr){6-9} \cmidrule(l){10-13} 
@@ -224,7 +228,7 @@ iOS               & Carmadillo           & \redt  & \redt  & \green & \green  & 
 \begin{table*}
   \caption{\label{tab:complextext} Overview of related literature on the topic of the thesis.}
   \centering
-  % \small % uncomment this line to use smaller fontsize in the table
+  \small % use smaller fontsize in the table
   {\renewcommand{\arraystretch}{1.3} % increase vertical space between rows
   \begin{tabularx}{\linewidth}{@{}lcXlcc@{}} % @{} omits outer horizontal margins, the "X" column uses up all remaining available space 
     \toprule
@@ -321,7 +325,7 @@ The following code produces Fig.~\ref{fig:Electron}:
 \label{fig:Electron}
 \end{figure}
 
-You can also use the custom command \code{image} for inserting a figure.
+You can also use the custom command \code{image} for inserting a figure:
 
 \begin{latex}
 \image[h]{\textwidth}{Electron}{An electron (artist's impression).}{Electron}
@@ -364,7 +368,7 @@ LaTeX is capable of using images in PDF, JPG, and PNG format. Whenever possible,
 \caption{\label{fig:widefig}This is a full-width figure. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.}
 \end{figure*}
 
-You can also use the custom command \code{wideimage} for inserting a figure.
+You can also use the custom command \code{wideimage} for inserting a figure:
 
 \begin{latex}
 \wideimage[h]{plot.pdf}{This is a full-width figure. Lorem ipsum dolor sit amet, …}{widefig}
@@ -389,7 +393,7 @@ Occasionally, LaTeX misplaces wide figures on the \textbf{horizontal axis}. For 
 \end{figure}
 \end{latex}
 
-You can also use the custom command \code{twoimages} for inserting two figures next to each other.
+You can also use the custom command \code{twoimages} for inserting two figures next to each other:
 
 \begin{latex}
 \twoimages[h]{barplot-before}{barplot-after}{Removing unnecessary clutter.}{barplot}
@@ -402,25 +406,25 @@ For further information on the usage of the custom commands you should take a lo
 Figure \ref{fig:barplot} uses a \textbf{side caption} (\code{sidecaption}). Whether you use side captions or not is up to you.
 Just ensure to place all captions consistently, i.\,e., either in the margin or above or below floats for tables and figures, respectively. Note that \code{sidecaption} does not work with floating listings.
 
-\begin{marginfigure}[1\baselineskip] % move figure down by 1 line 
+\begin{marginfigure}[-1\baselineskip] % move figure up by 1 line 
 \includegraphics[width=\marginparwidth]{Electron}
-\caption{\label{fig:marfig}This is a margin figure with a short caption.}
+\caption{\label{fig:marfig}This is a margin figure with a reasonably short caption.}
 \end{marginfigure}
 
 \paragraph{Margin Figures} Sometimes, it makes sense to place figures in the margin. Margin figures work best for figures that are simple and unobtrusive. They are a useful mechanism to include figures that illustrate concepts and for graphs that are meant to give an overall impression. Do not use margin figures for figures that convey essential results.
 %
 You can create margin figures like Fig.~\ref{fig:marfig} with the following code:
 \begin{latex}
-\begin{marginfigure}[1\baselineskip] % move figure down by 1 line 
+\begin{marginfigure}[-1\baselineskip] % move figure up by 1 line 
 \includegraphics[width=\marginparwidth]{Electron}
-\caption{\label{fig:marfig}This is a margin figure with a short caption.}
+\caption{\label{fig:marfig}This is a margin figure with a reasonably short caption.}
 \end{marginfigure}
 \end{latex}
 
-You can also use the custom command \code{marginimage} for inserting a figure in the margin.
+You can also use the custom command \code{marginimage} for inserting a figure in the margin:
 
 \begin{latex}
-\marginimage[1]{Electron}{This is a margin figure with a short caption.}{marfig}
+\marginimage[-1]{Electron}{This is a margin figure with a short caption.}{marfig}
 \end{latex}
 
 This command will produce the same result as the previously shown commands.
@@ -470,7 +474,7 @@ You can create a full-width margin table like Table~\ref{tab:martab} with the fo
 
 If you are new to LaTeX, we recommend to use the \emph{listings} package for code listings.%
 \sidenote{If you have Python, you can consider the more modern package \code{minted}, which uses \code{pygments} for syntax highlighting.}
-With the template's default monospace font, lines can have up to 70 characters. Longer lines are automatically wrapped. An arrow at the end of the line indicates the line wrapping.
+With the template's default monospace font, lines can have up to 70 characters. Longer lines are automatically wrapped. An arrow at the end of the line indicates the line wrapping. Format your listing in such a way that the number of wrapped lines is low to improve readability.
 
 You can create floating listings, which behave very much like floating figures and tables, i.\,e., they have a caption and can be referenced (cf. Listing~\ref{lst:listing} for an example).\sidenote{As of now, the template does not offer wide listings that span the text and the margin.} Sometimes, however, the properties of floating listings are undesirable. For short code fragments, it often makes more sense to use a non-floating listing.
 
