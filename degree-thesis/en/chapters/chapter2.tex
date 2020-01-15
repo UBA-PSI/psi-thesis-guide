@@ -373,6 +373,8 @@ You can also use the custom command \code{wideimage} for inserting a figure.
 This command will produce the same result as the previously shown commands.
 For further information on the usage of the custom commands you should take a look at the extensive documentation in \file{commands.tex} in the \emph{misc} folder.
 
+Occasionally, LaTeX misplaces wide figures on the \textbf{horizontal axis}. For instance, figures may end up partly outside of the page instead of being properly aligned with the text block. Often, these problems happen only sporadically. Compiling \texttt{main.tex} again with a single invocation of \texttt{lualatex} will fix the layout.
+
 \paragraph{Side-by-Side Figures} Sometimes it is desirable to show multiple figures next to each other. There are several approaches for that, e.\,g., using the \texttt{subfigure} package. In many cases, however, a comprehensive subfigure support is not needed. A lightweight approach as shown in Fig.~\ref{fig:barplot} may be sufficient. This result is achieved with the following code:
 \begin{latex}
 \begin{figure}[t]
