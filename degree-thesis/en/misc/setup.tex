@@ -1,3 +1,18 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% File: setup.tex
+% 
+% This file is part of the PSIThesis.cls
+% LaTeX documentclass
+% 
+% The code in this file is made available
+% under the following license:
+%
+% LPPL v1.3c (http://www.latex-project.org/lppl)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %----------------------------------------------------------------------------------------
 %		UNIVERSITY OF BAMBERG COLORS
 %----------------------------------------------------------------------------------------
@@ -27,7 +42,12 @@
 %\usepackage[T1]{fontenc} % Output font encoding for international characters - do not use T1 encoding with luatex!
 \usepackage[utf8]{luainputenc} % makes unicode characters like –, €, and ß work properly
 
-\usepackage{fontspec} % allows us to use OTF/TTF fonts
+% amssymb must be loaded before newtxmath to avoid this error:
+% Command `\Bbbk' already defined
+\usepackage{amssymb}
+\usepackage[cochineal]{newtxmath} % must be loaded before fontspec
+
+\usepackage[no-math]{fontspec} % allows us to use OTF/TTF fonts, but do not interfere with math (because we use newtxmath, which does support Cochineal)
 
 % If you cannot use the cochineal font, uncomment the following lines to select
 % the Crimson font. Note, however, that you'll have to take care of the math font
@@ -40,14 +60,12 @@
 %    BoldItalicFont = {Crimson-BoldItalic.otf}
 %]{Crimson-Roman.otf}
 
-% Recommended: use Cochineal with old-style figures (math fonts: see further down)
-%\usepackage[p,osf]{cochineal}
-
 \setmainfont{Cochineal}[
   Numbers={Proportional,OldStyle},
   Style=Swash % for nice swashed Q letter, see https://golatex.de/spezeielle-opentype-features-in-fontspec-aktivieren-t19831.html
 ]
 %\setmainlanguage{english}
+\DeclareSymbolFont{operators}{\encodingdefault}{\familydefault}{m}{n} %  render numbers in cochineal, cf. https://tex.stackexchange.com/questions/398895/using-two-different-math-fonts-with-lualatex
 
 % imitate the behavior of the cochineal package as follows:
 % cf. https://tex.stackexchange.com/questions/448895/fontenc-vs-fontspec-with-xelatex
@@ -64,14 +82,6 @@
   \tlfstyle
 }
 
-% amssymb should be loaded before newtxmath to avoid this error:
-% Command `\Bbbk' already defined
-\usepackage{amssymb}
-
-% math fonts that go well with cochineal
-\usepackage[cochineal,vvarbb]{newtxmath}
-\usepackage[cal=boondoxo]{mathalfa}
-
 
 % monospace font, will be used in verbatim and listing environments
 \setmonofont[
@@ -81,6 +91,7 @@
     BoldItalicFont       = {UbuntuMono-BI.ttf},
     Scale = 0.92 % manually determined value; MatchLowercase does not work with Cochineal because it is not included loaded via fontspec
 ]{UbuntuMono-R.ttf}
+
 
 % sans-serif font, will be used in the margins
 \setsansfont[
@@ -93,21 +104,11 @@
 
 \renewcommand{\familydefault}{\rmdefault}
 \defaultfontfeatures{Ligatures=TeX}
-%\usepackage[T1]{fontenc} % Output font encoding for international characters
+
 
 %----------------------------------------------------------------------------------------
 %		HEADINGS SETUP (CHAPTERS, SECTIONS, …)
 %----------------------------------------------------------------------------------------
-
-% ====== replace Q with \Qswash in Chapters and Sections =========
-%\newcommand{\swashedletter}{\Qswash}
-%\catcode`Q=\active
-%\defQ{\swashedletter}
-%\catcode`Q=11
-%\usepackage{xstring}
-%\noexpandarg\exploregroups
-%\newcommand\ReplaceStrQ[1]{\StrSubstitute{#1}{Q}{\swashedletter}}
-% ================================================================
 
 \usepackage[explicit]{titlesec}
 \newcommand{\hsp}{\hspace{20pt}}
@@ -117,19 +118,15 @@
 % We use lining figures for headers (tlfstyle) because they fit better with uppercase letters than old-style figures.
 
 % chapters have a vertical line between number and title
-%\titleformat{\chapter}[hang]{\Huge\bfseries\tlfstyle}{\color{black}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{ubblue60}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright\ReplaceStrQ{#1}\end{tabular}}
 \titleformat{\chapter}[hang]{\Huge\bfseries\tlfstyle}{\color{black}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{ubblue60}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright #1\end{tabular}}
 
 % sections
-%\titleformat{\section}[hang]{\bfseries\large\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}}}{1ex}{{\color{ubblue}\ReplaceStrQ{#1}}}{}
 \titleformat{\section}[hang]{\bfseries\large\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}}}{1ex}{{\color{ubblue} #1}}{}
 
 % subsections
-%\titleformat{\subsection}[hang]{\bfseries\large\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}.\arabic{subsection}}}{1ex}{{\color{ubblue}\ReplaceStrQ{#1}}}{}
 \titleformat{\subsection}[hang]{\bfseries\large\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}.\arabic{subsection}}}{1ex}{{\color{ubblue} #1}}{}
 
 % subsubsections
-%\titleformat{\subsubsection}[hang]{\bfseries\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}}{1ex}{{\color{ubblue}\ReplaceStrQ{#1}}}{}
 \titleformat{\subsubsection}[hang]{\bfseries\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}}{1ex}{{\color{ubblue} #1}}{}
 
 % vertical spacing for headings ==============
