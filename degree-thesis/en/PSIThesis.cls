@@ -242,6 +242,8 @@
 
 \newcommand{\HRule}{\rule{.9\linewidth}{.6pt}} % New command to make the lines in the title page
 \newcommand{\decoRule}{\rule{.8\textwidth}{.4pt}} % New command for a rule to be used under figures
+\newcommand{\decoRuleFlex}[1]{\rule{#1}{.4pt}}
+
 
 \setcounter{tocdepth}{3} % The depth to which the document sections are printed to the table of contents
 \ProvideDocumentCommand{\addchaptertocentry}{ m }{%
