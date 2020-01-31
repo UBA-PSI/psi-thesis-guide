@@ -60,6 +60,9 @@ Usually, these tools are available in a typical LaTeX installation. We have test
 Use a current version of TeX Live that is available at \url{https://www.tug.org/texlive/}. The TeX Live version that is part of Debian Linux may contain an outdated version of lualatex.
 If you are using an outdated version of lualatex, compilation may fail with \textbf{error: (vf): invalid DVI command (1)}. This is a known bug\sidenote{\url{https://de.comp.text.tex.narkive.com/fC1xfeb2/lualtex-microtype-error-vf-invalid-dvi-command-1}} in old versions of lualatex that is triggered by the \texttt{microtype} package. In this case we recommend upgrading to a current version of TeX Live.
 
+Moreover, there is known layout issue with old versions of the \texttt{caption} package. Version 3.4 of that package (released on 2019-09-11) is known to work well.\sidenote{Check the version of caption in the log file that is created by LuaLaTeX
+ during compilation.} You can update your TeX Live installation by running \texttt{tlmgr}.
+
 \paragraph{Using Overlaf and XeTeX}
 
 As of December 2019, the template does not work with \url{https://www.overleaf.com}. Overleaf uses the outdated version lualatex~1.07 from TeX Live 2018, which is subject to the aforementioned bug that prevents compilation of documents that use the \code{microtype} package.
