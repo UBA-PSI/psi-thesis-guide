@@ -1,5 +1,8 @@
 """
 Overlapping densities ('ridge plot')
+
+Source:
+https://seaborn.pydata.org/examples/kde_ridgeplot.html
 ====================================
 
 
