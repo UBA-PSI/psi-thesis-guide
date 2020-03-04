@@ -14,7 +14,7 @@ Welcome to this LaTeX thesis template guide.%
 \sidenote{It is based on the guide of the \emph{MastersDoctoralThesis} template. The original text has been revised and extended. \emph{MastersDoctoralThesis} is available at \url{https://www.latextemplates.com/template/masters-doctoral-thesis}.}
 This template has been created mainly for students who want to submit a high-quality thesis to the Chair of Privacy and Security in Information Systems. The design of the template and the recommendations in this guide reflect, at least to some degree, the personal taste of members of the chair. Our students can use the template without any changes.
 
-The template and the guide are, however, available under an open license (cf. Sect.~\ref{sec:license}). If you want to use the template for a thesis submitted at a different department or organization, feel free to make changes at your discretion.
+The template and the guide are, however, available under an open license (cf. Sect.~\ref{sec:license}). If you want to use the template for a thesis submitted at a different department or organization, feel free to make changes at your discretion.\sidenote{Redistribution of this guide and the template is subject to the details outlined in Sect.~\ref{sec:license}.}
 
 
 \section{Learning LaTeX}
@@ -78,7 +78,7 @@ Another option is typesetting the template with XeTeX. To compile the template w
 
 \section{Getting Started with the Template}
 
-Once you are familiar with LaTeX, you should explore the directory structure of the template (cf. \Cref{sec:folders,sec:files}). Before you start to make changes, we recommend you to compile this guide on your own machine (cf. \Cref{sec:compile}). If there are no errors, it is time to place your details into the THESIS INFORMATION block of the \file{main.tex} file (cf. \Cref{sec:fillingdetails}).\marginnote{Additional features of the template are described in \Cref{ThesisFeatures}.}[-1\baselineskip]
+Once you are familiar with LaTeX, you should explore the directory structure of the template (cf. \Cref{sec:folders,sec:files}). Before you start to make changes, we recommend you to compile this guide on your own machine (cf. \Cref{sec:compile}). If there are no errors, it is time to place your details into the THESIS INFORMATION block of the \file{main.tex} file (cf. \Cref{sec:fillingdetails}). You will also have to make some changes to the file \file{misc/titlepage.tex}, which sets up the title page.\marginnote{Additional features of the template are described in \Cref{ThesisFeatures}.}[-1\baselineskip]
 
 
 \subsection{Folder Structure}
@@ -118,6 +118,8 @@ Most of the template's files are plain text, and you can see their contents in a
 
 \keyword{main.tex} -- This is the file that you tell LaTeX to compile to produce \file{main.pdf}. It contains the framework and constructs that tell LaTeX how to layout the thesis. It contains many comments that explain the purpose of each line of code. Fill in your details into the THESIS INFORMATION block.
 
+\keyword{titlepage.tex} -- This file creates the titlepage. In its initial form, several elements (e.\,g., displaying supervisor) are commented out. This is because the initial content of \file{titlepage.tex} sets up the title page of the PSIThesis Guide. Please check the content next to the TODO markers and remove the comments as instructed.
+
 \keyword{PSIThesis.cls} -- This is the class file that tells LaTeX how to format the thesis. You should not have to make changes here.
 
 \keyword{setup.tex} -- This file loads and sets up additional LaTeX packages. It changes some defaults of the MastersDoctoralThesis, on which this template is based, and controls the layout of the thesis. If you want to need the layout, you should do that here.
@@ -133,7 +135,7 @@ The auxiliary files can be ignored or deleted. They will be regenerated  as need
 
 You have to compile this template with \texttt{lualatex} (or XeTeX, cf. Sect.~\ref{sec:requirements}). Using \texttt{pdfLaTeX} is not possible, because the template uses TTF and OTF fonts.
 
-On Windows, you can use the TeXworks application for compilation. To obtain the final PDF, you have to compile \file{main.tex} with \code{lualatex}, then execute \code{biber}, and once more compile main.tex with \code{lualatex}.
+On Windows, you can use the TeXworks application for compilation. To obtain the final PDF, you have to compile \file{main.tex} with \code{lualatex}, then execute \code{biber}, and once more compile \file{main.tex} with \code{lualatex}.
 
 On Linux and macOS, you can use the provided \keyword{Makefile}.\sidenote{Alternatively, you should be able to compile the thesis by executing \code{latexmk -lualatex -pdf main.tex}.}
 Just navigate to the ``en'' directory and enter \code{make} in a terminal. Running \code{make} will automatically call the programs \code{lualatex} (which creates the PDF) and \code{biber} (which is used to compile the bibliography).
@@ -151,7 +153,9 @@ Open the file and scroll down to the third large block titled \emph{THESIS INFOR
 \sidenote{If you write a thesis at the PSI chair, you can keep the defaults.}
 You can also insert web links; if you do, make sure you use the full URL, including the \code{http://} for this. If you don't want these to be linked, simply remove the \verb|\href{url}{name}| and only leave the name.
 
-When you have done this, save the file and recompile \code{main.tex}. All the information you filled in should now be in the PDF, complete with web links. You can now begin writing your thesis!
+Mext, open the file \file{misc/titlepage.tex}. Remove and add the comments as instructed by the TODO notes.
+
+When you have done this, save all changed files and recompile \code{main.tex}. All the information you filled in should now be in the PDF. You can now begin writing your thesis!
 
 %----------------------------------------------------------------------------------------
 
