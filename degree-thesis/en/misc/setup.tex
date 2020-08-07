@@ -335,6 +335,14 @@
 % This also works with figures and tables.
 \usepackage{cleveref}
 
+% datetime is use to automatically handle the date rendering on the titlepage.
+\usepackage{datetime}
+% rendering the current date as Month/JJJJ
+% see: https://tex.stackexchange.com/questions/212263/month-year-format-in-latex
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+
+
 \raggedbottom % do NOT force all pages to have the same height (which would be done by increasing the space between paragraphs, which can create noisy layouts)
 
 %----------------------------------------------------------------------------------------

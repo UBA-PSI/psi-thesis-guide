@@ -75,11 +75,10 @@ consistentlayout, % layout of declaration, abstract and acknowledgements pages m
 % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
 \thesistitle{Guidelines for Writing a High-Quality Thesis with the PSITemplate}
 
-% date to be printed on the title
-\def\tdate{\today}
-\def\tdate{February 2020}
-% for the final version, insert the date of submission in the format "Month YYYY", e.g., January 2020
-%\def\tdate{January 2020}
+% date to be printed on the title, this will automatically update and be in the correct format
+% If any changes to this format (Month JJJJ) are necessary the definition can be found in line 343
+% of misc/setup.tex
+\def\tdate{\monthyeardate\today}
 
 %%% CHANGE THIS:
 % Your name, this is used in the title page, print it elsewhere with \authorname
