@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
 % PSI Chair Thesis Template
-% Version 2019-12
+% Version 2020-08
 % 
 % based on MastersDoctoralThesis.cls
 % Version 1.6 (27/8/17)
@@ -14,7 +14,7 @@
 % Johannes Böttcher
 %
 % Changes for PSI Chair @ University of Bamberg by
-% Dominik Herrmann
+% Dominik Herrmann and Fabian Lamprecht
 % - Simplified Layout of Abstract page
 % - Changed Caption Setup
 %

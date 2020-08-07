@@ -3,19 +3,29 @@
 This repository contains a LaTeX template and a guide for writing a thesis.
 For now, there is only an English version of this template.
 
-Read Chapters 1 and 2 in the file guide.pdf for instructions on using this
-template.
+Read Chapters 1 and 2 in the Guide for instructions on using the
+template. The Guide contains a lot of concrete recommendations that may
+help you write a compelling scientific thesis. A particular focus is
+on the topic of designing useful figures and tables.
 
-This template has been created mainly for students who want to submit a
+The template has been created mainly for students who want to submit a
 high-quality thesis to the Chair of Privacy and Security in Information
 Systems (PSI) at University of Bamberg (https://www.uni-bamberg.de/psi/).
-The design of the template and the recommendations in this guide reflect,
-at least to some degree, the personal taste of members of the chair. If
-you submit a thesis to PSI, you can use the template without any changes.
+The template can also be used for seminar reports and PhD dissertations.
 
-The template and the guide are, however, available under an open license
-(cf. Chapter 1 in guide.pdf and LICENSE.md). If you want to use the
-template for a thesis submitted at a different department or organization, feel free to make changes at your discretion.
+The PSIThesis template and the guide reflect, at least to some degree, the
+personal taste of members of the chair. We encourage our students to use
+the template without any changes. If you \emph{do} have a different opinion
+on a particular aspect of the template or the guide, we will be happy to hear
+you out.
+
+The template and the guide are available under an open license (CC BY SA 4.0). 
+If you want to use the template for a thesis submitted at a different 
+department or organization, feel free to make changes at your discretion.
+Redistribution of the guide and the template is subject to the license (see
+details explained in LICENSE.md and the Guide).
+
+If you wish to contribute to the template or the guide, you may create an Issue or a Pull Request in the GitHub repository.
 
 The PSIThesis template consists of a document class (PSIThesis.cls) and
 additional TeX files. The template is based on the MastersDoctoralThesis

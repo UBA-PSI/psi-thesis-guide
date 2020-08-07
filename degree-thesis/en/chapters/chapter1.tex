@@ -8,19 +8,20 @@ It also contains pointers to recommended reading for learning \LaTeX{}.
 
 The remainder of this document presents conventions and recommendations that will help you create a coherent and visually appealing thesis. \Cref{Chapter2} explains the most critical aspects of scientific writing, including citations, URLs, tables, figures, typography, and layout.
 
-Additional advice, which our students found useful in the past, follows in \Cref{appendixa}. Advice on designing compelling figures and tables follows in \Cref{appendixb}. Less-often needed details about the template, its history, and licensing details conclude this guide in \Cref{appendixc}.
+Additional advice, which our students found useful in the past, follows in \Cref{appendixa}. Advice on designing compelling figures and tables follows in \Cref{appendixb}. Less-often needed details about the template, its history, and licensing details can be found in \Cref{appendixc}.
 
 \section{A Quick Welcome}
 
 Welcome to this LaTeX thesis template guide.%
 \sidenote{It is based on the guide of the \emph{MastersDoctoralThesis} template. The original text has been revised and extended. \emph{MastersDoctoralThesis} is available at \url{https://www.latextemplates.com/template/masters-doctoral-thesis}.}
-This template has been created mainly for students who want to submit a high-quality thesis to the \emph{Chair of Privacy and Security in Information Systems} at the University of Bamberg (\url{https://www.uni-bamberg.de/psi/}).
-Template and enclosed guide reflect, at least to some degree, the personal taste of members of the chair.
+The PSIThesis template has been created mainly for students who want to submit a high-quality Bachelor's or Master's thesis to the \emph{Chair of Privacy and Security in Information Systems} at the University of Bamberg (\url{https://www.uni-bamberg.de/psi/}). The template can also be used for seminar reports and PhD dissertations.
+
+The PSITemplate and this thesis guide reflect, at least to some degree, the personal taste of members of the chair.
 We encourage our students to use the template without any changes.\sidenote{If you \emph{do} have a different opinion on a particular aspect of the template or the guide, we will be happy to hear you out.}
 
-The template and the guide are, however, available under an open license (cf. Sect.~\ref{sec:license}). If you want to use the template for a thesis submitted at a different department or organization, feel free to make changes at your discretion.\sidenote{Redistribution of this guide and the template is subject to the details outlined in Sect.~\ref{sec:license}.}
+The template and the guide are available under an open license (cf. Sect.~\ref{sec:license}). If you want to use the template for a thesis submitted at a different department or organization, feel free to make changes at your discretion.\sidenote{Redistribution of this guide and the template is subject to the details outlined in Sect.~\ref{sec:license}.}
 
-If you wish to contribute to the template or the guide, you may also create an Issue or a Pull Request in the public GitHub repository at \url{https://github.com/UBA-PSI/psi-thesis-guide}.
+If you wish to contribute to the template or the guide, you may create an Issue or a Pull Request in the public GitHub repository at \url{\githuburl}.
 
 \section{Learning LaTeX}
 
@@ -35,14 +36,14 @@ LaTeX is a \enquote{mark-up} language (like HTML): You tell the LaTeX processor 
 
 \subsection{Introduction to LaTeX}
 
-If you are new to LaTeX, there is an excellent eBook, \enquote{The Not So Short Introduction to LaTeX} (aka ``lshort''), which is freely available online.\marginnote{\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}.}
+If you are new to LaTeX, there is an excellent eBook, \enquote{The Not So Short Introduction to LaTeX} (aka ``lshort''), which is freely available online.\sidenote{\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}.}
 
 To learn how LaTeX works, we recommend creating small test documents to reduce complexity. You can also learn from others by looking at other templates.
 
 \paragraph{A Short Math Guide for LaTeX}
 
 If you are writing a technical or mathematical thesis, you may want to read \enquote{A Short Math Guide for LaTeX}.\sidenote{Find it under the \enquote{Additional Documentation} section towards the bottom of the page at \url{http://www.ams.org/tex/amslatex.html}.}
-LaTeX supports many mathematical symbols, and it would take a great effort to memorize the commands for all of them. Sunil Patel's website shows the most common ones.\marginnote{%
+LaTeX supports many mathematical symbols, and it would take a great effort to memorize the commands for all of them. Sunil Patel's website shows the most common ones.\sidenote{%
 \url{http://www.sunilpatel.co.uk/latex-type/latex-math-symbols/}}
 You can use Sunil's page as a reference or crib sheet. The symbols are rendered as large, high-quality images, so you can quickly find the LaTeX command for the symbol you need.
 
@@ -59,8 +60,8 @@ The package for macOS is called \textsc{MacTeX} (\url{http://www.tug.org/mactex/
 \label{sec:requirements}
 
 To use the PSIThesis template, you need a working LaTeX installation with \textbf{LuaLaTeX}, \textbf{biblatex}, and \textbf{biber}.%
-\sidenote{We have compiled this guide with TeX Live 2019 (LuaLaTeX 1.10.0, biber 2.14).}
-Usually, these tools are available in a typical LaTeX installation. We have tested the template with TeX Live 2019 in July~2020.
+\sidenote{We have compiled this guide with TeX Live 2019 (LuaLaTeX 1.10.0, biber 2.14), which was installed in January~2020.}
+Usually, these tools are available in a typical LaTeX installation. We have tested the template with TeX Live 2019. We recommend to perform a \textbf{full installation} to ensure that all required LaTeX packages are available right away.
 
 Use a current version of TeX Live that is available at \url{https://www.tug.org/texlive/}. Note that the TeX Live version packaged by major Linux distributions, such as Debian Linux, may contain an outdated version of lualatex.
 
@@ -155,7 +156,7 @@ The \code{make} command keeps track of changes in your source files. If you add 
 Otherwise, \code{make} may refuse to compile a new version because it believes that \file{main.pdf} is already up to date. In this case, a call to \code{make clean} will help: It removes all files generated during compilation. After that, a call to \code{make} will regenerate them, including \file{main.pdf}.
 
 
-We haven't prepared the template to be used with the convenient LaTeX editor \textsc{LyX}.\marginnote{\url{https://www.lyx.org}} LyX hides the LaTeX code from authors and offers a user interface that resembles a word processor.
+We haven't prepared the template to be used with the convenient LaTeX editor \textsc{LyX}.\sidenote{\url{https://www.lyx.org}} LyX hides the LaTeX code from authors and offers a user interface that resembles a word processor.
 If LaTeX code puts you off, check out LyX and start writing there. Eventually, you can still export the LaTeX source code and copy and paste it into the PSIThesis template. Be sure to reserve some days to debug compatibility issues.
 
 \subsection{Filling in Your Information in \emph{main.tex}}\label{sec:fillingdetails}
