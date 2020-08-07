@@ -8,7 +8,7 @@ An essential property of a long document, such as a thesis, is consistency.%
 It is, however, challenging to keep track of terminology, style, and structure over an extended period.
 
 Following certain conventions can help you achieve a consistent result. This chapter summarizes conventions and recommendations for effective thesis writing.
-Appendix~A contains additional guidelines, while Appendix~B provides more information on designing figures and tables.
+\Cref{appendixa} contains additional guidelines, while \Cref{appendixb} provides more information on designing figures and tables.
 
 This%
 \marginnote{Having a signpost paragraph before the first section in a chapter is considered good style.}
@@ -33,7 +33,7 @@ It is a frequently asked question whether one should embed \emph{all} links as p
 Many links become invalid at some point.
 Content may change or move to different URLs. Sites may go out of service altogether. This phenomenon is called \emph{link rot}, and it has become an issue for academia.\sidenote{See also: \href{https://en.wikipedia.org/wiki/Link_rot}{Link Rot in Wikipedia}}
 
-Therefore, we ask you to \textbf{archive all websites} whose URLs you provide using \textsc{The Wayback Machine} of the Internet Archive, which is available at \url{archive.org}.
+Therefore, we ask you to \textbf{archive all websites} whose URLs you provide using \textsc{The Wayback Machine} of the Internet Archive, which is available at \url{https://web.archive.org}.
 This preserves the content of a website at the given point in time and makes it permanently available in the Internet Archive.
 
 You should inform the reader about the availability of an archived version.
@@ -94,7 +94,7 @@ An example of a poorly styled reference is \cite{BuchananRSS08}, a cleaned up it
 
 A common issue is the \textbf{capitalization of words in titles}.
 Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces to protect them.%
-\sidenote{The template will print the items exactly as they are defined in the BibTex file, i.\,e., you will probably not have to worry about abbreviations.}
+\sidenote{The template will print the items exactly as they are defined in the BibTeX file, i.\,e., you will probably not have to worry about abbreviations.}
 Consider the following example, which ensures that TCP remains in uppercase:
 \begin{verbatim}
 @inproceedings{…, title = "A new {TCP}-based System", …}
@@ -342,7 +342,7 @@ Every figure \textbf{must be referenced} in the text at least once, either in pa
 
 The \verb|\caption| command contains two parts,
 the first part, inside the square brackets%
-\sidenote{Theses at PSI usually do not have a List of Figures. You can, therefore, omit the part in square brackets.} 
+\sidenote{Theses at the PSI Chair usually do not have a List of Figures. You can, therefore, omit the part in square brackets.} 
 is the title that will appear in the \emph{List of Figures}, and so should be short.
  The second part in the curly brackets should contain the longer and more descriptive caption text.
 
@@ -606,13 +606,15 @@ Use \textbf{thin spaces} (\verb|\,|) in the appropriate places. For instance, wr
 
 Use en dashes also for ranges, e.\,g., when you write something like 5--10\,\% (note the thin space before the \% symbol).
 
-Use a proper \textbf{minus symbol} (e.\,g., by using math mode like this \(-1.337\)). Also, use a sensible number of digits after the decimal point.\sidenote{Have you noticed that the main text uses \emph{old-style figures} for numbers, while math mode uses \emph{lining figures}? Do not  print numbers with differing figure styles close to each other (as we are doing in this section).}
+Use a proper \textbf{minus symbol} (e.\,g., by using math mode like this \(-1.337\)). Also, use a sensible number of digits after the decimal point.
+
+Have you noticed that the main text uses \textbf{old-style figures} for numbers (12345), while figures in Math Mode and tables use \emph{lining figures} (\textlf{12345})? This is intended behavior. Note, however, that it is dicouraged to print numbers with differing figure styles next to each other (as we are doing in this section). You may, therefore, have to enforce the use of \emph{lining figures}.\sidenote{Information on changing this default can be found in the documentation of the Cochineal font, which we use in this template: \url{https://ftp.agdsn.de/pub/mirrors/latex/dante/fonts/cochineal/doc/cochineal-doc.pdf}.} This can be achieved by enclosing the respective part in \verb|\textlf{…}| or by using Math Mode.
 
 Use proper \textbf{directional quotation marks} like ``these.'' Directional quotation marks are created  \verb|``like this''|, by using \verb|\enquote{text}|, or by copy-and-pasting the respective Unicode characters. Note that in contrast to conventions in the German language, the closing quotation mark is placed \emph{after} any subsequent punctuation, e.\,g., ``like this,'' and ``like that.''
 
 \paragraph{Further Reading}
 
-If you speak German, consider reading \textsc{typokurz} (\url{https://zvisionwelt.wordpress.com/downloads/}), a short introduction to typographic issues. You can also browse Matthew Butterick's website \url{https://practicaltypography.com}.
+If you understand German, consider reading \textsc{typokurz} (\url{https://zvisionwelt.wordpress.com/downloads/}), a short introduction to typography. You can also browse Matthew Butterick's website on typography (\url{https://practicaltypography.com}).
 
 \section{Language and Style}
 
@@ -727,4 +729,4 @@ Finally, if you seek inspiration, we recommend to read these reports by well-kno
 \item Nick Feamster: Writing Tips for Academics (\url{http://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/}).
 \end{itemize}
 
-The remaining parts of this guide contain less-often needed technical details and historical information about the template as well as a loose collection of assorted advice.
+The remaining parts of this guide consist of a loose collection of assorted advice (\Cref{appendixa}), advice on presenting figures and tables (\Cref{appendixb}), and less-often needed technical details and historical information about the template (\Cref{appendixc}).
