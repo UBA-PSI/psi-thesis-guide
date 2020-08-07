@@ -89,7 +89,7 @@
     BoldFont       = {iosevka-ss04-bold.ttf},
     ItalicFont       = {iosevka-ss04-italic.ttf},
     BoldItalicFont       = {iosevka-ss04-bolditalic.ttf},
-    Scale = 0.83 % manually determined value; MatchLowercase does not work with Cochineal because it is not included loaded via fontspec
+    Scale = 0.83 % manually determined value;
 ]{iosevka-ss04-regular.ttf}
 
 
@@ -99,7 +99,7 @@
 	BoldFont		= Roboto-Bold.otf,
 	ItalicFont		= Roboto-Italic.otf,
 	BoldItalicFont	= Roboto-BoldItalic.otf,
-	Scale = 0.83 % manually determined value; MatchLowercase does not work with Cochineal because it is not included loaded via fontspec
+	Scale = 0.83 % manually determined value;
 ]{Roboto-Regular.otf}
 
 \renewcommand{\familydefault}{\rmdefault}
@@ -228,7 +228,7 @@
 
 
 % this provides correct alignment for margin text that is inserted
-% right at the beginning of a paragrah; however, it messes up the
+% right at the beginning of a paragraph; however, it messes up the
 % alignment in all other cases.
 %% therefore, removed for now:
 %%\renewcommand{\marginnotevadjust}{0.71\baselineskip}
@@ -326,11 +326,6 @@
              filecolor=ubblue60,
              urlcolor=ubblue60}
 
-
-% should make links appear in black when PDF is printed
-% (do not use, breaks title page layout)
-%\usepackage[ocgcolorlinks]{ocgx2}
-
 % cleverref allows you to use \Cref{sec:foo} to get the text "Section 1.2".
 % This also works with figures and tables.
 \usepackage{cleveref}
@@ -384,19 +379,7 @@
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
 
-%\geometry{
-%	paper=a4paper, % Change to letterpaper for US letter (not recommended)
-%	inner=2cm, % Inner margin
-%	outer=6.2cm, % Outer margin, extra wide for margin notes
-%	marginparwidth=4cm,
-%	marginparsep=4mm,
-%	bindingoffset=.5cm, % Binding offset
-%	top=2.0cm, % Top margin
-%	bottom=2.5cm, % Bottom margin
-%	% showframe, % Uncomment to show how the type block is set on the page
-%}
-
-% testing, from kaobook
+% Using the layout from kaobook
 \geometry{
 		paper=a4paper,
 		head=13.6pt,
