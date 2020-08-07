@@ -1,0 +1,87 @@
+% Appendix C
+ 
+\chapter{About the Template}
+\label{appendixc}
+\label{appendix-more-details-on-template}
+
+This appendix provides additional information about less-often needed features of the template. Moreover, it contains a brief overview of the template's history. 
+
+\section{Further Template Features}\label{ThesisFeatures}
+
+This section explains customization options and technical details. For a thesis at the PSI Chair, you should stick with the defaults.
+
+\subsection{Printing Format}
+
+This thesis template is designed for double-sided printing (i.\,e., content on the front and back of pages) as most theses are printed and bound this way.\sidenote{At the PSI Chair, we highly encourage you to use double-sided printing.}
+Switching to one-sided printing is as simple as uncommenting the \option{oneside} option of the \code{documentclass} command at the top of the \file{main.tex} file. You may then wish to adjust the margins to suit specifications from your institution.
+
+The headers for the pages contain the page number on the outer side (so it is easy to flick through to the page you want) and the chapter name on the inner side.
+
+The font size is set to 11 points by default with single line spacing; again, you can tune the text size and spacing using the options at the top of \file{main.tex}. The spacing can be influenced by replacing the \option{singlespacing} with \option{onehalfspacing} or \option{doublespacing}.
+
+\subsection{Using US Letter Paper}
+
+The paper size used in the template is A4, which is the standard size in Europe. If you are using this thesis template elsewhere, for instance, in the United States, then you may have to change the A4 paper size to the US Letter size.
+
+Due to the differences in the paper size, the resulting margins may differ from what you like or require. You may need to adapt the page geometry settings in \file{setup.tex} in this case.
+
+\subsection{References}
+
+The template uses \code{biblatex} to format the bibliography and references such as this one \cite{murdoch_steven_j._chip_2010}. The template uses a citation style that creates in-text citations with the author(s) initials and the year of the publication. Multiple references are separated by semicolons (e.\,g., \cite{solat_security_2017, bond_chip_2014}). To see how you use references, look at the source files of this guide. If you choose a suitable BibTeX reference manager, you can copy and paste or drag and drop references into the document.
+
+The bibliography is typeset with references listed in alphabetical order by the first author's last name. To see how LaTeX typesets the bibliography, look at the end of this document (or just click on the reference links in in-text citations).
+
+\paragraph{BibTeX Backend}
+
+As the ``old'' \code{bibtex} backend does not correctly handle Unicode character encoding (i.\,e., ``international'' characters), we use the more modern \code{biber} BibTeX engine in this template.
+
+Here, we cite a lot of references so that the list of references gets populated \cite{murdoch_steven_j._chip_2010,anderson_ross_emv:_2014,kou_weidong_secure_2003,solat_security_2017,bond_chip_2014,ortiz_s._is_2006,haselsteiner_security_2006,galloway_visa_2019,zhou_nshield_2014,lalehTaxonomyFraudsFraud2009,ferradiWhenOrganizedCrime2016,Yang10,Kopsell06,VilaGM03,Herrmann12-ipv6prefix,Herrmann14-diss,HBF:2013,Herrmann11-NordSec,AcarEEJND14,Herrmann09,WangG13,Raymond00,Hintz02,Herrmann14-encdns,Goodson12-privacy,WendolskyHF07,chaum81,BertholdFK00,Dingledine04,rfc5246,LoesingMD10,FuchsHF13}.
+
+
+
+\section{Contributors and History}
+
+This guide has been written by Dominik Herrmann. The LaTeX template has been created by Dominik Herrmann with support by Fabian Lamprecht. Dominik and Fabian are affiliated with the Privacy and Security in Information Systems Group at University of Bamberg (\url{https://www.uni-bamberg.de/psi/}).
+
+
+The PSI Template has its own \emph{document class}, \file{PSIThesis.cls}. It has been derived from \file{MastersDoctoralThesis.cls} (\url{https://www.latextemplates.com/template/masters-doctoral-thesis}).
+
+The MastersDoctoralThesis LaTeX thesis template is based initially on a LaTeX style file created by Steve R.\ Gunn from the University of Southampton (UK), department of Electronics and Computer Science. You can find his original thesis style file at his site at
+\url{http://www.ecs.soton.ac.uk/~srg/softwaretools/document/templates/} (link not available as of 2019).
+
+Steve's \file{ecsthesis.cls} was then taken by Sunil Patel, who modified it by creating a skeleton framework and folder structure for a thesis. The resulting template is available on Sunil's site at
+\url{http://www.sunilpatel.co.uk/thesis-template}.
+
+Sunil's template was made available through \url{http://www.LaTeXTemplates.com} where it was modified many times based on user requests and questions. Version 2.0 and onwards of this template represents a significant modification to Sunil's template and is, in fact, hardly recognizable. The work to make version 2.0 possible was carried out by \href{mailto:vel@latextemplates.com}{Vel} and Johannes Böttcher.
+
+
+\section{License}
+\label{sec:license}
+
+We have chosen a license that  allows you to use the template for your thesis and make changes as needed. You are \emph{not} required to publish your thesis or its source code under the same license. If you fork the template or the guide, however, you have to comply with the following licensing restrictions.
+
+This guide and the template are made available under the Creative Commons license 
+CC BY-SA 4.0 (\url{http://creativecommons.org/licenses/by-sa/4.0/}) with two exceptions:
+
+\begin{enumerate}
+\item Some excerpts, figures, and tables in \Cref{Chapter2} and \Cref{appendixb} have been taken from the
+literature. The respective elements are explicitly marked with a citation and a note
+regarding the permission to re-use. They are not
+covered by the CC license. Permission to re-use and distribute
+these figures, tables, and excerpts must be obtained from the
+respective copyright holders.
+
+\item Parts of \Cref{Chapter1} and \Cref{appendix-more-details-on-template} contain content from the
+MastersDoctoralThesis template mentioned above, which is licensed under 
+CC BY-SA 3.0 (\url{http://creativecommons.org/licenses/by-nc-sa/3.0/}). 
+The original content has been written by
+Sunil Patel (\href{http://www.sunilpatel.co.uk}{www.sunilpatel.co.uk}) and
+Vel (\href{http://www.LaTeXTemplates.com}{LaTeXTemplates.com}).
+\end{enumerate}
+
+As this guide contains copyrighted material from third parties, you cannot host your own copy of this guide online. Please use the URLs printed on the title page to link to this document.
+
+The files \texttt{PSIThesis.cls}, \texttt{setup.tex}, and \texttt{titlepage.tex} are made available under
+the LPPL v1.3c (\url{http://www.latex-project.org/lppl}).
+
+The fonts that are included in this template in the \texttt{fonts} directory are licensed under the Apache License 2.0 (\emph{Roboto} sans-serif font) and the SIL OFL Version 1.1 (\emph{Iosevka} monospace font).

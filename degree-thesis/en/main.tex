@@ -1,0 +1,340 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PSI Chair Thesis Template
+% Version 20200807
+%
+% based on MastersDoctoralThesis.cls
+% Version 2.5 (27/8/17)
+%
+% which was obtained from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% License of this guide and the template
+% CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+%
+% Exception 1: Some excerpts, figures, and tables that have been taken
+% from the literature (denoted with a citation in the caption) are not
+% covered by the above license. Permission to re-use and distribute
+% these excerpts, figures, and tables must be obtained from the
+% respective holder of the copyrights.
+%
+% Exception 2: Chapter 1 and Appendix C are based on content from the
+% MastersDoctoralThesis template mentioned above, which is licensed under
+% CC BY-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% License of the PSIThesis.cls class file:
+% LPPL v1.3c (http://www.latex-project.org/lppl)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\PassOptionsToPackage{english,ngerman}{babel}
+\documentclass[
+11pt, % The default document font size is 11 (recommended), options: 10pt, 11pt, 12pt
+%oneside, % Two-side layout is recommended; uncomment to switch to one-sided
+english, % replace with ngerman for German; not fully supported so far -- requires changes elsewhere
+singlespacing, % Single line spacing (recommended), alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+%liststotoc, % Uncomment to add list of figures/tables/etc to table of contents (not recommended)
+%toctotoc, % Uncomment to add the main table of contents to the table of contents (not recommended)
+parskip, % add space between paragraphs (recommended)
+nohyperref, % do not load the hyperref package (is loaded in setup.tex)
+%headsepline, % print a horizontal line under the page header
+consistentlayout, % layout of declaration, abstract and acknowledgements pages matches the default layout
+%final, % Uncomment to hide all todo notes
+]{PSIThesis} % The class file specifying the document structure
+
+% version of the guide
+\def\tversion{v20200807}
+
+% long-term stable URL to the thesis guide
+\def\doiurl{https://doi.org/10.20378/irb-48428}
+\def\githuburl{https://github.com/UBA-PSI/psi-thesis-guide}
+
+\input{misc/setup.tex} % Load the settings from Misc/setup.tex
+\input{misc/commands.tex} % Load the custom commands from Misc/commands.tex
+
+% Uncomment this command to make all links black:
+%   useful for printing on black-white printers that do a
+%   poor job at rasterizing colored text properly
+%\hypersetup{colorlinks=false}
+
+\addbibresource{literature.bib} % The filename of the bibliography
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+\newcommand{\thesistype}{Bachelor} % type of your thesis (Bachelors, Masters, Doctoral ...)
+
+%%% CHANGE THIS:
+% Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\thesistitle{Guidelines for Writing a High-Quality Thesis with the PSIThesis Template}
+
+% date to be printed on the title, this will automatically update and be in the correct format
+% If any changes to this format (Month JJJJ) are necessary the definition can be found in line 337
+% of misc/setup.tex
+\def\tdate{\monthyeardate\today}
+
+%%% CHANGE THIS:
+% Your name, this is used in the title page, print it elsewhere with \authorname
+\author{Dominik Herrmann}
+
+% Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\supervisor{Prof. Dr. XXX YYY}
+
+% Your university's name and URL, this is used in the title page, print it elsewhere with \univname
+\university{\href{https://www.uni-bamberg.de/en/}{University of Bamberg}}
+
+% Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\group{\href{https://www.uni-bamberg.de/en/psi/}{Privacy and Security in Information Systems Group}}
+
+% Your department's name and URL, this is used in the title page, print it elsewhere with \deptname
+\department{department not used}
+
+% Your faculty's name and URL, this is used in the title page, print it elsewhere with \facname
+% TODO: insert *your* degree program in the \faculty command below
+% Applied Computer Science
+% Computing in the Humanities
+% Information Systems
+% International Information Systems Management
+% International Software Systems Science
+% Software Systems Science
+% Education in Business and Information Systems
+\faculty{Software Systems Science Degree Program in the\\ \href{https://www.uni-bamberg.de/en/wiai/}{Faculty of Information Systems and Applied Computer Sciences}}
+
+% Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+\addresses{address not used}
+
+% Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\subject{subject not used}
+
+% Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\keywords{keywords not used}
+%----------------------------------------------------------------------------------------
+%	END OF THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\selectlanguage{english}
+
+\frenchspacing % do not add additional hspace after end of sentence full stop dot.
+
+\frontmatter % Uses roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\hypersetup{urlcolor=black}
+
+\include{misc/titlepage} % Typeset the titlepage
+
+\hypersetup{urlcolor=ubblue80}
+
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION
+%----------------------------------------------------------------------------------------
+
+% \vspace*{0.2\textheight}
+
+% \noindent\enquote{\itshape Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism.}\bigbreak
+
+% \hfill Dave Barry
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+%\addchaptertocentry{\abstractname}
+% uncomment to add the abstract to the table of contents (not recommended)
+
+For an overview of this document, see \Cref{Chapter1}.
+
+Provide a Thesis Abstract here (length: less than one page).
+
+For a start, you may want to consult the concise instructions for writing the Summary Paragraph in \emph{Nature}: \url{https://www.nature.com/documents/nature-summary-paragraph.pdf}. Moreover, consider Markus Kuhn's advice on differentiating abstract and introduction: \url{https://www.lightbluetouchpaper.org/2007/03/14/how-not-to-write-an-abstract/}.
+
+A boilerplate scheme for an abstract is as follows: devote 25\,\% of the space on the purpose and importance of the research (introduction), 25\,\% of the space on what you did (methods), 35\,\% of the space on what you found (results), and 15\,\% of the space on the implications of the research (cf. \url{https://writingcenter.gmu.edu/guides/writing-an-abstract}).
+
+More concrete advice for writing abstracts can be found on the website of the Writing Center of the University of North Carolina at Chapel Hill (\url{https://writingcenter.unc.edu/tips-and-tools/abstracts/}). Some useful phrases for abstracts can be found at \url{http://dissertation.laerd.com/useful-phrases-when-writing-a-dissertation-abstract.php}
+
+Finally, you may also want to consider the excellent guide by Kent Beck on how to write good abstracts, which focuses on conference papers:
+\url{https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html}.
+
+\end{abstract}
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+%\begin{acknowledgements}
+% %\addchaptertocentry{\acknowledgementname}
+% Add the acknowledgements to the table of contents (not recommended)
+%
+%The acknowledgments and the people to thank go here.
+%\end{acknowledgements}
+
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+
+% Table of Contents uses a wider layout than the main content
+\newgeometry{
+		head=13.6pt,
+		top=27.4mm,
+		bottom=27.4mm,
+		inner=24.8mm,
+		outer=24.8mm,
+		marginparsep=0mm,
+		marginparwidth=0mm,
+}
+{
+\hypersetup{linkcolor=black}
+\tableofcontents % Prints the ToC entries
+}
+\restoregeometry
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+% \dedicatory{For/Dedicated to/To my\ldots}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+\mainmatter % From here on, numeric (1,2,3...) page numbering
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Define some commands to keep the formatting separated from the content
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+% Figures will automatically be searched for in the Figures subdirectory
+\graphicspath{{./figures/}{./examples/}}
+
+%%% CHANGES NEEDED HERE
+%
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+% Mind the \input instead of the \include here, that change is necessary for the appendix formatting
+% Due to the \input command you also need to provide the .tex file ending
+
+\input{chapters/chapter1.tex}
+\input{chapters/chapter2.tex}
+%\input{chapters/chapter3.tex}
+%\input{chapters/chapter4.tex}
+%\input{chapters/chapter5.tex}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+% By using input instead of include for the chapters we are able to move the following line here
+% Therefore the addition before the last chapter is not necessary anymore.
+
+% Call the following chapters "Appendix" inside the table of contents
+\addtocontents{toc}{\string\def\string\chaptername{Appendix}}
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Ensure proper section numbering in appendix, e.g., A.1, A.2, B.1, …
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+%%% CHANGES NEEDED HERE
+%
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\include{appendices/appendixA}
+\include{appendices/appendixB}
+\include{appendices/appendixC}
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+% Bibliography has no wide margins:
+\newgeometry{
+	inner=2cm, % Inner margin
+	outer=2cm, % Outer margin
+	marginparwidth=0cm,
+	marginparsep=0mm,
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin,
+	includehead,
+	includefoot
+	% showframe, % Uncomment to show how the type block is set on the page
+}
+
+\addchap{References}
+
+% enables two-column layout for bibliography
+\setlength\columnsep{2em}
+\begin{multicols}{2}
+	\begin{refcontext}[sorting=nyt] % sort bibliography by last name, year, title
+		\renewcommand*{\bibfont}{\small\RaggedRight}
+		\linespread{1.0}\selectfont % increase linespread if desired (not recommended)
+		\printbibliography[heading=none]
+	\end{refcontext}
+\end{multicols}
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{declaration}
+\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+
+% TODO Change the declaration according as needed. *
+
+%\selectlanguage{ngerman}
+Ich erkläre hiermit gemä\ss\ \S~17 Abs.\,2 APO, dass ich die vorstehende {\thesistype}arbeit selbständig\\ verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe.
+
+\bigskip
+\bigskip
+
+\begin{tabular}{@{}l@{}}
+  Bamberg, den \rule[-0.8em]{10em}{0.5pt}\\[2ex]
+  ~
+\end{tabular}
+\hspace{\fill}%
+\begin{tabular}{@{}c@{}}
+  \rule[-0.8em]{20em}{0.5pt}\\[2ex]
+  \authorname
+\end{tabular}\hspace{\fill}
+
+
+
+
+\end{declaration}
+
+\end{document}
