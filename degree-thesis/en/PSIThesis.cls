@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
 % PSI Chair Thesis Template
-% Version 2020-08
+% Version 2020-08-25
 % 
 % based on MastersDoctoralThesis.cls
 % Version 1.6 (27/8/17)
@@ -27,6 +27,9 @@
 % Class license:
 % LPPL v1.3c (http://www.latex-project.org/lppl)
 %
+% Changes:
+%  * 2020-08-25: corrected capitalization of classname in \classname
+% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
@@ -34,8 +37,8 @@
 %----------------------------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
-\newcommand{\classname}{PsiThesis}
-\ProvidesClass{\classname}[2019/12/31]
+\newcommand{\classname}{PSIThesis}
+\ProvidesClass{\classname}[2020/08/25]
 \providecommand{\baseclass}{book}
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}

@@ -85,7 +85,7 @@ A remark on style: \textbf{Do not treat references as nouns.} You should, theref
 
 \paragraph{BibTeX Snippets}
 
-For many publications, you will find BibTeX snippets online, for instance, in the ACM Digital Library or on \url{https://dblp.org}. Using these snippets is generally recommended. Unfortunately, the quality of publicly available BibTeX snippets varies a lot. You will have to edit them to create a consistent and concise bibliography.
+For many publications, you will find BibTeX snippets online, for instance, in the ACM Digital Library or on \url{https://dblp.org}. Using these snippets is generally recommended. Unfortunately, the quality of publicly available BibTeX snippets varies a lot. You will have to edit them to create a consistent and concise bibliography.\sidenote{For instance, it is now not allowed anymore to write \texttt{Jean\{-\}Francis Raymond} in the author field. You have to remove the curly braces around the hyphen. Otherwise there will be an error on processing the \emph{bbl}-file that is generated from the \emph{bib}-File: \texttt{Extra \}, or forgotten \textbackslash endgroup.}}
 
 For instance,
  make sure that the name of a particular conference is always spelled consistently in all entries. Moreover, we encourage you to \textbf{remove redundant information} such as precise dates, multiple occurrences of the year, and the location of the conference.%
@@ -93,8 +93,8 @@ For instance,
 An example of a poorly styled reference is \cite{BuchananRSS08}, a cleaned-up item is \cite{DietrichKBF18}.
 
 A common issue is the \textbf{capitalization of words in titles}.
-Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters. Alternatively, you can only enclose capitalized words or abbreviations in curly braces to protect them.%
-\sidenote{The template will print the items precisely as they are defined in the BibTeX file, i.\,e., you will probably not have to worry about abbreviations.}
+Whether you use sentence case or title case is up to you -- as long as you stick to the choice. You may have to enclose the whole title of a bibitem in double curly braces to preserve capitalized letters (a shortcut, which is considered poor style). Alternatively, you can only enclose capitalized words or abbreviations in curly braces to protect them.%
+\sidenote{The PSIThesis template is configured to print the items precisely as they are defined in the BibTeX file, i.\,e., you will probably not have to worry about capitalization when you use this template.}
 Consider the following example, which ensures that TCP remains in uppercase:
 \begin{verbatim}
 @inproceedings{…, title = "A new {TCP}-based System", …}
@@ -610,6 +610,8 @@ Use \emph{en dashes} for ranges, e.\,g., when you write something like 5--10\,\%
 Use a proper \textbf{minus symbol} (e.\,g., by using math mode like this \(-1.337\)). Also, use a sensible number of digits after the decimal point.
 
 Have you noticed that the main text uses \textbf{old-style figures} for numbers (12345), while figures in Math Mode and tables use \emph{lining figures} (\textlf{12345})? This difference is intended behavior. Note, however, that it is discouraged to print numbers with differing figure styles next to each other (as we are doing in this section). You may, therefore, have to enforce the use of \emph{lining figures}.\sidenote{Information on changing this default can be found in the documentation of the Cochineal font, which we use in this template: \url{https://ftp.agdsn.de/pub/mirrors/latex/dante/fonts/cochineal/doc/cochineal-doc.pdf}.} Lining figures can be enforced by enclosing the respective part in \verb|\textlf{…}| or by using Math Mode.
+
+We recommend to use \emph{thin spaces} to split large numbers \textbf{(thousands separator)}. We recommend to use a thousands separator \emph{only for numbers with more than four digits}. The number 2000 is legible without a thousands separator. The number 20\,000 definitely benefits from having it (just compare it to 20000). Using a thin space instead of a comma reduces confusion for readers who are used to use a comma as decimal mark (which is common in Germany). In English texts, a dot is used for the \textbf{decimal mark}, e.\,g., 123.45.
 
 Use proper \textbf{directional quotation marks} like ``these.'' Directional quotation marks are created  \verb|``like this''|, by using \verb|\enquote{text}|, or by copy-and-pasting the respective Unicode characters. Be aware of the following convention, which differs from German texts: The closing quotation mark is placed \emph{after} any subsequent punctuation, e.\,g., ``like this,'' and ``like that.''
 
