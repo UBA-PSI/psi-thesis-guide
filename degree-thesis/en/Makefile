@@ -1,5 +1,5 @@
-main.pdf: main.tex misc/setup.tex misc/titlepage.tex chapters/*.tex appendices/*.tex
-	lualatex main.tex && lualatex main.tex && biber main && lualatex main.tex
+main.pdf: main.tex misc/setup.tex misc/titlepage.tex chapters/*.tex appendices/*.tex literature.bib
+	lualatex main.tex &&  biber main && lualatex main.tex && lualatex main.tex
 
 clean:
 	latexmk -c && rm main.pdf && rm main.bbl && rm main.run.xml
