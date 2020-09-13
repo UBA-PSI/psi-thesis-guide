@@ -61,16 +61,15 @@ The package for macOS is called \textsc{MacTeX} (\url{http://www.tug.org/mactex/
 
 To use the PSIThesis template, you need a working LaTeX installation with \textbf{LuaLaTeX}, \textbf{biblatex}, and \textbf{biber}.%
 \sidenote{This guide is known to work fine on TeX Live Version 2019 (LuaLaTeX 1.10.0, biber 2.14) and 2020 (LuaHBTeX 1.12.0, biber 2.15).}
-Usually, these tools are available in a typical LaTeX installation. We have tested the template with TeX Live 2019. We recommend to perform a \textbf{full installation} to ensure that all required LaTeX packages are available right away.
-
-Use a current version of TeX Live that is available at \url{https://www.tug.org/texlive/}. Note that the TeX Live version packaged by major Linux distributions, such as Debian Linux, may contain an outdated version of lualatex.
+Usually, these tools are available in a typical LaTeX installation. We have tested the template with TeX Live 2019 and 2020. We recommend to perform a \textbf{full installation} to ensure that all required LaTeX packages are available right away.
 
 \paragraph{Known Issues}
 
 If you are using an outdated version of lualatex, compilation may fail with \textbf{error: (vf): invalid DVI command (1)}. This is a known bug\sidenote{\url{https://de.comp.text.tex.narkive.com/fC1xfeb2/lualtex-microtype-error-vf-invalid-dvi-command-1}} in old versions of lualatex that is triggered by the \texttt{microtype} package. In this case, we recommend upgrading to a current version of TeX Live.
 
-Moreover, there is a known layout issue with old versions of the \texttt{caption} package. Version 3.4 of that package (released on 2019-09-11) is known to work well.\sidenote{Check the version of \emph{caption} in the log file that is created by LuaLaTeX
- during compilation.} You can update your TeX Live installation by running \texttt{tlmgr}.
+Moreover, there is a known layout issue with old versions of the \texttt{caption} package. This issue causes the captions of margin figures and wide figures to be laid out incorrectly. Versions 3.4 and 3.5 of the caption package (released in 2019 and 2020, respectively) are known to work well. You can update your TeX Live installation by running \texttt{tlmgr}.
+
+Use a current version of TeX Live that is available at \url{https://www.tug.org/texlive/}. As of 2020, the TeX Live version packaged by \textbf{Debian Linux} contains outdated versions of lualatex and the caption LaTeX package, which will likely result in incorrectly laid out documents. This is why it is \textbf{recommended to install LaTeX on Linux using the TeX Live installer}.
 
 \paragraph{Using Overlaf and XeTeX}
 
