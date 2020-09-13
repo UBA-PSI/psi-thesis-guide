@@ -6,9 +6,9 @@ This repository contains a LaTeX template and a guide for writing a thesis..
 
 **Scroll down to see some preview images.**
 
-**[Download Guide – latest version v20200807](https://github.com/UBA-PSI/psi-thesis-guide/raw/master/psi-thesis-guide-v20200807.pdf) (PDF, 4 MB)**
+**[Download Guide – latest version v20200913](https://github.com/UBA-PSI/psi-thesis-guide/raw/master/psi-thesis-guide-v20200913.pdf) (PDF, 4 MB)**
 
-**[Download LaTeX Template – latest version v20200807](https://github.com/UBA-PSI/psi-thesis-guide/archive/v20200807pub.zip) (ZIP, 10 MB)**
+**[Download LaTeX Template – latest version v20200913](https://github.com/UBA-PSI/psi-thesis-guide/archive/v20200913pub.zip) (ZIP, 10 MB)**
 
 The **guide** is typeset with the PSIThesis template, and it contains a lot
 of **concrete recommendations (Chapter 2)** that may help you write
