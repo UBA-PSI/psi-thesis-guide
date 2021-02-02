@@ -411,14 +411,6 @@
 \addtolength{\overflowingheadlen}{\marginparsep}
 \addtolength{\overflowingheadlen}{\marginparwidth}
 
-% old header/footer, maybe not necessary any more?
-% \automark[chapter]{chapter}
-% \ihead{\textup{\headmark}} % Inner header; do not use italics: therefore textup
-% \ihead{\textup{\textsc{\MakeLowercase\headmark}}}% Inner header - use this line for Small Caps in header
-% \ohead[]{\pagemark} % Outer header
-% \cfoot[\pagemark]{} % On chapter opening pages, the page number goes centered into the footer
-% \automark*[section]{}%
-
 % new header/footer, from kaobook; we could probably remove the original definitions from the cls
 \renewpagestyle{thesis}{
   {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\textup{\thepage}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad{}\textup{\textsc{\MakeLowercase \leftmark}}}} % left page two sided
