@@ -1,4 +1,4 @@
-main.pdf: main.tex misc/setup.tex misc/titlepage.tex chapters/*.tex appendices/*.tex literature.bib
+main.pdf: main.tex misc/setup.tex misc/titlepage.tex $(wildcard chapters/*.tex) $(wildcard appendices/*.tex) literature.bib
 	lualatex main.tex &&  biber main && lualatex main.tex && lualatex main.tex
 
 clean:
