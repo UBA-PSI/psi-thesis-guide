@@ -11,7 +11,7 @@ RUN apk add --no-cache \
 
 # install texlive
 RUN mkdir install-tl
-Run wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
+RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
   tar -xvf install-tl-unx.tar.gz -C install-tl --strip-components=1; \
   echo "selected_scheme scheme-basic" > install-tl/texlive.profile; \
   install-tl/install-tl -profile install-tl/texlive.profile; \
@@ -33,7 +33,7 @@ RUN grep -v '^#' deps.txt | xargs tlmgr install
 COPY . /build
 
 # setup a volume for the build
-Volume ["/build"]
+VOLUME ["/build"]
 
 # build the pdf
 ENTRYPOINT ["make"]
