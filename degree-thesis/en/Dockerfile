@@ -1,4 +1,6 @@
 FROM alpine:3.19
+
+# update and install system dependencies
 RUN apk update
 RUN apk add --no-cache \
   wget \
@@ -6,6 +8,8 @@ RUN apk add --no-cache \
   make \
   bash \
   perl 
+
+# install texlive
 RUN mkdir install-tl
 Run wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
   tar -xvf install-tl-unx.tar.gz -C install-tl --strip-components=1; \
@@ -15,10 +19,21 @@ Run wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
   rm install-tl-unx.tar.gz
 
 ENV PATH="/usr/local/texlive/2023/bin/x86_64-linuxmusl:${PATH}"
+
+# setup a work directory
 WORKDIR /build
+
+# only copy the depenency file to avoid reinstalling on every file change
 COPY deps.txt /build/deps.txt
-# Install packages
-RUN tlmgr install `cat deps.txt`
+
+# Install packages from deps.txt
+RUN grep -v '^#' deps.txt | xargs tlmgr install
+
+# copy the rest of the files
 COPY . /build
+
+# setup a volume for the build
 Volume ["/build"]
+
+# build the pdf
 ENTRYPOINT ["make"]
