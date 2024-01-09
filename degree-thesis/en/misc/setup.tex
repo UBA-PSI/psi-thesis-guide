@@ -408,6 +408,10 @@
 % Use the pre-calculated length \widefigurewidth in \includegraphics.
 \def\widefigurewidth{\dimexpr(\marginparwidth + \textwidth + \marginparsep)}
 
+% Adjust penalties for widows and orphans (credit to @relikd https://github.com/UBA-PSI/psi-thesis-guide/issues/8)
+\widowpenalty10000
+\clubpenalty10000
+
 
 %----------------------------------------------------------------------------------------
 %	SETUP HEADER AND FOOTER
