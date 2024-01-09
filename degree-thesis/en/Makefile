@@ -2,7 +2,7 @@
 SOURCES = main.tex misc/setup.tex misc/titlepage.tex $(wildcard chapters/*.tex) $(wildcard appendices/*.tex) literature.bib
 
 # define depenencies for the docker build
-DOCKERFILES = Dockerfile deps.txt
+DOCKERSOURCES = Dockerfile deps.txt
 
 # this is the main target, it will compile the pdf
 main.pdf: $(SOURCES)
@@ -11,8 +11,12 @@ main.pdf: $(SOURCES)
 
 # this target will compile the pdf in a docker container, the results will be moved to the main directory
 docker: $(SOURCES) $(DOCKERSOURCES)
+	# build the image
 	docker build . -t build
+	# run the image as container, autoremoves the container after the run
 	docker run --rm -v "${PWD}:/build" --name build build
+	# remove the image (will not effect cached partial images)
+	docker rmi build
 
 # remove all the files that are created during the compilation
 clean:
