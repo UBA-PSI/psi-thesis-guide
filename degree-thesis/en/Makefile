@@ -4,9 +4,12 @@ SOURCES = main.tex misc/setup.tex misc/titlepage.tex $(wildcard chapters/*.tex) 
 # define depenencies for the docker build
 DOCKERSOURCES = Dockerfile deps.txt
 
+# define the options for the lualatex compiler
+OPTS = -shell-escape -interaction=nonstopmode
+
 # this is the main target, it will compile the pdf
 main.pdf: $(SOURCES)
-	lualatex main.tex &&  biber main && lualatex main.tex && lualatex main.tex
+	lualatex $(OPTS) main.tex &&  biber main && lualatex $(OPTS) main.tex && lualatex $(OPTS) main.tex 
 	$(MAKE) move
 
 # this target will compile the pdf in a docker container, the results will be moved to the main directory

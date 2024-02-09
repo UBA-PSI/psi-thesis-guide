@@ -7,7 +7,9 @@ RUN apk add --no-cache \
   gpg \
   make \
   bash \
-  perl 
+  perl \
+  python3 \
+  py3-pygments
 
 # install texlive
 RUN mkdir install-tl
@@ -25,6 +27,9 @@ WORKDIR /build
 
 # only copy the depenency file to avoid reinstalling on every file change
 COPY deps.txt /build/deps.txt
+
+# Update tlmgr to make sure we are using the latest version
+RUN tlmgr update --self
 
 # Install packages from deps.txt
 RUN grep -v '^#' deps.txt | xargs tlmgr install

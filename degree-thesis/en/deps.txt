@@ -36,4 +36,9 @@ enumitem
 txfonts
 biber
 
+# Minted as code highlighting alternative and its dependencies 
+minted
+fancyvrb
+upquote
+
 # Add your own packages below this line
