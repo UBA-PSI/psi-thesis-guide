@@ -12,6 +12,17 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%----------------------------------------------------------------------------------------
+%		Configuration switches
+%----------------------------------------------------------------------------------------
+% The following switches are used to enable or disable certain features of the document.
+% Uncomment the line to enable the feature, and comment the line to disable the feature.
+
+% Enable minted code listings, this will disable the listings package
+% \def\enableMinted{useMinted}
+
+
+
 
 %----------------------------------------------------------------------------------------
 %		UNIVERSITY OF BAMBERG COLORS
@@ -455,8 +466,10 @@
 %----------------------------------------------------------------------------------------
 %	LISTINGS SETTINGS
 %----------------------------------------------------------------------------------------
-
 \usepackage{textcomp}
+
+% check if minted was enabled, if not use listings as fallback
+\ifx\enableMinted\undefined
 \usepackage{listings}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 
@@ -511,6 +524,16 @@
 \lstnewenvironment{latex}
     {\lstset{language=[LaTeX]TeX}}
     {}
+
+\else % minted was enabled
+\usepackage{minted}
+
+% set up a new environment using minted for latex code
+\newenvironment{latex}
+    {\VerbatimEnvironment
+    \begin{minted}{latex}}
+    {\end{minted}}
+\fi
 
 %----------------------------------------------------------------------------------------
 %	MARGINAL CAPTIONS
