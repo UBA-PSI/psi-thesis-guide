@@ -20,7 +20,7 @@ RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
   rm -rf install-tl; \
   rm install-tl-unx.tar.gz
 
-ENV PATH="/usr/local/texlive/2023/bin/x86_64-linuxmusl:${PATH}"
+ENV PATH="/usr/local/texlive/2024/bin/x86_64-linuxmusl:${PATH}"
 
 # setup a work directory
 WORKDIR /build
