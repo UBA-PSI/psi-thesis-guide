@@ -19,12 +19,12 @@ jobs:
       run: |
         cd degree-thesis/en
         make docker
-        ls
     - name: Upload PDF
       uses: actions/upload-artifact@v4
       with: 
         name: PDF
         path: pdf
+        run: ls
     - name: Upload logs
       uses: actions/upload-artifact@v4
       with:
