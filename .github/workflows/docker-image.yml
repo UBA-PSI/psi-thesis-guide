@@ -28,4 +28,12 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: logs
-        path: main.aux main.bbl main.bcf main.blg main.log main.out main.run.xml main.toc
+        path: |
+          degree-thesis/en/main.aux 
+          degree-thesis/en/main.bbl 
+          degree-thesis/en/main.bcf 
+          degree-thesis/en/main.blg 
+          degree-thesis/en/main.log 
+          degree-thesis/en/main.out 
+          degree-thesis/en/main.run.xml 
+          degree-thesis/en/main.toc
