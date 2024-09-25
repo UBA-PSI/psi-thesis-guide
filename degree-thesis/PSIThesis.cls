@@ -47,6 +47,7 @@
 \newbool{listtoc}
 \newbool{toctoc}
 \newbool{parskip}
+\newbool{minted}
 \newbool{hyperrefsupport}
 \booltrue{hyperrefsupport}
 \newbool{headsepline}
@@ -56,6 +57,7 @@
 \DeclareOption{nolistspacing}{\booltrue{nolistspace}}
 \DeclareOption{liststotoc}{\booltrue{listtoc}}
 \DeclareOption{chapterinoneline}{\booltrue{chapteroneline}}
+\DeclareOption{minted}{\booltrue{minted}}
 \DeclareOption{toctotoc}{\booltrue{toctoc}}
 \DeclareOption{parskip}{\booltrue{parskip}}
 \DeclareOption{headsepline}{\booltrue{headsepline}}
@@ -191,6 +193,94 @@
 
 
 %----------------------------------------------------------------------------------------
+%		TABLE OF CONTENTS SETUP
+%----------------------------------------------------------------------------------------
+
+% solution inspired from https://tex.stackexchange.com/questions/178510/how-can-i-reproduce-this-beautiful-table-of-contents
+\usepackage{etoc}
+\etocsetlevel{section}{2}
+\etocsetlevel{subsection}{3}
+
+\etocsettocdepth{section} % set to subsection for adding subsections to toc (not recommended)
+
+\newlength{\tocleft}
+\setlength{\tocleft}{2.5cm} % must be set to fit the innermargin defined in geometry (change only if you have changed the margins)
+
+\newlength{\tocsep}
+\setlength{\tocsep}{2em}
+
+\usepackage{textcase}
+
+
+\etocsetstyle{chapter}
+   {}
+   {}
+   {\etocifnumbered
+     {\makebox[0pt][r]
+       % we use \etocthenumber instead of \etocnumber to avoid the href, which is part of \etocthenumber, messing with MakeTextLowercase
+       {\textsc{\MakeTextLowercase\chaptername\ \MakeTextLowercase\etocthenumber}\hspace{\tocsep}}%
+       \textbf{\etocname\kern1em\relax\etocpage}%
+    }%
+    {\textbf{\etocname\kern1em\relax\etocpage}}%
+    \par\vspace{3ex}%
+   }%
+   {}
+
+\etocsetstyle{section}
+   {\vspace{-2ex}} % Muss von den 3ex aus Chapter abgezogen werden
+   {}
+   % see the comment regarding etocthenumber in the chapter style definition
+   {\makebox[0pt][r]{\textsc{\MakeTextLowercase\etocthenumber}\hspace{\tocsep}}%
+    \etocname\kern1em\etocpage\par%
+   }%
+   {\addvspace{3ex}} % 3ex falls danach Chapter kommt
+
+\etocsetstyle{subsection}
+   {\vspace{0ex}}
+   {}
+   {\makebox[3em][l]{\etocnumber}\etocname\kern1em\etocpage\par}
+   {\addvspace{2ex}} % 2ex falls danach Section kommt
+
+\etocsettocstyle{\chapter*{\contentsname}
+                \thispagestyle{plain}%
+                \leftskip\tocleft\parindent0pt}{}
+
+
+%----------------------------------------------------------------------------------------
+%		HEADINGS SETUP (CHAPTERS, SECTIONS, …)
+%----------------------------------------------------------------------------------------
+
+\usepackage[explicit]{titlesec}
+\newcommand{\hsp}{\hspace{20pt}}
+
+\setcounter{secnumdepth}{3}
+
+% We use lining figures for headers (tlfstyle) because they fit better with uppercase letters than old-style figures.
+
+% chapters have a vertical line between number and title
+\titleformat{\chapter}[hang]{\Huge\bfseries\tlfstyle}{\color{black}\thechapter}{20pt}{\begin{tabular}[t]{@{\color{ubblue60}\vrule width 2pt\hsp}p{0.85\textwidth}}\raggedright #1\end{tabular}}
+
+% sections
+\titleformat{\section}[hang]{\bfseries\large\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}}}{1ex}{{\color{ubblue} #1}}{}
+
+% subsections
+\titleformat{\subsection}[hang]{\bfseries\large\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}.\arabic{subsection}}}{1ex}{{\color{ubblue} #1}}{}
+
+% subsubsections
+\titleformat{\subsubsection}[hang]{\bfseries\tlfstyle}{{\color{ubblue}\thechapter.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}}{1ex}{{\color{ubblue} #1}}{}
+
+% vertical spacing for headings ==============
+\titlespacing*{\section}
+{0pt}{7ex}{3ex}
+
+\titlespacing*{\subsection}
+{0pt}{4ex}{2ex}
+
+\titlespacing*{\subsubsection}
+{0pt}{4ex}{2ex}
+% end of vertical spacing ====================
+
+%----------------------------------------------------------------------------------------
 %	REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
 
@@ -205,6 +295,7 @@
 \RequirePackage{longtable} % Required for tables that span multiple pages (used in the symbols, abbreviations and physical constants pages)
 
 \RequirePackage{siunitx} % Required for \SI commands
+\RequirePackage{textcomp} % I am sure it does something, probably font related
 
 \RequirePackage{graphicx} % Required to include images
 \graphicspath{{figures/}{./}} % Specifies where to look for included images
@@ -248,7 +339,7 @@
 \newcommand{\decoRuleFlex}[1]{\rule{#1}{.4pt}}
 
 
-\setcounter{tocdepth}{3} % The depth to which the document sections are printed to the table of contents
+\setcounter{tocdepth}{2} % The depth to which the document sections are printed to the table of contents
 \ProvideDocumentCommand{\addchaptertocentry}{ m }{%
 	\addcontentsline{toc}{chapter}{#1}%
 }
@@ -261,17 +352,50 @@
 
 \colorlet{mdtRed}{red!50!black}
 
+% University of Bamberg color codes
+%
+% Base Color value obtained from UB Corporate Identity Manual
+\definecolor{ubblue}{HTML}{00457D}
+\definecolor{ubblue80}{HTML}{336A97}
+\definecolor{ubblue60}{HTML}{668FB1}
+\definecolor{ubblue40}{HTML}{99B5CB}
+\definecolor{ubblue20}{HTML}{CCDAE5}
+
+\definecolor{ubyellow}{HTML}{FFD300}
+\definecolor{ubyellow25}{HTML}{FFF4BF}
+
+\definecolor{ubred}{HTML}{e6444F}
+
+\definecolor{ubgreen}{HTML}{97BF0D}
+
+\definecolor{gray75}{gray}{0.75}
+\definecolor{gray50}{gray}{0.50}
+
 %----------------------------------------------------------------------------------------
 %	MARGINS
 %----------------------------------------------------------------------------------------
 
 \RequirePackage{geometry}
-%\geometry{
-%	outer=5cm,
-%	headheight=4ex,
-%	includehead,
-%	includefoot
-%}
+% Using the layout from kaobook
+\geometry{
+		paper=a4paper,
+		head=13.6pt,
+		top=27.4mm,
+		bottom=27.4mm,
+		inner=24.8mm,
+		%outer=24.8mm,
+		%right=2.183cm,
+		textwidth=107mm,
+		marginparsep=8.2mm,
+		marginparwidth=49.4mm,
+		%textheight=49\baselineskip,
+		includemp,
+		% showframe
+}
+
+% Wide figures span text and margin.
+% Use the pre-calculated length \widefigurewidth in \includegraphics.
+\def\widefigurewidth{\dimexpr(\marginparwidth + \textwidth + \marginparsep)}
 
 \raggedbottom
 
@@ -281,8 +405,8 @@
 
 \doublehyphendemerits=10000 % No consecutive line hyphens
 \brokenpenalty=10000 % No broken words across columns/pages
-\widowpenalty=9999 % Almost no widows at bottom of page
-\clubpenalty=9999 % Almost no orphans at top of page
+\widowpenalty=10000 % Almost no widows at bottom of page
+\clubpenalty=10000 % Almost no orphans at top of page
 \interfootnotelinepenalty=9999 % Almost never break footnotes
 
 %----------------------------------------------------------------------------------------
@@ -330,6 +454,116 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\newpage
 	\if@twocolumn\hbox{}\newpage\fi\fi\fi%
 }
+
+% new header/footer, from kaobook; we could probably remove the original definitions from the cls
+\renewpagestyle{thesis}{
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\textup{\thepage}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad{}\textup{\textsc{\MakeLowercase \leftmark}}}} % left page two sided
+  {\makebox[\overflowingheadlen][r]{\textup{\textsc{\MakeLowercase \rightmark}}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\textup{\thepage}}} % right page two sided
+  % TODO ifthispageodd appears to not effect the header of even/odd pages in onesided layouts
+  {\ifthispageodd{\makebox[\overflowingheadlen][l]{\textup{\thepage}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad{}\textup{\textsc{\MakeLowercase \leftmark}}}}{\makebox[\overflowingheadlen][l]{\textup{\thepage}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad{}\textup{\textsc{\MakeLowercase \rightmark}}}}} % one sided       
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.thesis}{
+  {}%
+  {}%
+  {}
+}{
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\textup{\textsc{\thepage}}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}}} % left page two sided
+  {\makebox[\overflowingheadlen][r]{\rule[-\dp\strutbox]{1pt}{\baselineskip}\quad\textup{\textsc{\thepage}}}} % right page two sided
+  {\makebox[\overflowingheadlen][l]{\textup{\textsc{\thepage}}\quad\rule[-\dp\strutbox]{1pt}{\baselineskip}}} % one sided
+}
+
+\newlength{\overflowingheadlen}
+\setlength{\overflowingheadlen}{\textwidth}
+\addtolength{\overflowingheadlen}{\marginparsep}
+\addtolength{\overflowingheadlen}{\marginparwidth}
+
+
+
+%----------------------------------------------------------------------------------------
+%	LISTINGS
+%	%----------------------------------------------------------------------------------------
+
+\ifbool{minted}{
+    %True
+    \usepackage{minted}
+
+    % set up a new environment using minted for latex code
+    \newenvironment{latex}
+      {\VerbatimEnvironment
+      \begin{minted}{latex}}
+      {\end{minted}}
+
+  } {
+    % False
+    \usepackage{listings}
+    \definecolor{darkgray}{rgb}{.4,.4,.4}
+
+    \lstdefinelanguage{JavaScript}{
+      keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+      ndkeywords={class, export, boolean, throw, implements, import, this},
+      sensitive=false,
+      comment=[l]{//},
+      morecomment=[s]{/*}{*/},
+      morestring=[b]',
+      morestring=[b]"
+    }
+
+    \lstset{
+        aboveskip={1\baselineskip},
+        abovecaptionskip=-1\baselineskip,
+        belowcaptionskip=2ex,
+        basicstyle=\footnotesize\ttfamily\linespread{4},
+        breaklines=true,
+        columns=flexible,
+        commentstyle=\color{gray50}\ttfamily\itshape,
+        escapechar=@,
+        extendedchars=true,
+        frame=l,
+        framerule=.5pt,
+        identifierstyle=\color{black},
+        inputencoding=latin1,
+        keywordstyle=\color{ubblue80}\bfseries,
+        ndkeywordstyle=\color{ubblue80}\bfseries,
+        numbers=left,
+        numbersep=1.25em,
+        numberstyle=\scriptsize\ttfamily,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        stringstyle=\color{ubblue60}\ttfamily,
+        upquote=true,
+        showstringspaces=false,
+    }
+
+    \lstset{literate=%
+      *{0}{{{\color{darkgray}0}}}1
+        {1}{{{\color{darkgray}1}}}1
+        {2}{{{\color{darkgray}2}}}1
+        {3}{{{\color{darkgray}3}}}1
+        {4}{{{\color{darkgray}4}}}1
+        {5}{{{\color{darkgray}5}}}1
+        {6}{{{\color{darkgray}6}}}1
+        {7}{{{\color{darkgray}7}}}1
+        {8}{{{\color{darkgray}8}}}1
+        {9}{{{\color{darkgray}9}}}1
+    }
+
+    \lstnewenvironment{latex}
+        {\lstset{language=[LaTeX]TeX}}
+        {}
+  }
+
+%----------------------------------------------------------------------------------------
+%	Symbols
+%----------------------------------------------------------------------------------------
+
+\usepackage{pifont}
+\let\oldding\ding% Store old \ding in \oldding
+\renewcommand{\ding}[2][1]{\scalebox{#1}{\oldding{#2}}}% Scale \oldding via optional argument
+% usage \ding{number} or |ding[factor]{number}
+
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS PAGE DESIGN
