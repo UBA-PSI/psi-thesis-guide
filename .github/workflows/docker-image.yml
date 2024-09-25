@@ -24,6 +24,7 @@ jobs:
       with: 
         name: PDF
         path: degree-thesis/pdf
+        compression-level: 0
     - name: Upload logs
       uses: actions/upload-artifact@v4
       with:
